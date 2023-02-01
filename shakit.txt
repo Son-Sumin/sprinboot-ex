@@ -1,0 +1,3793 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <!-- Google Tag Manager 201117 -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P3PD8PM');
+  </script>
+  <!-- End Google Tag Manager -->
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="no" http-equiv="imagetoolbar"/>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <meta content="LtDqz5_zUqpVcBtUbNUeChXK8t6kWzFJb8ARaY8uygo" name="google-site-verification"/>
+  <meta content="494c6c2beca29c313d8b7b53b1b609f00a44d839" name="naver-site-verification"/>
+  <meta content="2f9hbam61t4njo9uunkcjh6h4cp0py" name="facebook-domain-verification"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" name="title"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" name="publisher"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" name="author"/>
+  <meta content="index,follow" name="robots"/>
+  <meta content="쉐이킷, shakit, 하이볼, 칵테일, 칵테일키트, 칵테일만들기, 전통주, 무알콜, 무알콜칵테일, 파티, 홈파티, 홈술, 홈텐딩, 혼술, 홈바, 캠핑, cocktail, 이색선물, 바용품, 칵테일용품, DIY키트, 쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" name="keywords"/>
+  <meta content="온라인으로 DIY 칵테일 키트를 주문하고 집에서 즐겨보세요. 쉐이킷 칵테일 레시피만 따라하면 오늘은 내가 바텐더!" name="description"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" property="og:title"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" property="og:site_name"/>
+  <meta content="쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스" property="og:author"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://shakit.co.kr/data/apms/background/%EC%89%90%EC%9D%B4%ED%82%B7_%EC%98%A4%ED%94%88%EA%B7%B8%EB%9E%98%ED%94%84_%EB%8C%80%EC%9A%A9%EB%9F%89.png" property="og:image"/>
+  <meta content="온라인으로 DIY 칵테일 키트를 주문하고 집에서 즐겨보세요. 쉐이킷 칵테일 레시피만 따라하면 오늘은 내가 바텐더!" property="og:description"/>
+  <meta content="https://www.shakit.co.kr/" property="og:url"/>
+  <link href="https://shakit.co.kr/data/apms/background/%EC%89%90%EC%9D%B4%ED%82%B7_%EC%98%A4%ED%94%88%EA%B7%B8%EB%9E%98%ED%94%84_%EB%8C%80%EC%9A%A9%EB%9F%89.png" rel="image_src"/>
+  <link href="https://www.shakit.co.kr/" rel="canonical"/>
+  <title>
+   쉐이킷 | Shakit | 국내 최초 DIY 칵테일키트 온라인 배송 서비스
+  </title>
+  <link href="https://www.shakit.co.kr/css/default.css?ver=171013" rel="stylesheet"/>
+  <link href="https://www.shakit.co.kr/css/apms.css?ver=171013" rel="stylesheet"/>
+  <link class="thema-mode" href="https://www.shakit.co.kr/thema/uglysmith-basic/assets/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link class="thema-colorset" href="https://www.shakit.co.kr/thema/uglysmith-basic/colorset/Basic-Box/colorset.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.shakit.co.kr/thema/uglysmith-basic/widget/miso-shop-item/widget.css" rel="stylesheet"/>
+  <link href="https://www.shakit.co.kr/thema/uglysmith-basic/widget/miso-post-gallery2-main/widget.css" rel="stylesheet"/>
+  <link href="https://www.shakit.co.kr/css/font-awesome/css/font-awesome.min.css?ver=171013" rel="stylesheet"/>
+  <link href="https://www.shakit.co.kr/css/level/basic.css?ver=171013" rel="stylesheet"/>
+  <link href="https://www.shakit.co.kr/plugin/fullpage/fullpage.css" rel="stylesheet"/>
+  <!--[if lte IE 8]>
+<script src="https://www.shakit.co.kr/js/html5.js"></script>
+<![endif]-->
+  <script>
+   (function (w, d, s, l, i, c) {
+        w["_b_g_e_b_f"] = w["_b_g_e_b_f"] ? w["_b_g_e_b_f"] : [];
+        w[l] = w[l] ? w[l] : {};
+        w[l].user = function (c, d) {
+            w["_b_g_e_b_f"].push({t: "user",a1: c,a2: d});
+        }
+        w[l].event = function (c, d, t) {
+            w["_b_g_e_b_f"].push({t: "event",a1: c,a2: d,a3: t ? t : new Date().getTime()});
+        }
+        w[l].track = function (c, d) {
+            w["_b_g_e_b_f"].push({t: "track",a1: c,a2: d});
+        }
+        function fEv() {
+            if (w["_b_g_e_b_f"] && w["_b_g_e_b_f"].length > 0) {
+                for (var i = 0; i < w["_b_g_e_b_f"].length; i++) {
+                    var ev = w["_b_g_e_b_f"][i]
+                    w[l][ev["t"]](ev["a1"], ev["a2"], ev["a3"])
+                }
+            }
+        }
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+        j.async = true;
+        j.src = 'https://sdk.bigin.io/v1/bigin.sdk.js';
+        var u = navigator.userAgent.toLowerCase(), h = {
+            projectID: i,
+            currencyCode: c
+        };
+        if ((u.indexOf('msie') !== -1) && parseInt(u.split('msie')[1]) < 9) {
+            var r = setInterval(function () {
+                if (w[l] !== undefined) {
+                    clearInterval(r);
+                    w[l].config(h);
+                    fEv();
+                }
+            }, 50);
+        } else {
+            j.onload = function () {
+                w[l].config(h)
+                fEv();
+            };
+        }
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'bigin', '2C5RJO963H-G', "KRW");
+
+
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "https://www.shakit.co.kr";
+var g5_bbs_url   = "https://www.shakit.co.kr/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_pim       = "";
+var g5_editor    = "";
+var g5_responsive    = "1";
+var g5_cookie_domain = "";
+var g5_purl = "https://www.shakit.co.kr/";
+  </script>
+  <script src="https://www.shakit.co.kr/js/jquery-1.11.3.min.js">
+  </script>
+  <script src="https://www.shakit.co.kr/js/jquery-migrate-1.2.1.min.js">
+  </script>
+  <script src="https://www.shakit.co.kr/lang/korean/lang.js?ver=171013">
+  </script>
+  <script src="https://www.shakit.co.kr/js/common.js?ver=171013">
+  </script>
+  <script src="https://www.shakit.co.kr/js/wrest.js?ver=171013">
+  </script>
+  <script src="https://www.shakit.co.kr/js/apms.js?ver=171013">
+  </script>
+  <script src="https://www.shakit.co.kr/plugin/fullpage/fullpage.extensions.min.js?ver=171013">
+  </script>
+  <!-- kakao map Api -->
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22bcf91679c16d6ac105ef90a2ec8578&amp;libraries=clusterer,services" type="text/javascript">
+  </script>
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#da532c" name="msapplication-TileColor"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <script src="https://www.shakit.co.kr/plugin/apms/js/jquery.mobile.swipe.min.js">
+  </script>
+  <script src="https://www.shakit.co.kr/plugin/apms/js/imagesloaded.pkgd.min.js">
+  </script>
+  <script src="https://www.shakit.co.kr/plugin/apms/js/masonry.pkgd.min.js">
+  </script>
+  <script src="https://www.shakit.co.kr/plugin/apms/js/jquery.infinitescroll.min.js">
+  </script>
+ </head>
+ <body class="responsive is-pc">
+  <!-- Google Tag Manager (noscript) 201117 -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P3PD8PM" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- 팝업레이어 시작 { -->
+  <div id="hd_pop">
+   <h2>
+    팝업레이어 알림
+   </h2>
+   <span class="sound_only">
+    팝업레이어 알림이 없습니다.
+   </span>
+  </div>
+  <script>
+   $(function() {
+		var noticeModal = document.querySelector('.hd_pops');
+		var noticeModalLayer = document.querySelector('.notice_modal_layer');
+		if($('.hd_pops').css('display') !== 'none') $('#hd_pop .dim').show();
+
+		$('.hd_pops_close').click(function() {
+
+			noticeModal.classList.remove('show');
+
+			var idb = $(this).attr('class').split(' ');
+			$('#' + idb[1]).next('.dim').hide();
+			$('#' + idb[1]).css('display', 'none');
+
+			if ($('.hd_pops_reject').is(':checked')) {
+				var id = $('.hd_pops_reject').attr('class').split(' ');
+				var ck_name = id[1];
+				var exp_time = parseInt(id[2]);
+
+				console.log(ck_name);
+
+				set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+			}
+
+			noticeModalLayer.classList.remove('show')
+		});
+
+		$("#popviewchkbox2").on("change", function() {				
+				if ($(this).attr("checked")) {					
+					$.cookie('notice', 'true', {
+						expires: 1
+					});
+				} else {
+					$.removeCookie('notice', {
+						path: '/'
+					});
+				}
+			});
+
+
+		$("#hd").css("z-index", 1000);
+
+	});
+  </script>
+  <!-- } 팝업레이어 끝 -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P3PD8PM" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- naver 공통 스크립트 
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+	if(!wcs_add) var wcs_add = {};
+		wcs_add["wa"] = "s_34e58203b852";
+		if (!_nasa) var _nasa={};
+		if (window.wcs) {
+		wcs.inflow("shakit.co.kr");
+		wcs_do(_nasa);
+	}
+</script>-->
+  <style>
+   .no-responsive .wrapper, .no-responsive .at-container-wide { min-width:1200px; }
+	.no-responsive .boxed.wrapper, .no-responsive .at-container { width:1200px; }
+	.at-menu .nav-height { height:100px; line-height:100px !important; }
+	.pc-menu .nav-top.nav-float .menu-a, .pc-menu .nav-mega .menu-a { padding:0px 25px; }
+	.pc-menu .nav-top.nav-float .sub-1div::before { left: 25px; }
+	.pc-menu .nav-full-first, .pc-menu .nav-full-last, .pc-menu .nav-full.on .sub-1div { height: 300px; }
+	.pc-menu .nav-full.on, .pc-menu .nav-full.on .at-container { height:400px; }
+	.pc-menu .subm-w { width:170px; }
+	.pc-menu .nav-content, .pc-menu .nav-cw { width:170px; }
+	.pc-menu .nav-content-height { height:400px; }
+	.pc-menu .nav-content .sub-content { width:860px; left:170px; }
+	@media all and (min-width:1200px) {
+		.responsive .boxed.wrapper { max-width:1200px; }
+	}
+  </style>
+  <!-- Channel Plugin Scripts -->
+  <script>
+   (function() {
+		/*
+		var w = window;
+		if (w.ChannelIO) {
+			return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+		}
+		var d = window.document;
+		var ch = function() {
+			ch.c(arguments);
+		};
+		ch.q = [];
+		ch.c = function(args) {
+			ch.q.push(args);
+		};
+		w.ChannelIO = ch;
+		function l() {
+			if (w.ChannelIOInitialized) {
+				return;
+			}
+			w.ChannelIOInitialized = true;
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+			s.charset = 'UTF-8';
+			var x = document.getElementsByTagName('script')[0];
+			x.parentNode.insertBefore(s, x);
+		}
+		if (document.readyState === 'complete') {
+			l();
+		} else if (window.attachEvent) {
+			window.attachEvent('onload', l);
+		} else {
+			window.addEventListener('DOMContentLoaded', l, false);
+			window.addEventListener('load', l, false);
+		}
+		*/
+	})();
+
+	/*
+	ChannelIO('boot', {
+		"pluginKey": "9b1b659d-a802-4e4c-aedd-a5b718a3650e"
+	});
+	*/
+
+	window.onload = function() {
+		/*
+			$(".go-btn.go-top.cursor").width($(".textLauncherIcon").width());
+			$(".go-btn.go-top.cursor").height($(".textLauncherIcon").width());
+			$(".go-btn.go-top.cursor").css("right",$(".sc-ifAKCX").css("right"));
+			var sbottom = Number($(".sc-ifAKCX").css("bottom").replace("px","")) + 10 + Number($(".textLauncherIcon").width());
+			$(".go-btn.go-top.cursor").css("bottom",sbottom);
+		*/
+	}
+  </script>
+  <!-- End Channel Plugin -->
+  <!-- kakao 채널 추가 -->
+  <script>
+   (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+		fjs.parentNode.insertBefore(js, fjs);
+	})(document, 'script', 'kakao-js-sdk');
+  </script>
+  <!-- end kakao 채널 추가 -->
+  <!-- new thema : ugly smith -->
+  <link href="https://www.shakit.co.kr/thema/uglysmith-basic/assets/css/common.css" rel="stylesheet"/>
+  <link href="/css/custom/custom_ugly.css" rel="stylesheet"/>
+  <div class="load-box">
+   <div class="center-box">
+    <img src="/img/logo.png" title=""/>
+   </div>
+  </div>
+  <div id="wrap">
+   <header class="fixed" id="header">
+    <!--top banner-->
+    <div class="top-banner">
+     <a class="fc" href="https://shakit.co.kr/bbs/page.php?hid=b2b_company">
+      <p>
+       기업 학교 고객이신가요?
+       <b class="pink">
+        쉐이킷 B2B 전용몰
+       </b>
+      </p>
+      <img alt="" src="/images/common/ico_arrow_p.svg"/>
+     </a>
+    </div>
+    <!-- PC Menu -->
+    <div class="pc-menu">
+     <!--22.07.12 리뉴얼-->
+     <link href="/css/renewal.css" rel="stylesheet" type="text/css"/>
+     <div class="menu">
+      <ul class="logo">
+       <li>
+        <a class="menu-a nav-height" href="https://www.shakit.co.kr">
+         <img src="/images/common/logo_pink.png"/>
+        </a>
+       </li>
+      </ul>
+      <ul class="gnb">
+       <!-- <li><a href="/shop/list.php?ca_id=40">칵테일</a></li>
+    <li><a href="/shop/list.php?ca_id=5020">칵테일 용품</a></li>
+    <li><a href="/shop/list.php?ca_id=60">V-Sprits</a></li>
+    <li><a href="/bbs/board.php?bo_table=event">이벤트</a></li> -->
+       <li class="menu-li off">
+        <a href="https://www.shakit.co.kr/shop/list.php?ca_id=40">
+         칵테일 키트
+        </a>
+       </li>
+       <li class="menu-li off">
+        <a href="https://www.shakit.co.kr/shop/list.php?ca_id=70">
+         칵테일 재료
+        </a>
+       </li>
+       <li class="menu-li off">
+        <a href="https://www.shakit.co.kr/shop/list.php?ca_id=50">
+         칵테일 용품
+        </a>
+       </li>
+       <li class="menu-li off">
+        <a href="https://www.shakit.co.kr/shop/list.php?ca_id=80">
+         스웰처
+        </a>
+       </li>
+       <li class="menu-li off">
+        <a href="/bbs/board.php?bo_table=event&amp;sca=진행중인+이벤트">
+         이벤트
+        </a>
+       </li>
+      </ul>
+      <ul class="my_list">
+       <li>
+        <a href="https://www.shakit.co.kr/bbs/login.php?url=%2F">
+         로그인/회원가입
+        </a>
+       </li>
+       <li>
+        <!--로그인 안했을 때는 로그인 페이지로 이동-->
+        <a href="https://www.shakit.co.kr/bbs/login.php?url=%2F">
+         주문/배송
+        </a>
+       </li>
+       <li>
+        <a href="https://www.shakit.co.kr/bbs/login.php?url=%2F">
+         장바구니
+         <span class="cart_num">
+         </span>
+        </a>
+       </li>
+       <!--
+		<li class="b2b"><a href="https://shakit.co.kr/bbs/page.php?hid=b2b_company" target="_blank">기업·학교 고객이신가요? <img src="/images/common/ico_open.png" alt="바로가기 아이콘"></a></li>-->
+      </ul>
+     </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="m-menu">
+     <link href="/css/plugin/swiper-5.4.5/swiper.min.css" rel="stylesheet" type="text/css"/>
+     <style>
+      .upper .cart>a {
+		position: relative;
+	}
+
+	.cart_num {
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		font-size: 8px;
+		line-height: 15px;
+		text-align: center;
+		color: #fff;
+		background-color: #D82F58;
+		position: absolute;
+		left: 14px;
+		bottom: -5px;
+	}
+     </style>
+     <div class="m-wrap">
+      <ul class="upper">
+       <li class="left fc">
+        <!-- (모바일) 메인에서만 노출 -->
+        <div class="logo">
+         <a href="https://www.shakit.co.kr">
+          <img alt="shackit" src="/images/common/logo_pink.png"/>
+         </a>
+        </div>
+        <!-- 뒤로가기(상세노출) -->
+        <!-- 홈버튼(상세노출) -->
+       </li>
+       <li class="right fc">
+        <div class="cart">
+         <a href="/shop/cart.php">
+          <img alt="장바구니" src="/images/common/ico_cart3.svg"/>
+          <span class="cart_num">
+           0
+          </span>
+          <img alt="장바구니" class="img_white" src="/images/common/ico_cart_white.png"/>
+         </a>
+        </div>
+        <div class="ham_menu">
+         <span>
+         </span>
+         <span>
+         </span>
+         <span>
+         </span>
+         <!--<a href="/shop/mypage.php">
+	                <img src="/images/common/ico_mypage.png" alt="로그인/회원가입">
+                    <img src="/images/common/ico_member_white.png" alt="회원정보" class="img_white" />
+                </a> -->
+        </div>
+       </li>
+      </ul>
+      <!--모바일 메뉴 슬라이드-->
+      <!--상품 구매 페이지에서는 보여주면 안됨-->
+      <!--모바일 햄버거 메뉴-->
+      <div class="ham_wrap">
+       <div class="dim">
+       </div>
+       <div class="ham">
+        <div class="ham-top text-left">
+         <div class="mypage">
+          <div class="profile">
+           <img alt="프로필" src="/images/common/ico_mypage_m.png"/>
+          </div>
+          <i class="close-icon">
+          </i>
+          <ul class="mypage-top">
+           <li>
+            <!--<p>로그인이 필요합니다.</p>-->
+            <a href="https://www.shakit.co.kr/bbs/login.php?url=%2F">
+             로그인 / 회원가입
+            </a>
+           </li>
+           <li class="order">
+            <a href="https://www.shakit.co.kr/bbs/login.php?url=%2F">
+             주문 / 배송
+            </a>
+           </li>
+          </ul>
+         </div>
+         <ul class="gnb">
+          <li class="menu-li text-left">
+           <a href="https://shakit.co.kr/bbs/page.php?hid=brand">
+            브랜드 소개
+           </a>
+          </li>
+          <li class="menu-li text-left">
+           <a href="https://shakit.co.kr/bbs/board.php?bo_table=notice">
+            공지사항
+           </a>
+          </li>
+          <li class="menu-li text-left">
+           <a href="https://shakit.co.kr/bbs/page.php?hid=sw_news">
+            쉐이킷 뉴스
+           </a>
+          </li>
+         </ul>
+         <ul class="sns">
+          <li>
+           <a href="https://www.instagram.com/shakit_official/?hl=ko" target="_blank">
+            <i class="instagram">
+            </i>
+            Instagram
+           </a>
+          </li>
+          <li>
+           <a href="https://blog.naver.com/gourmetcloud" target="_blank">
+            <i class="blog">
+            </i>
+            Blog
+           </a>
+          </li>
+          <li>
+           <a href="https://www.youtube.com/channel/UCv3jUL6eoEiUUen9VoXLg7g" target="_blank">
+            <i class="youtube">
+            </i>
+            Youtube
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="ham-bottom">
+         <a href="https://shakit.co.kr/bbs/page.php?hid=b2b_company">
+          <div class="bottom-txt">
+           <p>
+            기업 학교 고객이신가요?
+           </p>
+           <b>
+            쉐이킷 B2B 전용몰
+           </b>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+     <script src="/js/plugin/swiper-5.4.5/swiper.min.js">
+     </script>
+     <script>
+      $("header .m-menu .ham_menu").on('click', function(e) {
+		e.preventDefault();
+		$("header .m-menu .ham_wrap .ham").animate({
+			'right': '0'
+		});
+		$("header .m-menu .ham_wrap").fadeIn(400);
+		$("html,body").css('overflow', 'hidden');
+	});
+	$("header .m-menu .ham_wrap .close-icon").on('click', function(e) {
+		e.preventDefault();
+		$("header .m-menu .ham_wrap .ham").animate({
+			'right': '-800px'
+		}, 600);
+		$("header .m-menu .ham_wrap").fadeOut(400);
+		$("html,body").css('overflow', 'unset');
+	});
+
+	var swiper = new Swiper(".slide-gnb", {
+		spaceBetween: 24,
+		slidesPerView: 'auto',
+
+	});
+     </script>
+    </div>
+   </header>
+   <script>
+    $(document).ready(function() {
+
+			var lastScrollTop = 0,
+				delta = 15;
+
+			$(window).on('scroll', function(e) {
+				var windowTop = $(this).scrollTop();
+
+				if (windowTop > 60) {
+					if (Math.abs(lastScrollTop - windowTop) <= delta) return;
+
+					if ((windowTop > lastScrollTop) && (lastScrollTop > 0)) {
+						$('#header').removeClass('fixed');
+					} else {
+						$('#header').addClass('fixed');
+					}
+
+					lastScrollTop = windowTop;
+
+					/*
+			topbtn 과 채팅 icon 변화
+			$(".go-btn.go-top.cursor").width($(".textLauncherIcon").width());
+			$(".go-btn.go-top.cursor").height($(".textLauncherIcon").width());
+			var sbottom =  55 + Number($(".textLauncherIcon").width());
+			$(".go-btn.go-top.cursor").css("bottom",sbottom);
+			*/
+				} else {
+					// $('#header').removeClass('fixed');
+				}
+			});
+
+		});
+   </script>
+   <!-- 타이틀 삭제 20.05.07
+    -->
+   <div id="container">
+    <style>
+     #header.trans {
+		background: transparent
+	}
+
+	/* #header.trans .gnb > li > a, #header.trans .menu .my_list > li > a {color:#fff;} */
+	#header.trans .gnb>li>a,
+	#header.trans .menu .my_list>li>a {
+		border-color: #000;
+		color: #000;
+	}
+
+	#header:not(.trans) .img_black {
+		display: block
+	}
+
+	#header .gnb>li>a {
+		color: #000;
+	}
+
+	header .pc-menu .menu .my_list>li>a {
+		border-color: #fff
+	}
+
+	header:not(.trans) .pc-menu .menu .my_list>li>a {
+		border-color: #222
+	}
+
+	/* header .m-menu {background: #9f9f9f;} */
+
+	/* 모바일 */
+	.m-menu .img_black {
+		display: block;
+	}
+
+	.m-menu .img_white {
+		display: none;
+	}
+    </style>
+    <link href="/css/plugin/swiper-5.4.5/swiper.min.css" rel="stylesheet" type="text/css"/>
+    <div class="main" id="main">
+     <!-- 메인 비쥬얼 -->
+     <section class="main_visual">
+      <div class="banner hidden-xs">
+       <style>
+        #isfwtljqokuxgrhpmvn .item { background-size:contain; background-position:center center; background-repeat:no-repeat; }
+	/* #isfwtljqokuxgrhpmvn .img-wrap { padding-bottom:400px; } */
+	#isfwtljqokuxgrhpmvn .tab-indicators { position:absolute; left:0; bottom:0; width:100%; }
+	#isfwtljqokuxgrhpmvn .nav a { background: rgba(255,255,255, 0.9); color:#000; border-radius: 0px; margin:0px; }
+	#isfwtljqokuxgrhpmvn .nav a:hover, #isfwtljqokuxgrhpmvn .nav a:focus,
+	#isfwtljqokuxgrhpmvn .nav .active a { background: rgba(0,0,0, 0.6); color:#fff; }
+       </style>
+       <div class="carousel swiper-container slide" data-interval="2500" data-ride="carousel" id="isfwtljqokuxgrhpmvn">
+        <div class="is-round-title swiper-wrapper">
+         <!-- 스와이퍼 슬라이드 사용을 위해 class명 carousel-inner 뺌-->
+         <div class="item swiper-slide active">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="javascript:;">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/Happy-New-Year_%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%88Pc.jpg"/>
+             <div class="inner">
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/list.php?ca_id=7020">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/%EB%8C%80%EC%9A%A9%EB%9F%89%EC%B6%9C%EC%8B%9CPC.jpg"/>
+             <div class="inner">
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/item.php?it_id=1587029141&amp;ca_id=40">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/Main_%EC%A4%80%EB%B2%85_PC.jpg"/>
+             <div class="inner">
+              <!-- <div class="en in-title font-24 trans-bg-color"> -->
+              <div class="text_cnt">
+               <h4>
+                싱그러움을 가득담은 June bug
+               </h4>
+               <p>
+                달콤한 멜론과 코코넛향이 어우러진 트로피컬 칵테일
+               </p>
+              </div>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/item.php?it_id=1619145939&amp;ca_id=40">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/Main_%ED%94%BC%EC%B9%98%ED%81%AC%EB%9F%AC%EC%89%AC_PC.jpg"/>
+             <div class="inner">
+              <!-- <div class="en in-title font-24 trans-bg-color"> -->
+              <div class="text_cnt">
+               <h4>
+                피치크러쉬 칵테일 Kit
+               </h4>
+               <p>
+                나만의 칵테일을 어디서든 쉽게 만들어보세요.
+               </p>
+              </div>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators" style="display:none;z-index:2;margin-bottom:0px;bottom:10px;">
+         <li class="active" data-slide-to="0" data-target="#isfwtljqokuxgrhpmvn">
+         </li>
+         <li data-slide-to="1" data-target="#isfwtljqokuxgrhpmvn">
+         </li>
+         <li data-slide-to="2" data-target="#isfwtljqokuxgrhpmvn">
+         </li>
+         <li data-slide-to="3" data-target="#isfwtljqokuxgrhpmvn">
+         </li>
+        </ol>
+        <div class="swiper-pagination">
+        </div>
+       </div>
+       <style>
+        .swiper-pagination-bullet{
+        width: 10px;
+        height:10px;
+        border:1px solid #fff;
+        border-radius:10px;
+        background:rgba(0,0,0,0);
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+        width: 12px;
+        height:12px;
+        background:#fff;
+    }
+       </style>
+      </div>
+      <div class="banner hidden-sm hidden-md hidden-lg">
+       <style>
+        #yuktdnogpzqfvhlcjsbmriewx .item { background-size:contain; background-position:center center; background-repeat:no-repeat; }
+	/* #yuktdnogpzqfvhlcjsbmriewx .img-wrap { padding-bottom:400px; } */
+	#yuktdnogpzqfvhlcjsbmriewx .tab-indicators { position:absolute; left:0; bottom:0; width:100%; }
+	#yuktdnogpzqfvhlcjsbmriewx .nav a { background: rgba(255,255,255, 0.9); color:#000; border-radius: 0px; margin:0px; }
+	#yuktdnogpzqfvhlcjsbmriewx .nav a:hover, #yuktdnogpzqfvhlcjsbmriewx .nav a:focus,
+	#yuktdnogpzqfvhlcjsbmriewx .nav .active a { background: rgba(0,0,0, 0.6); color:#fff; }
+       </style>
+       <div class="carousel swiper-container slide" data-interval="4000" data-ride="carousel" id="yuktdnogpzqfvhlcjsbmriewx">
+        <div class="is-round-title swiper-wrapper">
+         <!-- 스와이퍼 슬라이드 사용을 위해 class명 carousel-inner 뺌-->
+         <div class="item swiper-slide active">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="javascript:;">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/Happy-New-Year_%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%88MO.jpg"/>
+             <div class="inner">
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/list.php?ca_id=7020">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/%EB%8C%80%EC%9A%A9%EB%9F%89%EC%B6%9C%EC%8B%9CMO.jpg"/>
+             <div class="inner">
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/item.php?it_id=1587029141&amp;ca_id=40">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/01_Main_Mo_03.jpg"/>
+             <div class="inner">
+              <!-- <div class="en in-title font-24 trans-bg-color"> -->
+              <div class="text_cnt">
+               <h4>
+                싱그러움을 가득담은 June bug
+               </h4>
+               <p>
+                달콤한 멜론과 코코넛향이 어우러진 트로피컬 칵테일
+               </p>
+              </div>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="item swiper-slide">
+          <div class="img-wrap">
+           <div class="img-item">
+            <a href="https://shakit.co.kr/shop/item.php?it_id=1641791843&amp;ca_id=80">
+             <img alt="" src="https://shakit.co.kr/data/apms/background/01_Main_Mo_05.jpg"/>
+             <div class="inner">
+              <!-- <div class="en in-title font-24 trans-bg-color"> -->
+              <div class="text_cnt">
+               <h4>
+                SWELLTZER
+               </h4>
+               <p>
+                저알코올, 저 칼로리, 천연원료인 스파클링 워터 술.
+               </p>
+              </div>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators" style="display:none;z-index:2;margin-bottom:0px;bottom:10px;">
+         <li class="active" data-slide-to="0" data-target="#yuktdnogpzqfvhlcjsbmriewx">
+         </li>
+         <li data-slide-to="1" data-target="#yuktdnogpzqfvhlcjsbmriewx">
+         </li>
+         <li data-slide-to="2" data-target="#yuktdnogpzqfvhlcjsbmriewx">
+         </li>
+         <li data-slide-to="3" data-target="#yuktdnogpzqfvhlcjsbmriewx">
+         </li>
+        </ol>
+        <div class="swiper-pagination">
+        </div>
+       </div>
+       <style>
+        .swiper-pagination-bullet{
+        width: 10px;
+        height:10px;
+        border:1px solid #fff;
+        border-radius:10px;
+        background:rgba(0,0,0,0);
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+        width: 12px;
+        height:12px;
+        background:#fff;
+    }
+       </style>
+      </div>
+     </section>
+     <!-- 브랜드 소개 -->
+     <section class="brand">
+      <div class="inner">
+       <p class="font-02">
+        Ready for your
+        <br class="in-mo"/>
+        special day!
+       </p>
+       <!--pc 슬라이드-->
+       <div class="swiper-container in-pc">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide swiper-slide-01">
+          <a href="https://shakit.co.kr/bbs/board.php?bo_table=event&amp;sca=진행중인+이벤트">
+           <div class="txt text-center fc">
+            <h2 class="font-02">
+             EVENT
+            </h2>
+            <p>
+             쉐이킷이 펑펑 터트리는 알찬 이벤트 소식! 놓치지 말고 참여하세요.
+            </p>
+           </div>
+          </a>
+         </div>
+         <div class="swiper-slide swiper-slide-02">
+          <a href="https://shakit.co.kr/bbs/page.php?hid=b2b_custom">
+           <div class="txt text-center fc">
+            <h2 class="font-02">
+             CUSTOMIZE
+            </h2>
+            <p>
+             쉐이킷의 DIY 칵테일, 하이볼 패키지를 내 마음대로 커스터마이징 할 수 있습니다.
+            </p>
+           </div>
+          </a>
+         </div>
+         <div class="swiper-slide swiper-slide-03">
+          <div class="txt text-center fc">
+           <h2 class="font-02">
+            RECIPE
+           </h2>
+           <p>
+            특별한 여러가지 레시피로 쉐이킷으로 다양하게 칵테일을 즐겨보세요.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-button-next">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+       </div>
+       <!--mobile 슬라이드-->
+       <div class="swiper-container in-mo">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide swiper-slide-02 fc">
+          <a href="https://shakit.co.kr/bbs/page.php?hid=b2b_custom">
+           <div class="txt text-left">
+            <h2 class="font-02">
+             CUSTOMIZE
+            </h2>
+            <p>
+             쉐이킷의 DIY 칵테일, 하이볼 패키지를 내 마음대로 커스터마이징 할 수 있습니다.
+            </p>
+           </div>
+          </a>
+         </div>
+         <div class="swiper-slide swiper-slide-03 fc">
+          <div class="txt text-left">
+           <h2 class="font-02">
+            RECIPE
+           </h2>
+           <p>
+            특별한 여러가지 레시피로 쉐이킷으로 다양하게 칵테일을 즐겨보세요.
+           </p>
+          </div>
+         </div>
+         <div class="swiper-slide swiper-slide-01 fc">
+          <a href="https://shakit.co.kr/bbs/board.php?bo_table=event&amp;sca=진행중인+이벤트">
+           <div class="txt text-left">
+            <h2 class="font-02">
+             EVENT
+            </h2>
+            <p>
+             쉐이킷이 펑펑 터트리는 알찬 이벤트 소식! 놓치지 말고 참여하세요.
+            </p>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="swiper-pagination in-mo">
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- 쉐이킷 소개 -->
+     <!-- <section class="introduce">
+		<div class="inner">
+			<div class="banner hidden-xs hidden-sm">
+			    <//?php	echo apms_widget("miso-title-shackit","banner5"); ?>
+			</div>
+			<div class="banner hidden-md hidden-lg">
+			   <//?php echo apms_widget("miso-title-shackit","banner6"); ?>
+			</div>
+		</div>
+	</section> -->
+     <!-- 상품 목록 -->
+     <section class="cocktail">
+      <div class="inner">
+       <div class="section_tit">
+        <h4 class="tit">
+         Recommend
+        </h4>
+        <i class="plus-icon">
+         <a href="https://shakit.co.kr/shop/list.php?ca_id=40">
+         </a>
+        </i>
+       </div>
+       <div class="miso-item miso-item" id="tgrmufkoybwxvdjlpiheaqznsc">
+        <ul class="item-wrap prd_list">
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1671081955&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1671081955/thumb-66qo7Z6I65iQ7IOB7ZKI7I2464Sk7J28_332x332.jpg" src="https://www.shakit.co.kr/data/item/1671081955/thumb-66qo7Z6I65iQ7IOB7ZKI7I2464Sk7J28_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             하이볼
+            </p>
+            <h5 class="item-name line1">
+             모히또 보드카 하이볼
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <span class="dc">
+               8%
+              </span>
+              <b class="price dc_price">
+               16,400
+               <span>
+                원
+               </span>
+              </b>
+              <strike class="item-cur-price text-muted">
+               17,900
+              </strike>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1671081955', // (필수) 제품의 고유 ID.
+			'name': '모히또 보드카 하이볼', // (필수) 제품 이름.
+			'category': [40, 4020, 4020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': 'Mojito Vodka Highball', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '0', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1671081955/66qo7Z6I65iQ7IOB7ZKI7I2464Sk7J28.jpg'
+		});
+         </script>
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655259991&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655259991/thumb-7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iuc6re464uI7LKY7Yyo7YKk7KeA_332x332.jpg" src="https://www.shakit.co.kr/data/item/1655259991/thumb-7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iuc6re464uI7LKY7Yyo7YKk7KeA_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             하이볼
+            </p>
+            <h5 class="item-name line1">
+             시그니처 하이볼 패키지
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <span class="dc">
+               5%
+              </span>
+              <b class="price dc_price">
+               30,500
+               <span>
+                원
+               </span>
+              </b>
+              <strike class="item-cur-price text-muted">
+               32,000
+              </strike>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1655259991', // (필수) 제품의 고유 ID.
+			'name': '시그니처 하이볼 패키지', // (필수) 제품 이름.
+			'category': [4020, 4020, 4020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': 'Signature Highball Package', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '1', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655259991/7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iuc6re464uI7LKY7Yyo7YKk7KeA.jpg'
+		});
+         </script>
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1605771526&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="https://www.shakit.co.kr/data/item/1605771526/thumb-7IOB7ZKI7Zi467KE_7ZmU7J207Yq467Ko67Kz_332x332.jpg" data-org="https://www.shakit.co.kr/data/item/1605771526/thumb-7IOB7ZKI7I2464Sk7J28_7ZmU7J207Yq467Ko67Kz_332x332.jpg" src="https://www.shakit.co.kr/data/item/1605771526/thumb-7IOB7ZKI7I2464Sk7J28_7ZmU7J207Yq467Ko67Kz_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             칵테일
+            </p>
+            <h5 class="item-name line1">
+             화이트 벨벳
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price">
+               29,100
+               <span>
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1605771526', // (필수) 제품의 고유 ID.
+			'name': '화이트 벨벳', // (필수) 제품 이름.
+			'category': [40, 4010, 40], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '알콜도수 6%', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '2', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1605771526/7IOB7ZKI7I2464Sk7J28_7ZmU7J207Yq467Ko67Kz.jpg'
+		});
+         </script>
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1587028605&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="https://www.shakit.co.kr/data/item/1587028605/thumb-7IOB7ZKI7Zi467KE_7YGs67CU7L2V_332x332.jpg" data-org="https://www.shakit.co.kr/data/item/1587028605/thumb-7IOB7ZKI7I2464Sk7J28_7YGs67CU7L2V_332x332.jpg" src="https://www.shakit.co.kr/data/item/1587028605/thumb-7IOB7ZKI7I2464Sk7J28_7YGs67CU7L2V_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             칵테일
+            </p>
+            <h5 class="item-name line1">
+             크렌베리 바닐라 코크 테일
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price">
+               27,400
+               <span>
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1587028605', // (필수) 제품의 고유 ID.
+			'name': '크렌베리 바닐라 코크 테일', // (필수) 제품 이름.
+			'category': [40, 4010, ], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '알콜도수 10.9%', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '3', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1587028605/7IOB7ZKI7I2464Sk7J28_7YGs67CU7L2V.jpg'
+		});
+         </script>
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655257344&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655257344/thumb-7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iqk7JyE7Yq47Yyo7YKk7KeA_332x332.jpg" src="https://www.shakit.co.kr/data/item/1655257344/thumb-7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iqk7JyE7Yq47Yyo7YKk7KeA_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             하이볼
+            </p>
+            <h5 class="item-name line1">
+             달콤 하이볼 패키지
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <span class="dc">
+               4%
+              </span>
+              <b class="price dc_price">
+               39,900
+               <span>
+                원
+               </span>
+              </b>
+              <strike class="item-cur-price text-muted">
+               41,400
+              </strike>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1655257344', // (필수) 제품의 고유 ID.
+			'name': '달콤 하이볼 패키지', // (필수) 제품 이름.
+			'category': [4020, 4020, 4020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': 'Sweet Highball Package', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '4', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655257344/7IOB7ZKI7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Iqk7JyE7Yq47Yyo7YKk7KeA.jpg'
+		});
+         </script>
+         <li class="item-row">
+          <a href="https://www.shakit.co.kr/shop/item.php?it_id=1654584450&amp;ca_id=40">
+           <div class="item-image">
+            <div class="img-item prd_thumb">
+             <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1654584450/thumb-7IOB7ZKI7I2464Sk7J28_7KeE7KCA7JeQ7J28_332x332.jpg" src="https://www.shakit.co.kr/data/item/1654584450/thumb-7IOB7ZKI7I2464Sk7J28_7KeE7KCA7JeQ7J28_332x332.jpg"/>
+            </div>
+           </div>
+          </a>
+          <!--장바구니-->
+          <div class="is-item-content">
+           <div class="item-content">
+            <p class="item-category">
+             하이볼
+            </p>
+            <h5 class="item-name line1">
+             진저에일 보드카 하이볼
+             <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <span class="dc">
+               8%
+              </span>
+              <b class="price dc_price">
+               16,400
+               <span>
+                원
+               </span>
+              </b>
+              <strike class="item-cur-price text-muted">
+               17,900
+              </strike>
+             </div>
+            </div>
+           </div>
+          </div>
+         </li>
+         <script>
+          bigin.event("bg:impression", {
+			'id': '1654584450', // (필수) 제품의 고유 ID.
+			'name': '진저에일 보드카 하이볼', // (필수) 제품 이름.
+			'category': [40, 4020, 4020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': 'Ginger Ale Vodka Highball', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '5', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1654584450/7IOB7ZKI7I2464Sk7J28_7KeE7KCA7JeQ7J28.jpg'
+		});
+         </script>
+         <script>
+          $(function() {
+		// 바뀌는 효과 kay 원본
+		//   $(".wr-img").on("mouseover",function(){
+		// 	if($(this).attr("data-img")){
+		// 		$(this).fadeOut('fast', function () {
+		// 			$(this).attr('src', $(this).attr("data-img"));
+		// 			$(this).fadeIn('fast');
+		// 		});
+		// 	}
+		// });
+		// $(".wr-img").on("mouseout",function(){
+		// 	if($(this).attr("data-img")){
+		// 		$(this).fadeOut('fast', function () {
+		// 			$(this).attr('src', $(this).attr("data-org"));
+		// 			$(this).fadeIn('fast');
+		// 		});
+		// 	}
+		// });
+		// 바뀌는 효과
+
+	});
+         </script>
+        </ul>
+        <div class="clearfix">
+        </div>
+        <div class="item-nav" id="tgrmufkoybwxvdjlpiheaqznsc-nav">
+         <a href="https://www.shakit.co.kr/thema/uglysmith-basic/widget/miso-shop-item/widget.rows.php?thema=uglysmith-basic&amp;wname=miso-shop-item&amp;wid=cocktail-item&amp;page=2">
+         </a>
+        </div>
+        <div class="item-more" id="tgrmufkoybwxvdjlpiheaqznsc-more">
+         <a class="color btn_type01" href="#" title="더보기">
+          더보기
+         </a>
+        </div>
+       </div>
+       <script>
+        $(function(){
+		var $tgrmufkoybwxvdjlpiheaqznsc = $('#tgrmufkoybwxvdjlpiheaqznsc .item-wrap');
+		// $tgrmufkoybwxvdjlpiheaqznsc.imagesLoaded(function(){
+		// 	$tgrmufkoybwxvdjlpiheaqznsc.masonry({
+		// 		columnWidth : '.item-row',
+		// 		itemSelector : '.item-row',
+		// 		percentPosition: true,
+		// 		isAnimated: true
+		// 	});
+		// });
+				$tgrmufkoybwxvdjlpiheaqznsc.infinitescroll({
+			navSelector  : '#tgrmufkoybwxvdjlpiheaqznsc-nav', 
+			nextSelector : '#tgrmufkoybwxvdjlpiheaqznsc-nav a',
+			itemSelector : '.item-row', 
+			loading: {
+				msgText: '로딩 중...',
+				finishedMsg: '더이상 상품이 없습니다.',
+				img: 'https://www.shakit.co.kr/plugin/apms/img/loader.gif',
+			}
+		}, function( newElements ) {
+			var $newElems = $( newElements ).css({ opacity: 0 });
+			$newElems.imagesLoaded(function(){
+				$newElems.animate({ opacity: 1 });
+				$tgrmufkoybwxvdjlpiheaqznsc.masonry('appended', $newElems, true);
+			});
+		});
+				$(window).unbind('#tgrmufkoybwxvdjlpiheaqznsc .infscr');
+		$('#tgrmufkoybwxvdjlpiheaqznsc-more a').click(function(){
+		   $tgrmufkoybwxvdjlpiheaqznsc.infinitescroll('retrieve');
+		   $('#tgrmufkoybwxvdjlpiheaqznsc-nav').show();
+			return false;
+		});
+		$(document).ajaxError(function(e,xhr,opt){
+			if(xhr.status==404) $('#tgrmufkoybwxvdjlpiheaqznsc-nav').remove();
+		});
+					});
+       </script>
+      </div>
+     </section>
+     <!-- 칵테일 클래스 
+	<section class="collaboration">
+		<div class="banner hidden-xs ">
+			<//?php echo apms_widget("miso-title-shackit","collaboar-web"); ?>
+		</div>
+		<div class="banner hidden-sm hidden-md hidden-lg">
+			<//?php echo apms_widget("miso-title-shackit","collaboar-mobile"); ?>
+		</div>
+	</section>-->
+     <!--recommend with soju-->
+     <section class="recommend-item">
+      <div class="inner">
+       <div class="item">
+        <div class="swiper recommend-item-slide">
+         <p>
+          소주와 함께해도 좋은 상품
+         </p>
+         <ul class="swiper-wrapper prd_list">
+          <!--칵테일 키트는 돋보기->상세페이지 이동-->
+          <li class="swiper-slide">
+           <input id="it_id" type="hidden" value="1627264351"/>
+           <input id="it_name" type="hidden" value="딸기 시럽"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="3800"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99974"/>
+           <!-- <a href="#"> -->
+           <a href="/shop/item.php?it_id=1627264351&amp;ca_id=7020">
+            <div>
+             <img alt="" src="https://www.shakit.co.kr/data/item/1627264351/thumb-65S46riw7Iuc659_246x246.jpg"/>
+            </div>
+           </a>
+           <!-- 장바구니 -->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this);">
+            <img alt="딸기 시럽" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="item-content">
+            <p class="item-category">
+             시럽
+            </p>
+            <h5 class="item-name line1">
+             딸기 시럽
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price dc_price">
+               3,800
+               <span class="won">
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </li>
+          <li class="swiper-slide">
+           <input id="it_id" type="hidden" value="1629770150"/>
+           <input id="it_name" type="hidden" value="복숭아 시럽"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="4300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99845"/>
+           <!-- <a href="#"> -->
+           <a href="/shop/item.php?it_id=1629770150&amp;ca_id=7020">
+            <div>
+             <img alt="" src="https://www.shakit.co.kr/data/item/1629770150/thumb-67O17Iit7JWE7Iuc659_7KCV66m0_246x246.jpg"/>
+            </div>
+           </a>
+           <!-- 장바구니 -->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this);">
+            <img alt="복숭아 시럽" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="item-content">
+            <p class="item-category">
+             시럽
+            </p>
+            <h5 class="item-name line1">
+             복숭아 시럽
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price dc_price">
+               4,300
+               <span class="won">
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </li>
+          <li class="swiper-slide">
+           <input id="it_id" type="hidden" value="1627445859"/>
+           <input id="it_name" type="hidden" value="하이드로토닉"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="2800"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99962"/>
+           <!-- <a href="#"> -->
+           <a href="/shop/item.php?it_id=1627445859&amp;ca_id=7040">
+            <div>
+             <img alt="" src="https://www.shakit.co.kr/data/item/1627445859/thumb-7Yag64uJ7JuM7YSw_246x246.jpg"/>
+            </div>
+           </a>
+           <!-- 장바구니 -->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this);">
+            <img alt="하이드로토닉" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="item-content">
+            <p class="item-category">
+             음료
+            </p>
+            <h5 class="item-name line1">
+             하이드로토닉
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price dc_price">
+               2,800
+               <span class="won">
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </li>
+          <li class="swiper-slide">
+           <input id="it_id" type="hidden" value="1627265146"/>
+           <input id="it_name" type="hidden" value="쉐이킷 믹스"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="3800"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99859"/>
+           <!-- <a href="#"> -->
+           <a href="/shop/item.php?it_id=1627265146&amp;ca_id=7040">
+            <div>
+             <img alt="" src="https://www.shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_246x246.jpg"/>
+            </div>
+           </a>
+           <!-- 장바구니 -->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this);">
+            <img alt="쉐이킷 믹스" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="item-content">
+            <p class="item-category">
+             음료
+            </p>
+            <h5 class="item-name line1">
+             쉐이킷 믹스
+            </h5>
+            <div class="item-price">
+             <div class="dc_wrap">
+              <b class="price dc_price">
+               3,800
+               <span class="won">
+                원
+               </span>
+              </b>
+             </div>
+            </div>
+           </div>
+          </li>
+         </ul>
+         <div class="swiper-button-next">
+         </div>
+         <div class="swiper-button-prev">
+         </div>
+         <div class="swiper-pagination">
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- Make your own -->
+     <!--칵테일 재료만 들어감-->
+     <section class="make_your_own">
+      <div class="inner">
+       <!-- <div class="section_tit">
+				<h4>Better with</h4>
+				<p>당신의 소중한 순간을 더욱 빛나게 해줄 상품들</p>
+			</div>
+			<div class="slide_wrap">
+				<div class="left_area">
+				</ ?php echo apms_widget("miso-shop-item-slider","better-item-1"); 
+				?>
+				</div>
+				<div class="right_area">
+				<// ?php echo apms_widget("miso-shop-item-slider2","better-item-2"); 
+				?>
+				</div>
+			</div> -->
+       <div class="section_tit">
+        <h4 class="tit">
+         Make Your Own
+        </h4>
+        <i class="plus-icon">
+         <a href="https://shakit.co.kr/shop/list.php?ca_id=70">
+         </a>
+        </i>
+       </div>
+       <div>
+        <div class="miso-item miso-item" id="jmlswnrtyvpfigqokuhx">
+         <ul class="item-wrap prd_list">
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1587100242"/>
+           <input id="it_name" type="hidden" value="브이스피릿 (200ml)"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="13800"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99893"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1587100242">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1587100242/thumb-67iM7J207Iqk7ZS866a200ml_246x246.jpg" src="https://www.shakit.co.kr/data/item/1587100242/thumb-67iM7J207Iqk7ZS866a200ml_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              술
+             </p>
+             <h5 class="item-name line1">
+              브이스피릿 (200ml)
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                13,800
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1587100242', // (필수) 제품의 고유 ID.
+			'name': '브이스피릿 (200ml)', // (필수) 제품 이름.
+			'category': [70, 7010, ], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': 'V Spirits', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '0', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1587100242/67iM7J207Iqk7ZS866a200ml.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1627263851"/>
+           <input id="it_name" type="hidden" value="멜론 코코넛 시럽"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="4300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99922"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1627263851">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1627263851/thumb-66mc66Gg7L2U7L2U64Sb7Iuc659_246x246.jpg" src="https://www.shakit.co.kr/data/item/1627263851/thumb-66mc66Gg7L2U7L2U64Sb7Iuc659_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              시럽
+             </p>
+             <h5 class="item-name line1">
+              멜론 코코넛 시럽
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                4,300
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1627263851', // (필수) 제품의 고유 ID.
+			'name': '멜론 코코넛 시럽', // (필수) 제품 이름.
+			'category': [7020, 7020, 7020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '1', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1627263851/66mc66Gg7L2U7L2U64Sb7Iuc659.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1627265146"/>
+           <input id="it_name" type="hidden" value="쉐이킷 믹스"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="3800"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99859"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1627265146">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_246x246.jpg" src="https://www.shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              음료
+             </p>
+             <h5 class="item-name line1">
+              쉐이킷 믹스
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                3,800
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1627265146', // (필수) 제품의 고유 ID.
+			'name': '쉐이킷 믹스', // (필수) 제품 이름.
+			'category': [7040, 7040, 7040], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '2', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1627265146/7ImQ7J207YK36657Iqk.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1627445719"/>
+           <input id="it_name" type="hidden" value="파인사워믹스"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="4000"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99947"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1627445719">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1627445719/thumb-7YyM7J247IKs7JuM6657Iqk_246x246.jpg" src="https://www.shakit.co.kr/data/item/1627445719/thumb-7YyM7J247IKs7JuM6657Iqk_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              음료
+             </p>
+             <h5 class="item-name line1">
+              파인사워믹스
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                4,000
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1627445719', // (필수) 제품의 고유 ID.
+			'name': '파인사워믹스', // (필수) 제품 이름.
+			'category': [7040, 7040, 7040], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '3', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1627445719/7YyM7J247IKs7JuM6657Iqk.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1655191540"/>
+           <input id="it_name" type="hidden" value="얼그레이 시럽"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="4300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99938"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655191540">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655191540/thumb-7Ja86re466CI7J207Iuc659_246x246.jpg" src="https://www.shakit.co.kr/data/item/1655191540/thumb-7Ja86re466CI7J207Iuc659_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              시럽
+             </p>
+             <h5 class="item-name line1">
+              얼그레이 시럽
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                4,300
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1655191540', // (필수) 제품의 고유 ID.
+			'name': '얼그레이 시럽', // (필수) 제품 이름.
+			'category': [7020, 7020, 7020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '4', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655191540/7Ja86re466CI7J207Iuc659.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1655688810"/>
+           <input id="it_name" type="hidden" value="건 레몬&amp;오렌지 혼합 슬라이스"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="2300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99985"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655688810">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655688810/thumb-7Zi87ZWp_66CI66qs7Jik66CM7KeA_246x246.jpg" src="https://www.shakit.co.kr/data/item/1655688810/thumb-7Zi87ZWp_66CI66qs7Jik66CM7KeA_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              가니시
+             </p>
+             <h5 class="item-name line1">
+              건 레몬&amp;오렌지 혼합 슬라이스
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                2,300
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1655688810', // (필수) 제품의 고유 ID.
+			'name': '건 레몬&오렌지 혼합 슬라이스', // (필수) 제품 이름.
+			'category': [7030, 7030, 7030], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '5', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655688810/7Zi87ZWp_66CI66qs7Jik66CM7KeA.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1655689030"/>
+           <input id="it_name" type="hidden" value="핑크 슈거"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="2300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99990"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655689030">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655689030/thumb-7ZWR7YGs7IqI6rGw_246x246.jpg" src="https://www.shakit.co.kr/data/item/1655689030/thumb-7ZWR7YGs7IqI6rGw_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              가니시
+             </p>
+             <h5 class="item-name line1">
+              핑크 슈거
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                2,300
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1655689030', // (필수) 제품의 고유 ID.
+			'name': '핑크 슈거', // (필수) 제품 이름.
+			'category': [7030, 7030, 7030], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '6', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655689030/7ZWR7YGs7IqI6rGw.jpg'
+		});
+          </script>
+          <li class="item-row">
+           <input id="it_id" type="hidden" value="1655191747"/>
+           <input id="it_name" type="hidden" value="진저에일 시럽"/>
+           <input id="dc" type="hidden" value=""/>
+           <input id="it_cust_price" type="hidden" value="0"/>
+           <input id="it_price" type="hidden" value="4300"/>
+           <input id="is_soldout" type="hidden" value=""/>
+           <input id="it_stock_qty" type="hidden" value="99979"/>
+           <a href="https://www.shakit.co.kr/shop/item.php?it_id=1655191747">
+            <div class="item-image">
+             <div class="img-item prd_thumb">
+              <img alt="" class="wr-img" data-img="" data-org="https://www.shakit.co.kr/data/item/1655191747/thumb-7KeE7KCA7JeQ7J287Iuc659_246x246.jpg" src="https://www.shakit.co.kr/data/item/1655191747/thumb-7KeE7KCA7JeQ7J287Iuc659_246x246.jpg"/>
+             </div>
+            </div>
+           </a>
+           <!--장바구니-->
+           <div class="cart-icon" onclick="showPopup('shoppingBasketOpen',this)">
+            <img alt="" src="/images/main/cart-icon.svg"/>
+           </div>
+           <div class="is-item-content">
+            <div class="item-content">
+             <p class="item-category">
+              시럽
+             </p>
+             <h5 class="item-name line1">
+              진저에일 시럽
+              <!--<p class="basic_txt line2"><//?php echo $list[$i]['it_basic']; ?></p>-->
+             </h5>
+             <div class="item-price">
+              <div class="dc_wrap">
+               <b class="price">
+                4,300
+                <span>
+                 원
+                </span>
+               </b>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <script>
+           bigin.event("bg:impression", {
+			'id': '1655191747', // (필수) 제품의 고유 ID.
+			'name': '진저에일 시럽', // (필수) 제품 이름.
+			'category': [7020, 7020, 7020], // 제품의 카테고리. 하위 카테고리의 설정은 배열의 순서로 설정됩니다.
+			'brand': '', // 제품과 관련된 브랜드
+			'list': '메인화면', // 제품을 조회한 경로 (예 : 검색, 메인화면, 인기 상품)
+			'position': '7', // 목록 또는 컬렉션의 제품 위치 (예 : 2)
+			'thumbnail': '1655191747/7KeE7KCA7JeQ7J287Iuc659.jpg'
+		});
+          </script>
+          <script>
+           $(function() {
+		// 바뀌는 효과 kay 원본
+		//   $(".wr-img").on("mouseover",function(){
+		// 	if($(this).attr("data-img")){
+		// 		$(this).fadeOut('fast', function () {
+		// 			$(this).attr('src', $(this).attr("data-img"));
+		// 			$(this).fadeIn('fast');
+		// 		});
+		// 	}
+		// });
+		// $(".wr-img").on("mouseout",function(){
+		// 	if($(this).attr("data-img")){
+		// 		$(this).fadeOut('fast', function () {
+		// 			$(this).attr('src', $(this).attr("data-org"));
+		// 			$(this).fadeIn('fast');
+		// 		});
+		// 	}
+		// });
+		// 바뀌는 효과
+
+	});
+          </script>
+         </ul>
+         <div class="clearfix">
+         </div>
+        </div>
+        <script>
+         $(function(){
+		var $jmlswnrtyvpfigqokuhx = $('#jmlswnrtyvpfigqokuhx .item-wrap');
+		// $jmlswnrtyvpfigqokuhx.imagesLoaded(function(){
+		// 	$jmlswnrtyvpfigqokuhx.masonry({
+		// 		columnWidth : '.item-row',
+		// 		itemSelector : '.item-row',
+		// 		percentPosition: true,
+		// 		isAnimated: true
+		// 	});
+		// });
+			});
+        </script>
+       </div>
+       <!--<div role="tabpanel">
+				<ul class="nav" role="tablist">
+					<li role="presentation" class="active"><a href="#alcohol" aria-controls="alcohol" role="tab" data-toggle="tab">술</a></li>
+					<li role="presentation"><a href="#syrup" aria-controls="syrup" role="tab" data-toggle="tab">시럽</a></li>
+					<li role="presentation"><a href="#garnish" aria-controls="garnish" role="tab" data-toggle="tab">가니시</a></li>
+				</ul>
+				<div class="tab-content">
+					<!-- 술 
+					<div role="tabpanel" class="tab-pane active fade in" id="alcohol">	
+						<//?php echo apms_widget("miso-shop-item","make-item1"); ?>
+					</div>
+					<!-- 시럽 
+					<div role="tabpanel" class="tab-pane fade" id="syrup">
+						<// ?php echo apms_widget("miso-shop-item","make-item2"); ?>
+					</div>
+					<!-- 가니시
+					<div role="tabpanel" class="tab-pane fade" id="garnish">
+						<// ?php echo apms_widget("miso-shop-item","make-item3"); ?>
+					</div>
+				</div>
+			</div>-->
+      </div>
+     </section>
+     <!-- Spring cocktail 
+	<section class="middle_banner">
+		<div class="inner">
+			<div class="banner hidden-xs">
+               <// ?php echo apms_widget("miso-title-shackit","banner3"); ?>
+			</div>
+			<div class="banner hidden-sm hidden-md hidden-lg">
+			    <// ?php echo apms_widget("miso-title-shackit","banner4"); ?>
+			</div>
+		</div>
+	</section>-->
+     <!-- VOD 
+	<section class="vod">
+		<div class="inner">
+			<div class="section_tit">
+				<h4>Shakit together!</h4>
+				<p>쉐이킷 채널에서 집에서도 쉽게 즐길 수 있는<br>다양한 칵테일 꿀팁을 공유합니다.</p>
+			</div>
+			<ul class="banner">
+				<li class="post-row"><iframe src="https://www.youtube.com/embed/LXmk8iwVkpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></li>
+				<li class="post-row"><iframe src="https://www.youtube.com/embed/3bCDrSAYXto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></li>
+			</ul>
+		</div>
+	</section>-->
+     <!-- Event 
+	<section class="event">
+		<div class="inner">
+			<div class="section_tit">
+				<h4>Event</h4>
+				<p>쉐이킷이 펑펑 터트리는 알찬 이벤트 소식!<br>놓치지 말고 참여하세요.</p>
+			</div>
+			<div class="banner">
+				php echo apms_widget("miso-post-gallery","board-gallery"); 
+			</div>
+		</div>
+	</section>-->
+     <!--Swelltzer-->
+     <section class="swelltzer-banner">
+      <a href="http://swelltzer.co.kr/" target="_blank">
+       <ul class="fc">
+        <li>
+         <img alt="" class="in-pc" src="/images/main/main_swelltzer_image.png"/>
+         <img alt="" class="in-mo" src="/images/main/main_swelltzer_image_m.png"/>
+        </li>
+        <li class="txt">
+         <b>
+          Swelltzer
+         </b>
+         <p>
+          저알콜, 저칼로리, 천연원료가 특징인 스파클링 워터
+         </p>
+         <button type="button">
+          브랜드 웹사이트 바로가기
+         </button>
+        </li>
+       </ul>
+      </a>
+      <!--모바일에서 보이는 슬라이드-->
+      <div class="inner in-mo">
+       <div class="swiper-container swelltzer-slide">
+        <ul class="swiper-wrapper prd_list">
+         <li class="swiper-slide">
+          <a href="https://shakit.co.kr/shop/item.php?it_id=1641794660&amp;ca_id=80">
+           <img alt="" src="/images/common/swelltzer-01.png"/>
+           <div class="item-content">
+            <p class="item-category">
+             스웰쳐
+            </p>
+            <h5 class="item-name line1">
+             버라이어티 팩
+            </h5>
+           </div>
+          </a>
+         </li>
+         <li class="swiper-slide">
+          <a href="https://shakit.co.kr/shop/item.php?it_id=1636597825&amp;ca_id=80">
+           <img alt="" src="/images/common/swelltzer-02.png"/>
+           <div class="item-content">
+            <p class="item-category">
+             스웰쳐
+            </p>
+            <h5 class="item-name line1">
+             유자&amp;라임
+            </h5>
+           </div>
+          </a>
+         </li>
+         <li class="swiper-slide">
+          <a href="https://shakit.co.kr/shop/item.php?it_id=1641791843&amp;ca_id=80">
+           <img alt="" src="/images/common/swelltzer-03.png"/>
+           <div class="item-content">
+            <p class="item-category">
+             스웰쳐
+            </p>
+            <h5 class="item-name line1">
+             석류&amp;블루베리
+            </h5>
+           </div>
+          </a>
+         </li>
+         <li class="swiper-slide">
+          <a href="https://shakit.co.kr/shop/item.php?it_id=1641792777&amp;ca_id=80">
+           <img alt="" src="/images/common/swelltzer-04.png"/>
+           <div class="item-content">
+            <p class="item-category">
+             스웰쳐
+            </p>
+            <h5 class="item-name line1">
+             복숭아&amp;오이
+            </h5>
+           </div>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </section>
+     <!-- 베스트 리뷰 -->
+     <section class="best_review pd-none">
+      <div class="inner">
+       <div class="section_tit">
+        <h4 class="tit">
+         Best Review
+        </h4>
+        <i class="plus-icon">
+         <a href="https://shakit.co.kr/shop/itemuselist.php">
+         </a>
+        </i>
+       </div>
+       <style>
+        /* #rikxbhofjutvenqspdwcmagl .post-wrap { margin-right:-15px; margin-bottom:-15px; } */
+	/* #rikxbhofjutvenqspdwcmagl .post-row { width:16.66%; } */
+	/* #rikxbhofjutvenqspdwcmagl .post-list { margin-right:15px; margin-bottom:15px; } */
+		#rikxbhofjutvenqspdwcmagl .img-wrap { padding-bottom:75%; }
+		@media (max-width:1199px) { 
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-wrap { margin-right:-15px; margin-bottom:-15px; } */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-row { width:25%; }  */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-list { margin-right:15px; margin-bottom:15px; } */
+	}
+	@media (max-width:991px) { 
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-wrap { margin-right:-15px; margin-bottom:-15px; } */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-row { width:25%; }  */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-list { margin-right:15px; margin-bottom:15px; } */
+	}
+	@media (max-width:767px) { 
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-wrap { margin-right:-15px; margin-bottom:-15px; } */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-row { width:33.33%; }  */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-list { margin-right:15px; margin-bottom:15px; } */
+	}
+	@media (max-width:480px) { 
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-wrap { margin-right:-15px; margin-bottom:-15px; } */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-row { width:50%; }  */
+		/* .responsive #rikxbhofjutvenqspdwcmagl .post-list { margin-right:15px; margin-bottom:15px; } */
+	}
+       </style>
+       <div class="miso-post-gallery-main use_content show" id="rikxbhofjutvenqspdwcmagl">
+        <div class="post-wrap">
+         <div class="swiper-container">
+          <ul class="item_list swiper-wrapper">
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CmGfENXy5r-/?next=%2F" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/2039219259_pdRlZJXP_b9bb02229f93f77acfc9a6b89ba3332171c79848.png"/>
+              <p class="txt ellipsis-3">
+               간편하게 집에서 즐길 수 있는 칵테일키트 #쉐이킷
+율무로 만든 보드카 브리스피릿은 전통주라 인터넷 구매가 가능한 덕분에 이렇게 칵테일 키트를 편하게 집에서 택배로 받아 볼 수 있더라고요
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1671081955">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1671081955/thumb-66qo7Z6I65iQ7IOB7ZKI7I2464Sk7J28_80x80.jpg" width="80"/>
+               </a>
+               간편하게 집에서 즐길 수 있는 칵테일키트 #쉐이킷
+율무로 만든 보드카 브리스피릿은 전통주라 인터넷 구매가 가능한 덕분에 이렇게 칵테일 키트를 편하게 집에서 택배로 받아 볼 수 있더라고요
+               <div>
+                <p class="item-name line1">
+                 모히또 보드카 하이볼
+                </p>
+                <b class="item-price">
+                 16,400
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CmG7gT0SJrA/?next=%2F" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/2039219259_iERybW3e_6670b855ca8615555f2d37c01cf46f4831293033.png"/>
+              <p class="txt ellipsis-3">
+               하이볼을 밖에서 사먹으면
+한잔에 1만원이상인데…
+Shakit의 #하이볼만들기 패키지는
+4잔분량을 16,000원대로 저렴하게 마실 수 있는
+찐 가성비 칵테일키트 입니다.
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1671081955">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1671081955/thumb-66qo7Z6I65iQ7IOB7ZKI7I2464Sk7J28_80x80.jpg" width="80"/>
+               </a>
+               하이볼을 밖에서 사먹으면
+한잔에 1만원이상인데…
+Shakit의 #하이볼만들기 패키지는
+4잔분량을 16,000원대로 저렴하게 마실 수 있는
+찐 가성비 칵테일키트 입니다.
+               <div>
+                <p class="item-name line1">
+                 모히또 보드카 하이볼
+                </p>
+                <b class="item-price">
+                 16,400
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/Ci9JjdMLDKM/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3695764973_wFMvjA5V_19618be1952400038c5a9584c9366c746962a3d6.png"/>
+              <p class="txt ellipsis-3">
+               울 인친님들!! 달달한 칵테일 좋아하시나요??
+오늘은 쉐이킷 칵테일 키트로 "준벅 칵테일"을
+만들어봤는데 너무 간편하고 좋더라고요✌
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1587029141">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1587029141/thumb-7IOB7ZKI7I2464Sk7J28_7KSA67KF_80x80.jpg" width="80"/>
+               </a>
+               울 인친님들!! 달달한 칵테일 좋아하시나요??
+오늘은 쉐이킷 칵테일 키트로 "준벅 칵테일"을
+만들어봤는데 너무 간편하고 좋더라고요✌
+               <div>
+                <p class="item-name line1">
+                 준벅
+                </p>
+                <b class="item-price">
+                 29,000
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CjAz7yuLFoV/?igshid=MjU0Y2ZlMmY%3D" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3695764973_OjRGElZU_0edc953928f934b9568446168fe48aee76fe21f1.png"/>
+              <p class="txt ellipsis-3">
+               간편하게 준비할 수 있고 분위기 내기에 딱!좋은 키트라 #캠린이 #캠핑러버 분들께 특히 추천드리며~~
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1587029141">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1587029141/thumb-7IOB7ZKI7I2464Sk7J28_7KSA67KF_80x80.jpg" width="80"/>
+               </a>
+               간편하게 준비할 수 있고 분위기 내기에 딱!좋은 키트라 #캠린이 #캠핑러버 분들께 특히 추천드리며~~
+               <div>
+                <p class="item-name line1">
+                 준벅
+                </p>
+                <b class="item-price">
+                 29,000
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CfrOTzYvZ2F/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_PDJha7RY_da0414ee26ee3e2042b9b51a09b883057a6d7551.png"/>
+              <p class="txt ellipsis-3">
+               집에서 홈파티 또는 야외에서 기분낼때 쉐이킷으로 분위기
+한스푼 더해야겠다요
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1654579111">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1654579111/thumb-7IOB7ZKI7I2464Sk7J28_7Ja86re466CI7J20_80x80.jpg" width="80"/>
+               </a>
+               집에서 홈파티 또는 야외에서 기분낼때 쉐이킷으로 분위기
+한스푼 더해야겠다요
+               <div>
+                <p class="item-name line1">
+                 얼그레이 보드카 하이볼
+                </p>
+                <b class="item-price">
+                 16,400
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CfrLeOlPeW1/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_kfaoVPJh_fd59b83d72c7a957c4edc25eb488e9959bb0f6e0.png"/>
+              <p class="txt ellipsis-3">
+               ❤ 박나래 얼그레이 하이볼로도 유명하죠~
+방송에서 박나래씨가 웰컴주로 만드는 것 보고 맛이 너무 궁금했었거든요. ㄲㅑ악. 드디어 마셔봤어요 &gt;.&lt;
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1654579111">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1654579111/thumb-7IOB7ZKI7I2464Sk7J28_7Ja86re466CI7J20_80x80.jpg" width="80"/>
+               </a>
+               ❤ 박나래 얼그레이 하이볼로도 유명하죠~
+방송에서 박나래씨가 웰컴주로 만드는 것 보고 맛이 너무 궁금했었거든요. ㄲㅑ악. 드디어 마셔봤어요 &gt;.&lt;
+               <div>
+                <p class="item-name line1">
+                 얼그레이 보드카 하이볼
+                </p>
+                <b class="item-price">
+                 16,400
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CfYel4blBA_/" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_QxiRCUID_a78ec9ab712b760e8d09081c0ace11cf37a201bc.png"/>
+              <p class="txt ellipsis-3">
+               홈파티나 홈술용은 물론 여행, 캠핑, 호캉스에도 간편하게 들고갈 수 있어 넘 좋더라구요!
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1654579111">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1654579111/thumb-7IOB7ZKI7I2464Sk7J28_7Ja86re466CI7J20_80x80.jpg" width="80"/>
+               </a>
+               홈파티나 홈술용은 물론 여행, 캠핑, 호캉스에도 간편하게 들고갈 수 있어 넘 좋더라구요!
+               <div>
+                <p class="item-name line1">
+                 얼그레이 보드카 하이볼
+                </p>
+                <b class="item-price">
+                 16,400
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CbdITDVvTii/" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_iX7YCs5d_d48603ef29776194ea6dea541dc1af4d78e3a50c.jpg"/>
+              <p class="txt ellipsis-3">
+               과일향이 은은하고 가볍게 칵테일처럼 즐길 수 있는 맛이라 술찔이들도 부담없이 먹을 수 있겠더라:)
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1641794660">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1641794660/thumb-7Iqk7Juw7LKY67KE65287J207Ja07Yuw7Yyp_80x80.jpg" width="80"/>
+               </a>
+               과일향이 은은하고 가볍게 칵테일처럼 즐길 수 있는 맛이라 술찔이들도 부담없이 먹을 수 있겠더라:)
+               <div>
+                <p class="item-name line1">
+                 스웰처 버라이어티 팩
+                </p>
+                <b class="item-price">
+                 12,900
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/Cbjn6bpPne3/" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_NyoldI2O_ad6cdaaf6cb5e10d75fbdb1269c08174e40c8a36.jpg"/>
+              <p class="txt ellipsis-3">
+               탄산수에 알코올을 섞고 과일향을 첨가한 술이 하드셀처라고 하는데 맛이 강하기 보다는 탄산에 은은하게 과일향 나는 술이라 가볍게 마실 수 있어요ෆ
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1636597825">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1636597825/thumb-7Iqk7Juw7LKY66CI66qs_80x80.jpg" width="80"/>
+               </a>
+               탄산수에 알코올을 섞고 과일향을 첨가한 술이 하드셀처라고 하는데 맛이 강하기 보다는 탄산에 은은하게 과일향 나는 술이라 가볍게 마실 수 있어요ෆ
+               <div>
+                <p class="item-name line1">
+                 스웰처 유자&amp;라임
+                </p>
+                <b class="item-price">
+                 12,900
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://www.instagram.com/p/CZjjLI4pEnp/" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_cRblxV2G_7b7c475b935ff2e5a7788aead14bd9ee11fadcd3.jpg"/>
+              <p class="txt ellipsis-3">
+               신랑이 다음주에는 출장을 가기에 신랑을 위해 미리 발렌타인 을 준비해서 분위기를 내보려구 준비해보았어요
+커피와 우유가 섞여 부드러운 커피맛에 칵테일잔에 붙은
+화이트초콜릿의 달콤함이 분위기를 더 달콤하게 해주는맛
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1605771526">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1605771526/thumb-7IOB7ZKI7I2464Sk7J28_7ZmU7J207Yq467Ko67Kz_80x80.jpg" width="80"/>
+               </a>
+               신랑이 다음주에는 출장을 가기에 신랑을 위해 미리 발렌타인 을 준비해서 분위기를 내보려구 준비해보았어요
+커피와 우유가 섞여 부드러운 커피맛에 칵테일잔에 붙은
+화이트초콜릿의 달콤함이 분위기를 더 달콤하게 해주는맛
+               <div>
+                <p class="item-name line1">
+                 화이트 벨벳
+                </p>
+                <b class="item-price">
+                 29,100
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://blog.naver.com/729hhh/222353726112" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_4apNqBud_3e32c61f04757964c8131e8fd43c7fb3558813d9.jpg"/>
+              <p class="txt ellipsis-3">
+               저는 알콜을 좋아하지만 논알콜패키지도 있다니 술은 안드시지만 분위기 내고 싶을 때에도 좋을 것 같죠
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1619145939">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1619145939/thumb-7IOB7ZKI7I2464Sk7J28_7ZS87LmY7YGs65s7Ims_80x80.jpg" width="80"/>
+               </a>
+               저는 알콜을 좋아하지만 논알콜패키지도 있다니 술은 안드시지만 분위기 내고 싶을 때에도 좋을 것 같죠
+               <div>
+                <p class="item-name line1">
+                 피치 크러쉬
+                </p>
+                <b class="item-price">
+                 27,700
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+           <li class="item type02 swiper-slide">
+            <a href="https://blog.naver.com/ksuzy0329/222355204741" target="_blank">
+             <div class="thumb rowsimgthumb">
+              <img alt="" class="rowsimg" src="https://shakit.co.kr/data/file/bestreview/3068359458_dExAK9BF_5b30fba83750d03e5b9b7a79d9d1b4a4125bffac.jpg"/>
+              <p class="txt ellipsis-3">
+               쉐이킷 칵테일 키트는 홈술을 즐겨볼 수 있는 모든 재료가 전부 다 들어있다. 추가로 준비해야 할게 전혀없고 오직 쉐이킷 하나면 칵테일을 마실 준비 끝!
+              </p>
+             </div>
+             <ul class="item-info fc">
+              <li class="left line1">
+               <!-- <a href="<//?php echo $list[$i]['']?>"></a> -->
+               <a href="https://www.shakit.co.kr/shop/item.php?it_id=1619145939">
+                <img alt="" height="80" src="https://www.shakit.co.kr/data/item/1619145939/thumb-7IOB7ZKI7I2464Sk7J28_7ZS87LmY7YGs65s7Ims_80x80.jpg" width="80"/>
+               </a>
+               쉐이킷 칵테일 키트는 홈술을 즐겨볼 수 있는 모든 재료가 전부 다 들어있다. 추가로 준비해야 할게 전혀없고 오직 쉐이킷 하나면 칵테일을 마실 준비 끝!
+               <div>
+                <p class="item-name line1">
+                 피치 크러쉬
+                </p>
+                <b class="item-price">
+                 27,700
+                 <span>
+                  원
+                 </span>
+                </b>
+               </div>
+              </li>
+              <li class="right">
+               <i class="arrow-icon">
+               </i>
+              </li>
+             </ul>
+             <!--<div class="info">
+					<dl>
+						<dt><//?=substr($list[$i]['wr_10'],0,2)?>***님</dt>
+						<dd><//?=$list[$i]['wr_content']?></dd>
+					</dl>
+				</div>-->
+            </a>
+           </li>
+          </ul>
+          <div class="swiper-pagination">
+          </div>
+         </div>
+         <div class="swiper-button-next">
+         </div>
+         <div class="swiper-button-prev">
+         </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <!-- <a href="/bbs/write.php?bo_table=bestreview" class="btn btn_submit"><span>후기 작성</span></a> -->
+       </div>
+      </div>
+     </section>
+     <!--shakit news-->
+     <section class="shakit_news">
+      <div class="inner">
+       <div class="section_tit">
+        <h4 class="tit">
+         Shakit News
+        </h4>
+        <i class="plus-icon">
+         <a href="https://shakit.co.kr/bbs/page.php?hid=sw_news">
+         </a>
+        </i>
+       </div>
+       <ul>
+        <li class="fc" onclick="location.href='https://shakit.co.kr/bbs/page.php?hid=sw_news_view&amp;idx=6'">
+         <div class="news">
+          <b>
+           News
+          </b>
+          <p class="news-tit">
+           “커스텀 칵테일 시장을 열다” 쉐이킷 박형국·신정우 대표
+          </p>
+          <span class="news-data">
+           2022-12-15
+          </span>
+         </div>
+         <i class="arrow-icon">
+         </i>
+        </li>
+        <li class="fc" onclick="location.href='https://shakit.co.kr/bbs/page.php?hid=sw_news_view&amp;idx=5'">
+         <div class="news">
+          <b>
+           News
+          </b>
+          <p class="news-tit">
+           '쉐이킷' 2022 푸드테크산업전 참가
+          </p>
+          <span class="news-data">
+           2022-11-08
+          </span>
+         </div>
+         <i class="arrow-icon">
+         </i>
+        </li>
+        <li class="fc" onclick="location.href='https://shakit.co.kr/bbs/page.php?hid=sw_news_view&amp;idx=2'">
+         <div class="news">
+          <b>
+           News
+          </b>
+          <p class="news-tit">
+           그래비티 서울 판교, '쉐이킷 유어 테이스트' 패키지 출시
+          </p>
+          <span class="news-data">
+           2022-08-10
+          </span>
+         </div>
+         <i class="arrow-icon">
+         </i>
+        </li>
+        <li class="fc" onclick="location.href='https://shakit.co.kr/bbs/page.php?hid=sw_news_view&amp;idx=1'">
+         <div class="news">
+          <b>
+           News
+          </b>
+          <p class="news-tit">
+           강한소상공인34팀 선발
+          </p>
+          <span class="news-data">
+           2022-07-29
+          </span>
+         </div>
+         <i class="arrow-icon">
+         </i>
+        </li>
+       </ul>
+      </div>
+     </section>
+    </div>
+    <script src="/js/jquery.easing.1.3.js">
+    </script>
+    <script src="/js/plugin/swiper-5.4.5/swiper.min.js">
+    </script>
+    <script>
+     //main_visual
+    var swiper = new Swiper(".main_visual .swiper-container", {
+		slidesPerView: 1,
+        autoplay:{
+            delay:2500,
+        },
+        loop:false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+	});
+	//2021.06.21 베스트 후기 슬라이드 추가
+	//2022.07.13 수정
+	var swiper = new Swiper('.best_review .swiper-container', {
+		slidesPerView: 1,
+		centeredSlides: false,
+        slidesPerGroup : 3,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		},
+		breakpoints: {
+            1024: {
+				spaceBetween: 12,
+				slidesPerView: 3,
+			},
+			991: {
+				spaceBetween: 12,
+				slidesPerView: 3,
+			},
+			578: {
+				spaceBetween: 12,
+				slidesPerView: 2,
+			}
+		},
+        navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+
+	})
+	//2022.07.13 브랜드 소개 슬라이드 추가 
+	var swiper = new Swiper(".brand .in-pc", {
+		initialSlide: 1,
+		slidesPerView: 'auto',
+		spaceBetween: 0,
+		centeredSlides: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+
+	});
+
+	var swiper = new Swiper(".brand .in-mo", {
+		pagination: {
+			el: ".swiper-pagination",
+			type: "progressbar",
+		},
+	});
+	//2022.07.13 recommend 슬라이드 추가
+	var swiper = new Swiper(".recommend-item-slide", {
+		slidesPerView: 2.5,
+		spaceBetween: 12,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			768: {
+				spaceBetween: 12,
+				slidesPerView: 2,
+			},
+		}
+	});
+	//swelltzer 모바일 슬라이드
+	var swiper = new Swiper(".swelltzer-slide", {
+		spaceBetween: 12,
+		slidesPerView: 2.5,
+	});
+
+
+	$(document).ready(function() {
+		
+
+		$(window).scroll(function() {
+			var st = $(this).scrollTop();
+
+			if (st == 0) {
+				$('#header').addClass('trans');
+			} else {
+				$('#header').removeClass('trans');
+			}
+		});
+		$(window).trigger('scroll');
+
+		var A = document.querySelectorAll("a[href='#']");
+		for (var i = 0; i < A.length; i++) {
+			A[i].addEventListener("click", function(e) {
+				e.preventDefault();
+			})
+		}
+
+	});
+    </script>
+    <!--모달 팝업 추가--->
+    <!-- 		<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+		<script>
+		window.onload=function(){
+			
+			if ($.cookie('popinfo')==undefined) {
+				$(".modal").modal({
+					backdrop: false,
+					keyboard: false
+				});
+				$(".modal").modal("show");
+			}
+			$("#popviewchkbox").on("change",function(){
+				if ($(this).attr("checked")) {
+					$.cookie('popinfo', 'true', { expires: 1 });
+				} else {
+					$.removeCookie('popinfo', { path: '/' });
+				}
+			});
+
+			
+			$(".popmodal .modal-dialog .cookietext button").on("click",function(){
+				$(".modal").modal("hide");
+			});
+		}
+
+		//$.cookie('name', 'value', { expires: 7 });
+
+		</script>
+
+		<div class="popmodal modal fade">
+			<div class="pop_inner">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-body">
+					<ul class="list-unstyled">
+					<li class="popicon"><img src="/img/pop_icon1.png"></li>
+					<li class="poptext">
+						<p>[주류의 통신판매에 관한 명령위임고시] 에 따라 <br>본인인증을 한 회원들에게만 판매하고 있습니다.</p>	
+						<p class=""><br>회원가입으로 본인 인증 및 쉐이킷의 다양한 소식을 받아보세요.</p>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onClick="location.href='/bbs/register_form.php'">로그인/회원가입</button>
+				</div>
+				</div>
+				<div class="cookietext">
+				<div>
+					<input type="checkbox" name="popviewchkbox" id="popviewchkbox">
+					<label for="popviewchkbox">오늘 하루 다시 보지 않기</label>
+				</div>
+				<button type="button" class="btn btn-default">닫기</button>
+				</div>
+			</div>
+			</div>
+
+        </div>
+
+	 -->
+    <!--모달 팝업 추가--->
+    <div class="popmodal modal fade modal-a">
+     <div class="pop_inner">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        <div class="modal-body">
+         <ul class="list-unstyled">
+          <li class="popicon">
+           <img src="/img/pop_icon1.png"/>
+          </li>
+          <li class="poptext">
+           <p>
+            [주류의 통신판매에 관한 명령위임고시] 에 따라
+            <br/>
+            본인인증을 한 회원들에게만 판매하고 있습니다.
+           </p>
+           <p>
+            <br/>
+            본인 인증 후 회원 정보를 등록해주세요.
+           </p>
+          </li>
+         </ul>
+        </div>
+        <div class="modal-footer">
+         <button class="btn btn-default" data-dismiss="modal" type="button">
+          닫기
+         </button>
+         <button class="btn btn-primary" onclick="location.href='/bbs/login.php'" type="button">
+          본인 인증
+         </button>
+        </div>
+       </div>
+       <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+     </div>
+    </div>
+    <!-- /.modal -->
+    <!--모달 팝업 추가--->
+    <!-- 201130 -->
+    <script src="/js/jquery.cookie.js" type="text/javascript">
+    </script>
+    <script>
+     window.onload = function() {
+
+		if ($.cookie('popinfo') == undefined) {
+			$(".modal").modal({
+				backdrop: false,
+				keyboard: false
+			});
+			// $(".modal").modal("show");
+			$(".modal").modal("hide");
+		}
+		$("#popviewchkbox").on("change", function() {
+			if ($(this).attr("checked")) {
+				$.cookie('popinfo', 'true', {
+					expires: 1
+				});
+			} else {
+				$.removeCookie('popinfo', {
+					path: '/'
+				});
+			}
+		});
+
+
+		$(".popmodal .modal-dialog .cookietext button").on("click", function() {
+			$(".modal").modal("hide");
+		});
+	}
+
+	//$.cookie('name', 'value', { expires: 7 });
+    </script>
+    <div class="popmodal modal fade main_modal">
+     <div class="pop_inner">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        <div class="modal-body">
+         <img alt="" src="/thema/uglysmith-basic/assets/img/main/modal_summer.png"/>
+         <button class="btn go_link yellow" onclick="location.href='https://shakit.co.kr/shop/list.php?ca_id=40'" type="button">
+          바로가기
+         </button>
+        </div>
+       </div>
+       <div class="cookietext">
+        <div>
+         <input id="popviewchkbox" name="popviewchkbox" type="checkbox"/>
+         <label for="popviewchkbox">
+          오늘 하루 다시 보지 않기
+         </label>
+        </div>
+        <button class="btn btn-default" type="button">
+         닫기
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!--장바구니 팝업-->
+    <div class="popup-wrapper dim cart" id="shoppingBasketOpen">
+     <div class="popup-inner">
+      <form action="/shop/cartupdate.php" method="post" name="fitem" onsubmit="return fitem_submit(this);">
+       <input name="it_id[]" type="hidden" value=""/>
+       <input name="it_msg1[]" type="hidden" value=""/>
+       <input name="it_msg2[]" type="hidden" value=""/>
+       <input name="it_msg3[]" type="hidden" value=""/>
+       <input name="sw_direct" type="hidden" value=""/>
+       <input name="gift_ck" type="hidden"/>
+       <input name="url" type="hidden"/>
+       <input name="ori_it_price" type="hidden" value=""/>
+       <input name="it_price" type="hidden" value=""/>
+       <input name="it_stock_qty" type="hidden" value=""/>
+       <input name="io_type" type="hidden" value=""/>
+       <input name="io_id" type="hidden" value=""/>
+       <input name="io_value" type="hidden" value=""/>
+       <ul>
+        <li class="fc item">
+         <div>
+          <p>
+           얼그레이 시럽
+          </p>
+          <div class="item-price en">
+           <div class="dc_wrap">
+            <span class="dc">
+            </span>
+            <b class="price">
+             4,000
+            </b>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="input-group">
+           <div class="input-group-btn">
+            <button class="it_qty_minus" type="button">
+             <span class="sound_only">
+              감소
+             </span>
+            </button>
+           </div>
+           <label class="sound_only" for="ct_qty_1">
+            수량
+           </label>
+           <input class="form-control input-sm" id="ct_qty_1" name="ct_qty[][]" size="3" type="text" value="1"/>
+           <div class="input-group-btn">
+            <button class="it_qty_plus" type="button">
+             <span class="sound_only">
+              증가
+             </span>
+            </button>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="fc price">
+         <p>
+          총 상품 금액
+         </p>
+         <b id="io_price">
+          4,300
+          <span>
+           원
+          </span>
+         </b>
+        </li>
+        <li class="btn">
+         <input class="btn-basic btn-01" onclick="hidePopup('shoppingBasketOpen')" type="button" value="취소"/>
+         <input class="btn-basic btn-02" type="submit" value="장바구니 담기"/>
+        </li>
+       </ul>
+      </form>
+     </div>
+    </div>
+    <script>
+     // 팝업 show hide
+	const mbid = '';
+	const FORMEL = document.fitem;
+	const hidePopup = (id) => {
+		const popup = document.getElementById(id);
+
+		popup.classList.remove("open");
+		document.body.classList.remove("showPopup");
+	};
+
+
+	// 팝업 딤 클릭 이벤트
+	const popupDimClickEvent = () => {
+		document.querySelectorAll(".dim").forEach((el) => {
+			el.addEventListener("click", (e) => {
+				if (e.target.classList.contains("dim")) {
+					hidePopup(e.target.id);
+				}
+			});
+		});
+	};
+
+
+	const showPopup = (id, obj) => {
+		const popup = document.getElementById(id);
+		const openInnerPopup = document.querySelector(".popup-wrapper.open");
+
+		if (popup.classList.contains("popup-wrapper") && openInnerPopup) {
+			openInnerPopup.classList.remove("open");
+		}
+
+		if (mbid != "") {
+			popup.classList.add("open");
+			document.body.classList.add("showPopup");
+		} else {
+			$(".modal-a").modal("show");
+		}
+
+
+		/**
+		 * NEW SET FORM
+		 */
+		let parentEl = obj.parentElement.closest("li");
+		var it_name = parentEl.querySelector('#it_name').value;
+		FORMEL.querySelector("input[name^='it_id']").value = parentEl.querySelector('#it_id').value;
+		FORMEL.querySelector(".item p").innerText = it_name;
+		var price = parentEl.querySelector('#it_price').value;
+		FORMEL.querySelector("input[name^='it_price']").value = price;
+		FORMEL.querySelector("input[name^='ori_it_price']").value = price;
+
+		FORMEL.querySelector("li.price #io_price").innerHTML = number_format(String(price)) + " <span>원</span>";
+		let HTML = '';
+		if (parentEl.querySelector('#is_soldout').value != "") {
+			HTML = '<span class="soldout">품절</span>';
+		}
+		if (parentEl.querySelector('#dc').value != "") {
+			FORMEL.querySelector(".dc_wrap span.dc").innerHTML = parentEl.querySelector('#dc').value + "%";
+		}
+
+		if (parentEl.querySelector('#it_cust_price').value > 1) {
+			FORMEL.querySelector("li.item .dc_wrap b.price").ClassList.add = 'dc_price';
+			price = parentEl.querySelector('#it_cust_price').value;
+			FORMEL.querySelector(".dc_wrap b.price").innerHTML = number_format(String(price)) + " 원 " + HTML;
+		} else {
+			FORMEL.querySelector(".dc_wrap b.price").innerHTML = number_format(String(price)) + " 원 " + HTML;
+		}
+
+		FORMEL.querySelector("input[name^='it_stock_qty']").value = parentEl.querySelector('#it_stock_qty').value;
+		FORMEL.querySelector("input[name^='ct_qty']").value = 1;
+
+		FORMEL.querySelector("input[name^='ct_qty']").setAttribute('name', 'ct_qty');
+		FORMEL.querySelector("input[name^='ct_qty']").setAttribute('name', 'ct_qty[' + FORMEL.querySelector("input[name^='it_id']").value + '][]');
+
+		for (var i = 0; i < FORMEL.querySelectorAll("input[name^='io_']").length; i++) {
+			var oriName = FORMEL.querySelectorAll("input[name^='io_']")[i].getAttribute("name");
+			FORMEL.querySelectorAll("input[name^='io_']")[i].setAttribute('name', 'io_');
+			FORMEL.querySelectorAll("input[name^='io_']")[i].setAttribute('name', oriName + '[' + FORMEL.querySelector("input[name^='it_id']").value + '][]');
+		}
+
+		FORMEL.querySelector("input[name^='io_type']").value = 0;
+		FORMEL.querySelector("input[name^='io_value']").value = it_name;
+	};
+
+
+	const init = () => {
+		popupDimClickEvent(); // 공통 : 팝업 딤 클릭 이벤트
+	};
+	document.addEventListener("DOMContentLoaded", () => {
+		init();
+	});
+
+
+
+	//장바구니 폼 전송
+	function fitem_submit(f) {
+
+		f.sw_direct.value = 0;
+		document.pressed = "장바구니";
+
+		// 판매가격이 0 보다 작다면
+		if (f.it_price.value < 0) {
+			alert("전화로 문의해 주시면 감사하겠습니다.");
+			return false;
+		}
+
+		var val, io_type, result = true;
+		var sum_qty = 0;
+		var min_qty = parseInt();
+		var max_qty = parseInt();
+		var $el_type = $("input[name^=io_type]");
+
+		$("input[name^=ct_qty]").each(function(index) {
+			val = $(this).val();
+
+			if (val.length < 1) {
+				alert("수량을 입력해 주십시오.");
+				result = false;
+				return false;
+			}
+
+			if (val.replace(/[0-9]/g, "").length > 0) {
+				alert("수량은 숫자로 입력해 주십시오.");
+				result = false;
+				return false;
+			}
+
+			if (parseInt(val.replace(/[^0-9]/g, "")) < 1) {
+				alert("수량은 1이상 입력해 주십시오.");
+				result = false;
+				return false;
+			}
+
+			io_type = $el_type.eq(index).val();
+			if (io_type == "0")
+				sum_qty += parseInt(val);
+		});
+
+		if (!result) {
+			return false;
+		}
+
+		if (min_qty > 0 && sum_qty < min_qty) {
+			alert("선택옵션 개수 총합 " + number_format(String(min_qty)) + "개 이상 주문해 주십시오.");
+			return false;
+		}
+
+		if (max_qty > 0 && sum_qty > max_qty) {
+			alert("선택옵션 개수 총합 " + number_format(String(max_qty)) + "개 이하로 주문해 주십시오.");
+			return false;
+		}
+
+		if (document.pressed == "장바구니") {
+
+			hidePopup('shoppingBasketOpen');
+
+			$.post("/shop/itemcart.php", $(f).serialize(), function(error) {
+				if ($.trim(error).indexOf("OK") < 0) {
+					alert(error.replace(/\\n/g, "\n"));
+					return false;
+				} else {
+
+
+					if (confirm("장바구니에 담겼습니다.\n\n바로 확인하시겠습니까?") == true) {
+						document.location.href = "/shop/cart.php";
+					}
+				}
+			});
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+
+	// 수량변경 및 삭제
+	$(document).on("click", ".input-group button", function() {
+		var mode = $(this).text();
+		var this_qty, max_qty = 9999,
+			min_qty = 1;
+		var $el_qty = $(this).closest("div.input-group").find("input[name^=ct_qty]");
+		var stock = $(this).closest("form").find("input[name^='it_stock_qty']").val();
+
+		switch (mode) {
+			case "증가":
+				this_qty = parseInt($el_qty.val().replace(/[^0-9]/, "")) + 1;
+				if (this_qty > stock) {
+					alert("재고수량 보다 많은 수량을 구매할 수 없습니다.");
+					this_qty = stock;
+				}
+
+				if (this_qty > max_qty) {
+					this_qty = max_qty;
+					alert("최대 구매수량은 " + number_format(String(max_qty)) + " 입니다.");
+				}
+
+				$el_qty.val(this_qty);
+				price_calculate();
+				break;
+
+			case "감소":
+				this_qty = parseInt($el_qty.val().replace(/[^0-9]/, "")) - 1;
+				if (this_qty < min_qty) {
+					this_qty = min_qty;
+					alert("최소 구매수량은 " + number_format(String(min_qty)) + " 입니다.");
+				}
+				$el_qty.val(this_qty);
+				price_calculate();
+				break;
+
+			case "삭제":
+				if (confirm("선택하신 옵션항목을 삭제하시겠습니까?")) {
+					var $el = $(this).closest("li");
+					var del_exec = true;
+
+					if ($("#it_sel_option .it_spl_list").size() > 0) {
+						// 선택옵션이 하나이상인지
+						if ($el.hasClass("it_opt_list")) {
+							if ($(".it_opt_list").size() <= 1)
+								del_exec = false;
+						}
+					}
+
+					if (del_exec) {
+						$el.closest("li").remove();
+						price_calculate();
+					} else {
+						alert("선택옵션은 하나이상이어야 합니다.");
+						return false;
+					}
+				}
+				break;
+
+			default:
+				alert("올바른 방법으로 이용해 주십시오.");
+				break;
+		}
+	});
+
+
+	function price_calculate() {
+
+		var it_price = parseInt(FORMEL.ori_it_price.value);
+
+		if (isNaN(it_price))
+			return;
+
+		var price, qty, total = 0;
+
+		qty = parseInt(FORMEL.querySelector("input[name^='ct_qty']").value);
+		total += it_price * qty;
+
+		FORMEL.it_price.value = total;
+		FORMEL.querySelector("li.price #io_price").innerHTML = number_format(String(total)) + " <span>원</span>";
+
+	}
+	//모바일기기에서만 banner에 style 주기
+	function detectMobileDevice(agent) {
+		const mobileRegex = [
+			/Android/i,
+			/iPhone/i,
+			/iPad/i,
+			/iPod/i,
+			/BlackBerry/i,
+			/Windows Phone/i
+		]
+
+		return mobileRegex.some(mobile => agent.match(mobile))
+	}
+
+	const isMobile = detectMobileDevice(window.navigator.userAgent)
+
+	if (isMobile) {
+		document.querySelector('.banner.hidden-lg').style.marginTop = '42px';
+	};
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-167578336-1">
+    </script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167578336-1');
+    </script>
+   </div>
+   <!-- #container -->
+   <footer class="footer" id="footer">
+    <div class="inner">
+     <div class="upper clearfix">
+      <ul class="info_list left">
+       <li>
+        <dl>
+         <dt>
+          고객센터
+         </dt>
+         <dd>
+         </dd>
+         <dd>
+          070-5223-4950
+         </dd>
+        </dl>
+        <p>
+         운영시간 : 오전 10:00 ~ 오후 06:00
+         <br/>
+         점심시간 : 오후 12:00 ~ 오후 13:00
+         <br/>
+         휴         무 : 토요일, 일요일, 공휴일
+        </p>
+       </li>
+       <li>
+        <dl>
+         <dt>
+          카카오톡 채널 상담
+         </dt>
+         <dd>
+          shakit_official
+         </dd>
+        </dl>
+        <p>
+         카카오톡 채널로 문의주시면
+         <br/>
+         빠른 답변 받으실 수 있습니다.
+        </p>
+       </li>
+      </ul>
+      <ul class="board_list right">
+       <li>
+        <h5>
+         Shakit
+        </h5>
+        <ul>
+         <li>
+          <a href="/bbs/page.php?hid=brand">
+           브랜드 소개
+          </a>
+         </li>
+         <li>
+          <a href="/bbs/board.php?bo_table=notice">
+           공지사항
+          </a>
+         </li>
+         <li>
+          <a href="https://shakit.co.kr/bbs/page.php?hid=sw_news">
+           쉐이킷 뉴스
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <h5>
+         칵테일 크리에이터
+        </h5>
+        <ul>
+         <li>
+          <a href="https://forms.gle/PqmD1tXyXxYiQ7bd9" target="_blank">
+           칵테일 크리에이터란?
+          </a>
+         </li>
+         <li>
+          <a href="https://forms.gle/PqmD1tXyXxYiQ7bd9" target="_blank">
+           지원하기
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <h5>
+         Community
+        </h5>
+        <ul>
+         <li>
+          <a href="/bbs/qalist.php">
+           문의 하기
+          </a>
+         </li>
+         <li>
+          <a href="/shop/itemuselist.php">
+           후기 작성
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <h5>
+         Social media
+        </h5>
+        <ul>
+         <li>
+          <a href="https://www.youtube.com/channel/UCv3jUL6eoEiUUen9VoXLg7g" target="_blank">
+           유튜브
+          </a>
+         </li>
+         <li>
+          <a href="https://www.instagram.com/shakit_official/?hl=ko" target="_blank">
+           인스타그램
+          </a>
+         </li>
+         <li>
+          <a href="https://blog.naver.com/gourmetcloud" target="_blank">
+           블로그
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="bottom clearfix">
+      <div class="left">
+       <img alt="WEB AWARD" src="/images/main/foot-award.png"/>
+      </div>
+      <div class="right">
+       <!--기업은행안심이체 인증마크 적용 시작 -->
+       <div class="bank_wrap">
+        <form method="POST" name="AUTHMARK_FORM">
+         <input name="authmarkinfo" type="hidden"/>
+        </form>
+        <a href="javascript:onPopAuthMark('984db10ced6c9c307c122bdf301ff41b')">
+         <img alt="인증마크" border="0" src="https://kiup.ibk.co.kr/IBK/uib/ecb/img/KO/esc/sub/imgIbkMark.gif" style="width: 60px;"/>
+        </a>
+       </div>
+       <!--기업은행안심이체 인증마크 적용 종료 -->
+       <ul class="terms">
+        <li>
+         <a href="/bbs/content.php?co_id=privacy" target="_blank">
+          개인정보처리방침
+         </a>
+        </li>
+        <li>
+         <a href="/bbs/content.php?co_id=provision" target="_blank">
+          이용약관
+         </a>
+        </li>
+       </ul>
+       <!--  070-5223-4950 -> 070-5223-4950 -->
+       <p>
+        농업회사법인 (주)고메클라우드 | 대표 손건우 |  (본사) 경기도 광주시 퇴촌면 천진암로 635, 1층 | (서울사무소) 서울특별시 마포구 동교로23길 41 골드빌딩 4층 (동교동 205-22) | 070-5223-4950 | shakit@gourmetcloud.co.kr
+        <br/>
+        법인사업자등록번호 634-87-01744 | 통신판매업 신고 2021-경기광주-0159 | 개인정보보호 책임자 신정우
+       </p>
+       <p class="copyright">
+        "Shakit"에서 판매하는 주류(전통주)는 양조장에서 직접 취급/배송합니다.
+        <br/>
+        주류는 통신판매 가능한 주세법 상 전통주(제 3조 1항 1의2)만을 취급합니다.
+       </p>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!-- #wrap -->
+  <div class="at-go">
+   <div class="modal_v2 aaaaa">
+    <div class="modal_title">
+     <h4>
+      사이트 이용 필독
+     </h4>
+     <button class="btn_close" type="button">
+      ×
+     </button>
+    </div>
+    <div class="modal_body">
+     <div class="modal_content">
+      <p class="parag">
+       [주류의 통신판매에 관한 명령위임고시] 에 따라
+       <span class="c_point">
+        본인인증을 한 회원들에게만 판매
+       </span>
+       하고 있습니다.
+      </p>
+      <p class="">
+       회원가입으로 본인 인증 및 쉐이킷의 다양한 소식을 받아보세요.
+      </p>
+      <div class="btn_wrap">
+       <button class="button" onclick="location.href='/bbs/register_form.php'" type="button">
+        로그인/회원가입
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="go-btn go-top cursor" id="go-btn">
+    <span>
+    </span>
+   </div>
+   <!--<div class="go-btn-kakao" id="kakao-talk-channel-chat-button"></div>-->
+   <div class="go-btn-kakao">
+    <a href="javascript:plusFriendChat()">
+     <img class="kakaoChat" src="https://www.shakit.co.kr/images/common/kakao_chat.png"/>
+    </a>
+   </div>
+  </div>
+  <!--모달 팝업 추가--->
+  <script src="/js/jquery.cookie.js" type="text/javascript">
+  </script>
+  <script>
+   $(function() {
+			
+
+			// if ($.cookie('popinfo')==undefined) {
+			// 	$(".modal_v2").show();
+			// }
+
+			if ($.cookie('popinfo')==undefined && pageYOffset > 20) {
+				$(".modal_v2").addClass('show');
+			}
+			$(window).scroll(function(){
+				if ($.cookie('popinfo')==undefined && $(this).scrollTop() > 250) {
+					$(".modal_v2").addClass('show');
+				} else {
+					$(".modal_v2").removeClass('show');
+				}
+			});
+			// $("#popviewchkbox").on("change",function(){
+			// 	if ($(this).attr("checked")) {
+			// 		$.cookie('popinfo', 'true', { expires: 1 });
+			// 	} else {
+			// 		$.removeCookie('popinfo', { path: '/' });
+			// 	}
+			// });
+
+			
+			$(".modal_v2 .btn_close").on("click",function(){
+				$.cookie('popinfo', 'true', { expires: 1 });
+				$(".modal_v2").removeClass('show');
+			});
+		});
+
+		//$.cookie('name', 'value', { expires: 7 });
+  </script>
+  <!--모달 팝업 추가--->
+  <!--[if lt IE 9]>
+
+<script type="text/javascript" src="https://www.shakit.co.kr/thema/uglysmith-basic/assets/js/respond.js"></script>
+
+<![endif]-->
+  <!-- kakao 채널 추가 -->
+  <script type="text/javascript">
+   // 사용할 앱의 JavaScript 키를 설정해 주세요.
+  Kakao.init('c089c8172def97eb00c07217cae17495');
+  // 채널 1:1 채팅 버튼을 생성합니다.
+  Kakao.Channel.createChatButton({
+	container: '#kakao-talk-channel-chat-button',
+	channelPublicId: '_czmRxb',
+	title: 'consult',
+	size: 'small',
+	color: 'yellow',
+	shape: 'pc',
+	supportMultipleDensities: true,
+  });
+
+function plusFriendChat(){
+	
+	Kakao.Channel.chat({
+			channelPublicId : '_czmRxb'
+	});
+}
+  </script>
+  <!--END kakao 채널 추가 -->
+  <!-- naver 공통 스크립트 -->
+  <script src="//wcs.naver.net/wcslog.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   if(!wcs_add) var wcs_add = {};
+		wcs_add["wa"] = "s_34e58203b852";
+		if (!_nasa) var _nasa={};
+		if (window.wcs) {
+		wcs.inflow("shakit.co.kr");
+		wcs_do(_nasa);
+	}
+  </script>
+  <!-- JavaScript -->
+  <script>
+   var sub_show = "";
+var sub_hide = "";
+var menu_startAt = "0";
+var menu_sub = "";
+var menu_subAt = "0";
+  </script>
+  <script src="https://www.shakit.co.kr/thema/uglysmith-basic/assets/bs3/js/bootstrap.min.js" type="text/javascript">
+  </script>
+  <script src="https://www.shakit.co.kr/thema/uglysmith-basic/assets/js/sly.min.js" type="text/javascript">
+  </script>
+  <script src="https://www.shakit.co.kr/thema/uglysmith-basic/assets/js/custom.js" type="text/javascript">
+  </script>
+  <script>
+   $(document).ready(function() { 
+		$(".load-box").addClass("off");
+		$("body").addClass("on");
+	});
+  </script>
+  <script type="application/ld+json">
+   {
+ "@context": "http://schema.org",
+ "@type": "Organization",
+ "name": "쉐이킷",
+ "url": "https://www.shakit.co.kr",
+ "sameAs": [
+   "https://www.instagram.com/shakit_official",
+   "https://blog.naver.com/gourmetcloud",
+   "https://www.youtube.com/channel/UCv3jUL6eoEiUUen9VoXLg7g"
+
+ ]
+}
+  </script>
+  <script _ah_="-386916535" _ajs_="48_7aa30342e1f861a5">
+   //기업은행안심이체 인증마크 적용 시작  20210702 추가
+	function onPopAuthMark(key) {
+		window.open('','AUTHMARK_POPUP','height=900, width=630, status=yes, toolbar=no, menubar=no, location=no');
+		document.AUTHMARK_FORM.authmarkinfo.value = key;
+		document.AUTHMARK_FORM.action='https://kiup.ibk.co.kr/uib/jsp/guest/esc/esc1030/esc103020/CESC302020_i.jsp';
+		document.AUTHMARK_FORM.target='AUTHMARK_POPUP';
+		document.AUTHMARK_FORM.submit();
+	}
+//기업은행안심이체 인증마크 적용 종료
+  </script>
+  <!-- 빌더 1.7.22 / 5.2.9.8 / 5.2.9.8 -->
+  <!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+  <!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+  <script>
+   // 상품상세페이지 장바구니 차단 이벤트 && 메인 장바구니 차단
+    const ss_mb_id = '';
+    const mb_dupinfo = '';
+    const buyBtn = document.querySelector('li input.buy');
+    const cartBtn = document.querySelector('li.cart input');
+    if(!!buyBtn){
+        if(mb_dupinfo.length < 1 && mb_dupinfo === ""){
+            buyBtn.setAttribute("onclick","alert('본인확인 후 구매와 페이지 이동이 가능합니다.'); return false;");
+            cartBtn.setAttribute("onclick","alert('본인확인 후 구매와 페이지 이동이 가능합니다.'); return false;");
+        }
+    }
+    const giftArr = document.querySelectorAll('li.gift button,li.gift img');
+    if(!!giftArr){
+        for(const i of giftArr){
+            if(mb_dupinfo.length < 1 && mb_dupinfo === ""){
+                i.setAttribute("onclick","alert('본인확인 후 구매와 페이지 이동이 가능합니다.'); return false;");
+            }
+        }
+    }
+    // 메인 작업 & 장바구니 차단
+    const mcartBtn = document.querySelectorAll('div.cart-icon');
+    if(!!mcartBtn){
+        if(mb_dupinfo.length < 1 && mb_dupinfo === ""){
+            for(const c of mcartBtn){
+                c.removeAttribute("onclick");
+                c.setAttribute("onclick","alert('본인확인 후 구매와 페이지 이동이 가능합니다.'); return false;");
+            }
+        }
+    }
+    //장바구니 주문하기 버튼
+    const cart_buy_btn = document.querySelector('div.cart-btn button');
+    if(!!cart_buy_btn){
+        if(mb_dupinfo.length < 1 && mb_dupinfo === ""){
+            cart_buy_btn.removeAttribute("onclick");
+            cart_buy_btn.setAttribute("onclick","alert('본인확인 후 구매와 페이지 이동이 가능합니다.'); return false;");
+        }
+    }
+  </script>
+ </body>
+</html>
