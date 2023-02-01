@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Layout from './components/Layout/Layout';
-import CocktailList from './containers/CocktailList/CocktailList';
-import Main from './containers/Home/Main';
+import CocktailList from './components/containers/CocktailList/CocktailList';
+import Main from './components/containers/Home/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
