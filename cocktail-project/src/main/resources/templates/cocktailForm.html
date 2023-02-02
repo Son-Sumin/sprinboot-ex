@@ -1,12 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<body>
+<style>
+	*{margin:0; padding:0;}
+    .container {
+        width : 300px;
+        margin : 0 auto;
+        margin-top : 60px;
+    }
+    button[type="submit"] {
+		margin : 0 auto;
+		display: flex;
+	    justify-content: center;
+	}
+	input[type="radio"] {
+		display: inline-block;
+	}
+</style>
 
+<body>
 	<div class="container">
-	
 		<form action="/cocktailForm" method="post">
 			<div class="form-group">
-				<label for="type">종류 </label>
+				<label for="type">종류   </label>
 				<input type="radio" name="type" value="alcohol" checked="checked">알코올
 				<input type="radio" name="type" value="non-alcohol">논알코올
 				<br><br>

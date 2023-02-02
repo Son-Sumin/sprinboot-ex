@@ -27,7 +27,9 @@ public class SignatureController {
 	// 시그니처 글 생성
 	@PostMapping("/signatureForm")
 	public String enrollSignature(Signature form) {
+		
 		Signature signature = new Signature();
+		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
 		//signature.setRegDate(form.getRegDate());
@@ -58,7 +60,7 @@ public class SignatureController {
 	@GetMapping("/signature/delete")
 	public String delete(Long no) {;
 		signatureService.delete(no);
-		return "redirect:/signature";
+		return "signature";
 	}
 	
 	// 시그니처 게시글 수정

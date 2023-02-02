@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.bitacademy.cocktail.domain.Signature;
@@ -31,7 +30,7 @@ public class SignatureService {
 			return signatureRepository.findByNo(no);
 		}
 		
-		public void delete(@Param("no") Long no) {
+		public void delete(Long no) {
 			signatureRepository.deleteByNo(no);
 		}
 }

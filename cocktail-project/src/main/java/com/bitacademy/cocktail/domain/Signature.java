@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity
-@Table(name="signature")
+@Entity(name="signature")
+@Table
 @Data
 public class Signature {
 

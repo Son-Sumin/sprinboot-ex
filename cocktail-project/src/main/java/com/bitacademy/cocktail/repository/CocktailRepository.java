@@ -18,7 +18,7 @@ public class CocktailRepository {
 	}
 
 	public List<Cocktail> findAll() {
-		List<Cocktail> result = em.createQuery("select m from Cocktail m", Cocktail.class).getResultList();
+		List<Cocktail> result = em.createQuery("select m from cocktail m", Cocktail.class).getResultList();
 		return result;
 	}
 

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.Signature;
@@ -26,7 +25,7 @@ public class SignatureRepository {
 	}
 
 	public List<Signature> findAll() {
-		List<Signature> result = em.createQuery("select m from Signature m", Signature.class).getResultList();
+		List<Signature> result = em.createQuery("select m from signature m", Signature.class).getResultList();
 		return result;
 	}
 	
@@ -34,7 +33,7 @@ public class SignatureRepository {
 		return em.find(Signature.class, no);
 	}
 
-	public void deleteByNo(@Param("no") Long no) {
+	public void deleteByNo(Long no) {
 		em.remove(no);
 	}
 }
