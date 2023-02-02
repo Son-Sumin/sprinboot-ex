@@ -24,5 +24,9 @@ public class SignatureService {
 
 		public void add(Signature signature) {
 			signatureRepository.add(signature);
-	}
+		}
+
+		public Signature findSigContents(Long no) {
+			return signatureRepository.findByNo(no);
+		}
 }

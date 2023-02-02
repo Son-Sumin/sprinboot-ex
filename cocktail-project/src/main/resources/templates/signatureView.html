@@ -24,9 +24,7 @@
 				<tr th:each="signature : ${signature}">  <!-- "___ :  ${ }" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
 					<td th:text="${signature.no}"></td>
 					<td th:text="${signature.nickname}"></td>
-					<td> 
-						<a th:text="${signature.cocktailName}" th:href="@{/signature/view(no= ${signature.no})}"  />
-					</td>
+					<td th:text="${signature.cocktailName}"></td>
 					<td th:text="${signature.regDate}"></td>
 					<td th:text="${signature.cocktailContents}"></td>
 					<td th:text="${signature.recipeContents}"></td>
@@ -34,6 +32,9 @@
 				</tr>
 			</tbody>
 		</table>
+		<br><br>
+		<a th:href="@{/signature/modify(no= ${signature.no})}">글수정</a>
+		<a th:href="@{/signature/reply(no= ${signature.no})}">답글</a>
 	</div>
 </div> <!-- /container -->
 

@@ -27,4 +27,7 @@ public class SignatureRepository {
 		return signature;
 	}
 
+	public Signature findByNo(Long no) {
+		return em.find(Signature.class, no);
+	}
 }

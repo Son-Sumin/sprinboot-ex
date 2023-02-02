@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bitacademy.cocktail.domain.Signature;
@@ -23,6 +24,24 @@ public class SignatureController {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
 		return "signature";
+	}
+	
+	@GetMapping("/signature/view")
+	public String view(Long no, Model model) {
+		model.addAttribute("signature", signatureService.findSigContents(no));
+		return "signatureView";
+	}
+	
+	@GetMapping("/signature/modify")
+	public String modify(Long no, Model model) {;
+		model.addAttribute("signature", signatureService.findSigContents(no));
+		return "signatureView";
+	}
+	
+	@GetMapping("/signature/reply")
+	public String reply(Long no, Model model) {
+		model.addAttribute("signature", signatureService.findSigContents(no));
+		return "signatureView";
 	}
 	
 	@GetMapping("/signatureForm")
