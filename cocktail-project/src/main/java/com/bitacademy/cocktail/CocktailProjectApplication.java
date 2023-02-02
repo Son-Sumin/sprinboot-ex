@@ -1,0 +1,13 @@
+package com.bitacademy.cocktail;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CocktailProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CocktailProjectApplication.class, args);
+	}
+
+}

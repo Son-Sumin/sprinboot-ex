@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<div class="container">
+	
+		<form action="/signatureForm" method="post">
+			<div class="form-group">
+				<label for="nickname">닉네임 </label>
+				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">  <!-- 스프링이 MemberForm의 String name과 연결해줌 -->
+				<br><br>
+				
+				<label for="cocktailName">칵테일 이름 </label>
+				<input type="text" id="cocktailName" name="cocktailName" placeholder="칵테일 이름을 입력하세요">
+				<br><br>
+				
+				<label for="regDate">등록일 </label>
+				<input type="text" id="regDate" name="regDate" placeholder="등록일">
+				<br><br>
+				
+				<label for="cocktailContents">칵테일 설명 </label>
+				<input type="text" id="cocktailContents" name="cocktailContents" placeholder="칵테일 설명">
+				<br><br>
+				
+				<label for="recipeContents">칵테일 레시피 </label>
+				<input type="text" id="recipeContents" name="recipeContents" placeholder="칵테일 레시피">
+				<br><br>
+				
+				<label for="type">종류 </label>
+				<input type="radio" name="type" value="alcohol" checked="checked">알코올
+				<input type="radio" name="type" value="non-alcohol">논알코올
+				<br><br>
+			</div>
+			<br><br>
+			<button type="submit">등록</button>
+		</form>
+		
+	</div> <!-- /container -->
+</body>
+</html>

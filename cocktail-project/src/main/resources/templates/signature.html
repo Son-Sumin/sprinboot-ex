@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signature List</title>
+</head>
+<body>
+
+<div class="container">  <!-- thymeleaf 본격적으로 동작 -->
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>   닉네임   </th>
+					<th>   칵테일 이름   </th>
+					<th>  등록일  </th>
+					<th>   칵테일 설명   </th>
+					<th>   칵테일 레시피   </th>
+					<th>  종류  </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="signature : signature">  <!-- "___ :  ${ }" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
+					<td th:text="${signature.no}"></td>
+					<td th:text="${signature.name}"></td>
+					<td th:text="${signature.cocktailName}"></td>
+					<td th:text="${signature.regDate}"></td>
+					<td th:text="${signature.cocktailContents}"></td>
+					<td th:text="${signature.recipeContents}"></td>
+					<td th:text="${signature.type}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div> <!-- /container -->
+
+</body>
+</html>
