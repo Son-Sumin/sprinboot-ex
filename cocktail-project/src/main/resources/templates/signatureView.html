@@ -25,7 +25,7 @@
 					<td th:text="${signature.no}"></td>
 					<td th:text="${signature.nickname}"></td>
 					<td th:text="${signature.cocktailName}"></td>
-					<td th:text="${signature.regDate}"></td>
+					<td th:text="${signature.createdAt}"></td>
 					<td th:text="${signature.cocktailContents}"></td>
 					<td th:text="${signature.recipeContents}"></td>
 					<td th:text="${signature.type}"></td>
@@ -35,6 +35,7 @@
 		<br><br>
 		<a th:href="@{/signature/modify(no= ${signature.no})}">글수정</a>
 		<a th:href="@{/signature/reply(no= ${signature.no})}">답글</a>
+		<a th:href="@{/signature/delete(no= ${signature.no})}">삭제</a>
 	</div>
 </div> <!-- /container -->
 

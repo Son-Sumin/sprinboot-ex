@@ -1,14 +1,19 @@
 package com.bitacademy.cocktail.domain;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
+@Table(name="signature")
 @Data
 public class Signature {
 
@@ -22,7 +27,8 @@ public class Signature {
 	private String cocktailName;
 	
 	@Column(name = "reg_date")
-	private String regDate;
+	//private String regDate;
+	private LocalDateTime createdAt;
 	
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
@@ -31,4 +37,10 @@ public class Signature {
 	private String recipeContents;
 	
 	private String type;
+	
+	
+	@PrePersist
+	public void createdAt() {
+		this.createdAt = LocalDateTime.now();
+	}
 }

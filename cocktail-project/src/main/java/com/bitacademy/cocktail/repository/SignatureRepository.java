@@ -3,12 +3,15 @@ package com.bitacademy.cocktail.repository;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.Signature;
 
 @Repository
+@Transactional
 public class SignatureRepository {
 	
 	private final EntityManager em;
@@ -17,17 +20,21 @@ public class SignatureRepository {
 		this.em = em;
 	}
 
-	public List<Signature> findAll() {
-		List<Signature> result = em.createQuery("select m from Signature m", Signature.class).getResultList();
-		return result;
-	}
-
 	public Signature add(Signature signature) {
 		em.persist(signature);
 		return signature;
 	}
 
+	public List<Signature> findAll() {
+		List<Signature> result = em.createQuery("select m from Signature m", Signature.class).getResultList();
+		return result;
+	}
+	
 	public Signature findByNo(Long no) {
 		return em.find(Signature.class, no);
+	}
+
+	public void deleteByNo(@Param("no") Long no) {
+		em.remove(no);
 	}
 }

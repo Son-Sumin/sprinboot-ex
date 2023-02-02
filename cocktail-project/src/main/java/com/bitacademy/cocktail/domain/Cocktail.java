@@ -5,15 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
-@Getter
-@Setter
-@ToString
+@Table(name="cocktail")
+@Data
 public class Cocktail {
 
 	@Id
@@ -33,10 +31,4 @@ public class Cocktail {
 	@Column(name = "recipe_contents")
 	private String recipeContents;
 	
-//	public Cocktail(String type, String name, String engName, String image) {
-//        this.type = type;
-//        this.name = name;
-//        this.engName = engName;
-//        this.image = image;
-//    }
 }

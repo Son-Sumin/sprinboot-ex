@@ -1,5 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<style>
+	*{margin:0; padding:0;}
+	
+	.form-group {
+		width : 500px;
+		margin : 0 auto;
+		margin-top : 40px;
+	}
+	
+	.form-group input {
+		width : 300px;
+		box-sizing : boarder-box;
+	}
+	
+	.form-group textarea {
+		width : 500px;
+		margin-top : 10px;
+		min-height : 300px;
+	}
+</style>
+
+
 <body>
 
 	<div class="container">
@@ -13,17 +35,13 @@
 				<label for="cocktailName">칵테일 이름 </label>
 				<input type="text" id="cocktailName" name="cocktailName" placeholder="칵테일 이름을 입력하세요">
 				<br><br>
-				
-				<label for="regDate">등록일 </label>
-				<input type="text" id="regDate" name="regDate" placeholder="등록일">
-				<br><br>
-				
+
 				<label for="cocktailContents">칵테일 설명 </label>
-				<input type="text" id="cocktailContents" name="cocktailContents" placeholder="칵테일 설명">
+				<textarea type="content" id="cocktailContents" name="cocktailContents" placeholder="칵테일 설명"></textarea>
 				<br><br>
 				
 				<label for="recipeContents">칵테일 레시피 </label>
-				<input type="text" id="recipeContents" name="recipeContents" placeholder="칵테일 레시피">
+				<textarea type="content" id="recipeContents" name="recipeContents" placeholder="칵테일 레시피"></textarea>
 				<br><br>
 				
 				<label for="type">종류 </label>
@@ -32,6 +50,7 @@
 				<br><br>
 			</div>
 			<br><br>
+			
 			<button type="submit">등록</button>
 		</form>
 		
