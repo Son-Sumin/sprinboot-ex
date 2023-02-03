@@ -35,7 +35,7 @@
 		<br><br>
 		<a th:href="@{/signature/modify/{no}(no= ${signature.no})}">글수정</a>
 		<a th:href="@{/signature/reply(no= ${signature.no})}">답글</a>
-		<a th:href="@{/signature/delete(no= ${signature.no})}">삭제</a>
+		<a th:href="@{/signature/delete/{no}(no= ${signature.no})}">삭제</a>
 	</div>
 </div> <!-- /container -->
 

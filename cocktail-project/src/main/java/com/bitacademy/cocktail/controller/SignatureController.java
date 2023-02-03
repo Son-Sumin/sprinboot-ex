@@ -19,6 +19,7 @@ public class SignatureController {
 		this.signatureService = signatureService;
 	}
 	
+	
 	// 시그니처 작성 폼
 	@GetMapping("/signatureForm")
 	public String signatureForm() {
@@ -33,7 +34,6 @@ public class SignatureController {
 		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
-		//signature.setRegDate(form.getRegDate());
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
 		signature.setType(form.getType());
@@ -50,16 +50,17 @@ public class SignatureController {
 		return "signature";
 	}
 	
+	
 	// 시그니처 게시글 보기
 	@GetMapping("/signature/view")
 	public String view(Long no, Model model) {
-		model.addAttribute("signature", signatureService.findSigContents(no));
+		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureView";
 	}
 	
 	// 시그니처 게시글 삭제
-	@GetMapping("/signature/delete")
-	public String delete(Long no) {;
+	@GetMapping("/signature/delete/{no}")
+	public String delete(@PathVariable Long no) {;
 		signatureService.delete(no);
 		return "signature";
 	}
@@ -67,21 +68,29 @@ public class SignatureController {
 	// 시그니처 게시글 수정폼
 	@GetMapping("/signature/modify/{no}")
 	public String modify(@PathVariable Long no, Model model) {;
-		model.addAttribute("signature", signatureService.findSigContents(no));
+		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureModify";
 	}
 	
 	// 시그니처 게시글 수정
 	@PostMapping("/signature/modify/{no}")
-	public String modify(@PathVariable Long no, Signature signature) {;
-		//signature.addAttribute("signature", signatureService.findSigContents(no));
+	public String modify(@PathVariable Long no, Signature signature) {
+		Signature sigView = signatureService.findSigView(no);
+		
+		sigView.setNickname(signature.getNickname());
+		sigView.setCocktailName(signature.getCocktailName());
+		sigView.setCocktailContents(signature.getCocktailContents());
+		sigView.setRecipeContents(signature.getRecipeContents());
+		sigView.setType(signature.getType());
+		
 		return "redirect:/signature";
 	}
+	
 	
 	// 시그니처 게시글 답글 달기
 	@GetMapping("/signature/reply")
 	public String reply(Long no, Model model) {
-		model.addAttribute("signature", signatureService.findSigContents(no));
+		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureView";
 	}
 	

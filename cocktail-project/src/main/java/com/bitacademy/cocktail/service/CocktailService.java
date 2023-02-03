@@ -2,12 +2,11 @@ package com.bitacademy.cocktail.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bitacademy.cocktail.repository.CocktailRepository;
 import com.bitacademy.cocktail.domain.Cocktail;
+import com.bitacademy.cocktail.repository.CocktailRepository;
 
 
 @Service
@@ -16,7 +15,6 @@ public class CocktailService {
 	
 	private final CocktailRepository cocktailRepository;
 	
-	@Autowired
 	public CocktailService(CocktailRepository cocktailRepository) {
 		this.cocktailRepository = cocktailRepository;
 	}
@@ -26,7 +24,7 @@ public class CocktailService {
 	}
 
 	public void add(Cocktail cocktail) {
-		cocktailRepository.add(cocktail);
+		cocktailRepository.save(cocktail);
 	}
 
 }

@@ -8,7 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 
@@ -26,9 +30,14 @@ public class Signature {
 	@Column(name = "cocktail_name")
 	private String cocktailName;
 	
+	@CreationTimestamp
 	@Column(name = "reg_date")
 	//private String regDate;
 	private LocalDateTime createdAt;
+	
+//	@UpdateTimestamp
+//	@Column(name = "reg_date")
+//	private LocalDateTime updDate;
 	
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
@@ -39,8 +48,13 @@ public class Signature {
 	private String type;
 	
 	
-	@PrePersist
-	public void createdAt() {
-		this.createdAt = LocalDateTime.now();
-	}
+//	@PrePersist
+//	public void createdAt() {
+//		this.createdAt = LocalDateTime.now();
+//	}
+//	
+//	@PreUpdate
+//    public void preUpdate() {
+//        super.preUpdate();
+//    }
 }

@@ -1,30 +1,13 @@
 package com.bitacademy.cocktail.repository;
 
-import java.util.List;
+import java.util.Optional;
 
-import javax.persistence.EntityManager;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import org.springframework.stereotype.Repository;
+import com.bitacademy.cocktail.domain.Cocktail;;
 
-import com.bitacademy.cocktail.domain.Cocktail;
-
-@Repository
-public class CocktailRepository {
+public interface CocktailRepository extends JpaRepository<Cocktail, Long> {
 	
-	private final EntityManager em;
+	Optional<Cocktail> findByNo(Long no);
 	
-	public CocktailRepository(EntityManager em) {
-		this.em = em;
-	}
-
-	public List<Cocktail> findAll() {
-		List<Cocktail> result = em.createQuery("select m from cocktail m", Cocktail.class).getResultList();
-		return result;
-	}
-
-	public Cocktail add(Cocktail cocktail) {
-		em.persist(cocktail);
-		return cocktail;
-	}
-
 }

@@ -19,14 +19,14 @@ public class SignatureService {
 		}
 		
 		public void add(Signature signature) {
-			signatureRepository.add(signature);
+			signatureRepository.save(signature);
 		}
 		
 		public List<Signature> listSignature() {
 			return signatureRepository.findAll();
 		}
 
-		public Signature findSigContents(Long no) {
+		public Signature findSigView(Long no) {
 			return signatureRepository.findByNo(no);
 		}
 		

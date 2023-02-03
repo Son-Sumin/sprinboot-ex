@@ -1,39 +1,12 @@
 package com.bitacademy.cocktail.repository;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
-
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.bitacademy.cocktail.domain.Signature;
 
-@Repository
-@Transactional
-public class SignatureRepository {
-	
-	private final EntityManager em;
-	
-	public SignatureRepository(EntityManager em) {
-		this.em = em;
-	}
+public interface SignatureRepository extends JpaRepository<Signature, Long> {
 
-	public Signature add(Signature signature) {
-		em.persist(signature);
-		return signature;
-	}
+	Signature findByNo(Long no);
 
-	public List<Signature> findAll() {
-		List<Signature> result = em.createQuery("select m from signature m", Signature.class).getResultList();
-		return result;
-	}
-	
-	public Signature findByNo(Long no) {
-		return em.find(Signature.class, no);
-	}
-
-	public void deleteByNo(Long no) {
-		em.remove(no);
-	}
+	void deleteByNo(Long no);
 }
