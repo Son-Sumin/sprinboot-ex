@@ -11,14 +11,16 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import com.bitacademy.cocktail.base.BaseTimeEntity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity(name="signature")
 @Table
-@Data
+@Getter @Setter @ToString  @RequiredArgsConstructor
 public class Signature {
 
 	@Id
@@ -30,14 +32,11 @@ public class Signature {
 	@Column(name = "cocktail_name")
 	private String cocktailName;
 	
-	@CreationTimestamp
 	@Column(name = "reg_date")
-	//private String regDate;
 	private LocalDateTime createdAt;
 	
-//	@UpdateTimestamp
-//	@Column(name = "reg_date")
-//	private LocalDateTime updDate;
+//	@Column(nullable = true)
+//	private LocalDateTime updateAt;
 	
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
@@ -47,6 +46,18 @@ public class Signature {
 	
 	private String type;
 	
+	
+	@PrePersist
+    public void prePersist(){
+		this.createdAt = LocalDateTime.now();
+       // this.updateAt = LocalDateTime.now();
+    }
+
+//    @PreUpdate
+//    public void preUpdate(){
+//    	this.updateAt = LocalDateTime.now();
+//    }
+
 	
 //	@PrePersist
 //	public void createdAt() {
