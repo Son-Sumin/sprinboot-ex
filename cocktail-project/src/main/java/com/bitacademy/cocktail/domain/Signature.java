@@ -8,19 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Table;
 
-import com.bitacademy.cocktail.base.BaseTimeEntity;
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name="signature")
-@Table
-@Getter @Setter @ToString  @RequiredArgsConstructor
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Signature {
 
 	@Id
@@ -33,7 +31,7 @@ public class Signature {
 	private String cocktailName;
 	
 	@Column(name = "reg_date")
-	private LocalDateTime createdAt;
+	private LocalDateTime regDate;
 	
 //	@Column(nullable = true)
 //	private LocalDateTime updateAt;
@@ -49,7 +47,7 @@ public class Signature {
 	
 	@PrePersist
     public void prePersist(){
-		this.createdAt = LocalDateTime.now();
+		this.regDate = LocalDateTime.now();
        // this.updateAt = LocalDateTime.now();
     }
 

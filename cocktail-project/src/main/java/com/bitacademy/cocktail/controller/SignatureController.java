@@ -83,7 +83,7 @@ public class SignatureController {
 		// 수정 내용 다시 세팅하기
 		signature.setNickname(signature.getNickname());
 		signature.setCocktailName(signature.getCocktailName());
-		signature.setCreatedAt(LocalDateTime.now());
+		signature.setRegDate(LocalDateTime.now());
 		signature.setCocktailContents(signature.getCocktailContents());
 		signature.setRecipeContents(signature.getRecipeContents());
 		signature.setType(signature.getType());
