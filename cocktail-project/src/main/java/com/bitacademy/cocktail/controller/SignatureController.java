@@ -20,7 +20,7 @@ public class SignatureController {
 	}
 	
 	
-	/* 시그니처 작성 폼 */
+	/* 시그니처 작성폼 */
 	@GetMapping("/signature/form")
 	public String signatureForm() {
 		return "signature/signatureForm";
@@ -28,7 +28,7 @@ public class SignatureController {
 	
 	/* 시그니처 글 작성 */
 	@PostMapping("/signature/form")
-	public String enrollSignature(Signature form) {
+	public String writeSignature(Signature form) {
 		
 		Signature signature = new Signature();
 		
@@ -43,13 +43,12 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 목록 */
-	@GetMapping("/signature/list")
+	@GetMapping({"/signature", "/signature/list"})
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
 		return "signature/signatureList";
 	}
-	
 	
 	/* 시그니처 게시글 보기 */
 	@GetMapping("/signature/view")
@@ -60,23 +59,26 @@ public class SignatureController {
 	
 	/* 시그니처 게시글 삭제 */
 	@GetMapping("/signature/delete/{no}")
-	public String delete(@PathVariable Long no) {;
+	public String delete(@PathVariable("no") Long no) {;
 		signatureService.delete(no);
 		return "redirect:/signature/list";
 	}
 	
 	/* 시그니처 게시글 수정폼 */
 	@GetMapping("/signature/modify/{no}")
-	public String modify(@PathVariable Long no, Model model) {;
+	public String modify(@PathVariable("no") Long no, Model model) {;
 		model.addAttribute("signature", signatureService.findSigView(no));
-		return "signatureModify";
+		return "/signature/signatureModify";
 	}
 	
 	/* 시그니처 게시글 수정 */
 	@PostMapping("/signature/modify/{no}")
-	public String modify(@PathVariable Long no, Signature signature) {
+	public String modify(@PathVariable("no") Long no, Signature signature) {
+		
+		// 기존 글 담아오기
 		Signature sigView = signatureService.findSigView(no);
 		
+		// 수정 내용 다시 세팅하기
 		sigView.setNickname(signature.getNickname());
 		sigView.setCocktailName(signature.getCocktailName());
 		sigView.setCocktailContents(signature.getCocktailContents());
@@ -85,7 +87,6 @@ public class SignatureController {
 		
 		return "redirect:/signature";
 	}
-	
 	
 	/* 시그니처 게시글 답글 달기 */
 	@GetMapping("/signature/reply")
