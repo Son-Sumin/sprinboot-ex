@@ -20,13 +20,13 @@ public class CocktailController {
 	
 	
 	/* 칵테일 작성 폼 */
-	@GetMapping("/cocktailForm")
+	@GetMapping("/cocktail/form")
 	public String cocktailForm() {
-		return "cocktailForm";
+		return "cocktail/cocktailForm";
 	}
 	
 	/* 칵테일 글 작성 */
-	@PostMapping("/cocktailForm")
+	@PostMapping("/cocktail/form")
 	public String enrollCocktail(Cocktail form) {
 		
 		Cocktail cocktail = new Cocktail();
@@ -42,18 +42,18 @@ public class CocktailController {
 	}
 	
 	/* 칵테일 목록 */
-	@GetMapping("/cocktail")
+	@GetMapping("/cocktail/list")
 	public String list(Model model) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
 		model.addAttribute("cocktail", cocktail);
-		return "cocktail";
+		return "cocktail/cocktailList";
 	}
 	
 	/* 칵테일 게시글 보기 */
 	@GetMapping("/cocktail/view")
 	public String view(Long no, Model model) {
 		model.addAttribute("cocktail", cocktailService.findSigView(no));
-		return "cocktailView";
+		return "cocktail/cocktailView";
 	}
 }
 

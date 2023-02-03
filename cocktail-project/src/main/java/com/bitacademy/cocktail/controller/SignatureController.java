@@ -21,13 +21,13 @@ public class SignatureController {
 	
 	
 	/* 시그니처 작성 폼 */
-	@GetMapping("/signatureForm")
+	@GetMapping("/signature/form")
 	public String signatureForm() {
-		return "signatureForm";
+		return "signature/signatureForm";
 	}
 	
 	/* 시그니처 글 작성 */
-	@PostMapping("/signatureForm")
+	@PostMapping("/signature/form")
 	public String enrollSignature(Signature form) {
 		
 		Signature signature = new Signature();
@@ -43,11 +43,11 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 목록 */
-	@GetMapping("/signature")
+	@GetMapping("/signature/list")
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
-		return "signature";
+		return "signature/signatureList";
 	}
 	
 	
@@ -55,14 +55,14 @@ public class SignatureController {
 	@GetMapping("/signature/view")
 	public String view(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
-		return "signatureView";
+		return "signature/signatureView";
 	}
 	
 	/* 시그니처 게시글 삭제 */
 	@GetMapping("/signature/delete/{no}")
 	public String delete(@PathVariable Long no) {;
 		signatureService.delete(no);
-		return "redirect:/signature";
+		return "redirect:/signature/list";
 	}
 	
 	/* 시그니처 게시글 수정폼 */
