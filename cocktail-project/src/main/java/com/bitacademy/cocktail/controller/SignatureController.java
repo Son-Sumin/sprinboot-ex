@@ -20,13 +20,13 @@ public class SignatureController {
 	}
 	
 	
-	// 시그니처 작성 폼
+	/* 시그니처 작성 폼 */
 	@GetMapping("/signatureForm")
 	public String signatureForm() {
 		return "signatureForm";
 	}
 	
-	// 시그니처 글 생성
+	/* 시그니처 글 작성 */
 	@PostMapping("/signatureForm")
 	public String enrollSignature(Signature form) {
 		
@@ -42,7 +42,7 @@ public class SignatureController {
 		return "redirect:/";
 	}
 	
-	// 시그니처 목록
+	/* 시그니처 목록 */
 	@GetMapping("/signature")
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
@@ -51,28 +51,28 @@ public class SignatureController {
 	}
 	
 	
-	// 시그니처 게시글 보기
+	/* 시그니처 게시글 보기 */
 	@GetMapping("/signature/view")
 	public String view(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureView";
 	}
 	
-	// 시그니처 게시글 삭제
+	/* 시그니처 게시글 삭제 */
 	@GetMapping("/signature/delete/{no}")
 	public String delete(@PathVariable Long no) {;
 		signatureService.delete(no);
-		return "signature";
+		return "redirect:/signature";
 	}
 	
-	// 시그니처 게시글 수정폼
+	/* 시그니처 게시글 수정폼 */
 	@GetMapping("/signature/modify/{no}")
 	public String modify(@PathVariable Long no, Model model) {;
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureModify";
 	}
 	
-	// 시그니처 게시글 수정
+	/* 시그니처 게시글 수정 */
 	@PostMapping("/signature/modify/{no}")
 	public String modify(@PathVariable Long no, Signature signature) {
 		Signature sigView = signatureService.findSigView(no);
@@ -87,7 +87,7 @@ public class SignatureController {
 	}
 	
 	
-	// 시그니처 게시글 답글 달기
+	/* 시그니처 게시글 답글 달기 */
 	@GetMapping("/signature/reply")
 	public String reply(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));

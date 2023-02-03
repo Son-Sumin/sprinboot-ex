@@ -2,7 +2,6 @@ package com.bitacademy.cocktail.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,26 +14,23 @@ import com.bitacademy.cocktail.service.CocktailService;
 public class CocktailController {
 	private final CocktailService cocktailService;
 	
-	@Autowired
 	private CocktailController(CocktailService cocktailService) {
 		this.cocktailService = cocktailService;
 	}
 	
-	@GetMapping("/cocktail")
-	public String list(Model model) {
-		List<Cocktail> cocktail = cocktailService.listCocktail();
-		model.addAttribute("cocktail", cocktail);
-		return "cocktail";
-	}
 	
+	/* 칵테일 작성 폼 */
 	@GetMapping("/cocktailForm")
 	public String cocktailForm() {
 		return "cocktailForm";
 	}
 	
+	/* 칵테일 글 작성 */
 	@PostMapping("/cocktailForm")
 	public String enrollCocktail(Cocktail form) {
+		
 		Cocktail cocktail = new Cocktail();
+		
 		cocktail.setType(form.getType());
 		cocktail.setName(form.getName());
 		cocktail.setEngName(form.getEngName());
@@ -43,6 +39,21 @@ public class CocktailController {
 		
 		cocktailService.add(cocktail);
 		return "redirect:/";
+	}
+	
+	/* 칵테일 목록 */
+	@GetMapping("/cocktail")
+	public String list(Model model) {
+		List<Cocktail> cocktail = cocktailService.listCocktail();
+		model.addAttribute("cocktail", cocktail);
+		return "cocktail";
+	}
+	
+	/* 칵테일 게시글 보기 */
+	@GetMapping("/cocktail/view")
+	public String view(Long no, Model model) {
+		model.addAttribute("cocktail", cocktailService.findSigView(no));
+		return "cocktailView";
 	}
 }
 

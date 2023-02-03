@@ -18,13 +18,17 @@ public class CocktailService {
 	public CocktailService(CocktailRepository cocktailRepository) {
 		this.cocktailRepository = cocktailRepository;
 	}
-
+	
+	public void add(Cocktail cocktail) {
+		cocktailRepository.save(cocktail);
+	}
+	
 	public List<Cocktail> listCocktail() {
 		return cocktailRepository.findAll();
 	}
 
-	public void add(Cocktail cocktail) {
-		cocktailRepository.save(cocktail);
+	public Cocktail findSigView(Long no) {
+		return cocktailRepository.findByNo(no);
 	}
 
 }

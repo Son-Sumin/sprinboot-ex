@@ -8,6 +8,6 @@ import com.bitacademy.cocktail.domain.Cocktail;;
 
 public interface CocktailRepository extends JpaRepository<Cocktail, Long> {
 	
-	Optional<Cocktail> findByNo(Long no);
+	Cocktail findByNo(Long no);
 	
 }
