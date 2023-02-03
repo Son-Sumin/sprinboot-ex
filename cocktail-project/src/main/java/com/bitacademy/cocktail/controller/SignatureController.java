@@ -21,6 +21,13 @@ public class SignatureController {
 		this.signatureService = signatureService;
 	}
 	
+	/* 시그니처 리스트 */
+	@GetMapping({"/signature", "/signature/list"})
+	public String list(Model model) {
+		List<Signature> signature = signatureService.listSignature();
+		model.addAttribute("signature", signature);
+		return "signature/signatureList";
+	}
 	
 	/* 시그니처 작성폼 */
 	@GetMapping("/signature/form")
@@ -42,14 +49,6 @@ public class SignatureController {
 		
 		signatureService.add(signature);
 		return "redirect:/";
-	}
-	
-	/* 시그니처 목록 */
-	@GetMapping({"/signature", "/signature/list"})
-	public String list(Model model) {
-		List<Signature> signature = signatureService.listSignature();
-		model.addAttribute("signature", signature);
-		return "signature/signatureList";
 	}
 	
 	/* 시그니처 게시글 보기 */
