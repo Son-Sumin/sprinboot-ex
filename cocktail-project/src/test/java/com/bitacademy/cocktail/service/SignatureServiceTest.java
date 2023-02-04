@@ -20,7 +20,6 @@ public class SignatureServiceTest {
 				.recipeContents("빙글빙글")
 				.type("alcohol")
 				.build();
-		
 	}
 	
 	@Test
