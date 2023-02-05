@@ -9,5 +9,6 @@ grant all privileges on study.* to 'study'@'localhost';
 flush privileges;
 
 show databases;
-show tables;
 show tables from study;
+
+select * from cocktail;
