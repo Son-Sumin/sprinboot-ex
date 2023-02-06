@@ -53,7 +53,7 @@ public class Signature {
 	@PrePersist
     public void prePersist(){
 		this.regDate = LocalDateTime.now();
-		//this.modDate = LocalDateTime.now();
+		this.modDate = LocalDateTime.now();
     }
 
     @PreUpdate
