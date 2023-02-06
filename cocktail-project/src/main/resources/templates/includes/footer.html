@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>footer</title>
+</head>
+<style>
+	*{margin:0; padding:0;}
+	
+	.bi {
+		height: 24px;
+		margin : 0 auto;
+		display: inline-block;
+	}
+	
+</style>
+<body>
+	<div class="container">
+	    <footer class="main-footer">
+	        <div>
+	            <span class="text-muted">&copy; 2021 Company, Inc - footer</span>
+	        </div>
+	
+	        <div class="main-footer-sns">
+	            <div class="bi"><a th:href="twitter"/></a>twitter</div>
+	            <div class="bi"><a th:href="instagram"/></a>instagram</div>
+	            <div class="bi"><a th:href="facebook"/></a>facebook</div>
+	        </div>
+	    </footer>
+	</div>
+
+</body>
+</html>

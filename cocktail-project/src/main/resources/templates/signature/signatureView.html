@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<div th:include="~{/includes/header}"></div>
+
 <div class="container">
 	<div>
 		<table>
@@ -38,6 +40,8 @@
 		<a th:href="@{/signature/delete/{no}(no= ${signature.no})}">삭제</a>
 	</div>
 </div> <!-- /container -->
+
+<div th:include="~{/includes/footer}"></div>
 
 </body>
 </html>

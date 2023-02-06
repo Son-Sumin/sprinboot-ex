@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Cocktail List</title>
 </head>
 <body>
 
-<div class="container">  <!-- thymeleaf 본격적으로 동작 -->
+<div th:include="~{/includes/header}"></div>
+
+<div class="container">
 	<div>
 		<table>
 			<thead>
@@ -24,7 +26,7 @@
 					<td th:text="${cocktail.no}"></td>
 					<td th:text="${cocktail.type}"></td>
 					<td>
-						<a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"  />
+						<a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"></a>
 					</td>
 					<td th:text="${cocktail.engName}"></td>
 					<td th:text="${cocktail.cocktailContents}"></td>
@@ -36,6 +38,8 @@
 		<a th:href="@{/}">메인으로</a>
 	</div>
 </div> <!-- /container -->
+
+<div th:include="~{/includes/footer}"></div>
 
 </body>
 </html>
