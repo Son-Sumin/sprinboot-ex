@@ -8,13 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
-import com.bitacademy.cocktail.base.BaseTimeEntity;
+import org.hibernate.annotations.GenerationTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity(name="signature")
@@ -22,8 +22,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@EqualsAndHashCode(callSuper=false)
-public class Signature { //extends BaseTimeEntity {
+public class Signature {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,14 +33,13 @@ public class Signature { //extends BaseTimeEntity {
 	@Column(name = "cocktail_name")
 	private String cocktailName;
 	
-	@Column(name = "reg_date")
+	@Column(name = "reg_date", updatable = false)
+	@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
 	private LocalDateTime regDate;
 	
-//	@Column(nullable = false)
-//	private LocalDateTime createdDate;
-//	
-//	@Column(nullable = false)
-//	private LocalDateTime modifiedDate;
+	@Column(name = "mod_date")
+	@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
+	private LocalDateTime modDate;
 	
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
@@ -50,27 +48,17 @@ public class Signature { //extends BaseTimeEntity {
 	private String recipeContents;
 	
 	private String type;
-	
+
 	
 	@PrePersist
     public void prePersist(){
 		this.regDate = LocalDateTime.now();
-       // this.updateAt = LocalDateTime.now();
+		this.modDate = LocalDateTime.now();
     }
 
-//    @PreUpdate
-//    public void preUpdate(){
-//    	this.updateAt = LocalDateTime.now();
-//    }
+    @PreUpdate
+    public void preUpdate(){
+    	this.modDate = LocalDateTime.now();
+    }
 
-	
-//	@PrePersist
-//	public void createdAt() {
-//		this.createdAt = LocalDateTime.now();
-//	}
-//	
-//	@PreUpdate
-//    public void preUpdate() {
-//        super.preUpdate();
-//    }
 }

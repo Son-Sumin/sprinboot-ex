@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Signature Modifyform</title>
+	<title>Signature ModifyForm</title>
 	
 	<link rel="stylesheet" th:href="@{/css/signature.css}">
 </head>
@@ -21,6 +21,7 @@
 				<br><br>
 				
 				<input type="hidden" id="reg_date" name="regDate" th:value="${signature.regDate}" readonly>
+				<input type="hidden" id="mod_date" name="modDate" th:value="${signature.modDate}" readonly>
 
 				<label for="cocktailContents">칵테일 설명 </label>
 				<textarea id="cocktailContents" name="cocktailContents" th:text="${signature.cocktailContents}"></textarea>

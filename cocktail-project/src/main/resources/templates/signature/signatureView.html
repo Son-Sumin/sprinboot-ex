@@ -28,6 +28,7 @@
 					<td th:text="${signature.nickname}"></td>
 					<td th:text="${signature.cocktailName}"></td>
 					<td th:text="${#temporals.format(signature.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+					<td th:text="${#temporals.format(signature.modDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 					<td th:text="${signature.cocktailContents}"></td>
 					<td th:text="${signature.recipeContents}"></td>
 					<td th:text="${signature.type}"></td>

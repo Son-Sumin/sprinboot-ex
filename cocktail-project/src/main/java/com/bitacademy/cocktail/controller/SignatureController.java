@@ -68,8 +68,8 @@ public class SignatureController {
 	
 	/* 시그니처 게시글 수정 */
 	@PostMapping("/modify/{no}")
-	public String modify(@PathVariable("no") Long no, Signature signature) {
-		signatureService.modify(signature);
+	public String modify(Signature signature) {
+		signatureService.add(signature);
 		return "redirect:/signature";
 	}
 //	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {

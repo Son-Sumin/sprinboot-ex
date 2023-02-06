@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.repository.SignatureRepository;
@@ -37,6 +38,8 @@ public class SignatureService {
 		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
+		signature.setRegDate(LocalDateTime.now());
+		signature.setModDate(LocalDateTime.now());
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
 		signature.setType(form.getType());
@@ -50,11 +53,11 @@ public class SignatureService {
 	}
 	
 	/* 글 수정 */
-	public void modify(Signature signature) {
+	public void modify(@PathVariable("no") Long no, Signature signature) {
 		
 		signature.setNickname(signature.getNickname());
 		signature.setCocktailName(signature.getCocktailName());
-		signature.setRegDate(LocalDateTime.now());
+		signature.setModDate(LocalDateTime.now());
 		signature.setCocktailContents(signature.getCocktailContents());
 		signature.setRecipeContents(signature.getRecipeContents());
 		signature.setType(signature.getType());
