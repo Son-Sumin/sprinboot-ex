@@ -31,25 +31,25 @@ public class SignatureServiceTest {
 		signatureService.add(signature);
 	}
 	
-//	@Test
-//	void testModify() {
-//		/* 전체수정도 하지만 부분수정할 경우 고려하여 아래 방법 실시
-//		Signature signature = new Signature();
-//		
-//		signature.setNo(1);
-//		signature.setNickname("수정");
-//		signature.setRegDate(LocalDateTime.now());
-//		signature.setCocktailName("수정");
-//		signature.setCocktailContents("수정");
-//		signature.setRecipeContents("수정");
-//		signature.setType("alcohol");
-//		*/
-//		
-//		Signature signature = signatureService.findSigView(1L);
-//		signature.setCocktailContents("이것만 수정");
-//		
-//		signatureService.modify(signature);
-//	}
+	@Test
+	void testModify() {
+		/* 전체수정도 하지만 부분수정할 경우 고려하여 아래 방법 실시
+		Signature signature = new Signature();
+		
+		signature.setNo(1);
+		signature.setNickname("수정");
+		signature.setRegDate(LocalDateTime.now());
+		signature.setCocktailName("수정");
+		signature.setCocktailContents("수정");
+		signature.setRecipeContents("수정");
+		signature.setType("alcohol");
+		*/
+		
+		Signature signature = signatureService.findSigView(1L);
+		signature.setCocktailContents("이것만 수정");
+		
+		signatureService.modify(no, signature);
+	}
 	
 	@Test
 	@Transactional  // Rollback 처리
