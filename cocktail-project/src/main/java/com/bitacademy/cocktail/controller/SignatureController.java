@@ -24,33 +24,24 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 리스트 */
-	@GetMapping({"/", "/list"})
+	@GetMapping({"", "/list"})
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
 		return "signature/signatureList";
 	}
 	
-	/* 시그니처 작성폼 */
+	/* 시그니처 글 작성폼 */
 	@GetMapping("/form")
-	public String signatureForm() {
+	public String writeSignature() {
 		return "signature/signatureForm";
 	}
 	
 	/* 시그니처 글 작성 */
 	@PostMapping("/form")
-	public String writeSignature(Signature form) {
-		
-		Signature signature = new Signature();
-		
-		signature.setNickname(form.getNickname());
-		signature.setCocktailName(form.getCocktailName());
-		signature.setCocktailContents(form.getCocktailContents());
-		signature.setRecipeContents(form.getRecipeContents());
-		signature.setType(form.getType());
-		
+	public String writeSignature(@ModelAttribute Signature signature) {
 		signatureService.add(signature);
-		return "redirect:/";
+		return "redirect:/signature";	
 	}
 	
 	/* 시그니처 게시글 보기 */
@@ -69,28 +60,33 @@ public class SignatureController {
 	
 	/* 시그니처 게시글 수정폼 */
 	@GetMapping("/modify/{no}")
-	public String modify(@PathVariable("no") Long no, Model model) {;
+	public String modify(@PathVariable("no") Long no, Model model) {
+		// 기존 글 담아오기
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signature/signatureModify";
 	}
 	
 	/* 시그니처 게시글 수정 */
 	@PostMapping("/modify/{no}")
-	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {
-		
-		// 기존 글 담아오기
-		signature = signatureService.findSigView(no);
-		
-		// 수정 내용 다시 세팅하기
-		signature.setNickname(signature.getNickname());
-		signature.setCocktailName(signature.getCocktailName());
-		signature.setRegDate(LocalDateTime.now());
-		signature.setCocktailContents(signature.getCocktailContents());
-		signature.setRecipeContents(signature.getRecipeContents());
-		signature.setType(signature.getType());
-		
-		return "redirect:/signature/list";
+	public String modify(@PathVariable("no") Long no, Signature signature) {
+		signatureService.modify(signature);
+		return "redirect:/signature";
 	}
+//	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {
+//		
+//		// 기존 글 담아오기
+//		signature = signatureService.findSigView(no);
+//		
+//		// 수정 내용 다시 세팅하기
+//		signature.setNickname(signature.getNickname());
+//		signature.setCocktailName(signature.getCocktailName());
+//		signature.setRegDate(LocalDateTime.now());
+//		signature.setCocktailContents(signature.getCocktailContents());
+//		signature.setRecipeContents(signature.getRecipeContents());
+//		signature.setType(signature.getType());
+//		
+//		return "redirect:/signature/list";
+//	}
 	
 	/* 시그니처 게시글 답글 달기 */
 	@GetMapping("/reply")
@@ -98,6 +94,4 @@ public class SignatureController {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureView";
 	}
-	
-
 }

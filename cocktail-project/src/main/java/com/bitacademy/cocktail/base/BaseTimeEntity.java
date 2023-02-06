@@ -2,7 +2,7 @@ package com.bitacademy.cocktail.base;
 
 import java.time.LocalDateTime;
 
-//import javax.persistence.Column;
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -18,6 +18,7 @@ import lombok.Getter;
 public abstract class BaseTimeEntity {
 	
 	@CreatedDate
+	@Column(updatable = false)
     private LocalDateTime createdDate;
 
     @LastModifiedDate

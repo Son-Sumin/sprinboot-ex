@@ -30,10 +30,8 @@
 					<tr th:each="signature : ${signature}">  <!-- "___ :  ${객체}" : ${객체} model 안에 있는 값 꺼내서 ___ 넣기 -->
 						<td th:text="${signature.no}"></td>
 						<td th:text="${signature.nickname}"></td>
-						<td> 
-							<a th:text="${signature.cocktailName}" th:href="@{/signature/view(no= ${signature.no})}" ></a>
-						</td>
-						<td th:text="${signature.regDate}"></td>
+						<td><a th:text="${signature.cocktailName}" th:href="@{/signature/view(no= ${signature.no})}"></a></td>
+						<td th:text="${#temporals.format(signature.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${signature.cocktailContents}"></td>
 						<td th:text="${signature.recipeContents}"></td>
 						<td th:text="${signature.type}"></td>

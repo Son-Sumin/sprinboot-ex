@@ -1,5 +1,6 @@
 package com.bitacademy.cocktail.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -30,12 +31,16 @@ public class SignatureService {
 	}
 	
 	/* 글 생성 */
-	public void add(Signature signature) {
-		signatureRepository.save(signature);
-	}
-	
-	/* 글 수정 */
-	public void modify(Signature signature) {
+	public void add(Signature form) {
+		
+		Signature signature = new Signature();
+		
+		signature.setNickname(form.getNickname());
+		signature.setCocktailName(form.getCocktailName());
+		signature.setCocktailContents(form.getCocktailContents());
+		signature.setRecipeContents(form.getRecipeContents());
+		signature.setType(form.getType());
+		
 		signatureRepository.save(signature);
 	}
 	
@@ -43,4 +48,25 @@ public class SignatureService {
 	public void delete(Long no) {
 		signatureRepository.deleteByNo(no);
 	}
+	
+	/* 글 수정 */
+	public void modify(Signature signature) {
+		
+		signature.setNickname(signature.getNickname());
+		signature.setCocktailName(signature.getCocktailName());
+		signature.setRegDate(LocalDateTime.now());
+		signature.setCocktailContents(signature.getCocktailContents());
+		signature.setRecipeContents(signature.getRecipeContents());
+		signature.setType(signature.getType());
+		
+		signatureRepository.save(signature);
+		
+	}
+	
+	
+//	public void modify(Signature signature) {
+//		signatureRepository.save(signature);
+//	}
+	
+
 }
