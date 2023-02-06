@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-
-import org.hibernate.annotations.GenerationTime;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +17,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity(name="signature")
+@Table(name="signature")
 @Data
 @Builder
 @AllArgsConstructor
@@ -34,11 +34,11 @@ public class Signature {
 	private String cocktailName;
 	
 	@Column(name = "reg_date", updatable = false)
-	@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
+	//@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
 	private LocalDateTime regDate;
 	
 	@Column(name = "mod_date")
-	@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
+	//@org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
 	private LocalDateTime modDate;
 	
 	@Column(name = "cocktail_contents")
@@ -53,7 +53,7 @@ public class Signature {
 	@PrePersist
     public void prePersist(){
 		this.regDate = LocalDateTime.now();
-		this.modDate = LocalDateTime.now();
+		//this.modDate = LocalDateTime.now();
     }
 
     @PreUpdate

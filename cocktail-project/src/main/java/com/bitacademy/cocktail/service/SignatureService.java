@@ -38,8 +38,6 @@ public class SignatureService {
 		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
-		signature.setRegDate(LocalDateTime.now());
-		signature.setModDate(LocalDateTime.now());
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
 		signature.setType(form.getType());
@@ -52,19 +50,18 @@ public class SignatureService {
 		signatureRepository.deleteByNo(no);
 	}
 	
-	/* 글 수정 */
-	public void modify(@PathVariable("no") Long no, Signature signature) {
-		
-		signature.setNickname(signature.getNickname());
-		signature.setCocktailName(signature.getCocktailName());
-		signature.setModDate(LocalDateTime.now());
-		signature.setCocktailContents(signature.getCocktailContents());
-		signature.setRecipeContents(signature.getRecipeContents());
-		signature.setType(signature.getType());
-		
-		signatureRepository.save(signature);
-		
-	}
+//	/* 글 수정 */
+//	public void modify(@PathVariable("no") Long no, Signature signature) {
+//		
+//		signature.setNickname(signature.getNickname());
+//		signature.setCocktailName(signature.getCocktailName());
+//		signature.setModDate(LocalDateTime.now());
+//		signature.setCocktailContents(signature.getCocktailContents());
+//		signature.setRecipeContents(signature.getRecipeContents());
+//		signature.setType(signature.getType());
+//		
+//		signatureRepository.save(signature);
+//	}
 	
 	
 //	public void modify(Signature signature) {
