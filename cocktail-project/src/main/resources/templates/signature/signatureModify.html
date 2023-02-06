@@ -1,44 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<style>
-	*{margin:0; padding:0;}
-	
-	.container {
-		width : 500px;
-		margin : 0 auto;
-		margin-top : 40px;
-	}
-	
-	.form-group input {
-		width : 300px;
-		box-sizing : boarder-box;
-	}
-	
-	.form-group textarea {
-		width : 500px;
-		margin-top : 10px;
-		min-height : 300px;
-	}
-	
-	button[type="submit"] {
-		margin : 0 auto;
-		display: flex;
-	    justify-content: center;
-	}
-	
-	input[type="radio"] {
-		display: inline-block;
-		text-align: center;
-		width: 100px;
-  		margin: 3px;
-	}
-	
-</style>
 
+<head>
+	<meta charset="UTF-8">
+	<title>Signature Modifyform</title>
+	
+	<link rel="stylesheet" th:href="@{/css/signature.css}">
+</head>
 
 <body>
-	<div class="container">
-		<form action="@{/signature/modify/{no}(no = ${signature.no})}" method="post">
+	<div class="form-container">
+		<form th:action="@{/signature/modify/{no}(no = ${signature.no})}" method="post">
 			<div class="form-group">
 				<label for="nickname">닉네임 </label>
 				<input type="text" id="nickname" name="nickname" th:value="${signature.nickname}" readonly>  <!-- 스프링이 MemberForm의 String name과 연결해줌 -->

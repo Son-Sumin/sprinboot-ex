@@ -9,9 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 
+import com.bitacademy.cocktail.base.BaseTimeEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity(name="signature")
@@ -19,7 +22,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Signature {
+//@EqualsAndHashCode(callSuper=false)
+public class Signature { //extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +37,11 @@ public class Signature {
 	@Column(name = "reg_date")
 	private LocalDateTime regDate;
 	
-//	@Column(nullable = true)
-//	private LocalDateTime updateAt;
+//	@Column(nullable = false)
+//	private LocalDateTime createdDate;
+//	
+//	@Column(nullable = false)
+//	private LocalDateTime modifiedDate;
 	
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
