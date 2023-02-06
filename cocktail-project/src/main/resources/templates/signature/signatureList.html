@@ -21,7 +21,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="signature : ${signature}">  <!-- "___ :  ${ }" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
+				<tr th:each="signature : ${signature}">  <!-- "___ :  ${객체}" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
 					<td th:text="${signature.no}"></td>
 					<td th:text="${signature.nickname}"></td>
 					<td> 

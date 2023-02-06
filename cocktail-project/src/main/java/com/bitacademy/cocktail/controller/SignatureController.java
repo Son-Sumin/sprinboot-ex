@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.service.SignatureService;
 
 @Controller
+@RequestMapping("/signature")
 public class SignatureController {
 	private final SignatureService signatureService;
 	
@@ -22,7 +24,7 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 리스트 */
-	@GetMapping({"/signature", "/signature/list"})
+	@GetMapping({"/", "/list"})
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
@@ -30,13 +32,13 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 작성폼 */
-	@GetMapping("/signature/form")
+	@GetMapping("/form")
 	public String signatureForm() {
 		return "signature/signatureForm";
 	}
 	
 	/* 시그니처 글 작성 */
-	@PostMapping("/signature/form")
+	@PostMapping("/form")
 	public String writeSignature(Signature form) {
 		
 		Signature signature = new Signature();
@@ -52,28 +54,28 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 보기 */
-	@GetMapping("/signature/view")
+	@GetMapping("/view")
 	public String view(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signature/signatureView";
 	}
 	
 	/* 시그니처 게시글 삭제 */
-	@GetMapping("/signature/delete/{no}")
+	@GetMapping("/delete/{no}")
 	public String delete(@PathVariable("no") Long no) {;
 		signatureService.delete(no);
 		return "redirect:/signature/list";
 	}
 	
 	/* 시그니처 게시글 수정폼 */
-	@GetMapping("/signature/modify/{no}")
+	@GetMapping("/modify/{no}")
 	public String modify(@PathVariable("no") Long no, Model model) {;
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signature/signatureModify";
 	}
 	
 	/* 시그니처 게시글 수정 */
-	@PostMapping("/signature/modify/{no}")
+	@PostMapping("/modify/{no}")
 	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {
 		
 		// 기존 글 담아오기
@@ -91,11 +93,9 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 답글 달기 */
-	@GetMapping("/signature/reply")
+	@GetMapping("/reply")
 	public String reply(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		return "signatureView";
 	}
-	
-
 }

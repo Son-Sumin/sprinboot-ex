@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.Signature;
 
-@Repository
+//@Repository
 public interface SignatureRepository extends JpaRepository<Signature, Long> {
 
 	Signature findByNo(Long no);
