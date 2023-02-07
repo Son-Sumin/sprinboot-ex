@@ -22,7 +22,6 @@ public class SignatureRepositoryTest {
 			System.out.println(signature.getNo());
 			System.out.println(signature.getNickname());
 			System.out.println(signature.getCocktailName());
-			System.out.println(signature.getRegDate());
 			System.out.println(signature.getCocktailContents());
 			System.out.println(signature.getRecipeContents());
 			System.out.println(signature.getType());
@@ -35,8 +34,7 @@ public class SignatureRepositoryTest {
 
 		System.out.println(signature.getNo());
 		System.out.println(signature.getNickname());
-		System.out.println(signature.getCocktailName());
-		System.out.println(signature.getRegDate());
+		System.out.println(signature.getCocktailName());;
 		System.out.println(signature.getCocktailContents());
 		System.out.println(signature.getRecipeContents());
 		System.out.println(signature.getType());

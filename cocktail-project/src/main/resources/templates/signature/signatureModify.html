@@ -16,15 +16,15 @@
 		<form th:action="@{/signature/modify/{no}(no = ${signature.no})}" method="post">
 			<div class="form-group">
 				<label for="nickname">닉네임 </label>
-				<input type="text" id="nickname" name="nickname" th:value="${signature.nickname}" readonly>  <!-- 스프링이 MemberForm의 String name과 연결해줌 -->
+				<input type="text" id="nickname" name="nickname" th:value="${signature.nickname}" readonly>
 				<br><br>
 				
 				<label for="cocktailName">칵테일 이름 </label>
 				<input type="text" id="cocktailName" name="cocktailName" th:value="${signature.cocktailName}">
 				<br><br>
 				
-				<input type="hidden" id="regDate" name="regDate" th:value="${signature.regDate}" readonly>
-				<input type="hidden" id="modDate" name="modDate" th:value="${signature.modDate}" readonly>
+				<input type="hidden" id="regDate" name="regDate" th:value="${signature.createdDate}" readonly>
+				<input type="hidden" id="modDate" name="modDate" th:value="${signature.modifiedDate}" readonly>
 				
 				<label for="cocktailContents">칵테일 설명 </label>
 				<textarea id="cocktailContents" name="cocktailContents" th:text="${signature.cocktailContents}"></textarea>

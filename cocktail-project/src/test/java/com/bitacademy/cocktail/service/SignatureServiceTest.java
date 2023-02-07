@@ -1,7 +1,5 @@
 package com.bitacademy.cocktail.service;
 
-import java.time.Instant;
-
 import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
@@ -21,8 +19,6 @@ public class SignatureServiceTest {
 		Signature signature = Signature.builder()
 				.nickname("맹구")
 				.cocktailName("하와이안블루")
-				.regDate(Instant.now())
-				.modDate(Instant.now())
 				.cocktailContents("맹구의 하와이안 블루")
 				.recipeContents("빙글빙글")
 				.type("alcohol")
@@ -45,7 +41,7 @@ public class SignatureServiceTest {
 		signature.setType("alcohol");
 		*/
 		
-		Signature signature = signatureService.findSigView(1L);
+		Signature signature = signatureService.findSigView(3L);
 		signature.setCocktailContents("이것만 수정");
 		
 		signatureService.modify(signature);

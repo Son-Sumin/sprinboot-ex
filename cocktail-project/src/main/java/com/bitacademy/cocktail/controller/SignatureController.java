@@ -2,18 +2,18 @@ package com.bitacademy.cocktail.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.service.SignatureService;
 
-@RestController
+@Controller
 @RequestMapping("/signature")
 public class SignatureController {
 	private final SignatureService signatureService;
@@ -24,10 +24,10 @@ public class SignatureController {
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
-	public List<Signature> list(Model model) {
+	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
-		return signatureService.listSignature();
+		return "signature/signatureList";
 	}
 	
 	/* 시그니처 글 작성폼 */
@@ -71,21 +71,6 @@ public class SignatureController {
 		signatureService.modify(signature);
 		return "redirect:/signature";
 	}
-//	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {
-//		
-//		// 기존 글 담아오기
-//		signature = signatureService.findSigView(no);
-//		
-//		// 수정 내용 다시 세팅하기
-//		signature.setNickname(signature.getNickname());
-//		signature.setCocktailName(signature.getCocktailName());
-//		signature.setRegDate(LocalDateTime.now());
-//		signature.setCocktailContents(signature.getCocktailContents());
-//		signature.setRecipeContents(signature.getRecipeContents());
-//		signature.setType(signature.getType());
-//		
-//		return "redirect:/signature/list";
-//	}
 	
 	/* 시그니처 게시글 답글 달기 */
 	@GetMapping("/reply")
