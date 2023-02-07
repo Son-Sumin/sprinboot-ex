@@ -2,6 +2,7 @@ package com.bitacademy.cocktail.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +12,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Signature;
+import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/signature")
 public class SignatureController {
-	private final SignatureService signatureService;
 	
-	private SignatureController(SignatureService signatureService) {
-		this.signatureService = signatureService;
-	}
+	/* SignatureService, ReviewSignatureService 생성자 주입 */
+	private final SignatureService signatureService;
+	private final ReviewSignatureService reviewSignatureService;
+	
+//	private SignatureController(
+//			SignatureService signatureService,
+//			ReviewSignatureService reviewSignatureService) {
+//		this.signatureService = signatureService;
+//		this.reviewSignatureService = reviewSignatureService;
+//	}
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
