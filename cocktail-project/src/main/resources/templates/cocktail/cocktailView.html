@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Signature List</title>
 </head>
 <body>
 
-<div class="container">  <!-- thymeleaf 본격적으로 동작 -->
+<div class="container">
 	<div>
 		<table>
 			<thead>
@@ -20,7 +20,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="cocktail : ${cocktail}">  <!-- "___ :  ${ }" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
+				<tr th:each="cocktail : ${cocktail}">
 					<td th:text="${cocktail.no}"></td>
 					<td th:text="${cocktail.type}"></td>
 					<td th:text="${cocktail.name}"></td>

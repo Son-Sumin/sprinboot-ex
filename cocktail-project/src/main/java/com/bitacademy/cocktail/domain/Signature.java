@@ -36,11 +36,11 @@ public class Signature {
 	private String cocktailName;
 	
 	@Column(name = "reg_date", updatable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Instant regDate;
 	
 	@Column(name = "mod_date")
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private Instant modDate;
 	
@@ -55,13 +55,13 @@ public class Signature {
 	
 	@PrePersist
     public void prePersist(){
+		this.regDate = Instant.now();
+		this.modDate = Instant.now();
+		
 //		Instant instant = Instant.now();
 //    	ZoneId zone = ZoneId.systemDefault();
 //    	this.regDate = instant.atZone(zone);
 //    	this.modDate = instant.atZone(zone);
-		
-		this.regDate = Instant.now();
-		this.modDate = Instant.now();
     }
 
     @PreUpdate
