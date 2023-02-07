@@ -9,6 +9,9 @@
 </head>
 
 <body>
+	<!-- header -->
+	<div th:include="~{/includes/header}"></div>
+	
 	<div class="form-container">
 		<form action="/signature/form" method="post">
 			<div class="form-group">
@@ -38,5 +41,8 @@
 			<button type="submit">등록</button>
 		</form>
 	</div> <!-- /container -->
+	
+	<!-- footer -->
+	<div th:include="~{/includes/footer}"></div>
 </body>
 </html>

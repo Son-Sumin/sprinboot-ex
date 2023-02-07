@@ -5,37 +5,41 @@
 <title>Signature List</title>
 </head>
 <body>
-
-<div class="container">
-	<div>
-		<table>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>   종류   </th>
-					<th>   이름   </th>
-					<th>  name  </th>
-					<th>   칵테일 설명   </th>
-					<th>   칵테일 레시피   </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="cocktail : ${cocktail}">
-					<td th:text="${cocktail.no}"></td>
-					<td th:text="${cocktail.type}"></td>
-					<td th:text="${cocktail.name}"></td>
-					<td th:text="${cocktail.engName}"></td>
-					<td th:text="${cocktail.cocktailContents}"></td>
-					<td th:text="${cocktail.recipeContents}"></td>
-					
-				</tr>
-			</tbody>
-		</table>
-		<br><br>
-		<a th:href="@{/}">메인으로</a>
-		<a th:href="@{/cocktail/list}">칵테일 목록</a>
-	</div>
-</div> <!-- /container -->
-
+	<div class="container">
+		<!-- header -->
+		<div th:include="~{/includes/header}"></div>
+		
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>   종류   </th>
+						<th>   이름   </th>
+						<th>  name  </th>
+						<th>   칵테일 설명   </th>
+						<th>   칵테일 레시피   </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cocktail : ${cocktail}">
+						<td th:text="${cocktail.no}"></td>
+						<td th:text="${cocktail.type}"></td>
+						<td th:text="${cocktail.name}"></td>
+						<td th:text="${cocktail.engName}"></td>
+						<td th:text="${cocktail.cocktailContents}"></td>
+						<td th:text="${cocktail.recipeContents}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+			<br><br>
+			<a th:href="@{/}">메인으로</a>
+			<a th:href="@{/cocktail/list}">칵테일 목록</a>
+		</div>
+	</div> <!-- /container -->
+	
+	<!-- footer -->
+	<div th:include="~{/includes/footer}"></div>
 </body>
 </html>

@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
+	<!-- header -->
+	<div th:include="~{/includes/header}"></div>
+	
 	<div class="form-container">
 		<form action="/cocktail/form" method="post">
 			<div class="form-group">
@@ -29,7 +32,9 @@
 			<br><br>
 			<button type="submit">등록</button>
 		</form>
-		
 	</div> <!-- /container -->
+	
+	<!-- footer -->
+	<div th:include="~{/includes/footer}"></div>
 </body>
 </html>
