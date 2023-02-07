@@ -2,18 +2,18 @@ package com.bitacademy.cocktail.controller;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.service.SignatureService;
 
-@Controller
+@RestController
 @RequestMapping("/signature")
 public class SignatureController {
 	private final SignatureService signatureService;
@@ -24,10 +24,10 @@ public class SignatureController {
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
-	public String list(Model model) {
+	public List<Signature> list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signature", signature);
-		return "signature/signatureList";
+		return signatureService.listSignature();
 	}
 	
 	/* 시그니처 글 작성폼 */
