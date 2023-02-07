@@ -1,7 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,8 +26,8 @@ public class CocktailImage {
 	
 	private String url;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cocktail_no")
-	private String cocktailNo;
+	private Cocktail cocktail;
 	
 }

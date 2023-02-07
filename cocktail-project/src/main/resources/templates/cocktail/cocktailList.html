@@ -22,6 +22,7 @@
 						<th>   name   </th>
 						<th>   칵테일 설명   </th>
 						<th>   칵테일 레시피   </th>
+						<th>   이미지   </th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,6 +35,7 @@
 						<td th:text="${cocktail.engName}"></td>
 						<td th:text="${cocktail.cocktailContents}"></td>
 						<td th:text="${cocktail.recipeContents}"></td>
+						<td th:text="${cocktail.cocktailImages.url}"></td>
 					</tr>
 				</tbody>
 			</table>
