@@ -20,9 +20,10 @@
 				<input type="text" id="cocktailName" name="cocktailName" th:value="${signature.cocktailName}">
 				<br><br>
 				
-				<input type="hidden" id="regDate" name="regDate" th:value="${signature.regDate}" readonly>
-				<input type="hidden" id="modDate" name="modDate" th:value="${signature.modDate}" readonly>
-
+				<input type="text" id="regDate" name="regDate" th:value="${signature.regDate}" readonly>
+				<input type="text" id="modDate" name="modDate" th:value="${signature.modDate}" readonly>
+				<br><br>
+				
 				<label for="cocktailContents">칵테일 설명 </label>
 				<textarea id="cocktailContents" name="cocktailContents" th:text="${signature.cocktailContents}"></textarea>
 				<br><br>
