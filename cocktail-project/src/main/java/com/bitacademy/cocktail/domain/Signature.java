@@ -1,7 +1,8 @@
 package com.bitacademy.cocktail.domain;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,11 +36,11 @@ public class Signature {
 	private String cocktailName;
 	
 	@Column(name = "reg_date", updatable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Instant regDate;
 	
 	@Column(name = "mod_date")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private Instant modDate;
 	
@@ -54,6 +55,11 @@ public class Signature {
 	
 	@PrePersist
     public void prePersist(){
+//		Instant instant = Instant.now();
+//    	ZoneId zone = ZoneId.systemDefault();
+//    	this.regDate = instant.atZone(zone);
+//    	this.modDate = instant.atZone(zone);
+		
 		this.regDate = Instant.now();
 		this.modDate = Instant.now();
     }
@@ -61,6 +67,16 @@ public class Signature {
     @PreUpdate
     public void preUpdate(){
     	this.modDate = Instant.now();
+    	
+//    	Instant instant = Instant.now();
+//    	ZoneId zone = ZoneId.systemDefault();
+//    	this.modDate = instant.atZone(zone);
     }
+    
+//    public void dateFormat() {
+//    	Instant instant = Instant.now();
+//    	ZoneId zone = ZoneId.systemDefault();
+//    	ZonedDateTime zonedDateTime = instant.atZone(zone); 
+//    }
 
 }

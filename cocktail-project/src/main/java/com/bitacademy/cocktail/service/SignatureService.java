@@ -52,13 +52,6 @@ public class SignatureService {
 	
 	/* 글 수정 */
 	public void modify(Signature signature) {
-		
-//		signature.setNickname(signature.getNickname());
-//		signature.setCocktailName(signature.getCocktailName());
-//		signature.setCocktailContents(signature.getCocktailContents());
-//		signature.setRecipeContents(signature.getRecipeContents());
-//		signature.setType(signature.getType());
-		
 		signatureRepository.save(signature);
 	}
 	

@@ -1,6 +1,6 @@
 package com.bitacademy.cocktail.service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 import javax.transaction.Transactional;
 
@@ -21,8 +21,8 @@ public class SignatureServiceTest {
 		Signature signature = Signature.builder()
 				.nickname("맹구")
 				.cocktailName("하와이안블루")
-				.regDate(LocalDateTime.now())
-				.modDate(LocalDateTime.now())
+				.regDate(Instant.now())
+				.modDate(Instant.now())
 				.cocktailContents("맹구의 하와이안 블루")
 				.recipeContents("빙글빙글")
 				.type("alcohol")
@@ -48,7 +48,7 @@ public class SignatureServiceTest {
 		Signature signature = signatureService.findSigView(1L);
 		signature.setCocktailContents("이것만 수정");
 		
-		signatureService.modify(no, signature);
+		signatureService.modify(signature);
 	}
 	
 	@Test
