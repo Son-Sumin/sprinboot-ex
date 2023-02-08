@@ -12,13 +12,13 @@ import com.bitacademy.cocktail.service.ReviewSignatureService;
 
 @Controller
 public class ReviewSignatureController {
-	
+
 	private final ReviewSignatureService reviewSignatureService;
-	
+
 	public ReviewSignatureController(ReviewSignatureService reviewSignatureService) {
 		this.reviewSignatureService = reviewSignatureService;
 	}
-	
+
 	/* 한 시그니처에 달린 댓글 리스트 */
 	@GetMapping("/view/{no}")
 	public String list(@PathVariable("no") Long no, Model model) {

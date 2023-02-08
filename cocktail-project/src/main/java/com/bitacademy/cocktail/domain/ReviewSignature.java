@@ -20,9 +20,9 @@ public class ReviewSignature extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
-	
+
 	private String nickname;
-	
+
 	private String contents;
 
 }

@@ -10,7 +10,7 @@ import com.bitacademy.cocktail.repository.TestRepository;
 @Transactional
 public class TestService {
 	private final TestRepository testRepository;
-	
+
 	private TestService(TestRepository testRepository) {
 		this.testRepository = testRepository;
 	}

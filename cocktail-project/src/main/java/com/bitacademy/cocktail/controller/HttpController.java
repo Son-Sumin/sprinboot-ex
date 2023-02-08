@@ -24,13 +24,13 @@
 //	public String cocktailForm() {
 //		return "cocktail/cocktailForm";
 //	}
-//	
+//
 //	/* 시그니처 글 작성폼 */
 //	@GetMapping("/signature/form")
 //	public String writeSignature() {
 //		return "signature/signatureForm";
 //	}
-//	
+//
 //	/* 시그니처 게시글 수정폼 */
 //	@GetMapping("/signature/modify/{no}")
 //	public String modify(@PathVariable("no") Long no, Model model) {

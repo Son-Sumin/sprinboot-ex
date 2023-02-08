@@ -13,9 +13,9 @@ package com.bitacademy.cocktail.repository;
 //@Repository
 //@Transactional
 //public class SignatureRepository1 {
-//	
+//
 //	private final EntityManager em;
-//	
+//
 //	public SignatureRepository1(EntityManager em) {
 //		this.em = em;
 //	}
@@ -29,7 +29,7 @@ package com.bitacademy.cocktail.repository;
 //		List<Signature> result = em.createQuery("select m from signature m", Signature.class).getResultList();
 //		return result;
 //	}
-//	
+//
 //	public Signature findByNo(Long no) {
 //		return em.find(Signature.class, no);
 //	}

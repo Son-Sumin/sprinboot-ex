@@ -9,7 +9,7 @@ import com.bitacademy.cocktail.service.TestService;
 @RequestMapping("/test")
 public class TestController {
 	private final TestService testService;
-	
+
 	private TestController(TestService testService) {
 		this.testService = testService;
 	}

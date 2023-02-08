@@ -10,7 +10,7 @@ import com.bitacademy.cocktail.repository.UserRepository;
 @Transactional
 public class UserService {
 	private final UserRepository userRepository;
-	
+
 	public UserService(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}

@@ -22,18 +22,18 @@
 						<th>   name   </th>
 						<th>   칵테일 설명   </th>
 						<th>   칵테일 레시피   </th>
+						<th>   이미지   </th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="cocktail : ${cocktail}">  <!-- "___ :  ${ }" : ${ } model 안에 있는 값 꺼내서 ___ 넣기 -->
 						<td th:text="${cocktail.no}"></td>
 						<td th:text="${cocktail.type}"></td>
-						<td>
-							<a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"></a>
-						</td>
+						<td><a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"></a></td>
 						<td th:text="${cocktail.engName}"></td>
 						<td th:text="${cocktail.cocktailContents}"></td>
 						<td th:text="${cocktail.recipeContents}"></td>
+						<td th:if="${cocktail.no == cocktail.cocktailImages.getCocktail(no)}" th:text="${cocktail.cocktailImages.url}"></td>
 					</tr>
 				</tbody>
 			</table>

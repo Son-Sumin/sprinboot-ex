@@ -13,7 +13,7 @@ import com.bitacademy.cocktail.repository.ReviewSignatureRepository;
 @Transactional
 public class ReviewSignatureService {
 private final ReviewSignatureRepository reviewSignatureRepository;
-	
+
 	public ReviewSignatureService(ReviewSignatureRepository reviewSignatureRepository) {
 		this.reviewSignatureRepository = reviewSignatureRepository;
 	}

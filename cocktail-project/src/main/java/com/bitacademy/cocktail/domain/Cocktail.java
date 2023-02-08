@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,25 +28,26 @@ public class Cocktail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
-	
+
 	private String type;
-	
+
 	private String name;
-	
+
 	@Column(name = "eng_name")
 	private String engName;
-	
+
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
-	
+
 	@Column(name = "recipe_contents")
 	private String recipeContents;
-	
-//	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
-//	private List<CocktailImage> cocktailImages = new ArrayList<>();
-//	
-//	public void addCocktailImage(CocktailImage cocktailImage){
-//		cocktailImage.setCocktail(this);
-//      getCocktailImages().add(cocktailImage);
-//    }
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<CocktailImage> cocktailImages = new ArrayList<>();
+
+	public void addCocktailImage(CocktailImage cocktailImage){
+		this.cocktailImages.add(cocktailImage);
+		cocktailImage.setCocktail(this);
+    }
 }

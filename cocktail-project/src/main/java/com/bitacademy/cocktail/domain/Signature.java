@@ -25,36 +25,36 @@ public class Signature extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
-	
+
 	private String nickname;
-	
+
 	@Column(name = "cocktail_name")
 	private String cocktailName;
-	
+
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
-	
+
 	@Column(name = "recipe_contents")
 	private String recipeContents;
-	
+
 	private String type;
-	
+
 }
 
 
 
 
-	
+
 //	@Column(name = "reg_date", updatable = false)
 //	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 //	private Instant regDate;
-//	
+//
 //	@Column(name = "mod_date")
 //	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 //	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 //	private Instant modDate;
-	
-	
+
+
 //	@PrePersist
 //    public void prePersist(){
 //		this.regDate = Instant.now();
@@ -65,9 +65,9 @@ public class Signature extends BaseTimeEntity {
 //    public void preUpdate(){
 //    	this.modDate = Instant.now();
 //    }
-    
+
 //    public void dateFormat() {
 //    	Instant instant = Instant.now();
 //    	ZoneId zone = ZoneId.systemDefault();
-//    	ZonedDateTime zonedDateTime = instant.atZone(zone); 
+//    	ZonedDateTime zonedDateTime = instant.atZone(zone);
 //    }

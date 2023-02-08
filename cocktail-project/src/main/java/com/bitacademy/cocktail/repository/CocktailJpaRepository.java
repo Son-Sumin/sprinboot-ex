@@ -11,9 +11,9 @@ package com.bitacademy.cocktail.repository;
 //
 //@Repository
 //public class CocktailRepository1 {
-//	
+//
 //	private final EntityManager em;
-//	
+//
 //	public CocktailRepository1(EntityManager em) {
 //		this.em = em;
 //	}

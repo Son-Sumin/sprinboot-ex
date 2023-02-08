@@ -16,7 +16,7 @@ import lombok.Getter;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseTimeEntity {
-	
+
 	@CreatedDate
 	@Column(name = "reg_date", updatable = false)
     private LocalDateTime createdDate;

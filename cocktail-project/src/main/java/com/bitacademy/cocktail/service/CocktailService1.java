@@ -13,18 +13,18 @@
 //@Service
 //@Transactional
 //public class CocktailService1 {
-//	
+//
 //	private final CocktailRepository cocktailRepository;
-//	
+//
 //	public CocktailService1(CocktailRepository cocktailRepository) {
 //		this.cocktailRepository = cocktailRepository;
 //	}
-//	
-//	@ModelAttribute 
+//
+//	@ModelAttribute
 //	public Cocktail add(Cocktail cocktail) {
 //		return cocktailRepository.save(cocktail);
 //	}
-//	
+//
 //	public List<Cocktail> listCocktail() {
 //		return cocktailRepository.findAll();
 //	}

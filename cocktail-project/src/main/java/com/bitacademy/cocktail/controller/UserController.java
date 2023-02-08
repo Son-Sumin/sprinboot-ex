@@ -8,9 +8,9 @@ import com.bitacademy.cocktail.service.UserService;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-	
+
 	private final UserService userService;
-	
+
 	private UserController(UserService userService) {
 		this.userService = userService;
 	}

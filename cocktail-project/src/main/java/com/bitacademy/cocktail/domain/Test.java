@@ -1,7 +1,5 @@
 package com.bitacademy.cocktail.domain;
 
-import java.time.Instant;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Test {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
-	
+
 	private String name;
-	
+
 }
