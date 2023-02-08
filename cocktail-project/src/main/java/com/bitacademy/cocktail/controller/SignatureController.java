@@ -40,11 +40,11 @@ public class SignatureController {
 		return "signature/signatureList";
 	}
 
-//	/* 시그니처 글 작성폼 */
-//	@GetMapping("/form")
-//	public String writeSignature() {
-//		return "signature/signatureForm";
-//	}
+	/* 시그니처 글 작성폼 */
+	@GetMapping("/form")
+	public String writeSignature() {
+		return "signature/signatureForm";
+	}
 
 	/* 시그니처 글 작성 */
 	@PostMapping("/form")

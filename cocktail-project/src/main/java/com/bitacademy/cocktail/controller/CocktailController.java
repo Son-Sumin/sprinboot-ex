@@ -59,4 +59,3 @@ public class CocktailController {
 		return "cocktail/cocktailView";
 	}
 }
-

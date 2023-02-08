@@ -11,21 +11,25 @@ table, th, td {
     padding: 5px;
 }
 
-.form-group {
-    width : 300px;
+td, tr {
+	height : 10px;
+	width : 80px;
+}
+
+.form-container {
+    width : 500px;
     margin : 0 auto;
     margin-top : 60px;
-    justify-content: center;
 }
 
 button[type="submit"] {
 	margin : 0 auto;
 	display: flex;
-    justify-content: center;
 }
 
 input[type="radio"] {
 	display: inline-block;
 	width: 100px;
  	margin: 3px;
+ 	justify-content: center;
 }

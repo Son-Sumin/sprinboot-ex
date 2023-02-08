@@ -27,6 +27,6 @@ public class CocktailImage {
 
 	@ManyToOne
 	@JoinColumn(name = "cocktail_no", insertable = false, updatable = false)
-	private Cocktail cocktailNo;
+	private Cocktail cocktail;
 
 }

@@ -15,11 +15,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity(name="cocktail")
-@Data
+@ToString(exclude = "cocktailImages")
+@Getter @Setter 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,10 +47,12 @@ public class Cocktail {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+	//private CocktailImage cocktailImages;
+	
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
 		this.cocktailImages.add(cocktailImage);
-		cocktailImage.setCocktailNo(this);
+		cocktailImage.setCocktail(this);
     }
 }
