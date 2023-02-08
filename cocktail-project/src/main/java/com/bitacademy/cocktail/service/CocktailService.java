@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.bitacademy.cocktail.domain.Cocktail;
-import com.bitacademy.cocktail.repository.CocktailImageRepository;
 import com.bitacademy.cocktail.repository.CocktailRepository;
 
 
@@ -16,11 +15,9 @@ import com.bitacademy.cocktail.repository.CocktailRepository;
 public class CocktailService {
 
 	private final CocktailRepository cocktailRepository;
-	private final CocktailImageRepository cocktailImageRepository;
 
-	public CocktailService(CocktailRepository cocktailRepository, CocktailImageRepository cocktailImageRepository) {
+	public CocktailService(CocktailRepository cocktailRepository) {
 		this.cocktailRepository = cocktailRepository;
-		this.cocktailImageRepository = cocktailImageRepository;
 	}
 
 	@ModelAttribute

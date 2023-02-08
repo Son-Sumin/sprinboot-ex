@@ -1,18 +1,21 @@
-package com.bitacademy.cocktail.service;
+// 사용 X
 
-import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
-
-import com.bitacademy.cocktail.repository.TestRepository;
-
-@Service
-@Transactional
-public class TestService {
-	private final TestRepository testRepository;
-
-	private TestService(TestRepository testRepository) {
-		this.testRepository = testRepository;
-	}
-
-}
+//package com.bitacademy.cocktail.service;
+//
+//import javax.transaction.Transactional;
+//
+//import org.springframework.stereotype.Service;
+//
+//import com.bitacademy.cocktail.repository.TestRepository;
+//
+//@Service
+//@Transactional
+//public class TestService {
+//	private final TestRepository testRepository;
+//
+//	private TestService(TestRepository testRepository) {
+//		this.testRepository = testRepository;
+//	}
+//
+//}
