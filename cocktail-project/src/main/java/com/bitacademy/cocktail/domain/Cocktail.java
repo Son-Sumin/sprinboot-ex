@@ -45,10 +45,10 @@ public class Cocktail {
 	@Column(name = "recipe_contents")
 	private String recipeContents;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+	//@JsonIgnore
 	//private CocktailImage cocktailImages;
 	
+	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
