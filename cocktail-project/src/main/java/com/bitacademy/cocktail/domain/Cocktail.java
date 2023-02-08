@@ -40,11 +40,11 @@ public class Cocktail {
 	@Column(name = "recipe_contents")
 	private String recipeContents;
 	
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<CocktailImage> cocktailImages = new ArrayList<>();
-	
-	public void addCocktailImage(CocktailImage cocktailImage){
-		cocktailImage.setCocktail(this);
-        getCocktailImages().add(cocktailImage);
-    }
+//	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+//	private List<CocktailImage> cocktailImages = new ArrayList<>();
+//	
+//	public void addCocktailImage(CocktailImage cocktailImage){
+//		cocktailImage.setCocktail(this);
+//      getCocktailImages().add(cocktailImage);
+//    }
 }

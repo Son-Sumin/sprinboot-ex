@@ -26,8 +26,8 @@ public class CocktailImage {
 	
 	private String url;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "cocktail_no")
-	private Cocktail cocktail;
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	@JoinColumn(name = "cocktail_no", insertable = false, updatable = false)
+//	private Cocktail cocktail;
 	
 }
