@@ -8,5 +8,5 @@ import com.bitacademy.cocktail.domain.CocktailImage;;
 @Repository
 public interface CocktailImageRepository extends JpaRepository<CocktailImage, Long> {
 
-
+	CocktailImage findByCocktailNo(Long no);
 }

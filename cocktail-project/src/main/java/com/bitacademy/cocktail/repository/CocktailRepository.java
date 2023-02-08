@@ -13,9 +13,9 @@ public interface CocktailRepository extends JpaRepository<Cocktail, Long> {
 
 	Cocktail findByNo(Long no);
 
-	@Override
-	@Query("select a.*, b.url"
-			+ " from cocktail a, cocktailimage"
-			+ " where a.no = b.cocktail_no")
+	@Query(value = "select c, a.url "
+			+ "from cocktail c, cocktailImage a "
+			+ "where c.no = a.cocktail_no",
+			nativeQuery = true)
 	List<Cocktail> findAll();
 }

@@ -48,6 +48,6 @@ public class Cocktail {
 
 	public void addCocktailImage(CocktailImage cocktailImage){
 		this.cocktailImages.add(cocktailImage);
-		cocktailImage.setCocktail(this);
+		cocktailImage.setCocktailNo(this);
     }
 }

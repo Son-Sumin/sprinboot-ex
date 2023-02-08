@@ -26,6 +26,7 @@ public class CocktailController {
 	public String list(Model model) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
 		model.addAttribute("cocktail", cocktail);
+		
 		return "cocktail/cocktailList";
 	}
 
