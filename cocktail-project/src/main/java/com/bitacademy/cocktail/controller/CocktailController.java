@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bitacademy.cocktail.domain.Cocktail;
-import com.bitacademy.cocktail.service.CocktailService;
+import com.bitacademy.cocktail.service.CocktailService1;
 
 @RestController
 @RequestMapping("/cocktail")
 public class CocktailController {
-	private final CocktailService cocktailService;
+	private final CocktailService1 cocktailService;
 	
-	private CocktailController(CocktailService cocktailService) {
+	private CocktailController(CocktailService1 cocktailService) {
 		this.cocktailService = cocktailService;
 	}
 	
