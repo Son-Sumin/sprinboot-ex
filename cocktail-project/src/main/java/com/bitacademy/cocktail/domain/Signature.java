@@ -1,10 +1,13 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
 
@@ -38,6 +41,9 @@ public class Signature extends BaseTimeEntity {
 	private String recipeContents;
 
 	private String type;
+	
+	@OneToMany(mappedBy = "signature")
+	private List<ReviewSignature> reviewSignature;
 
 }
 

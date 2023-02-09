@@ -17,24 +17,24 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/signature")
+//@RequestMapping("/signature")
 public class ReviewSignatureController {
 
 	/* ReviewSignatureService 생성자 주입 */
 	private final ReviewSignatureService reviewSignatureService;
 
-	/* 한 시그니처에 달린 댓글 리스트 */
-	@GetMapping("/view/{no}")
-	public String list(@PathVariable("no") Long no, Model model) {
-		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature();
-		model.addAttribute("reviewSignature", reviewSignature);
-		return "signature/signatureView";
-	}
+//	/* 한 시그니처에 달린 댓글 리스트 */
+//	@GetMapping("/view/{no}")
+//	public String list(@PathVariable("no") Long no, Model model) {
+//		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature();
+//		model.addAttribute("reviewSignature", reviewSignature);
+//		return "signature/signatureView";
+//	}
 	
 	/* 시그니처 글 작성 */
 	@PostMapping("/view/{no}")
 	public String writeReviewSig(
-			@PathVariable("no") Long no,
+			@PathVariable("no") Long cocktail_no,
 			@ModelAttribute ReviewSignature reviewSignature) {
 		reviewSignatureService.add(reviewSignature);
 		return "redirect:/signature";
