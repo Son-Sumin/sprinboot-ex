@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
@@ -16,22 +17,18 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-//@RequestMapping("/comments")
+@RequestMapping("/signature")
 public class ReviewSignatureController {
 
 	/* ReviewSignatureService 생성자 주입 */
 	private final ReviewSignatureService reviewSignatureService;
 	
 	/* 시그니처 댓글 작성 */
-	@PostMapping("/signature/view/{no}")
+	@PostMapping("/review/{no}")
 	public String addReviewSig(
-			@PathVariable("no") Long signature_no,
+			@PathVariable("no") Long no,
 			@ModelAttribute ReviewSignature reviewSignature) {
-		
-		reviewSignatureService.add(signature_no, reviewSignature);
-		
-		//System.out.println(signature_no);
-		System.out.println(reviewSignature);
+		reviewSignatureService.add(no, reviewSignature);
 		return "redirect:/signature";
 		
 		
@@ -42,9 +39,9 @@ public class ReviewSignatureController {
 	}
 
 	/* 한 시그니처에 달린 댓글 리스트 */
-	@GetMapping("/signature/view/{no}")
-	public String list(@PathVariable("no") Long signature_no, Model model) {
-		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(signature_no);
+	@GetMapping("/view/{no}")
+	public String list(@PathVariable("no") Long no, Model model) {
+		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
 		model.addAttribute("reviewSignature", reviewSignature);
 		return "signature/signatureView";
 	}

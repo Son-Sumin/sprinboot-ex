@@ -25,16 +25,16 @@ public class ReviewSignatureService {
 	private final ReviewSignatureRepository reviewSignatureRepository;
 
 	/* 해당 시그니처 게시글 리스트 */
-	public List<ReviewSignature> listReviewSignature(@Param("no") Long signature_no) {
-		return reviewSignatureRepository.findBySignatureNo(signature_no);
+	public List<ReviewSignature> listReviewSignature(@Param("no") Long no) {
+		return reviewSignatureRepository.findBySignatureNo(no);
 	}
 	
 	/* 시그니처 댓글 작성 */
 	public void add(
-			Long signature_no,
+			Long no,
 			@ModelAttribute ReviewSignature form) {		
 		
-		Signature signature = signatureRepository.findByNo(signature_no);
+		Signature signature = signatureRepository.findByNo(no);
 		ReviewSignature reviewSignature = new ReviewSignature();
 		
 		reviewSignature.setNickname(form.getNickname());

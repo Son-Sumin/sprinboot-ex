@@ -47,9 +47,7 @@
 		
 		<!-- 댓글등록 폼 -->
 		<div class="review-container">
-			<form action="@{/signature/view/{no}(no= ${signature.no})}" method="post">
-			
-				
+			<form action="@{/signature/review/{no}(no= ${signature.no})}" method="post">
 				
 				<label for="nickname">닉네임 </label>
 				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
@@ -82,9 +80,11 @@
 						<td th:text="${reviewSignature.nickname}"></td>
 						<td th:text="${#temporals.format(reviewSignature.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
-						<td><button>신고</button><span> | </span>
-            <button>삭제</button></td>
 					</tr>
+					<br><br>
+					
+					<button>신고</button><span> | </span>
+           			<button>삭제</button>
 				</tbody>
 			</table>
 			<br><br>

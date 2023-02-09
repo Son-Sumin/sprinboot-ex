@@ -11,10 +11,10 @@ import com.bitacademy.cocktail.domain.ReviewSignature;
 
 public interface ReviewSignatureRepository extends JpaRepository<ReviewSignature, Long> {
 	
-	@Query(value = "select r from ReviewSignature as r "
-			+ "where r.signature.no = : r.signature_no and r.no > 0 "
-			+ "order by r.no asc",
-			nativeQuery = true)
-	List<ReviewSignature> findBySignatureNo(@Param("no") Long signature_no);
+//	@Query(value = "select r from ReviewSignature as r "
+//			+ "where r.signature.no = : r.signature_no and r.no > 0 "
+//			+ "order by r.no asc",
+//			nativeQuery = true)
+	List<ReviewSignature> findBySignatureNo(@Param("no") Long signatureNo);
 
 }
