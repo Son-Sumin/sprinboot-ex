@@ -7,14 +7,18 @@ import javax.persistence.Id;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity(name="reviewSignature")
 @Data
 @Builder
 @EqualsAndHashCode(callSuper=false)
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReviewSignature extends BaseTimeEntity {
 
 	@Id

@@ -9,7 +9,7 @@
 	<!-- header -->
 	<div th:include="~{/includes/header}"></div>
 
-	<div class="container">
+	<div class="form-container">
 		<div>
 			<table>
 				<thead>
@@ -37,8 +37,51 @@
 			</table>
 			<br><br>
 			<a th:href="@{/signature/modify/{no}(no= ${signature.no})}">글수정</a>
-			<a th:href="@{/signature/reply(no= ${signature.no})}">답글</a>
 			<a th:href="@{/signature/delete/{no}(no= ${signature.no})}">삭제</a>
+			<a th:href="@{/signature/list}">시그니처 목록</a>
+		</div>
+		
+		<br><br>
+		#############################################################################
+		<br><br>
+		
+		<!-- 댓글등록 폼 -->
+		<div class="review-container">
+			<form action="/signature/view(no= ${signature.no}" method="post">
+			
+				<label for="nickname">닉네임 </label>
+				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
+				<br><br>
+				
+				<label for="contents">내용 </label>
+				<textarea id="contents" name="contents" placeholder="내용을 입력하시오"></textarea>
+				<br><br>
+				<button type="submit">댓글 등록</button>
+			</form>
+		</div>
+		<br><br>
+		
+		<!-- 해당 게시글 댓글 리스트 -->
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>번호  </th>
+						<th>   닉네임   </th>
+						<th>  작성일자  </th>
+						<th>   댓글내용   </th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="reviewSignature : ${reviewSignature}">
+						<td th:text="${reviewSignature.no}"></td>
+						<td th:text="${reviewSignature.nickname}"></td>
+						<td th:text="${#temporals.format(reviewSignature.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td th:text="${reviewSignature.contents}"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div> <!-- /container -->
 	

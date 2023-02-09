@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 
-@Repository
 public interface ReviewSignatureRepository extends JpaRepository<ReviewSignature, Long> {
 
 }

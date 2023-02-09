@@ -25,13 +25,6 @@ public class SignatureController {
 	private final SignatureService signatureService;
 	private final ReviewSignatureService reviewSignatureService;
 
-//	private SignatureController(
-//			SignatureService signatureService,
-//			ReviewSignatureService reviewSignatureService) {
-//		this.signatureService = signatureService;
-//		this.reviewSignatureService = reviewSignatureService;
-//	}
-
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
 	public String list(Model model) {
@@ -67,13 +60,13 @@ public class SignatureController {
 		return "redirect:/signature/list";
 	}
 
-//	/* 시그니처 게시글 수정폼 */
-//	@GetMapping("/modify/{no}")
-//	public String modify(@PathVariable("no") Long no, Model model) {
-//		// 기존 글 담아오기
-//		model.addAttribute("signature", signatureService.findSigView(no));
-//		return "signature/signatureModify";
-//	}
+	/* 시그니처 게시글 수정폼 */
+	@GetMapping("/modify/{no}")
+	public String modify(@PathVariable("no") Long no, Model model) {
+		// 기존 글 담아오기
+		model.addAttribute("signature", signatureService.findSigView(no));
+		return "signature/signatureModify";
+	}
 
 	/* 시그니처 게시글 수정 */
 	@PostMapping("/modify/{no}")
