@@ -31,8 +31,8 @@
 						<td th:text="${cocktail.engName}"></td>
 						<td th:text="${cocktail.cocktailContents}"></td>
 						<td th:text="${cocktail.recipeContents}"></td>
-						<td th:text="${cocktail.cocktailImages}")>
-						</td>
+						<td th:if="${cocktail.cocktailImages[0].url.length > 0}"
+							th:text="${cocktail.cocktailImages[0].url}")></td>
 					</tr>
 				</tbody>
 			</table>

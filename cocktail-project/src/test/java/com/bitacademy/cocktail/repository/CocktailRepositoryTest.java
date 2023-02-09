@@ -8,7 +8,4 @@ public class CocktailRepositoryTest {
 
 	@Autowired
 	private CocktailRepository cocktailRepository;
-
-	@Autowired
-	private CocktailImageRepository cocktailImageRepository;
 }

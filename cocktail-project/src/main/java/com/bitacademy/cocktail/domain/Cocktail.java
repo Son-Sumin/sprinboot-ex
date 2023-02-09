@@ -44,9 +44,6 @@ public class Cocktail {
 
 	@Column(name = "recipe_contents")
 	private String recipeContents;
-
-	//@JsonIgnore
-	//private CocktailImage cocktailImages;
 	
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
@@ -55,4 +52,15 @@ public class Cocktail {
 		this.cocktailImages.add(cocktailImage);
 		cocktailImage.setCocktail(this);
     }
+	
+	public Cocktail(Cocktail cocktail) {
+		no = cocktail.getNo();
+		type = cocktail.getType();
+		name = cocktail.getName();
+		engName = cocktail.getEngName();
+		cocktailContents = cocktail.getCocktailContents();
+		recipeContents = cocktail.getRecipeContents();
+		cocktail.getCocktailImages().stream().forEach(i -> i.getUrl());
+		cocktailImages = cocktail.getCocktailImages();
+	}
 }
