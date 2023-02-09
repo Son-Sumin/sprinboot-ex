@@ -53,9 +53,4 @@ public class SignatureService {
 		signatureRepository.save(signature);
 	}
 
-
-//	public void modify(Signature signature) {
-//		signatureRepository.save(signature);
-//	}
-
 }

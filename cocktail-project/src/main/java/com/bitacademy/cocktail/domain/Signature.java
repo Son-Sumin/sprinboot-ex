@@ -8,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,6 +45,8 @@ public class Signature extends BaseTimeEntity {
 	private String type;
 	
 	@OneToMany(mappedBy = "signature")
+	@JsonIgnoreProperties({"signature"})
+	@OrderBy("no asc")
 	private List<ReviewSignature> reviewSignature;
 
 }

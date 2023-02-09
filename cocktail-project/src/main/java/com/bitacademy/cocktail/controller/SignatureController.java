@@ -75,10 +75,10 @@ public class SignatureController {
 		return "redirect:/signature";
 	}
 
-	/* 시그니처 게시글 답글 달기 */
-	@GetMapping("/reply")
-	public String reply(Long no, Model model) {
-		model.addAttribute("signature", signatureService.findSigView(no));
-		return "signatureView";
-	}
+//	/* 시그니처 게시글 답글 달기 */
+//	@GetMapping("/reply")
+//	public String reply(Long no, Model model) {
+//		model.addAttribute("signature", signatureService.findSigView(no));
+//		return "signatureView";
+//	}
 }
