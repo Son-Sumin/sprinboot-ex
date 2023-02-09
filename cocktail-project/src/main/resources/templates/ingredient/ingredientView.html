@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>Ingredient View</title>
+	<link rel="stylesheet" th:href="@{/css/cocktail.css}">
+</head>
+<body>
+	<div class="form-container">
+		<!-- header -->
+		<div th:include="~{/includes/header}"></div>
+		
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>   이름   </th>
+						<th>   name   </th>
+						<th>  종류  </th>
+						<th>   도수   </th>
+						<th>   이미지   </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="ingredient : ${ingredient}">
+						<td th:text="${ingredient.no}"></td>
+						<td><a th:text="${ingredient.name}"></a></td>
+						<td th:text="${ingredient.engName}"></td>
+						<td th:text="${ingredient.type}"></td>
+						<td th:text="${ingredient.degree}"></td>
+						<td th:text="${ingredient.image}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br><br>
+			<a th:href="@{/}">메인으로</a>
+			<a th:href="@{/ingredient/list}">칵테일 목록</a>
+		</div>
+	</div> <!-- /container -->
+	
+	<!-- footer -->
+	<div th:include="~{/includes/footer}"></div>
+</body>
+</html>
