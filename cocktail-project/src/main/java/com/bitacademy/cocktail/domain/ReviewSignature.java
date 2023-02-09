@@ -32,23 +32,23 @@ public class ReviewSignature extends BaseTimeEntity {
 	
 	@ManyToOne
     @JoinColumn(name = "signature_no", insertable=false, updatable=false)
-    private Signature signature;
+    private Signature signatureNo;
 	
-	@Builder
-    public ReviewSignature(String nickname, String contents, Signature signature) {
-        this.nickname = nickname;
-        this. contents =  contents;
-        if(this.signature != null) {
-        	signature.getReviewSignature().remove(this);
-        } else
-            this.signature = signature;
-    }
-	
-	public ReviewSignature toEntity() {
-		return ReviewSignature.builder()
-				.nickname(nickname)
-				.contents(contents)
-				.signature(signature)
-				.build();
-	}
+//	@Builder
+//    public ReviewSignature(String nickname, String contents, Signature signature) {
+//        this.nickname = nickname;
+//        this. contents =  contents;
+//        if(this.signature != null) {
+//        	signature.getReviewSignature().remove(this);
+//        } else
+//            this.signature = signature;
+//    }
+//	
+//	public ReviewSignature toEntity() {
+//		return ReviewSignature.builder()
+//				.nickname(nickname)
+//				.contents(contents)
+//				.signature(signature)
+//				.build();
+//	}
 }
