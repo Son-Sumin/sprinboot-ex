@@ -23,8 +23,7 @@ public class SignatureController {
 
 	/* SignatureService, ReviewSignatureService 생성자 주입 */
 	private final SignatureService signatureService;
-	private final ReviewSignatureService reviewSignatureService;
-
+	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
 	public String list(Model model) {

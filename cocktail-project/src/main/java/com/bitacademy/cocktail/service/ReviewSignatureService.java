@@ -1,9 +1,11 @@
 package com.bitacademy.cocktail.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -18,26 +20,27 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 @RequiredArgsConstructor
 public class ReviewSignatureService {
+	
 	private final SignatureRepository signatureRepository;
 	private final ReviewSignatureRepository reviewSignatureRepository;
 
 	/* 해당 시그니처 게시글 리스트 */
-	public List<ReviewSignature> listReviewSignature() {
-		return reviewSignatureRepository.findAll();
+	public List<ReviewSignature> listReviewSignature(@Param("no") Long signature_no) {
+		return reviewSignatureRepository.findBySignatureNo(signature_no);
 	}
 	
-	/* 댓글 작성 */
+	/* 시그니처 댓글 작성 */
 	public void add(
-			@ModelAttribute ReviewSignature form,
-			Long signatureNo) {
+			Long signature_no,
+			@ModelAttribute ReviewSignature form) {		
 		
-		Signature findSignature = signatureRepository.findByNo(signatureNo);
+		Signature signature = signatureRepository.findByNo(signature_no);
 		ReviewSignature reviewSignature = new ReviewSignature();
 		
 		reviewSignature.setNickname(form.getNickname());
 		reviewSignature.setContents(form.getContents());
+		reviewSignature.updateSignature(signature);
 		
-		reviewSignature.setSignatureNo(findSignature);
 		reviewSignatureRepository.save(reviewSignature);
 	}
 	

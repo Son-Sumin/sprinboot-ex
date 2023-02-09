@@ -44,9 +44,9 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	@OneToMany(mappedBy = "signatureNo")
-	@JsonIgnoreProperties({"signatureNo"})
-	@OrderBy("no asc")
+	@OneToMany(mappedBy = "signature")
+	@JsonIgnoreProperties({"signature"})
+	@OrderBy("no desc")
 	private List<ReviewSignature> reviewSignature;
 
 }

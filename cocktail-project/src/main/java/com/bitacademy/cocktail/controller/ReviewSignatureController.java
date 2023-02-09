@@ -10,35 +10,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
-import com.bitacademy.cocktail.repository.ReviewSignatureRepository;
-import com.bitacademy.cocktail.repository.SignatureRepository;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
-import com.bitacademy.cocktail.service.SignatureService;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
+//@RequestMapping("/comments")
 public class ReviewSignatureController {
 
-	/* SignatureService, ReviewSignatureService 생성자 주입 */
+	/* ReviewSignatureService 생성자 주입 */
 	private final ReviewSignatureService reviewSignatureService;
-
-	/* 한 시그니처에 달린 댓글 리스트 */
-	@GetMapping("/view/{no}")
-	public String list(@PathVariable("no") Long no, Model model) {
-		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature();
-		model.addAttribute("reviewSignature", reviewSignature);
-		return "signature/signatureView";
-	}
 	
 	/* 시그니처 댓글 작성 */
 	@PostMapping("/signature/view/{no}")
-	public String writeReviewSig(
-			@PathVariable("no") Long signatureNo,
+	public String addReviewSig(
+			@PathVariable("no") Long signature_no,
 			@ModelAttribute ReviewSignature reviewSignature) {
-
-		reviewSignatureService.add(reviewSignature, signatureNo);
+		
+		reviewSignatureService.add(signature_no, reviewSignature);
+		
+		//System.out.println(signature_no);
+		System.out.println(reviewSignature);
 		return "redirect:/signature";
 		
 		
@@ -47,4 +40,21 @@ public class ReviewSignatureController {
 		//reviewSignatureService.add(signature_no, reviewSignature, model);
 		//return "redirect:/signature";
 	}
+
+	/* 한 시그니처에 달린 댓글 리스트 */
+	@GetMapping("/signature/view/{no}")
+	public String list(@PathVariable("no") Long signature_no, Model model) {
+		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(signature_no);
+		model.addAttribute("reviewSignature", reviewSignature);
+		return "signature/signatureView";
+	}
+	
+
+	
+//	/* 시그니처 댓글 삭제 */
+//	@GetMapping("/delete/{no}")
+//	public String delete(@PathVariable("no") Long no) {
+//		reviewSignatureService.delete(no);
+//		return "redirect:/signature/list";
+//	}
 }
