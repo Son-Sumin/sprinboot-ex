@@ -11,7 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -46,11 +48,10 @@ public class Cocktail {
 	private String recipeContents;
 	
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonIgnore
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
-		this.cocktailImages.add(cocktailImage);
+		cocktailImages.add(cocktailImage);
 		cocktailImage.setCocktail(this);
     }
 	

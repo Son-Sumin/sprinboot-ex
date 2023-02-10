@@ -10,22 +10,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Cocktail;
+import com.bitacademy.cocktail.domain.CocktailImage;
+import com.bitacademy.cocktail.service.CocktailImageService;
 import com.bitacademy.cocktail.service.CocktailService;
+
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/cocktail")
+@RequiredArgsConstructor
 public class CocktailController {
+	
+	/* CocktailService, CocktailImageService 생성자 주입 */
 	private final CocktailService cocktailService;
-
-	private CocktailController(CocktailService cocktailService) {
-		this.cocktailService = cocktailService;
-	}
+	private final CocktailImageService cocktailImageService;
 
 	/* 칵테일 목록 */
 	@GetMapping({"", "/list"})
-	public String list(Model model) {
+	public String list(Model model, Long no) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
+		List<CocktailImage> cocktailImageUrl = cocktailImageService.listCocktailImageUrl(no);
 		model.addAttribute("cocktail", cocktail);
+		model.addAttribute("cocktailImageUrl", cocktailImageUrl);
+		
+		System.out.println(cocktail+"**********************************");
+		System.out.println(cocktailImageUrl+"**********************************");
 		
 		return "cocktail/cocktailList";
 	}
