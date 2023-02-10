@@ -24,7 +24,7 @@ public class ReviewSignatureService {
 	
 	private final ReviewSignatureRepository reviewSignatureRepository;
 
-	/* 해당 시그니처 게시글 리스트 */
+	/* 해당 시그니처 게시글 댓글 리스트 */
 	public List<ReviewSignature> listReviewSignature(@PathVariable("no") Long no) {
 		return reviewSignatureRepository.findBySignatureNo(no);
 	}
