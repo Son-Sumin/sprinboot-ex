@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -98,14 +99,13 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
-	@GetMapping("/review/delete/{reviewNo}")
+	@GetMapping("/view/{no}/review/delete/{reviewNo}")
 	public String deleteReviewSig(
+			@PathVariable("no") Signature no,
 			@PathVariable("reviewNo") Long reviewNo,
-			@ModelAttribute ReviewSignature reviewSignature,
-			@RequestParam("no") Signature signature_no) {
+			@RequestBody ReviewSignature reviewSignature) {
 		reviewSignatureService.delete(reviewNo);
-		return "redirect:/signature/view?no=" + signature_no;
-
+		return "redirect:/signature/view/" + no;
 	}
 
 }
