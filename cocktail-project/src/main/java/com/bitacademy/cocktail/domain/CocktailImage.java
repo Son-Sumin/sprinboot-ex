@@ -35,5 +35,5 @@ public class CocktailImage {
 	@JoinColumn(name = "cocktail_no", insertable = false, updatable = false)
 	@JsonIgnore
 	private Cocktail cocktail;
-
+	
 }
