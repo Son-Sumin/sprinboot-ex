@@ -90,15 +90,17 @@ public class SignatureController {
 			@ModelAttribute ReviewSignature reviewSignature) {
 		reviewSignature.setSignature(no);
 		reviewSignatureService.add(reviewSignature);
-		return "redirect:/signature";
+		return "redirect:/signature/view?no=" + no;
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
 	@GetMapping("/review/delete/{reviewNo}")
 	public String deleteReviewSig(
-			@PathVariable("reviewNo") Long reviewNo) {
+			@PathVariable("reviewNo") Long reviewNo,
+			@ModelAttribute ReviewSignature reviewSignature,
+			@RequestParam("no") Signature no) {
 		reviewSignatureService.delete(reviewNo);
-		return "redirect:/signature";
+		return "redirect:/signature/view?no=" + no;
 
 	}
 

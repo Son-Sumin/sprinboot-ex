@@ -46,6 +46,7 @@ public class Cocktail {
 	private String recipeContents;
 	
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonIgnore
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){

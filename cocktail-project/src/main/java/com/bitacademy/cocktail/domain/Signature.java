@@ -2,6 +2,7 @@ package com.bitacademy.cocktail.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,7 +45,7 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	@OneToMany(mappedBy = "signature")
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	@OrderBy("no desc")
 	private List<ReviewSignature> reviewSignature;

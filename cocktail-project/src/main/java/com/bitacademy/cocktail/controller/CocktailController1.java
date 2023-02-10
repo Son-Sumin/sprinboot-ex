@@ -26,7 +26,7 @@
 //	public List<Cocktail> list(Model model) {
 //		List<Cocktail> cocktail = cocktailService.listCocktail();
 //		model.addAttribute("cocktail", cocktail);
-//		//return "cocktail/cocktailList";
+//
 //		return cocktailService.listCocktail();
 //	}
 //
@@ -50,7 +50,6 @@
 //
 //		cocktailService.add(cocktail);
 //		return cocktailService.listCocktail();
-//		//return "redirect:/";
 //	}
 //
 //	/* 칵테일 게시글 보기 */
@@ -58,7 +57,6 @@
 //	public Cocktail view(Long no, Model model) {
 //		model.addAttribute("cocktail", cocktailService.findSigView(no));
 //		return cocktailService.findSigView(no);
-//		// return "cocktail/cocktailView";
 //	}
 //}
 //
