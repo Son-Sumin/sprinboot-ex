@@ -12,20 +12,20 @@
 //
 //@Service
 //@Transactional
-//public class CocktailService1 {
+//public class CocktailService2 {
 //
 //	private final CocktailRepository cocktailRepository;
 //
-//	public CocktailService1(CocktailRepository cocktailRepository) {
+//	public CocktailService2(CocktailRepository cocktailRepository) {
 //		this.cocktailRepository = cocktailRepository;
 //	}
-//	
+//
 //	/* 칵테일 추가하기 */
 //	@ModelAttribute
 //	public Cocktail add(Cocktail cocktail) {
 //		return cocktailRepository.save(cocktail);
 //	}
-//
+//	
 //	/* 칵테일 목록 불러오기 */
 //	public List<Cocktail> listCocktail() {
 //		return cocktailRepository.findAll();

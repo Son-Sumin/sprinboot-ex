@@ -19,13 +19,13 @@ public class CocktailService {
 	public CocktailService(CocktailRepository cocktailRepository) {
 		this.cocktailRepository = cocktailRepository;
 	}
-
+	
 	/* 칵테일 추가하기 */
 	@ModelAttribute
 	public Cocktail add(Cocktail cocktail) {
 		return cocktailRepository.save(cocktail);
 	}
-	
+
 	/* 칵테일 목록 불러오기 */
 	public List<Cocktail> listCocktail() {
 		return cocktailRepository.findAll();

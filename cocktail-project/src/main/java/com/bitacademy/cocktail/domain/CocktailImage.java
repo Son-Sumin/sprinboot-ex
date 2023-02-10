@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
@@ -25,12 +26,14 @@ public class CocktailImage {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private long no;
 
 	private String url;
 
 	@ManyToOne
 	@JoinColumn(name = "cocktail_no", insertable = false, updatable = false)
+	@JsonIgnore
 	private Cocktail cocktail;
 
 }
