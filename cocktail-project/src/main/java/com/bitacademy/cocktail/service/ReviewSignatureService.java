@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
@@ -21,45 +22,26 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewSignatureService {
 	
-	private final SignatureRepository signatureRepository;
 	private final ReviewSignatureRepository reviewSignatureRepository;
 
 	/* 해당 시그니처 게시글 리스트 */
-	public List<ReviewSignature> listReviewSignature(@Param("no") Long no) {
+	public List<ReviewSignature> listReviewSignature(@PathVariable("no") Long no) {
 		return reviewSignatureRepository.findBySignatureNo(no);
 	}
 	
 	/* 시그니처 댓글 작성 */
-	public void add(
-			Long no,
-			@ModelAttribute ReviewSignature form) {		
+	public void add(ReviewSignature form) {		
 		
-		Signature signature = signatureRepository.findByNo(no);
 		ReviewSignature reviewSignature = new ReviewSignature();
 		
 		reviewSignature.setNickname(form.getNickname());
 		reviewSignature.setContents(form.getContents());
-		reviewSignature.updateSignature(signature);
 		
 		reviewSignatureRepository.save(reviewSignature);
 	}
-	
-//	public void add(
-//			@PathVariable("no") Long signature_no,
-//			@ModelAttribute ReviewSignature form,
-//			Model model) {
-//		
-//		Signature signature = signatureRepository.findByNo(signature_no);
-//		ReviewSignature reviewSignature = new ReviewSignature();
-//		
-//		reviewSignature.setNickname(form.getNickname());
-//		reviewSignature.setContents(form.getContents());
-//		
-//		reviewSignatureRepository.save(reviewSignature);
-//		List<ReviewSignature> reviews = reviewSignatureRepository.findReviewSig(signature_no);
-//		
-//		model.addAttribute("reviews", reviews);
-//		model.addAttribute(signature);
-//		
-//	}
+
+	/* 시그니처 게시글 댓글 삭제 */
+	public void delete(Long no) {
+		reviewSignatureRepository.deleteByNo(no);
+	}
 }

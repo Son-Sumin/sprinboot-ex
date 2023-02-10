@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
+import com.bitacademy.cocktail.repository.ReviewSignatureRepository;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
 
@@ -23,6 +26,8 @@ public class SignatureController {
 
 	/* SignatureService, ReviewSignatureService 생성자 주입 */
 	private final SignatureService signatureService;
+	private final ReviewSignatureService reviewSignatureService;
+	private final ReviewSignatureRepository reviewSignatureRepository;
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
@@ -45,10 +50,14 @@ public class SignatureController {
 		return "redirect:/signature";
 	}
 
-	/* 시그니처 게시글 보기 */
+	/* 시그니처 게시글 보기 + 해당 게시글 댓글 리스트 */
 	@GetMapping("/view")
 	public String view(Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
+		
+		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
+		model.addAttribute("reviewSignature", reviewSignature);
+		
 		return "signature/signatureView";
 	}
 
@@ -73,11 +82,24 @@ public class SignatureController {
 		signatureService.modify(signature);
 		return "redirect:/signature";
 	}
+	
+	/* 시그니처 게시글 댓글 작성 */
+	@PostMapping("/review/{no}")
+	public String writeReviewSig(
+			@PathVariable("no") Signature no,
+			@ModelAttribute ReviewSignature reviewSignature) {
+		reviewSignature.setSignature(no);
+		reviewSignatureService.add(reviewSignature);
+		return "redirect:/signature";
+	}
+	
+	/* 시그니처 게시글 댓글 삭제 */
+	@GetMapping("/review/delete/{reviewNo}")
+	public String deleteReviewSig(
+			@PathVariable("reviewNo") Long reviewNo) {
+		reviewSignatureService.delete(reviewNo);
+		return "redirect:/signature";
 
-//	/* 시그니처 게시글 답글 달기 */
-//	@GetMapping("/reply")
-//	public String reply(Long no, Model model) {
-//		model.addAttribute("signature", signatureService.findSigView(no));
-//		return "signatureView";
-//	}
+	}
+
 }

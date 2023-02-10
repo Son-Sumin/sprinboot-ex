@@ -56,6 +56,8 @@
 				<label for="contents">내용 </label>
 				<textarea id="contents" name="contents" placeholder="내용을 입력하시오"></textarea>
 				<br><br>
+				
+				<!-- <input type="hidden" id="signature" name="signature" th:value="${signature.no}" readonly> -->
 	
 				<button type="submit">댓글 등록</button>
 			</form>
@@ -80,14 +82,16 @@
 						<td th:text="${reviewSignature.nickname}"></td>
 						<td th:text="${#temporals.format(reviewSignature.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
+						<td>
+							<a th:href="@{/signature/review/delete/{no}(no= ${reviewSignature.no})}">삭제</a>
+							<a th:href="@{/signature/review/delete/{no}(no= ${reviewSignature.no})}">신고</a>
+						</td>
 					</tr>
-					<br><br>
-					
-					<button>신고</button><span> | </span>
-           			<button>삭제</button>
 				</tbody>
 			</table>
 			<br><br>
+			
+		
 		</div>
 	</div> <!-- /container -->
 	

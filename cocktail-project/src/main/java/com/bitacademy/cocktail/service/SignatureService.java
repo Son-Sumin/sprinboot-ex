@@ -24,12 +24,12 @@ public class SignatureService {
 		return signatureRepository.findAll();
 	}
 
-	/* 1개 글 보기 */
+	/* 시그니처 1개 게시글 보기 */
 	public Signature findSigView(Long no) {
 		return signatureRepository.findByNo(no);
 	}
 
-	/* 글 생성 */
+	/* 시그니처 작성 */
 	public void add(Signature form) {
 
 		Signature signature = new Signature();
