@@ -83,7 +83,7 @@
 						<td th:text="${#temporals.format(reviewSignature.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
 						<td>
-							<a th:href="@{/signature/view/{no}(no= ${reviewSignature.signatureNo})/review/delete/{reviewNo}(reviewNo= ${reviewSignature.no})}">삭제</a>
+							<a th:href="@{/signature/view/{no}(no= ${signature.no})/review/delete/{reviewNo}(reviewNo= ${reviewSignature.no})}">삭제</a>
 							<a th:href="@{/signature}">신고</a> 
 						</td>
 					</tr>

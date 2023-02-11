@@ -52,8 +52,8 @@ public class SignatureController {
 	}
 
 	/* 시그니처 게시글 보기 + 해당 게시글 댓글 리스트 */
-	@GetMapping("/view")
-	public String view(Long no, Model model) {
+	@GetMapping("/view/{no}")
+	public String view(@PathVariable("no") Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
@@ -101,10 +101,12 @@ public class SignatureController {
 	/* 시그니처 게시글 댓글 삭제 */
 	@GetMapping("/view/{no}/review/delete/{reviewNo}")
 	public String deleteReviewSig(
-			@PathVariable("no") Signature no,
+			@PathVariable("no") Long no,
 			@PathVariable("reviewNo") Long reviewNo,
+			@ModelAttribute Signature signature,
 			ReviewSignature reviewSignature) {
 		reviewSignatureService.delete(reviewNo);
+		signatureService.findSigView(no);
 		return "redirect:/signature/view/" + no;
 	}
 

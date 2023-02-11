@@ -31,7 +31,7 @@
 					<tr th:each="signature : ${signature}">
 						<td th:text="${signature.no}"></td>
 						<td th:text="${signature.nickname}"></td>
-						<td><a th:text="${signature.cocktailName}" th:href="@{/signature/view(no= ${signature.no})}"></a></td>
+						<td><a th:text="${signature.cocktailName}" th:href="@{/signature/view/{no}(no= ${signature.no})}"></a></td>
 						<td th:text="${#temporals.format(signature.modifiedDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${signature.cocktailContents}"></td>
 						<td th:text="${signature.recipeContents}"></td>
