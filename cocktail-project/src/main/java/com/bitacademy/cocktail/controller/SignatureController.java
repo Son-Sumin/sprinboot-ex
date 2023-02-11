@@ -103,7 +103,7 @@ public class SignatureController {
 	public String deleteReviewSig(
 			@PathVariable("no") Signature no,
 			@PathVariable("reviewNo") Long reviewNo,
-			@RequestBody ReviewSignature reviewSignature) {
+			ReviewSignature reviewSignature) {
 		reviewSignatureService.delete(reviewNo);
 		return "redirect:/signature/view/" + no;
 	}
