@@ -45,6 +45,8 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
+	private long hit;
+	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	@OrderBy("no desc")

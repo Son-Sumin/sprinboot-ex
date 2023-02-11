@@ -28,7 +28,6 @@ public class SignatureController {
 	/* SignatureService, ReviewSignatureService 생성자 주입 */
 	private final SignatureService signatureService;
 	private final ReviewSignatureService reviewSignatureService;
-	private final ReviewSignatureRepository reviewSignatureRepository;
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
@@ -55,6 +54,8 @@ public class SignatureController {
 	@GetMapping("/view/{no}")
 	public String view(@PathVariable("no") Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
+		
+		signatureService.updateHit(no);
 		
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
 		model.addAttribute("reviewSignature", reviewSignature);

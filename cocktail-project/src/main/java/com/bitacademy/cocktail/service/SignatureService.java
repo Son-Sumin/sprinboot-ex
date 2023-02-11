@@ -52,5 +52,9 @@ public class SignatureService {
 	public void modify(Signature signature) {
 		signatureRepository.save(signature);
 	}
-
+	
+	/* 조회수 올리기 */
+	public void updateHit(Long no) {
+		signatureRepository.updateHit(no);
+	}    
 }
