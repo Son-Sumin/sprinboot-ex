@@ -28,7 +28,7 @@
 						<td th:text="${signature.no}"></td>
 						<td th:text="${signature.nickname}"></td>
 						<td th:text="${signature.cocktailName}"></td>
-						<td th:text="${#temporals.format(signature.modifiedDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td th:text="${signature.modifiedDate}"></td>
 						<td th:text="${signature.cocktailContents}"></td>
 						<td th:text="${signature.recipeContents}"></td>
 						<td th:text="${signature.type}"></td>
@@ -80,7 +80,7 @@
 					<tr th:each="reviewSignature : ${reviewSignature}">
 						<td th:text="${reviewSignature.no}"></td>
 						<td th:text="${reviewSignature.nickname}"></td>
-						<td th:text="${#temporals.format(reviewSignature.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td th:text="${reviewSignature.createdDate}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
 						<td>
 							<a th:href="@{/signature/view/{no}(no= ${signature.no})/review/delete/{reviewNo}(reviewNo= ${reviewSignature.no})}">삭제</a>
