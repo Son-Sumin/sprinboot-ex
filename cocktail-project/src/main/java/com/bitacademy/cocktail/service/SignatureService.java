@@ -56,5 +56,6 @@ public class SignatureService {
 	/* 조회수 올리기 */
 	public void updateHit(Long no) {
 		signatureRepository.updateHit(no);
-	}    
+	}
+	
 }
