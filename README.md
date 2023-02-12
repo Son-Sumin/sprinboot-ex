@@ -10,7 +10,9 @@
   <br>
   
 - cocktail-project   
-  * cocktail, signature page CRUD 구현
+  * cocktail, signature page CRUD 구현, BaseTimeEtity 활용한 시간 자동 등록   
+  * cocktail-cocktailImage 1:多 mapping   
+  * signature page 댓글 구현   
   <br>
   
 - studyboot   
