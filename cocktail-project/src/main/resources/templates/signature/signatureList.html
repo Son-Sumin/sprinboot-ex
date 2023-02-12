@@ -22,8 +22,8 @@
 						<th>   칵테일 이름   </th>
 						<th>  작성일자  </th>
 						<th>   칵테일 설명   </th>
-						<th>   칵테일 레시피   </th>
-						<th>  종류  </th>
+						<th>   조회수   </th>
+						<th>  좋아요  </th>
 					</tr>
 				</thead>
 				
@@ -36,6 +36,8 @@
 						<td th:text="${signature.cocktailContents}"></td>
 						<td th:text="${signature.recipeContents}"></td>
 						<td th:text="${signature.type}"></td>
+						<td th:text="${signature.hit}"></td>
+						<td th:text="${signature.like}"></td>
 					</tr>
 				</tbody>
 			</table>
