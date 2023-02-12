@@ -50,7 +50,7 @@ public class SignatureController {
 		return "redirect:/signature";
 	}
 
-	/* 시그니처 게시글 보기 + 해당 게시글 댓글 리스트 */
+	/* 시그니처 게시글 보기 + 해당 게시글 댓글 리스트 +  조회수 */
 	@GetMapping("/view/{no}")
 	public String view(@PathVariable("no") Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));

@@ -39,8 +39,8 @@ public class SignatureService {
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
 		signature.setType(form.getType());
-		signature.setHit(form.getHit());
-		signature.setLike(form.getLike());
+//		signature.setHit(form.getHit());
+//		signature.setLike(form.getLike());
 
 		signatureRepository.save(signature);
 	}
