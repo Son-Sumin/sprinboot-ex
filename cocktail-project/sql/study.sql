@@ -12,6 +12,7 @@ show databases;
 show tables from study;
 
 select * from cocktail;
+select * from signature;
 select * from reviewsignature;
 
 insert into reviewsignature values("1", "가", "가가가", "2023-02-11", "2023-02-11","1");
