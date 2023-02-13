@@ -13,6 +13,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.PrePersist;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -29,7 +31,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-//@DynamicInsert  @DynamicUpdate 
+@DynamicInsert  @DynamicUpdate 
 public class Signature extends BaseTimeEntity {
 
 	@Id
@@ -49,26 +51,35 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	@ColumnDefault("0")
-	private Long hit;
+	//@ColumnDefault("0")
+	//@Column(columnDefinition = "number default 0")
+	private int hit;
 	
-	@ColumnDefault("0")
-	private Long like;
+	//@ColumnDefault("0")
+	//@Column(columnDefinition = "number default 0")
+	private int like;
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	@OrderBy("no desc")
 	private List<ReviewSignature> reviewSignature;
 	
-	@PrePersist
-    public void prePersistHit() {
-        this.hit = this.hit == null ? 0 : this.hit;
-    }
+//	@PrePersist
+//	public Signature updateHit(Long hit){
+//        this.hit = hit+1;
+//        return this;
+//    }
 	
-	@PrePersist
-    public void prePersistLike() {
-        this.like = this.like == null ? 0 : this.like;
-    }
+	
+//	@PrePersist
+//    public void prePersistHit() {
+//        this.hit = this.hit == null ? 0 : this.hit;
+//    }
+//	
+//	@PrePersist
+//    public void prePersistLike() {
+//        this.like = this.like == null ? 0 : this.like;
+//    }
 
 }
 

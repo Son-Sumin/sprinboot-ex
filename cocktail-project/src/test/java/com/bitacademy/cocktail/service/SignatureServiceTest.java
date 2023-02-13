@@ -22,6 +22,8 @@ public class SignatureServiceTest {
 				.cocktailContents("맹구의 하와이안 블루")
 				.recipeContents("빙글빙글")
 				.type("alcohol")
+				.hit(0)
+				.like(0)
 				.build();
 
 		signatureService.add(signature);
