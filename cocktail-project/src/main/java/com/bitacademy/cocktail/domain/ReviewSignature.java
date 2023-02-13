@@ -32,7 +32,7 @@ public class ReviewSignature extends BaseTimeEntity {
 
 	private String contents;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = Signature.class)
 	@JsonIgnore
     @JoinColumn(name = "signature_no", insertable=false, updatable=false)
     private Signature signature;

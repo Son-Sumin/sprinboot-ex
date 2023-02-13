@@ -56,10 +56,13 @@ public class SignatureController {
 	/* 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 */
 	@GetMapping("/view/{no}")
 	public String view(@PathVariable("no") Long no, Model model) {
+		// 시그니처 게시글 보기
 		model.addAttribute("signature", signatureService.findSigView(no));
 		
+		// 조회수
 		signatureService.updateHit(no);
 		
+		// 해당 게시글 댓글 리스트
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
 		model.addAttribute("reviewSignatures", reviewSignature);
 		
@@ -99,9 +102,9 @@ public class SignatureController {
 	/* 시그니처 게시글 댓글 작성 */
 	@PostMapping("/review/{no}")
 	public String writeReviewSig(
-			@PathVariable("no") Long no, Model model,
-			ReviewSignature reviewSignature) {
-		model.addAttribute("signature", signatureService.findSigView(no));
+			@PathVariable("no") Long no,
+			@RequestBody ReviewSignature reviewSignature) {
+		//model.addAttribute("signature", signatureService.findSigView(no));
 		reviewSignatureService.add(reviewSignature);
 		
 		return "redirect:/signature";
