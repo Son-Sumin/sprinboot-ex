@@ -43,8 +43,6 @@ public class SignatureService {
 		signature.setLike(0);
 
 		signatureRepository.save(signature);
-		
-		System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&" + signature);
 	}
 
 	/* 글 삭제 */
@@ -57,11 +55,14 @@ public class SignatureService {
 		signatureRepository.save(signature);
 	}
 	
-//	/* 조회수 올리기 */
-//	public void updateHit(Long no) {
-//		//Signature signature = signatureRepository.findByNo(no);
-//		//signature.setHit(signature.getHit() + 1);
-//		signatureRepository.updateHit(no);
-//	}
+	/* 조회수 올리기 */
+	public void updateHit(Long no) {
+		signatureRepository.updateHit(no);
+	}
+	
+	/* 좋아요 올리기 */
+	public void updateLike(Long no) {
+		signatureRepository.updateLike(no);
+	}
 	
 }

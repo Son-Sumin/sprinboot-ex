@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
-import javax.persistence.PrePersist;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
@@ -59,14 +58,7 @@ public class Signature extends BaseTimeEntity {
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
-	@OrderBy("no desc")
 	private List<ReviewSignature> reviewSignature;
-	
-//	@PrePersist
-//	public Signature updateHit(Long hit){
-//        this.hit = hit+1;
-//        return this;
-//    }
 	
 	
 //	@PrePersist
