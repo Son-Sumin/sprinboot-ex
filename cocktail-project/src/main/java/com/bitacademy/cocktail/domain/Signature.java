@@ -51,13 +51,11 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	//@ColumnDefault("0")
-	//@Column(columnDefinition = "number default 0")
-	private int hit;
+	@ColumnDefault("0")
+	private Integer hit;
 	
-	//@ColumnDefault("0")
-	//@Column(columnDefinition = "number default 0")
-	private int like;
+	@ColumnDefault("0")
+	private Integer like;
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})

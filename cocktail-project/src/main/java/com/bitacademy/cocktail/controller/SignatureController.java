@@ -17,17 +17,23 @@ import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.repository.ReviewSignatureRepository;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
+import com.bitacademy.cocktail.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequiredArgsConstructor
 @RequestMapping("/signature")
 public class SignatureController {
 
 	/* SignatureService, ReviewSignatureService 생성자 주입 */
 	private final SignatureService signatureService;
 	private final ReviewSignatureService reviewSignatureService;
+	
+	private SignatureController(SignatureService signatureService, ReviewSignatureService reviewSignatureService) {
+		this.signatureService = signatureService;
+		this.reviewSignatureService = reviewSignatureService;
+		
+	}
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
@@ -55,7 +61,7 @@ public class SignatureController {
 	public String view(@PathVariable("no") Long no, Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		
-		signatureService.updateHit(no);
+		//signatureService.updateHit(no);
 		
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
 		model.addAttribute("reviewSignature", reviewSignature);

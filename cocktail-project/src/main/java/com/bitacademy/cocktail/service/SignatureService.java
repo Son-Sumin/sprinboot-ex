@@ -26,7 +26,6 @@ public class SignatureService {
 
 	/* 시그니처 1개 게시글 보기 */
 	public Signature findSigView(Long no) {
-		Signature signature = signatureRepository.findByNo(no);
 		return signatureRepository.findByNo(no);
 	}
 
@@ -40,10 +39,12 @@ public class SignatureService {
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
 		signature.setType(form.getType());
-		signature.setHit(form.getHit());
-		signature.setLike(form.getLike());
+		signature.setHit(0);
+		signature.setLike(0);
 
 		signatureRepository.save(signature);
+		
+		System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&" + signature);
 	}
 
 	/* 글 삭제 */
@@ -56,10 +57,11 @@ public class SignatureService {
 		signatureRepository.save(signature);
 	}
 	
-	/* 조회수 올리기 */
-	public void updateHit(Long no) {
-		//Signature signature = signatureRepository.findByNo(no);
-		signatureRepository.updateHit(no);
-	}
+//	/* 조회수 올리기 */
+//	public void updateHit(Long no) {
+//		//Signature signature = signatureRepository.findByNo(no);
+//		//signature.setHit(signature.getHit() + 1);
+//		signatureRepository.updateHit(no);
+//	}
 	
 }
