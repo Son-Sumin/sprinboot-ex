@@ -26,7 +26,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="cocktail : ${cocktail}">
+					<tr th:each="cocktail : ${cocktails}">
 						<td th:text="${cocktail.no}"></td>
 						<td th:text="${cocktail.type}"></td>
 						<td><a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"></a></td>

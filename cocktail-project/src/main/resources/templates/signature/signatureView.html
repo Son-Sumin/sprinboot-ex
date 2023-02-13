@@ -26,7 +26,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="signature : ${signature}">
+					<tr>
 						<td th:text="${signature.no}"></td>
 						<td th:text="${signature.nickname}"></td>
 						<td th:text="${signature.cocktailName}"></td>
@@ -52,7 +52,7 @@
 		
 		<!-- 댓글등록 폼 -->
 		<div class="review-container">
-			<form action="@{/review/{no}(no= ${reviewSignature.no})}" method="post">
+			<form action="@{/signature/review/{no}(no= ${reviewSignature.no})}" method="post">
 				
 				<label for="nickname">닉네임 </label>
 				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
@@ -62,7 +62,7 @@
 				<textarea id="contents" name="contents" placeholder="내용을 입력하시오"></textarea>
 				<br><br>
 				
-				<input type="hidden" id="signatureNo" name="signatureNo" th:value="${signature.no}" readonly>
+				<!-- <input type="hidden" id="signature_no" name="signature_no" th:value="${reviewSignature.signature[0].no}" readonly> -->
 	
 				<button type="submit">댓글 등록</button>
 			</form>
@@ -82,7 +82,7 @@
 				</thead>
 				
 				<tbody>
-					<tr th:each="reviewSignature : ${reviewSignature}">
+					<tr th:each="reviewSignature : ${reviewSignatures}">
 						<td th:text="${reviewSignature.no}"></td>
 						<td th:text="${reviewSignature.nickname}"></td>
 						<td th:text="${reviewSignature.createdDate}"></td>

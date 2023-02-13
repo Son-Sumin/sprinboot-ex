@@ -30,7 +30,7 @@
 				</thead>
 				
 				<tbody>
-					<tr th:each="signature : ${signature}">
+					<tr th:each="signature : ${signatures}">
 						<td th:text="${signature.no}"></td>
 						<td th:text="${signature.nickname}"></td>
 						<td><a th:text="${signature.cocktailName}" th:href="@{/signature/view/{no}(no= ${signature.no})}"></a></td>

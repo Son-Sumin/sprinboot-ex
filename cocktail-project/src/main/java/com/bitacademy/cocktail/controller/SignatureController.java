@@ -36,7 +36,7 @@ public class SignatureController {
 	@GetMapping({"", "/list"})
 	public String list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
-		model.addAttribute("signature", signature);
+		model.addAttribute("signatures", signature);
 		return "signature/signatureList";
 	}
 
@@ -61,12 +61,12 @@ public class SignatureController {
 		signatureService.updateHit(no);
 		
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
-		model.addAttribute("reviewSignature", reviewSignature);
+		model.addAttribute("reviewSignatures", reviewSignature);
 		
 		return "signature/signatureView";
 	}
 	
-	/* 시그니처 게시글 댓글 삭제 */
+	/* 시그니처 게시글 좋아요 */
 	@GetMapping("/view/like/{no}")
 	public String likeSig(@PathVariable("no") Long no,  Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
@@ -96,11 +96,11 @@ public class SignatureController {
 		return "redirect:/signature";
 	}
 	
-	/* 시그니처 게시글 댓글 작성 */ /////////////////
+	/* 시그니처 게시글 댓글 작성 */
 	@PostMapping("/review/{no}")
 	public String writeReviewSig(
 			@PathVariable("no") Long no, Model model,
-			 ReviewSignature reviewSignature) {
+			ReviewSignature reviewSignature) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		reviewSignatureService.add(reviewSignature);
 		

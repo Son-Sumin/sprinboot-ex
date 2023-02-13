@@ -30,8 +30,8 @@ public class CocktailController {
 	public String list(Model model, Long no) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
 		List<CocktailImage> cocktailImageUrl = cocktailImageService.listCocktailImageUrl(no);
-		model.addAttribute("cocktail", cocktail);
-		model.addAttribute("cocktailImageUrl", cocktailImageUrl);
+		model.addAttribute("cocktails", cocktail);
+		model.addAttribute("cocktailImageUrls", cocktailImageUrl);
 		
 		return "cocktail/cocktailList";
 	}
