@@ -1,6 +1,7 @@
 package com.bitacademy.cocktail.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,7 +27,7 @@ public class SignatureService {
 
 	/* 시그니처 1개 게시글 보기 */
 	public Signature findSigView(Long no) {
-		return signatureRepository.findByNo(no);
+		return signatureRepository.findByNo(no).get();
 	}
 
 	/* 시그니처 작성 */

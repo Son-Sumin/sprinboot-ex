@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-@DynamicInsert  @DynamicUpdate 
+//@DynamicInsert  @DynamicUpdate 
 public class Signature extends BaseTimeEntity {
 
 	@Id

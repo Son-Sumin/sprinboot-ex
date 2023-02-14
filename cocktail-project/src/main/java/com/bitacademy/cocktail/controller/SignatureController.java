@@ -1,6 +1,7 @@
 package com.bitacademy.cocktail.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -97,12 +98,14 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 댓글 작성 */
-	@PostMapping("/review/write")
-	public String writeReviewSig( Long no, @ModelAttribute ReviewSignature reviewSignature) {
-		Signature signature = signatureService.findSigView(no);
-		reviewSignature.setSignature(signature);
+	@PostMapping("/review/write/{no}")
+	public String writeReviewSig(
+			@PathVariable("no") Long no,
+			@ModelAttribute ReviewSignature reviewSignature) {
+		//Optional<Signature> signature = signatureService.findSigView(no);
+		reviewSignature.setSignature(signatureService.findSigView(no));
 		reviewSignatureService.add(reviewSignature);
-		return "redirect:/signature/view/" + no;
+		return "redirect:/signature";
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
