@@ -102,7 +102,6 @@ public class SignatureController {
 	public String writeReviewSig(
 			@PathVariable("no") Long no,
 			@ModelAttribute ReviewSignature reviewSignature) {
-		//Optional<Signature> signature = signatureService.findSigView(no);
 		reviewSignature.setSignature(signatureService.findSigView(no));
 		reviewSignatureService.add(reviewSignature);
 		return "redirect:/signature";

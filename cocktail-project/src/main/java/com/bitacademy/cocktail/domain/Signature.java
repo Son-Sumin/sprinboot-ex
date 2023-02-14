@@ -26,7 +26,6 @@ import lombok.NoArgsConstructor;
 
 @Entity(name="signature")
 @Data
-@Builder
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -60,6 +59,16 @@ public class Signature extends BaseTimeEntity {
 	@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignature;
 	
+	@Builder
+    private Signature(String nickname, String cocktailName, String cocktailContents, String recipeContents, String type, Integer hit, Integer like) {
+        this.nickname = nickname;
+        this.cocktailName = cocktailName;
+        this.cocktailContents = cocktailContents;
+        this.recipeContents = recipeContents;
+        this.type = type;
+        this.hit = hit;
+        this.like = like;
+    }
 	
 //	@PrePersist
 //    public void prePersistHit() {

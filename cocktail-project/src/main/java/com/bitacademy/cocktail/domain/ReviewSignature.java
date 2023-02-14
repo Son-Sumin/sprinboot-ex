@@ -1,8 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
-import java.util.Optional;
-
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +24,6 @@ import lombok.ToString;
 @ToString(exclude = "signature")
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class ReviewSignature extends BaseTimeEntity {
 
 	@Id
@@ -40,6 +38,15 @@ public class ReviewSignature extends BaseTimeEntity {
 	@JsonIgnore
     @JoinColumn(name = "signature_no", insertable=false, updatable=false)
     private Signature signature;
+	
+	
+	@Builder
+	public ReviewSignature(String nickname, String contents, Signature signature) {
+      this.nickname = nickname;
+      this.contents = contents;
+      this.signature = signature;
+      signature.getReviewSignature().add(this);
+	}
 
 	
 //	public void updateSignature(Signature signature) {
