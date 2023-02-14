@@ -13,8 +13,8 @@ import com.bitacademy.cocktail.repository.SignatureRepository;
 @Transactional
 public class SignatureService {
 
+	/* SignatureRepository 생성자 주입 */
 	private final SignatureRepository signatureRepository;
-
 	public SignatureService(SignatureRepository signatureRepository) {
 		this.signatureRepository = signatureRepository;
 	}

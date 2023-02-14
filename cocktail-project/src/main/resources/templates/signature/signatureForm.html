@@ -13,7 +13,7 @@
 	<div th:include="~{/includes/header}"></div>
 	
 	<div class="form-container">
-		<form action="/signature/form" method="post">
+		<form th:action="/signature/form" method="post">
 			<div class="form-group">
 				<label for="nickname">닉네임 </label>
 				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
