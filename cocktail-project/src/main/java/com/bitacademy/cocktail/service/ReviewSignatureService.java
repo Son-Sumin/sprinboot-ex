@@ -22,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewSignatureService {
 	
+	private final SignatureRepository signatureRepository;
 	private final ReviewSignatureRepository reviewSignatureRepository;
 
 	/* 해당 시그니처 게시글 댓글 리스트 */
@@ -30,19 +31,15 @@ public class ReviewSignatureService {
 	}
 	
 	/* 시그니처 댓글 작성 */
-	public void add(ReviewSignature form) {		
-		
-		ReviewSignature reviewSignature = new ReviewSignature();
-		
-		reviewSignature.setNickname(form.getNickname());
-		reviewSignature.setContents(form.getContents());
-		//reviewSignature.setSignature(signature.getNo());
-		
+	public void add(ReviewSignature reviewSignature) {		
 		reviewSignatureRepository.save(reviewSignature);
+		
+		System.out.println(reviewSignature + "999999999999999999999999999999999999999");
 	}
 
 	/* 시그니처 게시글 댓글 삭제 */
 	public void delete(Long no) {
 		reviewSignatureRepository.deleteByNo(no);
 	}
+
 }

@@ -2,6 +2,7 @@ package com.bitacademy.cocktail.controller;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyProperties.Registration.Signing;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
@@ -100,25 +102,20 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 댓글 작성 */
-	@PostMapping("/review/{no}")
-	public String writeReviewSig(
-			@PathVariable("no") Long no,
-			@RequestBody ReviewSignature reviewSignature) {
-		//model.addAttribute("signature", signatureService.findSigView(no));
+	@PostMapping("/view/{no}/review/write")
+	public String writeReviewSig(@PathVariable("no") Long no, @ModelAttribute ReviewSignature reviewSignature) {
+		Signature signature = signatureService.findSigView(no);
+		reviewSignature.setSignature(signature);
 		reviewSignatureService.add(reviewSignature);
-		
 		return "redirect:/signature";
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
-	@GetMapping("/review/delete/{reviewNo}")
+	@GetMapping("/view/{no}/review/delete/{reviewNo}")
 	public String deleteReviewSig(
-			//@PathVariable("no") Long no,
-			@PathVariable("reviewNo") Long reviewNo,
-			@ModelAttribute Signature signature,
-			ReviewSignature reviewSignature) {
+			@PathVariable("no") Long no,
+			@PathVariable("reviewNo") Long reviewNo) {
 		reviewSignatureService.delete(reviewNo);
-		//signatureService.findSigView(no);
 		return "redirect:/signature";
 	}
 

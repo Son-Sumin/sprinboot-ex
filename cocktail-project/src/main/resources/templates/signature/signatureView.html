@@ -52,7 +52,7 @@
 		
 		<!-- 댓글등록 폼 -->
 		<div class="review-container">
-			<form action="@{/signature/review/{no}(no= ${signature.no})}" method="post">
+			<form action="@{/signature/view/{no}(no= ${signature.no})/review/write}" method="post">
 				
 				<label for="nickname">닉네임 </label>
 				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
@@ -62,7 +62,7 @@
 				<textarea id="contents" name="contents" placeholder="내용을 입력하시오"></textarea>
 				<br><br>
 				
-				<input type="hidden" id="signature_no" name="signature_no" th:value="${signature.no}" readonly>
+				<!-- <input type="hidden" id="signature_no" name="signature_no" th:value="${signature.no}" readonly> -->
 	
 				<button type="submit">댓글 등록</button>
 			</form>
@@ -88,7 +88,7 @@
 						<td th:text="${reviewSignature.createdDate}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
 						<td>
-							<a th:href="@{/signature/review/delete/{reviewNo}(reviewNo= ${reviewSignature.no})}">삭제</a>
+							<a th:href="@{/signature/view/{no}(no= ${signature.no})/review/delete/{reviewNo}(reviewNo= ${reviewSignature?.no})}">삭제</a>
 							<a th:href="@{/signature}">신고</a> 
 						</td>
 					</tr>
