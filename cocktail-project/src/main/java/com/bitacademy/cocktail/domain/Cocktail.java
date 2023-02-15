@@ -53,8 +53,8 @@ public class Cocktail {
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
-	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
+//	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+//	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
 		cocktailImages.add(cocktailImage);

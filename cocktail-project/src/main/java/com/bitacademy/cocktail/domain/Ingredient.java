@@ -19,7 +19,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity(name="ingredient")
-@ToString(exclude = "cocktailRecipe")
+//@ToString(exclude = "cocktailRecipe")
 @Getter @Setter 
 @Builder
 @AllArgsConstructor
@@ -41,7 +41,7 @@ public class Ingredient {
 	
 	private String image;
 	
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
-	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
+//	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+//	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
 
 }

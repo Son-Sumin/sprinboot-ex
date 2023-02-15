@@ -1,37 +1,39 @@
 package com.bitacademy.cocktail.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
+@SuppressWarnings("serial")
 @Entity(name="cocktailRecipe")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CocktailRecipe {
+public class CocktailRecipe implements Serializable {
 	
+	@EmbeddedId
+	private CocktailRecipeID id;
+
 	private Float amount;
 	private String unit;
 	
-	@ManyToOne
-	@JoinColumn(name = "cocktail_no")
-	@ToString.Exclude
-	@JsonIgnore
-	private Cocktail cocktail;
-	
-	@ManyToOne
-	@JoinColumn(name = "ingredient_no")
-	@ToString.Exclude
-	@JsonIgnore
-	private Ingredient ingredient;
+//	@ManyToOne
+//	@JoinColumn(name = "cocktail_no")
+//	@ToString.Exclude
+//	@JsonIgnore
+//	private Cocktail cocktail;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "ingredient_no")
+//	@ToString.Exclude
+//	@JsonIgnore
+//	private Ingredient ingredient;
 
 }
