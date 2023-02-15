@@ -1,12 +1,12 @@
 package com.bitacademy.cocktail.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity(name="reviewSignature")
+@Table
 @Data
 @EqualsAndHashCode(callSuper=false)
 @ToString(exclude = "signature")
@@ -36,7 +37,7 @@ public class ReviewSignature extends BaseTimeEntity {
 	
 	@ManyToOne
 	@JsonIgnore
-    @JoinColumn(name = "signature_no")
+    @JoinColumn(name = "signature_no", insertable=false, updatable=false)
     private Signature signature;
 	
 	
