@@ -23,12 +23,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity(name="signature")
 @Data
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(exclude = "reviewSignature")
 //@DynamicInsert  @DynamicUpdate 
 public class Signature extends BaseTimeEntity {
 

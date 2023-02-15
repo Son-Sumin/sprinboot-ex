@@ -31,7 +31,6 @@ public class ReviewSignatureService {
 		
 		reviewSignature.setNickname(form.getNickname());
 		reviewSignature.setContents(form.getContents());
-		reviewSignature.setSignature(form.getSignature());
 		
 		reviewSignatureRepository.save(reviewSignature);
 	}

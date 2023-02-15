@@ -1,7 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,9 +34,9 @@ public class ReviewSignature extends BaseTimeEntity {
 
 	private String contents;
 	
-	@ManyToOne(targetEntity = Signature.class)
+	@ManyToOne
 	@JsonIgnore
-    @JoinColumn(name = "signature_no", insertable=false, updatable=false)
+    @JoinColumn(name = "signature_no")
     private Signature signature;
 	
 	

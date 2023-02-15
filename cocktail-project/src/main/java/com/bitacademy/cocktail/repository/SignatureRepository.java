@@ -15,11 +15,11 @@ public interface SignatureRepository extends JpaRepository<Signature, Long> {
 
 	void deleteByNo(Long no);
 	
-	@Modifying
+	@Modifying(clearAutomatically = true)
 	@Query("update signature as s set s.hit = s.hit + 1 where s.no = :no")
 	void updateHit(@Param("no") Long no);
 
-	@Modifying
+	@Modifying(clearAutomatically = true)
 	@Query("update signature as s set s.like = s.like + 1 where s.no = :no")
 	void updateLike(@Param("no") Long no);
 	

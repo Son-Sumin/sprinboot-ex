@@ -98,13 +98,15 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 댓글 작성 */
-	@PostMapping("/review/write/{no}")
+	@PostMapping("/view/{no}/review/write")
 	public String writeReviewSig(
 			@PathVariable("no") Long no,
 			@ModelAttribute ReviewSignature reviewSignature) {
 		reviewSignature.setSignature(signatureService.findSigView(no));
+		System.out.println("sigNo: " + no);
+		System.out.println("ReviewSig: " + reviewSignature);
 		reviewSignatureService.add(reviewSignature);
-		return "redirect:/signature";
+		return "redirect:/signature/view/" + no;
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
