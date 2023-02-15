@@ -10,6 +10,7 @@
 		<!-- header -->
 		<div th:include="~{/includes/header}"></div>
 		
+		<!-- 칵테일 소개 -->
 		<div>
 			<table>
 				<thead>
@@ -40,6 +41,25 @@
 			<a th:href="@{/}">메인으로</a>
 			<a th:href="@{/cocktail/list}">칵테일 목록</a>
 		</div>
+		
+		<br><br>
+		#############################################################################
+		<br><br>
+		
+		<!-- 칵테일 재료 정보 -->
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<td th:text="${cocktail.no}"></td>
+						<td th:text="${cocktail.type}"></td>
+						<td th:text="${cocktail.name}"></td>
+						<td th:text="${cocktail.engName}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
 	</div> <!-- /container -->
 	
 	<!-- footer -->

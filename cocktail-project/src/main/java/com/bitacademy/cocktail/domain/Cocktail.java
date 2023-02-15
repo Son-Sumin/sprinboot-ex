@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +29,7 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "no")
 public class Cocktail {
 
@@ -48,22 +50,30 @@ public class Cocktail {
 	@Column(name = "recipe_contents")
 	private String recipeContents;
 	
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
 		cocktailImages.add(cocktailImage);
 		cocktailImage.setCocktail(this);
     }
 	
-	public Cocktail(Cocktail cocktail) {
-		no = cocktail.getNo();
-		type = cocktail.getType();
-		name = cocktail.getName();
-		engName = cocktail.getEngName();
-		cocktailContents = cocktail.getCocktailContents();
-		recipeContents = cocktail.getRecipeContents();
-		cocktail.getCocktailImages().stream().forEach(i -> i.getUrl());
-		cocktailImages = cocktail.getCocktailImages();
-	}
+//	public void addCocktailRecipe(CocktailRecipe cocktailRecipe){
+//		cocktailRecipe.add(cocktailRecipe);
+//		cocktailRecipe.setCocktail(this);
+//    }
+
+//	public Cocktail(Cocktail cocktail) {
+//		no = cocktail.getNo();
+//		type = cocktail.getType();
+//		name = cocktail.getName();
+//		engName = cocktail.getEngName();
+//		cocktailContents = cocktail.getCocktailContents();
+//		recipeContents = cocktail.getRecipeContents();
+//		cocktail.getCocktailImages().stream().forEach(i -> i.getUrl());
+//		cocktailImages = cocktail.getCocktailImages();
+//	}
 }

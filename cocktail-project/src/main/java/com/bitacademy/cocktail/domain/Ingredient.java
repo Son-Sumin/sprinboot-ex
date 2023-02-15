@@ -1,12 +1,15 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +19,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity(name="ingredient")
-//@ToString(exclude = "cocktailImages")
+@ToString(exclude = "cocktailRecipe")
 @Getter @Setter 
 @Builder
 @AllArgsConstructor
@@ -37,4 +40,8 @@ public class Ingredient {
 	private float degree;
 	
 	private String image;
+	
+	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
+
 }
