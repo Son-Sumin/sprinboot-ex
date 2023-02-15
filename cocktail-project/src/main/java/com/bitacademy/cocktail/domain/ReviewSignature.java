@@ -1,5 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,15 +31,15 @@ public class ReviewSignature extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long no;
+	private Long no;
 
 	private String nickname;
 
 	private String contents;
 	
-	@ManyToOne
+    @ManyToOne
 	@JsonIgnore
-    @JoinColumn(name = "signature_no", insertable=false, updatable=false)
+    @JoinColumn(name = "signature_no")
     private Signature signature;
 	
 	
@@ -48,7 +50,6 @@ public class ReviewSignature extends BaseTimeEntity {
       this.signature = signature;
       signature.getReviewSignature().add(this);
 	}
-
 	
 //	public void updateSignature(Signature signature) {
 //        this.signature = signature;

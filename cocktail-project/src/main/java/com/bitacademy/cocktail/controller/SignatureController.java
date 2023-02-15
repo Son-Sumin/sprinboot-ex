@@ -101,28 +101,21 @@ public class SignatureController {
 	@PostMapping("/view/{no}/review/write")
 	public String writeReviewSig(
 			@PathVariable("no") Long no,
-			@ModelAttribute ReviewSignature reviewSignature,
-			@ModelAttribute Signature signature) {
-		
-		reviewSignature.setSignature(signature);
-		reviewSignature.setSignature(signatureService.findSigView(no));
-		
-		System.out.println("sigNo: " + no);
-		System.out.println("ReviewSig: " + reviewSignature);
-		
-		reviewSignatureService.add(reviewSignature);
+			@ModelAttribute ReviewSignature reviewSignature) {	
+		reviewSignature.setNo(null);
+		reviewSignatureService.add(no, reviewSignature);
 		return "redirect:/signature/view/" + no;
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
-	@GetMapping("/review/delete/{reviewNo}")
+	@GetMapping("/view/{no}/review/delete/{reviewNo}")
 	public String deleteReviewSig(
-			//@PathVariable("no") Long no,
+			@PathVariable("no") Long no,
 			@PathVariable("reviewNo") Long reviewNo,
 			@ModelAttribute ReviewSignature reviewSignature) {
-		//reviewSignature.setSignature(signatureService.findSigView(no));
-		reviewSignatureService.delete(reviewNo);
-		return "redirect:/signature";
+		reviewSignature.setSignature(signatureService.findSigView(no));
+		reviewSignatureService.delete(no, reviewNo, reviewSignature);
+		return "redirect:/signature/view/" + no;
 	}
 
 }

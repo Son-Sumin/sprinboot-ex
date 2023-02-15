@@ -86,7 +86,7 @@
 						<td th:text="${reviewSignature.createdDate}"></td>
 						<td th:text="${reviewSignature.contents}"></td>
 						<td>
-							<a th:href="@{/signature/review/delete/{reviewNo}(reviewNo= ${reviewSignature?.no})}">삭제</a>
+							<a th:href="@{/signature/view/{no}/review/delete/{reviewNo}(no= ${signature.no}, reviewNo= ${reviewSignature?.no})}">삭제</a>
 							<a th:href="@{/signature}">신고</a> 
 						</td>
 					</tr>
