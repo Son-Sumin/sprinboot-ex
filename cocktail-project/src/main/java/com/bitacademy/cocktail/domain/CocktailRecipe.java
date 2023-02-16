@@ -30,11 +30,11 @@ public class CocktailRecipe{
 
 	@ManyToOne
 	@JoinColumn(name = "cocktail_no")
-	private Long cocktailNo;
+	private Cocktail cocktail;
 	
 	@ManyToOne
 	@JoinColumn(name = "ingredient_no")
-	private Long ingredientNo;
+	private Ingredient ingredient;
 	
 	private Long amount;
 	private String unit;

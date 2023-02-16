@@ -41,7 +41,7 @@ public class Ingredient {
 	private String image;
 	
 	@ToString.Exclude
-	@OneToMany(mappedBy = "ingredientNo", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 
 }
