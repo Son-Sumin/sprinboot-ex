@@ -63,7 +63,8 @@ public class Signature extends BaseTimeEntity {
 	private List<ReviewSignature> reviewSignature;
 	
 	@Builder
-    private Signature(String nickname, String cocktailName, String cocktailContents, String recipeContents, String type, Integer hit, Integer like) {
+    private Signature(String nickname, String cocktailName, String cocktailContents,
+    					String recipeContents, String type, Integer hit, Integer like) {
         this.nickname = nickname;
         this.cocktailName = cocktailName;
         this.cocktailContents = cocktailContents;

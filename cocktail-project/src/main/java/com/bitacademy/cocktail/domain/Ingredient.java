@@ -42,6 +42,18 @@ public class Ingredient {
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
+	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
+	
+	@Builder
+	public Ingredient(String name, String engName, String type,
+						float degree, String image, CocktailRecipe cocktailRecipe) {
+      this.name = name;
+      this.engName = engName;
+      this.type = type;
+      this.name = name;
+      this.degree = degree;
+//      this.cocktailRecipe = cocktailRecipe;
+//      cocktailRecipe.getCocktailRecipe().add(this);
+	}
 
 }

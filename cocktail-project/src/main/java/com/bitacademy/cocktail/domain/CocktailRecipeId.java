@@ -19,5 +19,5 @@ public class CocktailRecipeId implements Serializable {
 	public String cocktail;
 	
 	@Column(name = "ingredient_no")
-	public String  ingredient;
+	public String ingredient;
 }
