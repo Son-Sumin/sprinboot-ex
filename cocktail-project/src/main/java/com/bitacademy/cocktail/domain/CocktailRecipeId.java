@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 public class CocktailRecipeId implements Serializable {
 	
 	@Column(name = "cocktail_no")
-	private Long cocktailNo;
+	public String cocktail;
 	
 	@Column(name = "ingredient_no")
-	private Long ingredientNo;
+	public String  ingredient;
 }
