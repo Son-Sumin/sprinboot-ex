@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class CocktailRecipeID implements Serializable {
+public class CocktailRecipeId implements Serializable {
 	
 	@Column(name = "cocktail_no")
 	private Long cocktailNo;

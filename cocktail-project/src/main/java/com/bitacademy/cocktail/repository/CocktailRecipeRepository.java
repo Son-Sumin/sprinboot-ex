@@ -2,16 +2,12 @@ package com.bitacademy.cocktail.repository;
 
 import java.util.List;
 
-import javax.persistence.Embeddable;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.CocktailRecipe;
-import com.bitacademy.cocktail.domain.CocktailRecipeID;
+import com.bitacademy.cocktail.domain.CocktailRecipeId;
 
-@Embeddable
-public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, CocktailRecipeID> {
+public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, CocktailRecipeId> {
 
 	List<CocktailRecipe> findByCocktailNo(Long cocktailNo);
 	

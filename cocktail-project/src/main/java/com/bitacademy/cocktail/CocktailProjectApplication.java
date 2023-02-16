@@ -11,5 +11,4 @@ public class CocktailProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CocktailProjectApplication.class, args);
 	}
-
 }

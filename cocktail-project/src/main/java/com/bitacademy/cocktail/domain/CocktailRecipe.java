@@ -1,7 +1,5 @@
 package com.bitacademy.cocktail.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
@@ -10,16 +8,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@SuppressWarnings("serial")
 @Entity(name="cocktailRecipe")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CocktailRecipe implements Serializable {
+public class CocktailRecipe{
 	
 	@EmbeddedId
-	private CocktailRecipeID id;
+	private CocktailRecipeId crId;
 
 	private Float amount;
 	private String unit;
