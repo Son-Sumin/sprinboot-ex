@@ -9,6 +9,7 @@ select * from user;
 -- Cocktail------------------------------------------
 select * from cocktail;
 select * from cocktailimage;
+
 select * from cocktailRecipe;
 select * from ingredient;
 
@@ -32,9 +33,3 @@ insert into reviewsignature values('3', '다', '다다다', '2023-02-09', '2023-
 
 delete from signature where no='16';
 drop table signature;
-
--- TEST ------------------------------------------
-select * from test;
-insert into test values(1, "맹구");
-insert into test values(2, "짱구");
-insert into test values(3, "훈이");
