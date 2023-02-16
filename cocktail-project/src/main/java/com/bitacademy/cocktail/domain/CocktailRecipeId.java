@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Embeddable
 public class CocktailRecipeId implements Serializable {
 	
 	@Column(name = "cocktail_no")
