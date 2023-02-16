@@ -1,6 +1,8 @@
 package com.bitacademy.cocktail.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -23,20 +25,20 @@ import lombok.ToString;
 public class CocktailRecipe{
 	
 	@Id
-	private CocktailRecipeId crId;
-	private Long amount;
-	private String unit;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long no;
+
 	@ManyToOne
 	@JoinColumn(name = "cocktail_no")
-	@ToString.Exclude
-	@JsonIgnore
-	private Cocktail cocktail;
+	private Long cocktailNo;
 	
 	@ManyToOne
 	@JoinColumn(name = "ingredient_no")
-	@ToString.Exclude
-	@JsonIgnore
-	private Ingredient ingredient;
-
+	private Long ingredientNo;
+	
+	private Long amount;
+	private String unit;
+	
+//	@Id
+//	private CocktailRecipeId crId;
 }

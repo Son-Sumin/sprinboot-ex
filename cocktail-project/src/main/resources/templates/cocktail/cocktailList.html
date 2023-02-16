@@ -29,7 +29,7 @@
 					<tr th:each="cocktail : ${cocktails}">
 						<td th:text="${cocktail.no}"></td>
 						<td th:text="${cocktail.type}"></td>
-						<td><a th:text="${cocktail.name}" th:href="@{/cocktail/view(no= ${cocktail.no})}"></a></td>
+						<td><a th:text="${cocktail.name}" th:href="@{/cocktail/view/{no}(no= ${cocktail.no})}"></a></td>
 						<td th:text="${cocktail.engName}"></td>
 						<td th:text="${cocktail.cocktailContents}"></td>
 						<td th:text="${cocktail.recipeContents}"></td>

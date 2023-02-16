@@ -49,12 +49,20 @@
 		<!-- 칵테일 재료 정보 -->
 		<div>
 			<table>
+				<thead>
+						<tr>
+							<th>  칵테일 번호  </th>
+							<th>   재료 번호   </th>
+							<th>   용량   </th>
+							<th>  단위  </th>
+						</tr>
+				</thead>
 				<tbody>
 					<tr>
-						<td th:text="${cocktail.no}"></td>
-						<td th:text="${cocktail.type}"></td>
-						<td th:text="${cocktail.name}"></td>
-						<td th:text="${cocktail.engName}"></td>
+						<td th:text="${cocktailRecipe.cocktailNo}"></td>
+						<td th:text="${cocktailRecipe.ingredientNo}"></td>
+						<td th:text="${cocktailRecipe.amount}"></td>
+						<td th:text="${cocktailRecipe.unit}"></td>
 					</tr>
 				</tbody>
 			</table>

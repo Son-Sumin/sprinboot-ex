@@ -54,7 +54,7 @@ public class Cocktail {
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 	
 	@ToString.Exclude
-	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "cocktailNo", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){
@@ -64,7 +64,7 @@ public class Cocktail {
 	
 	public void addCocktailRecipe(CocktailRecipe cocktailRecipe){
 		cocktailRecipes.add(cocktailRecipe);
-		cocktailRecipe.setCocktail(this);
+		cocktailRecipe.setCocktailNo(no);
     }
 	
 //	public void addCocktailRecipe(CocktailRecipe cocktailRecipe){

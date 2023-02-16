@@ -9,6 +9,8 @@ select * from user;
 -- Cocktail------------------------------------------
 select * from cocktail;
 select * from cocktailimage;
+select * from cocktailRecipe;
+select * from ingredient;
 
 select a.*, b.url 
   from cocktail a, cocktailimage b

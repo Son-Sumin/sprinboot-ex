@@ -6,11 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Cocktail;
-import com.bitacademy.cocktail.domain.CocktailImage;
+import com.bitacademy.cocktail.service.CocktailRecipeService;
 import com.bitacademy.cocktail.service.CocktailService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ public class CocktailController {
 	
 	/* CocktailService, CocktailImageService 생성자 주입 */
 	private final CocktailService cocktailService;
+	private final CocktailRecipeService cocktailRecipeService;
 	//private final CocktailImageService cocktailImageService;
 
 	/* 칵테일 목록 */
@@ -58,9 +60,17 @@ public class CocktailController {
 	}
 
 	/* 칵테일 게시글 보기 */
-	@GetMapping("/view")
-	public String view(Long no, Model model) {
-		model.addAttribute("cocktail", cocktailService.findSigView(no));
+	@GetMapping("/view/{no}")
+	public String view(@PathVariable("no") Long no, Model model) {
+		//model.addAttribute("cocktail", cocktailService.findSigView(no));
+		model.addAttribute("cocktailRecipe", cocktailRecipeService.recipeByCocktailNo(no));
 		return "cocktail/cocktailView";
 	}
+	
+//	/* 칵테일 번호에 따른 재료 보기 */
+//	@GetMapping("/view/{no}")
+//	public String viewCocktailRecipe(Long no, Model model) {
+//		model.addAttribute("cocktailRecipe", cocktailRecipeService.recipeByCocktailNo(no));
+//		return "cocktail/cocktailView";
+//	}
 }
