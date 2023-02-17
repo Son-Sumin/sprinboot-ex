@@ -59,10 +59,10 @@
 						</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr th:each="cocktailRecipe : ${cocktailRecipes}">
 						<td th:text="${cocktailRecipe.no}"></td>
-						<td th:text="${cocktailRecipe.cocktail[0].no}"></td>
-						<td th:text="${cocktailRecipe.ingredient[0].no}"></td>
+						<td th:text="${cocktailRecipe.cocktail.no}"></td>
+						<td th:text="${cocktailRecipe.ingredient.no}"></td>
 						<td th:text="${cocktailRecipe.amount}"></td>
 						<td th:text="${cocktailRecipe.unit}"></td>
 					</tr>

@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -12,24 +11,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Setter;
 
 @Entity(name="cocktailRecipe")
-@Data
+@Getter  @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@IdClass(CocktailRecipeId.class)
 public class CocktailRecipe{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long no;
+	private Long no;
 
 	@ManyToOne  @JsonIgnore
-	@JoinColumn(name = "cocktailNo")
+	@JoinColumn(name = "cocktail_no")
 	private Cocktail cocktail;
 	
 	@ManyToOne  @JsonIgnore
@@ -39,15 +37,15 @@ public class CocktailRecipe{
 	private Long amount;
 	private String unit;
 	
-	@Builder
-	public CocktailRecipe(Cocktail cocktail, Ingredient ingredient, Long amount, String unit) {
-      this.amount = amount;
-      this.unit = unit;
-      this.cocktail = cocktail;
-      this.ingredient = ingredient;
-      cocktail.getCocktailRecipes().add(this);
-      ingredient.getCocktailRecipe().add(this);
-	}
+//	@Builder
+//	public CocktailRecipe(Cocktail cocktail, Ingredient ingredient, Long amount, String unit) {
+//      this.amount = amount;
+//      this.unit = unit;
+//      this.cocktail = cocktail;
+//      this.ingredient = ingredient;
+//      cocktail.getCocktailRecipes().add(this);
+//      ingredient.getCocktailRecipe().add(this);
+//	}
 	
 //	@Id
 //	private CocktailRecipeId crId;

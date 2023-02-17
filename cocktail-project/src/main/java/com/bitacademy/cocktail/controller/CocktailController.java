@@ -62,13 +62,16 @@ public class CocktailController {
 
 	/* 칵테일 게시글 보기 */
 	@GetMapping("/view/{no}")
-	public String view(@PathVariable("no") Long no, Model model,
-			@ModelAttribute CocktailRecipe cocktailRecipe) {
+	public String view(@PathVariable("no") Long no, Model model, CocktailRecipe cocktailRecipe) {
 		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
-		model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktail(no, cocktailRecipe));
+		
+		List<CocktailRecipe> list =  cocktailRecipeService.findByCocktail(no, cocktailRecipe);
+		model.addAttribute("cocktailRecipes", list);
+		//model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktail(no, cocktailRecipe));
+		//cocktailRecipe.setNo(null);
 		
 		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + no);
-		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" +cocktailRecipe);
+		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + cocktailRecipe);
 		return "cocktail/cocktailView";
 	}
 	

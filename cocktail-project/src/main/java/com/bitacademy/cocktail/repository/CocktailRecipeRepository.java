@@ -13,16 +13,17 @@ import com.bitacademy.cocktail.domain.CocktailRecipe;
 @EnableJpaRepositories
 public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, Long> {
 
-	@Query(value = "select b.name, c.*, a.amount, a.unit "
-			+ "from cocktailRecipe a, cocktail b, ingredient c "
-			+ "where b.no = :cocktailNo "
-			+ "and a.ingredient_no = c.no",
-			nativeQuery = true)
+//	@Query(value = "SELECT b.name, c.*, a.amount, a.unit "
+//			+ "FROM cocktailRecipe a, cocktail b, ingredient c "
+//			+ "WHERE a.cocktail_no = b.no "
+//			+ "AND a.ingredient_no = c.no",
+//			nativeQuery = true)
 	//@EntityGraph(attributePaths = {"cocktail"})
-	List<CocktailRecipe> findByCocktail(@Param("cocktailNo") Long cocktailNo);
+	
+	List<CocktailRecipe> findByCocktail_No(Long cocktailNo);
 	
 //	@Query("select cr.ingredient_no from CocktailRecipe as cr "
 //			+ "where cr.ingredient_no = :ingredientNo")
-	@EntityGraph(attributePaths = {"ingredient"})
-	List<CocktailRecipe> findByIngredientNo(@Param("ingredientNo") Long ingredientNo);
+//	@EntityGraph(attributePaths = {"ingredient"})
+//	List<CocktailRecipe> findByIngredient_No(@Param("ingredientNo") Long ingredientNo);
 }

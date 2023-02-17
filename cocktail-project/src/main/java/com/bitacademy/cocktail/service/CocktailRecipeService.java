@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bitacademy.cocktail.domain.Cocktail;
 import com.bitacademy.cocktail.domain.CocktailRecipe;
@@ -31,11 +32,11 @@ public class CocktailRecipeService {
 	public List<CocktailRecipe> findByCocktail(Long cocktailNo, CocktailRecipe cocktailRecipe) {
 		Cocktail cocktail = cocktailRepository.findByNo(cocktailNo);
 		cocktailRecipe.setCocktail(cocktail);
-		return cocktailRecipeRepository.findByCocktail(cocktailNo);
+		return cocktailRecipeRepository.findByCocktail_No(cocktailNo);
 	}
 	
-	/* ingredientNo에 따른 칵테일 레시피 */
-	public List<CocktailRecipe> findByIngredientNo(Long ingredientNo) {
-		return cocktailRecipeRepository.findByIngredientNo(ingredientNo);
-	}
+//	/* ingredientNo에 따른 칵테일 레시피 */
+//	public List<CocktailRecipe> findByIngredient(Long ingredientNo) {
+//		return cocktailRecipeRepository.findByIngredient_No(ingredientNo);
+//	}
 }
