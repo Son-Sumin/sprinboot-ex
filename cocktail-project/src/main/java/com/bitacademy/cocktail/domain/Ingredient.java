@@ -13,13 +13,12 @@ import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity(name="ingredient")
-@Getter @Setter 
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

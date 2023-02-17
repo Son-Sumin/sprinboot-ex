@@ -67,15 +67,4 @@ public class Cocktail {
 		cocktailRecipes.add(cocktailRecipe);
 		cocktailRecipe.setCocktail(this);
     }
-
-//	public Cocktail(Cocktail cocktail) {
-//		no = cocktail.getNo();
-//		type = cocktail.getType();
-//		name = cocktail.getName();
-//		engName = cocktail.getEngName();
-//		cocktailContents = cocktail.getCocktailContents();
-//		recipeContents = cocktail.getRecipeContents();
-//		cocktail.getCocktailImages().stream().forEach(i -> i.getUrl());
-//		cocktailImages = cocktail.getCocktailImages();
-//	}
 }

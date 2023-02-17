@@ -25,16 +25,12 @@ public class CocktailController {
 	/* CocktailService, CocktailRecipeService 생성자 주입 */
 	private final CocktailService cocktailService;
 	private final CocktailRecipeService cocktailRecipeService;
-	//private final CocktailImageService cocktailImageService;
 	
 	/* 칵테일 목록 */
 	@GetMapping({"", "/list"})
 	public String list(Model model, Long no) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
-		//List<CocktailImage> cocktailImageUrl = cocktailImageService.listCocktailImageUrl(no);
 		model.addAttribute("cocktails", cocktail);
-		//model.addAttribute("cocktailImageUrls", cocktailImageUrl);
-		
 		return "cocktail/cocktailList";
 	}
 
@@ -64,21 +60,9 @@ public class CocktailController {
 	@GetMapping("/view/{no}")
 	public String view(@PathVariable("no") Long no, Model model, CocktailRecipe cocktailRecipe) {
 		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
-		
 		List<CocktailRecipe> list =  cocktailRecipeService.findByCocktail(no, cocktailRecipe);
 		model.addAttribute("cocktailRecipes", list);
-		//model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktail(no, cocktailRecipe));
-		//cocktailRecipe.setNo(null);
-		
-		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + no);
-		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + cocktailRecipe);
 		return "cocktail/cocktailView";
 	}
 	
-//	/* 칵테일 번호에 따른 재료 보기 */
-//	@GetMapping("/view/{no}")
-//	public String viewCocktailRecipe(Long no, Model model) {
-//		model.addAttribute("cocktailRecipe", cocktailRecipeService.recipeByCocktailNo(no));
-//		return "cocktail/cocktailView";
-//	}
 }

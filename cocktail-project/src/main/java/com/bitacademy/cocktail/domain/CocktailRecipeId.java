@@ -1,3 +1,5 @@
+// 사용X
+
 //package com.bitacademy.cocktail.domain;
 //
 //import java.io.Serializable;
