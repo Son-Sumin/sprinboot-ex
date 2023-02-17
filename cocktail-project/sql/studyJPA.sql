@@ -22,7 +22,7 @@ select b.name, c.*, a.amount, a.unit
  where a.cocktail_no = b.no
    and a.ingredient_no = c.no;
  
- delete from cocktail where no='94';
+ delete from cocktail where no='95';
 
 -- Signature------------------------------------------
 select * from signature;
