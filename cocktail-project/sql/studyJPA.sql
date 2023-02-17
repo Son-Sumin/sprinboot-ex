@@ -17,7 +17,12 @@ select a.*, b.url
   from cocktail a, cocktailimage b
  where a.no = b.cocktail_no;
  
- delete from cocktail where no='96';
+select b.name, c.*, a.amount, a.unit
+  from cocktailRecipe a, cocktail b, ingredient c
+ where a.cocktail_no = b.no
+   and a.ingredient_no = c.no;
+ 
+ delete from cocktail where no='94';
 
 -- Signature------------------------------------------
 select * from signature;
