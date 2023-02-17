@@ -51,6 +51,7 @@
 			<table>
 				<thead>
 						<tr>
+							<th>  no  </th>
 							<th>  칵테일 번호  </th>
 							<th>   재료 번호   </th>
 							<th>   용량   </th>
@@ -58,12 +59,13 @@
 						</tr>
 				</thead>
 				<tbody>
-				<!--<tr>
-						<td th:text="${cocktailRecipe.cocktailNo}"></td>
-						<td th:text="${cocktailRecipe.ingredientNo}"></td>
+					<tr>
+						<td th:text="${cocktailRecipe.no}"></td>
+						<td th:text="${cocktailRecipe.cocktail[0].cocktail_co}"></td>
+						<td th:text="${cocktailRecipe.cocktail[0].ingredient_co}"></td>
 						<td th:text="${cocktailRecipe.amount}"></td>
 						<td th:text="${cocktailRecipe.unit}"></td>
-					</tr> -->
+					</tr>
 				</tbody>
 			</table>
 		</div>

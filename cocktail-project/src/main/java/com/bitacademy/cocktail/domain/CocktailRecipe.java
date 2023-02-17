@@ -21,18 +21,18 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@IdClass(CocktailRecipeId.class)
+//@IdClass(CocktailRecipeId.class)
 public class CocktailRecipe{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
 
-	@ManyToOne
+	@ManyToOne  @JsonIgnore
 	@JoinColumn(name = "cocktail_no")
 	private Cocktail cocktail;
 	
-	@ManyToOne
+	@ManyToOne  @JsonIgnore
 	@JoinColumn(name = "ingredient_no")
 	private Ingredient ingredient;
 	

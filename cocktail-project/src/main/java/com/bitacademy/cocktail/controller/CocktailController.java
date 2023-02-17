@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Cocktail;
-import com.bitacademy.cocktail.repository.CocktailRecipeRepository;
+import com.bitacademy.cocktail.domain.CocktailRecipe;
 import com.bitacademy.cocktail.service.CocktailRecipeService;
 import com.bitacademy.cocktail.service.CocktailService;
 
@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/cocktail")
+@RequiredArgsConstructor
 public class CocktailController {
 	
 	/* CocktailService, CocktailRecipeService 생성자 주입 */
@@ -26,11 +27,6 @@ public class CocktailController {
 	private final CocktailRecipeService cocktailRecipeService;
 	//private final CocktailImageService cocktailImageService;
 	
-	public CocktailController(CocktailService cocktailService, CocktailRecipeService cocktailRecipeService) {
-		this.cocktailService = cocktailService;
-		this.cocktailRecipeService = cocktailRecipeService;
-	}
-
 	/* 칵테일 목록 */
 	@GetMapping({"", "/list"})
 	public String list(Model model, Long no) {
@@ -66,9 +62,10 @@ public class CocktailController {
 
 	/* 칵테일 게시글 보기 */
 	@GetMapping("/view/{no}")
-	public String view(@PathVariable("no") Long no, Model model) {
-		//model.addAttribute("cocktail", cocktailService.findSigView(no));
-		model.addAttribute("cocktailRecipe", cocktailRecipeService.recipeByCocktailNo(no));
+	public String view(@PathVariable("no") Long no, Model model,
+			@ModelAttribute CocktailRecipe cocktailRecipe) {
+		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
+		model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktailNo(no, cocktailRecipe));
 		return "cocktail/cocktailView";
 	}
 	
