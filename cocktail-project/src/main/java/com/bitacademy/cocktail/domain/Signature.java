@@ -32,7 +32,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(exclude = "reviewSignature")
-@DynamicInsert  @DynamicUpdate 
+//@DynamicInsert  @DynamicUpdate 
 public class Signature extends BaseTimeEntity {
 
 	@Id
@@ -52,43 +52,39 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	@ColumnDefault("0")
+	//@ColumnDefault("0")
 	private Integer hit;
 	
-	@ColumnDefault("0")
+	//@ColumnDefault("0")
 	private Integer like;
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignature;
 	
-	@Builder
-    private Signature(String nickname, String cocktailName, String cocktailContents,
-    					String recipeContents, String type, Integer hit, Integer like) {
-        this.nickname = nickname;
-        this.cocktailName = cocktailName;
-        this.cocktailContents = cocktailContents;
-        this.recipeContents = recipeContents;
-        this.type = type;
-        this.hit = hit;
-        this.like = like;
-    }
-	
-//	@PrePersist
-//    public void prePersistHit() {
-//        this.hit = this.hit == null ? 0 : this.hit;
+//	@Builder
+//    private Signature(String nickname, String cocktailName, String cocktailContents,
+//    					String recipeContents, String type, Integer hit, Integer like) {
+//        this.nickname = nickname;
+//        this.cocktailName = cocktailName;
+//        this.cocktailContents = cocktailContents;
+//        this.recipeContents = recipeContents;
+//        this.type = type;
+//        this.hit = hit;
+//        this.like = like;
 //    }
-//	
-//	@PrePersist
-//    public void prePersistLike() {
-//        this.like = this.like == null ? 0 : this.like;
-//    }
-
 }
 
 
-
-
+//@PrePersist
+//public void prePersistHit() {
+//  this.hit = this.hit == null ? 0 : this.hit;
+//}
+//
+//@PrePersist
+//public void prePersistLike() {
+//  this.like = this.like == null ? 0 : this.like;
+//}
 
 //	@Column(name = "reg_date", updatable = false)
 //	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")

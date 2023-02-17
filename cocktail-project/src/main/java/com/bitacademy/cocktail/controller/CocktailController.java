@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.Cocktail;
+import com.bitacademy.cocktail.repository.CocktailRecipeRepository;
 import com.bitacademy.cocktail.service.CocktailRecipeService;
 import com.bitacademy.cocktail.service.CocktailService;
 
@@ -18,13 +19,17 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/cocktail")
-@RequiredArgsConstructor
 public class CocktailController {
 	
-	/* CocktailService, CocktailImageService 생성자 주입 */
+	/* CocktailService, CocktailRecipeService 생성자 주입 */
 	private final CocktailService cocktailService;
 	private final CocktailRecipeService cocktailRecipeService;
 	//private final CocktailImageService cocktailImageService;
+	
+	public CocktailController(CocktailService cocktailService, CocktailRecipeService cocktailRecipeService) {
+		this.cocktailService = cocktailService;
+		this.cocktailRecipeService = cocktailRecipeService;
+	}
 
 	/* 칵테일 목록 */
 	@GetMapping({"", "/list"})

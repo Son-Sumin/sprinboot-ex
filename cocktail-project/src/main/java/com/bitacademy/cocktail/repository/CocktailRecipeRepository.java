@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 
 import com.bitacademy.cocktail.domain.CocktailRecipe;
 import com.bitacademy.cocktail.domain.CocktailRecipeId;
 
+@EnableJpaRepositories
 public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, CocktailRecipeId> {
 
 	@EntityGraph(attributePaths = {"cocktail"})

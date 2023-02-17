@@ -39,6 +39,16 @@ public class CocktailRecipe{
 	private Long amount;
 	private String unit;
 	
+	@Builder
+	public CocktailRecipe(Cocktail cocktail, Ingredient ingredient, Long amount, String unit) {
+      this.amount = amount;
+      this.unit = unit;
+      this.cocktail = cocktail;
+      this.ingredient = ingredient;
+      cocktail.getCocktailRecipes().add(this);
+      ingredient.getCocktailRecipe().add(this);
+	}
+	
 //	@Id
 //	private CocktailRecipeId crId;
 }
