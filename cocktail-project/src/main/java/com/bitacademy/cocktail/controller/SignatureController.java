@@ -14,21 +14,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
+import com.bitacademy.cocktail.service.CocktailRecipeService;
+import com.bitacademy.cocktail.service.CocktailService;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
 @RequestMapping("/signature")
+@RequiredArgsConstructor
 public class SignatureController {
 
 	/* SignatureService, ReviewSignatureService 생성자 주입 */
 	private final SignatureService signatureService;
 	private final ReviewSignatureService reviewSignatureService;
-	
-	private SignatureController(SignatureService signatureService, ReviewSignatureService reviewSignatureService) {
-		this.signatureService = signatureService;
-		this.reviewSignatureService = reviewSignatureService;
-	}
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})

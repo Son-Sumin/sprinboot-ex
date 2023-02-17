@@ -1,5 +1,6 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,7 +32,6 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "reviewSignature")
 //@DynamicInsert  @DynamicUpdate 
 public class Signature extends BaseTimeEntity {
 
@@ -58,9 +58,19 @@ public class Signature extends BaseTimeEntity {
 	//@ColumnDefault("0")
 	private Integer like;
 	
+	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignature;
+	
+	@ToString.Exclude
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
+	
+	public void addSignatureRecipe(SignatureRecipe signatureRecipe){
+		signatureRecipes.add(signatureRecipe);
+		signatureRecipe.setSignature(this);
+    }
 	
 //	@Builder
 //    private Signature(String nickname, String cocktailName, String cocktailContents,
