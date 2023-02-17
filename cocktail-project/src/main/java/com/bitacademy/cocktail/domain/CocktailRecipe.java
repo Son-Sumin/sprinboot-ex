@@ -29,7 +29,7 @@ public class CocktailRecipe{
 	private long no;
 
 	@ManyToOne  @JsonIgnore
-	@JoinColumn(name = "cocktail_no")
+	@JoinColumn(name = "cocktailNo")
 	private Cocktail cocktail;
 	
 	@ManyToOne  @JsonIgnore

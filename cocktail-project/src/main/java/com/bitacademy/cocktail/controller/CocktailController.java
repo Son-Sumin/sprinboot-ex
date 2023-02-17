@@ -65,7 +65,10 @@ public class CocktailController {
 	public String view(@PathVariable("no") Long no, Model model,
 			@ModelAttribute CocktailRecipe cocktailRecipe) {
 		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
-		model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktailNo(no, cocktailRecipe));
+		model.addAttribute("cocktailRecipe", cocktailRecipeService.findByCocktail(no, cocktailRecipe));
+		
+		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + no);
+		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" +cocktailRecipe);
 		return "cocktail/cocktailView";
 	}
 	

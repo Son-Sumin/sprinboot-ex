@@ -28,10 +28,10 @@ public class CocktailRecipeService {
 	}
 	
 	/* cocktailNo에 따른 칵테일 레시피 */
-	public List<CocktailRecipe> findByCocktailNo(Long cocktailNo, CocktailRecipe cocktailRecipe) {
+	public List<CocktailRecipe> findByCocktail(Long cocktailNo, CocktailRecipe cocktailRecipe) {
 		Cocktail cocktail = cocktailRepository.findByNo(cocktailNo);
 		cocktailRecipe.setCocktail(cocktail);
-		return cocktailRecipeRepository.findByCocktailNo(cocktailNo);
+		return cocktailRecipeRepository.findByCocktail(cocktailNo);
 	}
 	
 	/* ingredientNo에 따른 칵테일 레시피 */
