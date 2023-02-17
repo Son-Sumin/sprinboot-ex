@@ -5,12 +5,13 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bitacademy.cocktail.domain.Cocktail;
 import com.bitacademy.cocktail.domain.CocktailRecipe;
+import com.bitacademy.cocktail.domain.Ingredient;
 import com.bitacademy.cocktail.repository.CocktailRecipeRepository;
 import com.bitacademy.cocktail.repository.CocktailRepository;
+import com.bitacademy.cocktail.repository.IngredientRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,9 +20,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CocktailRecipeService {
 
-	/* CocktailRecipeRepository 생성자 주입 */
+	/* CocktailRepository, CocktailRecipeRepository, IngredientRepository 생성자 주입 */
 	private final CocktailRepository cocktailRepository;
 	private final CocktailRecipeRepository cocktailRecipeRepository;
+	private final IngredientRepository ingredientRepository;
+	
 	
 	/* 칵테일 레시피 리스트 */
 	public List<CocktailRecipe> listCocktailRecipe() {
@@ -35,8 +38,10 @@ public class CocktailRecipeService {
 		return cocktailRecipeRepository.findByCocktail_No(cocktailNo);
 	}
 	
-//	/* ingredientNo에 따른 칵테일 레시피 */
-//	public List<CocktailRecipe> findByIngredient(Long ingredientNo) {
-//		return cocktailRecipeRepository.findByIngredient_No(ingredientNo);
-//	}
+	/* ingredientNo에 따른 칵테일 레시피 */
+	public List<CocktailRecipe> findByIngredient(Long ingredientNo, CocktailRecipe cocktailRecipe) {
+		Ingredient ingredient = ingredientRepository.findByNo(ingredientNo);
+		cocktailRecipe.setIngredient(ingredient);
+		return cocktailRecipeRepository.findByIngredient_No(ingredientNo);
+	}
 }

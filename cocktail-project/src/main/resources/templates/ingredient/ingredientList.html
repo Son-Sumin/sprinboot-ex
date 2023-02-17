@@ -27,7 +27,7 @@
 				<tbody>
 					<tr th:each="ingredient : ${ingredient}">
 						<td th:text="${ingredient.no}"></td>
-						<td><a th:text="${ingredient.name}" th:href="@{/ingredient/view(no= ${ingredient.no})}"></a></td>
+						<td><a th:text="${ingredient.name}" th:href="@{/ingredient/view/{no}(no= ${ingredient.no})}"></a></td>
 						<td th:text="${ingredient.engName}"></td>
 						<td th:text="${ingredient.type}"></td>
 						<td th:text="${ingredient.degree}"></td>

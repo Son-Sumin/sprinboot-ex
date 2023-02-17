@@ -56,12 +56,16 @@ public class CocktailController {
 		return "redirect:/";
 	}
 
-	/* 칵테일 게시글 보기 */
+	/* 칵테일 게시글 보기 + 칵테일별 재료 목록 */
 	@GetMapping("/view/{no}")
 	public String view(@PathVariable("no") Long no, Model model, CocktailRecipe cocktailRecipe) {
+		// 칵테일 게시글 보기
 		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
+		
+		//칵테일별 재료 목록
 		List<CocktailRecipe> list =  cocktailRecipeService.findByCocktail(no, cocktailRecipe);
 		model.addAttribute("cocktailRecipes", list);
+		
 		return "cocktail/cocktailView";
 	}
 	

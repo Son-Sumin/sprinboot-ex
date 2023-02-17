@@ -37,6 +37,34 @@
 			<a th:href="@{/}">메인으로</a>
 			<a th:href="@{/ingredient/list}">칵테일 목록</a>
 		</div>
+		<br><br>
+		#############################################################################
+		<br><br>
+		
+		<!-- 칵테일 재료 정보 -->
+		<div>
+			<table>
+				<thead>
+						<tr>
+							<th>  no  </th>
+					        <th>   재료 번호   </th>
+							<th>  칵테일 번호  </th>
+							<th>   용량   </th>
+							<th>  단위  </th>
+						</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cocktailRecipe : ${cocktailRecipes}">
+						<td th:text="${cocktailRecipe.no}"></td>
+						<td th:text="${cocktailRecipe.ingredient.no}"></td>
+						<td th:text="${cocktailRecipe.cocktail.no}"></td>
+						<td th:text="${cocktailRecipe.amount}"></td>
+						<td th:text="${cocktailRecipe.unit}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
 	</div> <!-- /container -->
 	
 	<!-- footer -->

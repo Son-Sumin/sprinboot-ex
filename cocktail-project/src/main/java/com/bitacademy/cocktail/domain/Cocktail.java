@@ -25,7 +25,6 @@ import lombok.ToString;
 
 @Entity(name="cocktail")
 @Data
-@Getter @Setter 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

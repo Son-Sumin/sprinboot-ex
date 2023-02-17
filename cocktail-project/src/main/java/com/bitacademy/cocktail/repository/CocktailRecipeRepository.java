@@ -25,5 +25,5 @@ public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, 
 //	@Query("select cr.ingredient_no from CocktailRecipe as cr "
 //			+ "where cr.ingredient_no = :ingredientNo")
 //	@EntityGraph(attributePaths = {"ingredient"})
-//	List<CocktailRecipe> findByIngredient_No(@Param("ingredientNo") Long ingredientNo);
+	List<CocktailRecipe> findByIngredient_No(Long ingredientNo);
 }
