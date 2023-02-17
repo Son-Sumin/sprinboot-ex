@@ -37,7 +37,7 @@ public class Signature extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long no;
+	private Long no;
 
 	private String nickname;
 
@@ -60,11 +60,12 @@ public class Signature extends BaseTimeEntity {
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"signature"})
+	//@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignature;
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+	//@JsonIgnoreProperties({"signature"})
 	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
 	public void addSignatureRecipe(SignatureRecipe signatureRecipe){

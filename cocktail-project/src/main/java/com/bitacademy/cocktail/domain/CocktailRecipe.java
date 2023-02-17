@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,11 +26,13 @@ public class CocktailRecipe{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
 
-	@ManyToOne  @JsonIgnore
+	@ManyToOne
+	@JsonIgnoreProperties({"cocktailImages"})
 	@JoinColumn(name = "cocktail_no")
 	private Cocktail cocktail;
 	
-	@ManyToOne  @JsonIgnore
+	@ManyToOne
+	@JsonIgnoreProperties({"cocktailImages"})
 	@JoinColumn(name = "ingredient_no")
 	private Ingredient ingredient;
 	

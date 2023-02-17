@@ -50,13 +50,11 @@ public class Cocktail {
 	private String recipeContents;
 	
 	@ToString.Exclude
-	//@JsonIgnore
 	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 	
 	@ToString.Exclude
-	//@JsonIgnore
 	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();

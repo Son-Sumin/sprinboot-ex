@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
@@ -46,10 +47,12 @@ public class Ingredient {
 	private String image;
 	
 	@ToString.Exclude
+	@JsonIgnoreProperties({"cocktailRecipes"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
 	
 	@ToString.Exclude
+	@JsonIgnoreProperties({"signatureRecipes"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<SignatureRecipe> signatureRecipe = new ArrayList<>();
 	
