@@ -5,6 +5,8 @@ select * from cocktailimage;
 select * from signature;
 select * from user;
 
+SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- Cocktail------------------------------------------
 select * from cocktail;
