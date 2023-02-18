@@ -5,6 +5,7 @@ select * from cocktailimage;
 select * from signature;
 select * from user;
 
+-- FK = 0으로 설정 후 1로 변경하기
 SET FOREIGN_KEY_CHECKS = 0;
 SET FOREIGN_KEY_CHECKS = 1;
 
