@@ -28,7 +28,7 @@ public class IngredientService {
 	}
 
 	/* 재료 게시글 불러오기 */
-	public Ingredient findIngreView(Long no) {
+	public Ingredient findIngredientView(Long no) {
 		return ingredientRepository.findByNo(no);
 	}
 

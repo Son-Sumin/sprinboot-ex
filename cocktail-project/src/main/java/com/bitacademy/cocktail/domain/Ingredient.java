@@ -23,6 +23,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity(name="ingredient")
+@ToString(exclude = {"cocktailRecipes"})
 @Data
 @Builder
 @AllArgsConstructor
@@ -45,8 +46,7 @@ public class Ingredient {
 	private float degree;
 	
 	private String image;
-	
-	@ToString.Exclude
+
 	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();

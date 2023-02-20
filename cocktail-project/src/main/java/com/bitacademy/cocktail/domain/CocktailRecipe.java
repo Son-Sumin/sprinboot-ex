@@ -30,12 +30,12 @@ public class CocktailRecipe{
 	private Long no;
 
 	@ManyToOne
-	@JsonIgnoreProperties({"cocktailImages"})
+	//@JsonIgnoreProperties({"cocktailImages", "cocktailRecipes"})
 	@JoinColumn(name = "cocktail_no")
 	private Cocktail cocktail;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"cocktailImages"})
+	@JsonIgnoreProperties({"cocktailRecipes"})
 	@JoinColumn(name = "ingredient_no")
 	private Ingredient ingredient;
 	
@@ -51,7 +51,4 @@ public class CocktailRecipe{
 //      cocktail.getCocktailRecipes().add(this);
 //      ingredient.getCocktailRecipe().add(this);
 //	}
-	
-//	@Id
-//	private CocktailRecipeId crId;
 }
