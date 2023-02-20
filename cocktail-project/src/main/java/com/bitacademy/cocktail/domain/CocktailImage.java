@@ -26,14 +26,12 @@ public class CocktailImage {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
 	private long no;
 
 	private String url;
 
 	@ManyToOne
 	@JoinColumn(name = "cocktail_no", insertable = false, updatable = false)
-	@JsonIgnore
 	private Cocktail cocktail;
 	
 }

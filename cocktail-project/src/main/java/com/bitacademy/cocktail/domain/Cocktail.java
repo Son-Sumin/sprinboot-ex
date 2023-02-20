@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -24,6 +23,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity(name="cocktail")
+@ToString(exclude = {"cocktailImages", "cocktailRecipes"})
 @Data
 @Builder
 @AllArgsConstructor
@@ -49,13 +49,11 @@ public class Cocktail {
 	@Column(name = "recipe_contents")
 	private String recipeContents;
 	
-	@ToString.Exclude
-	@JsonIgnoreProperties({"cocktail"})
+	@JsonIgnoreProperties({"no", "cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 	
-	@ToString.Exclude
-	@JsonIgnoreProperties({"cocktail", "ingredient"})
+	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 
