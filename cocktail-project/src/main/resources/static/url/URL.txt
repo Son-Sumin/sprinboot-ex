@@ -1,19 +1,76 @@
 ** URL **
-default : http://localhost:8080
+- default : http://localhost:8080
+- 글 중  'HttpController' 조회 기능 없이 단순 폼을 띄우는 url을 모아놓은 컨트롤러 의미함
+----------------------------------------------------------------------------------
+/*** USER ***/
 
-* USER *
+/*  */
+[GET]
 
+/*  */
+[POST]
 
-* COCKTAIL *
-- 칵테일 리스트 : [GET] /cocktail, /cocktail/list
-- 칵테일 작성폼 : [GET] /cocktail/form
-- 칵테일 글 작성 : [POST] /cocktail/form
-- 칵테일 게시글 보기 + 칵테일별 재료 목록 : [GET] /cocktail/view/{no}
+----------------------------------------------------------------------------------
+/*** BOARD ***/
 
-* SIGNATURE *
-- 시그니처 리스트 조회 : [GET] /signature, /signature/list
-- 시그니처 작성폼 : [GET] /signature/form
-- 시그니처 글 작성 : [POST] /signature/form
-- 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 : [GET] /signature/view/{no}
+/*  */
+[GET]
 
-* USER *
+/*  */
+[POST]
+
+----------------------------------------------------------------------------------
+/*** COCKTAIL ***/
+
+/* 칵테일 리스트 */
+[GET] /cocktail, /cocktail/list
+
+/* 칵테일 작성 폼 */  - HttpController
+[GET] /cocktail/form
+
+/* 칵테일 글 작성 */
+[POST] /cocktail/form
+
+/* 칵테일 게시글 보기 + 칵테일별 재료 목록 */
+[GET] /cocktail/view/{no}
+
+----------------------------------------------------------------------------------
+/*** SIGNATURE ***/
+
+/* 시그니처 리스트 */
+[GET] /signature, /signature/list
+
+/* 시그니처 글 작성폼 */  - HttpController
+[GET] /signature/form
+
+/* 시그니처 글 작성 */
+[POST] /signature/form
+
+/* 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 */
+[GET] /signature/view/{no}
+
+/* 시그니처 게시글 좋아요 */
+[PUT] /signature/view/like/{no}
+
+/* 시그니처 게시글 삭제 */
+[DELETE] /signature/delete/{no}
+
+/* 시그니처 게시글 수정폼 */  - HttpController
+[GET] /signature/modify/{no}
+
+/* 시그니처 게시글 수정 */
+[PUT] /signature/modify/{no}
+
+/* 시그니처 게시글 댓글 작성 */
+[POST] /signature/view/{no}/review/write
+
+/* 시그니처 게시글 댓글 삭제 */
+[DELETE] /signature/view/{no}/review/delete/{reviewNo}
+----------------------------------------------------------------------------------
+/*** INGREDIENT ***/
+
+/* 재료 목록 */
+[GET] /ingredient, /ingredient/list
+
+/* 재료 게시글 보기 + 재료별 칵테일 목록 */
+[GET] /ingredient/view/{no}
