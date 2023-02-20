@@ -1,27 +1,23 @@
 package com.bitacademy.cocktail.controller;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
-import com.bitacademy.cocktail.service.CocktailRecipeService;
-import com.bitacademy.cocktail.service.CocktailService;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
 
 import lombok.RequiredArgsConstructor;
 
-@Controller
+@RestController
 @RequestMapping("/signature")
 @RequiredArgsConstructor
 public class SignatureController {
@@ -32,10 +28,10 @@ public class SignatureController {
 	
 	/* 시그니처 리스트 */
 	@GetMapping({"", "/list"})
-	public String list(Model model) {
+	public List<Signature> list(Model model) {
 		List<Signature> signature = signatureService.listSignature();
 		model.addAttribute("signatures", signature);
-		return "signature/signatureList";
+		return signatureService.listSignature();
 	}
 
 //	/* 시그니처 글 작성폼 */
@@ -46,14 +42,25 @@ public class SignatureController {
 
 	/* 시그니처 글 작성 */
 	@PostMapping("/form")
-	public String writeSignature(@ModelAttribute Signature signature) {
+	public List<Signature> writeSignature(@ModelAttribute Signature form) {
+		
+		Signature signature = new Signature();
+
+		signature.setNickname(form.getNickname());
+		signature.setCocktailName(form.getCocktailName());
+		signature.setCocktailContents(form.getCocktailContents());
+		signature.setRecipeContents(form.getRecipeContents());
+		signature.setType(form.getType());
+		signature.setHit(0);
+		signature.setLike(0);
+		
 		signatureService.add(signature);
-		return "redirect:/signature";
+		return signatureService.listSignature();
 	}
 
 	/* 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 */
 	@GetMapping("/view/{no}")
-	public String view(@PathVariable("no") Long no, Model model) {
+	public Signature view(@PathVariable("no") Long no, Model model) {
 		// 시그니처 게시글 보기
 		model.addAttribute("signature", signatureService.findSigView(no));
 		
@@ -64,7 +71,7 @@ public class SignatureController {
 		List<ReviewSignature> reviewSignature = reviewSignatureService.listReviewSignature(no);
 		model.addAttribute("reviewSignatures", reviewSignature);
 		
-		return "signature/signatureView";
+		return signatureService.findSigView(no);
 	}
 	
 	/* 시그니처 게시글 좋아요 */

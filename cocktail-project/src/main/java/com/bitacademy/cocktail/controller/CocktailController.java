@@ -28,7 +28,7 @@ public class CocktailController {
 	
 	/* 칵테일 목록 */
 	@GetMapping({"", "/list"})
-	public List<Cocktail> list(Model model, Long no) {
+	public List<Cocktail> list(Model model) {
 		List<Cocktail> cocktail = cocktailService.listCocktail();
 		model.addAttribute("cocktails", cocktail);
 		return cocktailService.listCocktail();

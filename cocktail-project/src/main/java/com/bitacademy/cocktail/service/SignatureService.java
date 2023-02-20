@@ -1,24 +1,24 @@
 package com.bitacademy.cocktail.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.repository.SignatureRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class SignatureService {
 
 	/* SignatureRepository 생성자 주입 */
 	private final SignatureRepository signatureRepository;
-	public SignatureService(SignatureRepository signatureRepository) {
-		this.signatureRepository = signatureRepository;
-	}
 
 	/* 시그니처 리스트 */
 	public List<Signature> listSignature() {
@@ -31,19 +31,9 @@ public class SignatureService {
 	}
 
 	/* 시그니처 작성 */
-	public void add(Signature form) {
-
-		Signature signature = new Signature();
-
-		signature.setNickname(form.getNickname());
-		signature.setCocktailName(form.getCocktailName());
-		signature.setCocktailContents(form.getCocktailContents());
-		signature.setRecipeContents(form.getRecipeContents());
-		signature.setType(form.getType());
-		signature.setHit(0);
-		signature.setLike(0);
-
-		signatureRepository.save(signature);
+	@ModelAttribute
+	public Signature add(Signature signature) {
+		return signatureRepository.save(signature);
 	}
 
 	/* 글 삭제 */
