@@ -46,7 +46,7 @@ public class ReviewSignature extends BaseTimeEntity {
       this.nickname = nickname;
       this.contents = contents;
       this.signature = signature;
-      signature.getReviewSignature().add(this);
+      signature.getReviewSignatures().add(this);
 	}
 	
 //	public void updateSignature(Signature signature) {
