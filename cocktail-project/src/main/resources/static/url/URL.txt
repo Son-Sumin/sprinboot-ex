@@ -1,0 +1,19 @@
+** URL **
+default : http://localhost:8080
+
+* USER *
+
+
+* COCKTAIL *
+- 칵테일 리스트 : [GET] /cocktail, /cocktail/list
+- 칵테일 작성폼 : [GET] /cocktail/form
+- 칵테일 글 작성 : [POST] /cocktail/form
+- 칵테일 게시글 보기 + 칵테일별 재료 목록 : [GET] /cocktail/view/{no}
+
+* SIGNATURE *
+- 시그니처 리스트 조회 : [GET] /signature, /signature/list
+- 시그니처 작성폼 : [GET] /signature/form
+- 시그니처 글 작성 : [POST] /signature/form
+- 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 : [GET] /signature/view/{no}
+
+* USER *
