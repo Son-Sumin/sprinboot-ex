@@ -32,7 +32,7 @@
 //	}
 //
 //	/* 칵테일 게시글 불러오기 */
-//	public Cocktail findSigView(Long no) {
+//	public Cocktail findCocktailView(Long no) {
 //		return cocktailRepository.findByNo(no);
 //	}
 //

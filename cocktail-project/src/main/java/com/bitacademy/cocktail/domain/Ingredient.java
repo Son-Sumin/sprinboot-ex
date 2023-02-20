@@ -47,14 +47,14 @@ public class Ingredient {
 	private String image;
 	
 	@ToString.Exclude
-	@JsonIgnoreProperties({"cocktailRecipes"})
+	@JsonIgnoreProperties({"cocktail", "ingredient"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
+	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 	
 //	@ToString.Exclude
 //	@JsonIgnoreProperties({"signatureRecipes"})
 //	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-//	private List<SignatureRecipe> signatureRecipe = new ArrayList<>();
+//	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
 //	@Builder
 //	public Ingredient(String name, String engName, String type,

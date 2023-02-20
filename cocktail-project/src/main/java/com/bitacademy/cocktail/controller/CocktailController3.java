@@ -60,8 +60,8 @@
 //	/* 칵테일 게시글 보기 */
 //	@GetMapping("/view")
 //	public Cocktail view(Long no, Model model) {
-//		model.addAttribute("cocktail", cocktailService.findSigView(no));
-//		return cocktailService.findSigView(no);
+//		model.addAttribute("cocktail", cocktailService.findCocktailView(no));
+//		return cocktailService.findCocktailView(no);
 //	}
 //}
 //

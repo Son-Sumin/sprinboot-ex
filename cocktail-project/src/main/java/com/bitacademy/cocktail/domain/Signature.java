@@ -61,7 +61,7 @@ public class Signature extends BaseTimeEntity {
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	//@JsonIgnoreProperties({"signature"})
-	private List<ReviewSignature> reviewSignature;
+	private List<ReviewSignature> reviewSignatures;
 	
 //	@ToString.Exclude
 //	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
