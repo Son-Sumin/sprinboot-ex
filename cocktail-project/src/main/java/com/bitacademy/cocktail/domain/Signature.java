@@ -63,15 +63,15 @@ public class Signature extends BaseTimeEntity {
 	//@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignature;
 	
-	@ToString.Exclude
-	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
-	//@JsonIgnoreProperties({"signature"})
-	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
-	
-	public void addSignatureRecipe(SignatureRecipe signatureRecipe){
-		signatureRecipes.add(signatureRecipe);
-		signatureRecipe.setSignature(this);
-    }
+//	@ToString.Exclude
+//	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+//	//@JsonIgnoreProperties({"signature"})
+//	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
+//	
+//	public void addSignatureRecipe(SignatureRecipe signatureRecipe){
+//		signatureRecipes.add(signatureRecipe);
+//		signatureRecipe.setSignature(this);
+//    }
 	
 //	@Builder
 //    private Signature(String nickname, String cocktailName, String cocktailContents,

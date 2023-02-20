@@ -51,10 +51,10 @@ public class Ingredient {
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<CocktailRecipe> cocktailRecipe = new ArrayList<>();
 	
-	@ToString.Exclude
-	@JsonIgnoreProperties({"signatureRecipes"})
-	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-	private List<SignatureRecipe> signatureRecipe = new ArrayList<>();
+//	@ToString.Exclude
+//	@JsonIgnoreProperties({"signatureRecipes"})
+//	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
+//	private List<SignatureRecipe> signatureRecipe = new ArrayList<>();
 	
 //	@Builder
 //	public Ingredient(String name, String engName, String type,
