@@ -4,10 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import com.bitacademy.cocktail.service.CocktailService;
-import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureService;
 
 import lombok.RequiredArgsConstructor;
@@ -15,9 +12,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class HttpController {
-	private final CocktailService cocktailService;
 	private final SignatureService signatureService;
-	private final ReviewSignatureService reviewSignatureService;
 
 	/* 칵테일 작성 폼 */
 	@GetMapping("/cocktail/form")

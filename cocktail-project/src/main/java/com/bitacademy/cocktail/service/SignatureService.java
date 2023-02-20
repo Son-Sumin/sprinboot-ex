@@ -31,8 +31,18 @@ public class SignatureService {
 	}
 
 	/* 시그니처 작성 */
-	@ModelAttribute
-	public Signature add(Signature signature) {
+	public Signature add(Signature form) {
+		
+		Signature signature = new Signature();
+
+		signature.setNickname(form.getNickname());
+		signature.setCocktailName(form.getCocktailName());
+		signature.setCocktailContents(form.getCocktailContents());
+		signature.setRecipeContents(form.getRecipeContents());
+		signature.setType(form.getType());
+		signature.setHit(0);
+		signature.setLike(0);
+		
 		return signatureRepository.save(signature);
 	}
 

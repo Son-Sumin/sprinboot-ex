@@ -42,17 +42,7 @@ public class SignatureController {
 
 	/* 시그니처 글 작성 */
 	@PostMapping("/form")
-	public List<Signature> writeSignature(@ModelAttribute Signature form) {
-		
-		Signature signature = new Signature();
-
-		signature.setNickname(form.getNickname());
-		signature.setCocktailName(form.getCocktailName());
-		signature.setCocktailContents(form.getCocktailContents());
-		signature.setRecipeContents(form.getRecipeContents());
-		signature.setType(form.getType());
-		signature.setHit(0);
-		signature.setLike(0);
+	public List<Signature> writeSignature(@ModelAttribute Signature signature) {
 		
 		signatureService.add(signature);
 		return signatureService.listSignature();
