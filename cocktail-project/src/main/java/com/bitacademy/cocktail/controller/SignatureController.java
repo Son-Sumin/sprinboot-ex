@@ -3,10 +3,12 @@ package com.bitacademy.cocktail.controller;
 import java.util.List;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,9 +42,19 @@ public class SignatureController {
 //		return "signature/signatureForm";
 //	}
 
-	/* 시그니처 글 작성 */
+	/* 시그니처 글 작성 */  ////////////////
 	@PostMapping("/form")
-	public List<Signature> writeSignature(@ModelAttribute Signature signature) {
+	public List<Signature> writeSignature(@ModelAttribute Signature form) {
+		
+		Signature signature = new Signature();
+
+		signature.setNickname(form.getNickname());
+		signature.setCocktailName(form.getCocktailName());
+		signature.setCocktailContents(form.getCocktailContents());
+		signature.setRecipeContents(form.getRecipeContents());
+		signature.setType(form.getType());
+		signature.setHit(0);
+		signature.setLike(0);
 		
 		signatureService.add(signature);
 		return signatureService.listSignature();
@@ -66,17 +78,17 @@ public class SignatureController {
 	
 	/* 시그니처 게시글 좋아요 */
 	@GetMapping("/view/like/{no}")
-	public String likeSig(@PathVariable("no") Long no,  Model model) {
+	public Signature likeSig(@PathVariable("no") Long no,  Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		signatureService.updateLike(no);
-		return "redirect:/signature";
+		return signatureService.findSigView(no);
 	}
 
 	/* 시그니처 게시글 삭제 */
-	@GetMapping("/delete/{no}")
-	public String delete(@PathVariable("no") Long no) {
+	@DeleteMapping("/delete/{no}")
+	public List<Signature> delete(@PathVariable("no") Long no) {
 		signatureService.delete(no);
-		return "redirect:/signature/list";
+		return signatureService.listSignature();
 	}
 
 //	/* 시그니처 게시글 수정폼 */
@@ -88,10 +100,25 @@ public class SignatureController {
 //	}
 
 	/* 시그니처 게시글 수정 */
-	@PostMapping("/modify/{no}")
-	public String modify(@PathVariable("no") Long no, @ModelAttribute Signature signature) {
+	@PutMapping("/modify/{no}")
+	public Signature modify(
+			@PathVariable("no") Long no, 
+			@ModelAttribute Signature signature,
+			Signature form) {
+		
+		signature = signatureService.findSigView(no);
+		
+		signature.setNickname(signature.getNickname());
+		signature.setHit(signature.getHit());
+		signature.setLike(signature.getLike());
+		
+		signature.setCocktailName(form.getCocktailName());
+		signature.setCocktailContents(form.getCocktailContents());
+		signature.setRecipeContents(form.getRecipeContents());
+		signature.setType(form.getType());
+		
 		signatureService.modify(signature);
-		return "redirect:/signature";
+		return signatureService.findSigView(no);
 	}
 	
 	/* 시그니처 게시글 댓글 작성 */
