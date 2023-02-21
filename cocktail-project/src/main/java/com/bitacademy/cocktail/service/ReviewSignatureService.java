@@ -28,10 +28,10 @@ public class ReviewSignatureService {
 	}
 	
 	/* 시그니처 댓글 작성 */
-	public void add(Long no, ReviewSignature reviewSignature) {
+	public ReviewSignature add(Long no, ReviewSignature reviewSignature) {
 		Signature signature = signatureRepository.findByNo(no).get();	
 		reviewSignature.setSignature(signature);
-		reviewSignatureRepository.save(reviewSignature);
+		return reviewSignatureRepository.save(reviewSignature);
 	}
 
 	/* 시그니처 게시글 댓글 삭제 */

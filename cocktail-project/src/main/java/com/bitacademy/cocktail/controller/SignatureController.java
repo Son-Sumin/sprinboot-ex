@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,6 +49,9 @@ public class SignatureController {
 		
 		Signature signature = new Signature();
 
+		System.out.println("....>>>>>>" + form);
+		System.out.println("....>>>>>>" + signature);
+		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
 		signature.setCocktailContents(form.getCocktailContents());
@@ -55,6 +59,9 @@ public class SignatureController {
 		signature.setType(form.getType());
 		signature.setHit(0);
 		signature.setLike(0);
+		
+		System.out.println(">>>>>>" + form);
+		System.out.println(">>>>>>" + signature);
 		
 		signatureService.add(signature);
 		return signatureService.listSignature();
@@ -77,7 +84,7 @@ public class SignatureController {
 	}
 	
 	/* 시그니처 게시글 좋아요 */
-	@GetMapping("/view/like/{no}")
+	@PutMapping("/view/like/{no}")
 	public Signature likeSig(@PathVariable("no") Long no,  Model model) {
 		model.addAttribute("signature", signatureService.findSigView(no));
 		signatureService.updateLike(no);
@@ -123,23 +130,23 @@ public class SignatureController {
 	
 	/* 시그니처 게시글 댓글 작성 */
 	@PostMapping("/view/{no}/review/write")
-	public String writeReviewSig(
+	public Signature writeReviewSig(
 			@PathVariable("no") Long no,
 			@ModelAttribute ReviewSignature reviewSignature) {	
 		reviewSignature.setNo(null);
 		reviewSignatureService.add(no, reviewSignature);
-		return "redirect:/signature/view/" + no;
+		return signatureService.findSigView(no);
 	}
 	
 	/* 시그니처 게시글 댓글 삭제 */
-	@GetMapping("/view/{no}/review/delete/{reviewNo}")
-	public String deleteReviewSig(
+	@DeleteMapping("/view/{no}/review/delete/{reviewNo}")
+	public Signature deleteReviewSig(
 			@PathVariable("no") Long no,
 			@PathVariable("reviewNo") Long reviewNo,
 			@ModelAttribute ReviewSignature reviewSignature) {
 		reviewSignature.setSignature(signatureService.findSigView(no));
 		reviewSignatureService.delete(no, reviewNo, reviewSignature);
-		return "redirect:/signature/view/" + no;
+		return signatureService.findSigView(no);
 	}
 
 }
