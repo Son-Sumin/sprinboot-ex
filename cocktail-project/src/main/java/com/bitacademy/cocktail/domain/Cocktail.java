@@ -51,10 +51,12 @@ public class Cocktail {
 	
 	@JsonIgnoreProperties({"no", "cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+	@Builder.Default
 	private List<CocktailImage> cocktailImages = new ArrayList<>();
 	
 	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "cocktail", cascade = CascadeType.ALL)
+	@Builder.Default
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 
 	public void addCocktailImage(CocktailImage cocktailImage){

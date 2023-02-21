@@ -1,6 +1,5 @@
 package com.bitacademy.cocktail.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,12 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
-
 import com.bitacademy.cocktail.base.BaseTimeEntity;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +23,7 @@ import lombok.ToString;
 @Entity(name="signature")
 @Table
 @Data
+@Builder
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -96,30 +91,3 @@ public class Signature extends BaseTimeEntity {
 //public void prePersistLike() {
 //  this.like = this.like == null ? 0 : this.like;
 //}
-
-//	@Column(name = "reg_date", updatable = false)
-//	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-//	private Instant regDate;
-//
-//	@Column(name = "mod_date")
-//	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-//	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-//	private Instant modDate;
-
-
-//	@PrePersist
-//    public void prePersist(){
-//		this.regDate = Instant.now();
-//		this.modDate = Instant.now();
-//    }
-//
-//    @PreUpdate
-//    public void preUpdate(){
-//    	this.modDate = Instant.now();
-//    }
-
-//    public void dateFormat() {
-//    	Instant instant = Instant.now();
-//    	ZoneId zone = ZoneId.systemDefault();
-//    	ZonedDateTime zonedDateTime = instant.atZone(zone);
-//    }

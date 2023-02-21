@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.bitacademy.cocktail.domain.Cocktail;
 import com.bitacademy.cocktail.repository.CocktailRepository;

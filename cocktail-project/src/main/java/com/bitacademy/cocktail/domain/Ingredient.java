@@ -45,10 +45,13 @@ public class Ingredient {
 	
 	private float degree;
 	
+	private String contents;
+	
 	private String image;
 
 	@JsonIgnoreProperties({"cocktail"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
+	@Builder.Default
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 	
 //	@ToString.Exclude

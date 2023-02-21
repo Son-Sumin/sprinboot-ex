@@ -34,12 +34,6 @@ public class CocktailController {
 		return cocktailService.listCocktail();
 	}
 
-//	/* 칵테일 작성 폼 */
-//	@GetMapping("/form")
-//	public String cocktailForm() {
-//		return "cocktail/cocktailForm";
-//	}
-
 	/* 칵테일 글 작성 */
 	@PostMapping("/form")
 	public List<Cocktail> enrollCocktail(@ModelAttribute Cocktail form) {

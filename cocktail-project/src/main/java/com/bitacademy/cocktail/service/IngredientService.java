@@ -7,8 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.bitacademy.cocktail.domain.Ingredient;
-import com.bitacademy.cocktail.repository.CocktailRecipeRepository;
-import com.bitacademy.cocktail.repository.CocktailRepository;
 import com.bitacademy.cocktail.repository.IngredientRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +18,6 @@ public class IngredientService {
 	
 	/* IngredientRepository, CocktailRecipeRepository 생성자 주입 */
 	private final IngredientRepository ingredientRepository;
-	private final CocktailRecipeRepository cocktailRecipeRepository;
 
 	/* 재료 목록 불러오기 */
 	public List<Ingredient> listIngredient() {

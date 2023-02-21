@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,12 +35,6 @@ public class SignatureController {
 		model.addAttribute("signatures", signature);
 		return signatureService.listSignature();
 	}
-
-//	/* 시그니처 글 작성폼 */
-//	@GetMapping("/form")
-//	public String writeSignature() {
-//		return "signature/signatureForm";
-//	}
 
 	/* 시그니처 글 작성 */  ////////////////
 	@PostMapping("/form")
@@ -91,14 +84,6 @@ public class SignatureController {
 		signatureService.delete(no);
 		return signatureService.listSignature();
 	}
-
-//	/* 시그니처 게시글 수정폼 */
-//	@GetMapping("/modify/{no}")
-//	public String modify(@PathVariable("no") Long no, Model model) {
-//		// 기존 글 담아오기
-//		model.addAttribute("signature", signatureService.findSigView(no));
-//		return "signature/signatureModify";
-//	}
 
 	/* 시그니처 게시글 수정 */
 	@PutMapping("/modify/{no}")

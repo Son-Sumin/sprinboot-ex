@@ -5,7 +5,6 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.repository.SignatureRepository;

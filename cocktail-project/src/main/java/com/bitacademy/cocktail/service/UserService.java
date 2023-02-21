@@ -4,15 +4,13 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.bitacademy.cocktail.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class UserService {
-	private final UserRepository userRepository;
-
-	public UserService(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
+	
+	//private final UserRepository userRepository;
 
 }

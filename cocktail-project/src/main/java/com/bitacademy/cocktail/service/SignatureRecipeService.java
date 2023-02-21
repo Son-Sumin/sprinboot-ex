@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.domain.SignatureRecipe;
-import com.bitacademy.cocktail.repository.IngredientRepository;
 import com.bitacademy.cocktail.repository.SignatureRecipeRepository;
 import com.bitacademy.cocktail.repository.SignatureRepository;
 

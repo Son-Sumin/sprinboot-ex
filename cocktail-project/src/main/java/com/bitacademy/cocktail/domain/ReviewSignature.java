@@ -21,6 +21,7 @@ import lombok.ToString;
 @Entity(name="reviewSignature")
 @Table
 @Data
+@Builder
 @EqualsAndHashCode(callSuper=false)
 @ToString(exclude = "signature")
 @AllArgsConstructor
@@ -49,26 +50,4 @@ public class ReviewSignature extends BaseTimeEntity {
       signature.getReviewSignatures().add(this);
 	}
 	
-//	public void updateSignature(Signature signature) {
-//        this.signature = signature;
-//    }
-
-	
-//	@Builder
-//    public ReviewSignature(String nickname, String contents, Signature signature) {
-//        this.nickname = nickname;
-//        this. contents =  contents;
-//        if(this.signature != null) {
-//        	signature.getReviewSignature().remove(this);
-//        } else
-//            this.signature = signature;
-//    }
-//	
-//	public ReviewSignature toEntity() {
-//		return ReviewSignature.builder()
-//				.nickname(nickname)
-//				.contents(contents)
-//				.signature(signature)
-//				.build();
-//	}
 }
