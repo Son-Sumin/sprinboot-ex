@@ -70,13 +70,13 @@ public class SignatureController {
 		return signatureService.findSigView(no);
 	}
 	
-	/* 시그니처 게시글 좋아요 */
-	@PutMapping("/view/like/{no}")
-	public Signature likeSig(@PathVariable("no") Long no,  Model model) {
-		model.addAttribute("signature", signatureService.findSigView(no));
-		signatureService.updateLike(no);
-		return signatureService.findSigView(no);
-	}
+//	/* 시그니처 게시글 좋아요 */
+//	@PutMapping("/view/like/{no}")
+//	public Signature likeSig(@PathVariable("no") Long no,  Model model) {
+//		model.addAttribute("signature", signatureService.findSigView(no));
+//		signatureService.updateLike(no);
+//		return signatureService.findSigView(no);
+//	}
 
 	/* 시그니처 게시글 삭제 */
 	@DeleteMapping("/delete/{no}")
