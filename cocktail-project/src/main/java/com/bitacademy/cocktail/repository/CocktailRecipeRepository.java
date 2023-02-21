@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.bitacademy.cocktail.domain.CocktailRecipe;
 
-@EnableJpaRepositories
 public interface CocktailRecipeRepository extends JpaRepository<CocktailRecipe, Long> {
 
 	List<CocktailRecipe> findByCocktail_No(Long cocktailNo);
