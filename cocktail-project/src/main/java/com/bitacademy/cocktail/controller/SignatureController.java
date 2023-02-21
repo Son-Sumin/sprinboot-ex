@@ -49,9 +49,6 @@ public class SignatureController {
 		
 		Signature signature = new Signature();
 
-		System.out.println("....>>>>>>" + form);
-		System.out.println("....>>>>>>" + signature);
-		
 		signature.setNickname(form.getNickname());
 		signature.setCocktailName(form.getCocktailName());
 		signature.setCocktailContents(form.getCocktailContents());
@@ -59,9 +56,6 @@ public class SignatureController {
 		signature.setType(form.getType());
 		signature.setHit(0);
 		signature.setLike(0);
-		
-		System.out.println(">>>>>>" + form);
-		System.out.println(">>>>>>" + signature);
 		
 		signatureService.add(signature);
 		return signatureService.listSignature();
