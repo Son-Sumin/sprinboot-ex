@@ -34,7 +34,7 @@ public class Signature extends BaseTimeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
 
-	private String nickname;
+	//private String nickname;
 
 	@Column(name = "cocktail_name")
 	private String cocktailName;
@@ -51,7 +51,7 @@ public class Signature extends BaseTimeEntity {
 	private Integer hit;
 	
 	//@ColumnDefault("0")
-	private Integer like;
+	//private Integer like;
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)

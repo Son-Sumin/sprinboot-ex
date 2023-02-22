@@ -15,9 +15,6 @@
 	<div class="form-container">
 		<form action="/signature/form" method="post">
 			<div class="form-group">
-				<label for="nickname">닉네임 </label>
-				<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
-				<br><br>
 				
 				<label for="cocktailName">칵테일 이름 </label>
 				<input type="text" id="cocktailName" name="cocktailName" placeholder="칵테일 이름을 입력하세요">
@@ -37,7 +34,11 @@
 				<br><br>
 				
 				<input type="hidden" id="hit" name="hit" >
-				<input type="hidden" id="like" name="like">
+				
+				<label for="files">파일선택 </label>
+				<input type="file" name="file">
+				<br><br>
+				
 			</div>
 			<br><br>
 			
