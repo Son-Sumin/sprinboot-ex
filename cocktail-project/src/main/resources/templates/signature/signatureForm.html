@@ -13,7 +13,7 @@
 	<div th:include="~{/includes/header}"></div>
 	
 	<div class="form-container">
-		<form action="/signature/form" method="post">
+		<form action="/signature/form" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				
 				<label for="cocktailName">칵테일 이름 </label>
@@ -36,7 +36,7 @@
 				<input type="hidden" id="hit" name="hit" >
 				
 				<label for="files">파일선택 </label>
-				<input type="file" name="file">
+				<input multiple="multiple" type="file" name="files[]">
 				<br><br>
 				
 			</div>

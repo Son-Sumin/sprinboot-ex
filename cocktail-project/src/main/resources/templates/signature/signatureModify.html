@@ -13,11 +13,8 @@
 	<div th:include="~{/includes/header}"></div>
 	
 	<div class="form-container">
-		<form th:action="@{/signature/modify/{no}(no = ${signature.no})}" method="post">
+		<form th:action="@{/signature/modify/{no}(no = ${signature.no})}" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="nickname">닉네임 </label>
-				<input type="text" id="nickname" name="nickname" th:value="${signature.nickname}" readonly>
-				<br><br>
 				
 				<label for="cocktailName">칵테일 이름 </label>
 				<input type="text" id="cocktailName" name="cocktailName" th:value="${signature.cocktailName}">
@@ -40,7 +37,11 @@
 				<br><br>
 				
 				<input type="hidden" id="hit" name="hit" th:value="${signature.hit}">
-				<input type="hidden" id="like" name="like" th:value="${signature.like}">
+				
+				<label for="files">파일선택 </label>
+				<input multiple="multiple" type="file" name="files" >
+				<br><br>
+
 			</div>
 			<br><br>
 			
