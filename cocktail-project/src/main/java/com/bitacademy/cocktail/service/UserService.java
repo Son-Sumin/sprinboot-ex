@@ -1,16 +1,25 @@
 package com.bitacademy.cocktail.service;
 
-import javax.transaction.Transactional;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lombok.RequiredArgsConstructor;
+import com.bitacademy.cocktail.domain.User;
+import com.bitacademy.cocktail.repository.UserRepository;
+
 
 @Service
-@Transactional
-@RequiredArgsConstructor
 public class UserService {
-	
-	//private final UserRepository userRepository;
 
+	@Autowired
+	UserRepository userRepository;
+
+	public void join(User user) {
+		userRepository.save(user);
+	}
+
+	public List<User> userList() {
+		return userRepository.findAll();
+	}
 }
