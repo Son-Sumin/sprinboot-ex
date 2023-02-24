@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -64,6 +65,9 @@ public class Signature extends BaseTimeEntity {
 	@OneToMany(mappedBy = "signature", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@JsonIgnoreProperties({"signature"})
 	private List<SignatureImage> signatureImages = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
 	@OneToMany(mappedBy="board", cascade = CascadeType.ALL)
 	private Set<LikeBoard> likes = new HashSet<>();

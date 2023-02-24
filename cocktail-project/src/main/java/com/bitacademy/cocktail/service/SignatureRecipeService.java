@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SignatureRecipeService {
 	
-	/* CocktailRepository, SignatureRecipeRepository, IngredientRepository 생성자 주입 */
+	/* 생성자 주입 */
 	private final SignatureRepository signatureRepository;
 	private final SignatureRecipeRepository signatureRecipeRepository;
 	
@@ -28,13 +28,16 @@ public class SignatureRecipeService {
 		return signatureRecipeRepository.findAll();
 	}
 	
-	/* cocktailNo에 따른 칵테일 레시피 */
+	/* signatureNo에 따른 칵테일 레시피 */
 	public List<SignatureRecipe> findBySignature(Long signatureNo, SignatureRecipe signatureRecipe) {
 		Optional<Signature> signature = signatureRepository.findByNo(signatureNo);
 		//signatureRecipe.setSignature(signature).get();
 		return signatureRecipeRepository.findBySignature_No(signatureNo);
 	}
 	
-	
+	/* 시그니처 작성 */
+	public SignatureRecipe add(SignatureRecipe signatureRecipe) {		
+		return signatureRecipeRepository.save(signatureRecipe);
+	}
 	
 }

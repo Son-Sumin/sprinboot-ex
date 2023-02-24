@@ -1,5 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,12 +28,12 @@ public class SignatureRecipe {
 	private Long no;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"reviewSignatures"})
+	@JsonIgnoreProperties({"signatureRecipes"})
 	@JoinColumn(name = "signature_no")
 	private Signature signature;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"cocktailRecipes"})
+	@JsonIgnoreProperties({"cocktailRecipes", "signatureRecipes"})
 	@JoinColumn(name = "ingredient_no")
 	private Ingredient ingredient;
 	

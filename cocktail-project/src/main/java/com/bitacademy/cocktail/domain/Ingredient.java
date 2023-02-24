@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -23,9 +24,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity(name="ingredient")
-@ToString(exclude = {"cocktailRecipes"})
+@ToString(exclude = {"cocktailRecipes", "signatureRecipes"})
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
@@ -50,22 +50,12 @@ public class Ingredient {
 
 	@JsonIgnoreProperties({"ingredient"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-	@Builder.Default
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 	
-//	@ToString.Exclude
-//	@JsonIgnoreProperties({"signatureRecipes"})
-//	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
-//	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
+	@JsonIgnore
+	//@JsonIgnoreProperties({"signatureRecipes"})
+	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
+	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
-//	@Builder
-//	public Ingredient(String name, String engName, String type,
-//						float degree, String image, CocktailRecipe cocktailRecipe) {
-//      this.name = name;
-//      this.engName = engName;
-//      this.type = type;
-//      this.name = name;
-//      this.degree = degree;
-//	}
 
 }
