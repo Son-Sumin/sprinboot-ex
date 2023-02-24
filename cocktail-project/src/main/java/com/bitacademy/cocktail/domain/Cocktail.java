@@ -29,7 +29,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "no")
 public class Cocktail {
 
 	@Id

@@ -1,5 +1,6 @@
 package com.bitacademy.cocktail.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,15 +28,12 @@ import lombok.ToString;
 @Builder
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
-@NoArgsConstructor
-//@DynamicInsert  @DynamicUpdate 
+@NoArgsConstructor 
 public class Signature extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
-
-	//private String nickname;
 
 	@Column(name = "cocktail_name")
 	private String cocktailName;
@@ -47,22 +46,24 @@ public class Signature extends BaseTimeEntity {
 
 	private String type;
 	
-	//@ColumnDefault("0")
 	private Integer hit;
 	
-	//@ColumnDefault("0")
-	//private Integer like;
+	@ToString.Exclude
+	@Builder.Default
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"signature"})
+	private List<ReviewSignature> reviewSignatures = new ArrayList<>();
 	
 	@ToString.Exclude
-	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
-	//@JsonIgnoreProperties({"signature"})
-	private List<ReviewSignature> reviewSignatures;
+	@Builder.Default
+	@OneToMany(mappedBy = "signature", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+	@JsonIgnoreProperties({"signature"})
+	private List<SignatureImage> signatureImages = new ArrayList<>();
 	
-//	@ToString.Exclude
-//	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
-//	//@JsonIgnoreProperties({"signature"})
-//	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
-//	
+}
+
+
+
 //	public void addSignatureRecipe(SignatureRecipe signatureRecipe){
 //		signatureRecipes.add(signatureRecipe);
 //		signatureRecipe.setSignature(this);
@@ -79,8 +80,6 @@ public class Signature extends BaseTimeEntity {
 //        this.hit = hit;
 //        this.like = like;
 //    }
-}
-
 
 //@PrePersist
 //public void prePersistHit() {

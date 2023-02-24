@@ -29,7 +29,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "no")
 public class Ingredient {
 
 	@Id
@@ -49,7 +48,7 @@ public class Ingredient {
 	
 	private String image;
 
-	@JsonIgnoreProperties({"cocktail"})
+	@JsonIgnoreProperties({"ingredient"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	@Builder.Default
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();

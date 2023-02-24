@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,22 +31,10 @@ public class ReviewSignature extends BaseTimeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
 
-	private String nickname;
-
 	private String contents;
 	
     @ManyToOne
-	@JsonIgnore
     @JoinColumn(name = "signature_no")
     private Signature signature;
-	
-	
-	@Builder
-	public ReviewSignature(String nickname, String contents, Signature signature) {
-      this.nickname = nickname;
-      this.contents = contents;
-      this.signature = signature;
-      signature.getReviewSignatures().add(this);
-	}
 	
 }
