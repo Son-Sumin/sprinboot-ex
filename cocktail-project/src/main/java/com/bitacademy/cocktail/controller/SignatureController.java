@@ -3,12 +3,14 @@ package com.bitacademy.cocktail.controller;
 import java.util.List;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -45,12 +47,13 @@ public class SignatureController {
 	}
 
 	/* 시그니처 글 작성 + 재료 작성 + 멀티파일 업로드 */
+	@CrossOrigin(origins = "*")
 	@PostMapping("/form")
 	public List<Signature> writeSignature(
 			@ModelAttribute Signature form,
 			SignatureImage signatureImage,
 			SignatureRecipe recipe,
-			List<MultipartFile> files) throws Exception {
+			@ModelAttribute List<MultipartFile> files) throws Exception {
 		
 		// 시그니처 글 작성
 		Signature signature = new Signature();
@@ -61,13 +64,13 @@ public class SignatureController {
 		signature.setHit(0);
 		signatureService.add(signature);
 		
-//		// 시그니처 재료 작성
-//		SignatureRecipe signatureRecipe = new SignatureRecipe();
-//		signatureRecipe.setSignature(signature);
-//		signatureRecipe.setIngredient(recipe.getIngredient());
-//		signatureRecipe.setAmount(recipe.getAmount());
-//		signatureRecipe.setUnit(recipe.getUnit());
-//		signatureRecipeService.add(signatureRecipe);
+		// 시그니처 재료 작성
+		SignatureRecipe signatureRecipe = new SignatureRecipe();
+		signatureRecipe.setSignature(signature);
+		signatureRecipe.setIngredient(recipe.getIngredient());
+		signatureRecipe.setAmount(recipe.getAmount());
+		signatureRecipe.setUnit(recipe.getUnit());
+		signatureRecipeService.add(signatureRecipe);
 		
 		//파일 업로드
 		signatureImageService.addImages(signature, signatureImage, files);
@@ -102,6 +105,7 @@ public class SignatureController {
 	}
 
 	/* 시그니처 게시글 수정 */
+	// 자체 test시 @ModelAttribute, 클라이언트로 전송 시 @RequestBody
 	@PutMapping("/modify/{no}")
 	public Signature modify(
 			@PathVariable("no") Long no, 
