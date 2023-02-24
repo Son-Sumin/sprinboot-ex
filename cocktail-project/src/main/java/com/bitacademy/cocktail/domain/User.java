@@ -54,17 +54,20 @@ public class User {
 	@JsonIgnoreProperties({"user"})
 	private List<Board> boards = new ArrayList<>();
 	
-//	@OneToMany(mappedBy="user")
-//	@JsonIgnoreProperties({"reviewSignatures"})
-//	private List<Signature> signatures = new ArrayList<>();
-	
 	@OneToMany(mappedBy="user", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"user"})
 	private List<ReviewBoard> reviews = new ArrayList<>();
 	
-//	@OneToMany(mappedBy="user")
-//	@JsonIgnoreProperties({"reviewSignatures"})
-//	private List<Signature> signatures = new ArrayList<>();
+	@OneToMany(mappedBy="user", cascade = CascadeType.REMOVE)
+//	@JsonIgnoreProperties({"reviewSignatures", "signatureImages"})
+	private List<Signature> signatures = new ArrayList<>();
+	
+	@OneToMany(mappedBy="user", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"signature"})
+	private List<ReviewSignature> reviewSignatures = new ArrayList<>();
+	
+//	@OneToMany(mappedBy="user", cascade = CascadeType.REMOVE)
+//	private List<LikeSignature> LikeSignature = new ArrayList<>();
 	
     @PrePersist
     public void createdAt() {
