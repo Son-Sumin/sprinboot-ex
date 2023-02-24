@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bitacademy.cocktail.domain.Ingredient;
 import com.bitacademy.cocktail.domain.ReviewSignature;
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.domain.SignatureImage;
 import com.bitacademy.cocktail.domain.SignatureRecipe;
 import com.bitacademy.cocktail.service.ReviewSignatureService;
 import com.bitacademy.cocktail.service.SignatureImageService;
+import com.bitacademy.cocktail.service.SignatureRecipeService;
 import com.bitacademy.cocktail.service.SignatureService;
 
 import lombok.RequiredArgsConstructor;
@@ -33,6 +33,7 @@ public class SignatureController {
 	private final SignatureService signatureService;
 	private final ReviewSignatureService reviewSignatureService;
 	private final SignatureImageService signatureImageService;
+	private final SignatureRecipeService signatureRecipeService;
 	
 	
 	/* 시그니처 리스트 */
@@ -43,13 +44,12 @@ public class SignatureController {
 		return signatureService.listSignature();
 	}
 
-	/* 시그니처 글 작성 + 멀티파일 업로드 */
+	/* 시그니처 글 작성 + 재료 작성 + 멀티파일 업로드 */
 	@PostMapping("/form")
 	public List<Signature> writeSignature(
 			@ModelAttribute Signature form,
 			SignatureImage signatureImage,
-			SignatureRecipe recipeForm,
-			Ingredient ingredient,
+			SignatureRecipe recipe,
 			List<MultipartFile> files) throws Exception {
 		
 		// 시그니처 글 작성
@@ -61,12 +61,13 @@ public class SignatureController {
 		signature.setHit(0);
 		signatureService.add(signature);
 		
-		// 시그니처 재료 작성
-		SignatureRecipe signatureRecipe = new SignatureRecipe();
-		signatureRecipe.setSignature(signature);
-		signatureRecipe.setIngredient(recipeForm.getIngredient());
-		signatureRecipe.setAmount(recipeForm.getAmount());
-		signatureRecipe.setUnit(recipeForm.getUnit());
+//		// 시그니처 재료 작성
+//		SignatureRecipe signatureRecipe = new SignatureRecipe();
+//		signatureRecipe.setSignature(signature);
+//		signatureRecipe.setIngredient(recipe.getIngredient());
+//		signatureRecipe.setAmount(recipe.getAmount());
+//		signatureRecipe.setUnit(recipe.getUnit());
+//		signatureRecipeService.add(signatureRecipe);
 		
 		//파일 업로드
 		signatureImageService.addImages(signature, signatureImage, files);
