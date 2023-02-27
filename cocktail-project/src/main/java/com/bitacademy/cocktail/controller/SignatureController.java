@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -47,6 +46,7 @@ public class SignatureController {
 	}
 
 	/* 시그니처 글 작성 + 재료 작성 + 멀티파일 업로드 */
+	// 자체 test시 @ModelAttribute, 클라이언트로 전송 시 @RequestBody
 	@CrossOrigin(origins = "*")
 	@PostMapping("/form")
 	public List<Signature> writeSignature(
@@ -60,7 +60,6 @@ public class SignatureController {
 		signature.setCocktailName(form.getCocktailName());
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
-		signature.setType(form.getType());
 		signature.setHit(0);
 		signatureService.add(signature);
 		
@@ -118,7 +117,6 @@ public class SignatureController {
 		signature.setCocktailName(form.getCocktailName());
 		signature.setCocktailContents(form.getCocktailContents());
 		signature.setRecipeContents(form.getRecipeContents());
-		signature.setType(form.getType());
 		signature.setSignatureImages(form.getSignatureImages());
 		signatureService.modify(signature);
 		

@@ -18,7 +18,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.bitacademy.cocktail.base.BaseTimeEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -47,8 +46,6 @@ public class Signature extends BaseTimeEntity {
 
 	@Column(name = "recipe_contents")
 	private String recipeContents;
-
-	private String type;
 	
 	private Integer hit;
 	
