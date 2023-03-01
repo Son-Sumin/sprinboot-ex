@@ -81,6 +81,12 @@ public class BannerController {
 		
 		banner = bannerRepository.findByNo(no);
 		
+		// 기존에 올린 파일 있으면 지우기
+		if(file != null){
+			banner.setFilename("");
+			banner.setFilepath("");
+        }
+		
 		// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
 		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
 		UUID uuid = UUID.randomUUID();
@@ -94,11 +100,6 @@ public class BannerController {
 		banner.setTitle(form.getTitle());
 		banner.setFilename(file.getOriginalFilename());
 		banner.setFilepath("/files/" + fileName);
-		
-		// 기존에 올린 파일 있으면 지우기
-		if(banner.getFilename() != null){
-			bannerRepository.deleteByNo(no);
-        }
 		
 		bannerRepository.save(banner);
 		
