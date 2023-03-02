@@ -54,5 +54,8 @@ public class Ingredient {
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
-
+//	public void addCocktailRecipe(CocktailRecipe cocktailRecipe){
+//		cocktailRecipes.add(cocktailRecipe);
+//		cocktailRecipe.setIngredient(this);
+//    }
 }

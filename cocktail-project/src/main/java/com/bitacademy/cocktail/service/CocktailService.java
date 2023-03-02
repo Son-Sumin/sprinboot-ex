@@ -19,7 +19,6 @@ public class CocktailService {
 	private final CocktailRepository cocktailRepository;
 
 	/* 칵테일 추가하기 */
-	//@ModelAttribute
 	public Cocktail add(Cocktail cocktail) {
 		return cocktailRepository.save(cocktail);
 	}

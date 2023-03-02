@@ -31,7 +31,7 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
-@NoArgsConstructor 
+@NoArgsConstructor
 public class Signature extends BaseTimeEntity {
 
 	@Id
@@ -40,6 +40,9 @@ public class Signature extends BaseTimeEntity {
 
 	@Column(name = "cocktail_name")
 	private String cocktailName;
+	
+	@Column(name = "eng_name")
+	private String engName;
 
 	@Column(name = "cocktail_contents")
 	private String cocktailContents;
@@ -50,52 +53,24 @@ public class Signature extends BaseTimeEntity {
 	private Integer hit;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="user_no")
-	private User user;
+	@JoinColumn(name="member_no")
+	private Member member;
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignatures = new ArrayList<>();
-	
+
 	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@JsonIgnoreProperties({"signature"})
 	private List<SignatureImage> signatureImages = new ArrayList<>();
 	
+	@JsonIgnoreProperties({"signature"})
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
 	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
-	@OneToMany(mappedBy="board", cascade = CascadeType.ALL)
-	private Set<LikeBoard> likes = new HashSet<>();
+	@OneToMany(mappedBy="signature", cascade = CascadeType.ALL)
+	private Set<LikeSignature> likes = new HashSet<>();
 	
 }
-
-
-
-//	public void addSignatureRecipe(SignatureRecipe signatureRecipe){
-//		signatureRecipes.add(signatureRecipe);
-//		signatureRecipe.setSignature(this);
-//    }
-	
-//	@Builder
-//    private Signature(String nickname, String cocktailName, String cocktailContents,
-//    					String recipeContents, String type, Integer hit, Integer like) {
-//        this.nickname = nickname;
-//        this.cocktailName = cocktailName;
-//        this.cocktailContents = cocktailContents;
-//        this.recipeContents = recipeContents;
-//        this.type = type;
-//        this.hit = hit;
-//        this.like = like;
-//    }
-
-//@PrePersist
-//public void prePersistHit() {
-//  this.hit = this.hit == null ? 0 : this.hit;
-//}
-//
-//@PrePersist
-//public void prePersistLike() {
-//  this.like = this.like == null ? 0 : this.like;
-//}

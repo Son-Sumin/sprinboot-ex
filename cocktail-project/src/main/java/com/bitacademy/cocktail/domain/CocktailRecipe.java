@@ -31,20 +31,11 @@ public class CocktailRecipe{
 	private Cocktail cocktail;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"cocktailRecipes", "signatureRecipes"})
+	@JsonIgnoreProperties({"cocktailRecipes"})
 	@JoinColumn(name = "ingredient_no")
 	private Ingredient ingredient;
 	
 	private Long amount;
 	private String unit;
 	
-//	@Builder
-//	public CocktailRecipe(Cocktail cocktail, Ingredient ingredient, Long amount, String unit) {
-//      this.amount = amount;
-//      this.unit = unit;
-//      this.cocktail = cocktail;
-//      this.ingredient = ingredient;
-//      cocktail.getCocktailRecipes().add(this);
-//      ingredient.getCocktailRecipe().add(this);
-//	}
 }

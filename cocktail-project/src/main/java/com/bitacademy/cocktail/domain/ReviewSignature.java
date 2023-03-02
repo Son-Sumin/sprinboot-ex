@@ -34,11 +34,11 @@ public class ReviewSignature extends BaseTimeEntity {
 	private String contents;
 	
 	@ManyToOne
-    @JoinColumn(name = "user_no")
-    private User user;
+    @JoinColumn(name = "member_no")
+    private Member member;
 	
     @ManyToOne
     @JoinColumn(name = "signature_no")
     private Signature signature;
-	
+    
 }

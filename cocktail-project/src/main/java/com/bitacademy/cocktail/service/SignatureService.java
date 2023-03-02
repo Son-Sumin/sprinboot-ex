@@ -30,8 +30,8 @@ public class SignatureService {
 	}
 
 	/* 시그니처 작성 */
-	public Signature add(Signature signature) {		
-		return signatureRepository.save(signature);
+	public void add(Signature signature) {		
+		signatureRepository.save(signature);
 	}
 
 	/* 글 삭제 */
@@ -52,26 +52,6 @@ public class SignatureService {
 //	/* 좋아요 올리기 */
 //	public void updateLike(Long no) {
 //		signatureRepository.updateLike(no);
-//	}
-
-//	/* 시그니처 작성 */
-//	public void add(Signature signature, MultipartFile file) throws Exception {
-//		
-//		// 프로젝트 경로 설정
-//		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-//		
-//		// 식별자 (파일 이름에 붙일 임의의 문자 생성)
-//		UUID uuid = UUID.randomUUID();
-//		
-//		// 저장될 파일이름 : 임의의 문자_원래 파일이름
-//		String fileName = uuid + "_" + file.getOriginalFilename();
-//		
-//		// MultipartFile file 넣어줄 껍데기 지정 (경로, "파일이름")
-//		File saveFile = new File(projectPath, "name");
-//		
-//		file.transferTo(saveFile);
-//		
-//		signatureRepository.save(signature);
 //	}
 	
 }
