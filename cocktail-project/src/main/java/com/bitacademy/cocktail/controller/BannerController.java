@@ -48,12 +48,12 @@ public class BannerController {
 		
 		Banner banner = new Banner();
 		
-		// 파일을 올리지 않을 경우
+		 // 파일을 올리지 않을 경우
 		 if(file.isEmpty()) {
-			 banner.setTitle(form.getTitle());
-			 banner.setFilename("");
-			 banner.setFilepath("");
-			 bannerRepository.save(banner);
+			banner.setTitle(form.getTitle());
+			banner.setFilename("");
+			banner.setFilepath("");
+			bannerRepository.save(banner);
 			 
 	     } else {
 	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
@@ -69,7 +69,7 @@ public class BannerController {
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
 			banner.setFilepath("/files/" + fileName);
-	
+
 			bannerRepository.save(banner);
 	     }
 	}
@@ -92,19 +92,19 @@ public class BannerController {
 		banner = bannerRepository.findByNo(no);
 		
 		// 기존에 올린 파일 있으면 지우기
-		if(file != null){
+		if(file.isEmpty()) {
 			banner.setFilename("");
 			banner.setFilepath("");
         }
 		
-		 if(file.isEmpty()) {
-			 banner.setTitle(form.getTitle());
-			 banner.setFilename("");
-			 banner.setFilepath("");
-			 bannerRepository.save(banner);
-			 
-	     } else {
-			// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
+		if(file.isEmpty()) {
+			banner.setTitle(form.getTitle());
+			banner.setFilename("");
+			banner.setFilepath("");
+			bannerRepository.save(banner);
+			
+	    } else {
+	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
 			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
 			UUID uuid = UUID.randomUUID();
 			String fileName = uuid + "_" + file.getOriginalFilename();
@@ -117,9 +117,7 @@ public class BannerController {
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
 			banner.setFilepath("/files/" + fileName);
-			
 			bannerRepository.save(banner);
-	     }
-		
+	    }
 	}
 }
