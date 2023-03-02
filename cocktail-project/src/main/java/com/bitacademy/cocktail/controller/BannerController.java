@@ -1,11 +1,18 @@
 package com.bitacademy.cocktail.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import org.apache.commons.io.IOUtils;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,13 +39,24 @@ public class BannerController {
 	/* 생성자 주입 */
 	private final BannerRepository bannerRepository;
 	
-	
 	/* 배너 리스트 */
 	@GetMapping({"", "/list"})
 	public List<Banner> listBanner(Model model) {
 		List<Banner> banner = bannerRepository.findAll();
 		model.addAttribute("banners", banner);
 		return banner;
+	}
+	
+	/* 이미지 변환 */
+	@GetMapping(value = {"/view/{no}"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE,})
+	public ResponseEntity<byte[]> showImages(@PathVariable("no") Long no) throws IOException {
+		
+		Banner banner = bannerRepository.findByNo(no);
+
+		InputStream imageStream = new FileInputStream("src/main/resources/static" + banner.getFilepath());
+		byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+		imageStream.close();
+	    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 	}
 	
 	/* 배너 추가 */
