@@ -45,23 +45,33 @@ public class BannerController {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/add")
 	public void addBanner(@ModelAttribute Banner form, MultipartFile file) throws Exception {
-
-		// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
-		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-		UUID uuid = UUID.randomUUID();
-		String fileName = uuid + "_" + file.getOriginalFilename();
 		
-		// MultipartFile file 넣어줄 껍데기 지정 (경로, "파일이름")
-		File saveFile = new File(projectPath, fileName);
-		file.transferTo(saveFile);
-		
-		// 사진 추가		
 		Banner banner = new Banner();
-		banner.setTitle(form.getTitle());
-		banner.setFilename(file.getOriginalFilename());
-		banner.setFilepath("/files/" + fileName);
-
-		bannerRepository.save(banner);
+		
+		// 파일을 올리지 않을 경우
+		 if(file.isEmpty()) {
+			 banner.setTitle(form.getTitle());
+			 banner.setFilename("");
+			 banner.setFilepath("");
+			 bannerRepository.save(banner);
+			 
+	     } else {
+	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
+	 		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+	 		UUID uuid = UUID.randomUUID();
+	 		String fileName = uuid + "_" + file.getOriginalFilename();
+	 		
+	 		// MultipartFile file 넣어줄 껍데기 지정 (경로, "파일이름")
+	 		File saveFile = new File(projectPath, fileName);
+	 		file.transferTo(saveFile);
+			
+			// 사진 추가
+			banner.setTitle(form.getTitle());
+			banner.setFilename(file.getOriginalFilename());
+			banner.setFilepath("/files/" + fileName);
+	
+			bannerRepository.save(banner);
+	     }
 	}
 	
 	/* 배너 삭제 */
@@ -87,21 +97,29 @@ public class BannerController {
 			banner.setFilepath("");
         }
 		
-		// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
-		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-		UUID uuid = UUID.randomUUID();
-		String fileName = uuid + "_" + file.getOriginalFilename();
-		
-		// MultipartFile file 넣어줄 껍데기 지정 (경로, "파일이름")
-		File saveFile = new File(projectPath, fileName);
-		file.transferTo(saveFile);
-		
-		// 수정
-		banner.setTitle(form.getTitle());
-		banner.setFilename(file.getOriginalFilename());
-		banner.setFilepath("/files/" + fileName);
-		
-		bannerRepository.save(banner);
+		 if(file.isEmpty()) {
+			 banner.setTitle(form.getTitle());
+			 banner.setFilename("");
+			 banner.setFilepath("");
+			 bannerRepository.save(banner);
+			 
+	     } else {
+			// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
+			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+			UUID uuid = UUID.randomUUID();
+			String fileName = uuid + "_" + file.getOriginalFilename();
+			
+			// MultipartFile file 넣어줄 껍데기 지정 (경로, "파일이름")
+			File saveFile = new File(projectPath, fileName);
+			file.transferTo(saveFile);
+			
+			// 수정
+			banner.setTitle(form.getTitle());
+			banner.setFilename(file.getOriginalFilename());
+			banner.setFilepath("/files/" + fileName);
+			
+			bannerRepository.save(banner);
+	     }
 		
 	}
 }
