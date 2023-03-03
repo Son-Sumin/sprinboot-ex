@@ -65,15 +65,24 @@ public class BannerController {
 	public ResponseEntity<List<byte[]>> showImages() throws IOException {
 		
 		List<Banner> banner = bannerRepository.findAll();
-		List<ResponseEntity<byte[]>> res = new ArrayList<>();
+		List<ResponseEntity> res = new ArrayList<>();
 		
 		for (Banner ba : banner) {
-			InputStream imageStream = new FileInputStream("src/main/resources/static" + bannerRepository.findByNo(ba.getNo()).getFilepath());
-			byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
-			imageStream.close();
-			ResponseEntity<byte[]> re = new ResponseEntity<>(imageByteArray, HttpStatus.OK);
-		    res.add(re);
+			Long no = ba.getNo();
+			if (bannerRepository.findByNo(no).getFilepath().isEmpty()) {
+				continue;
+				
+			} else {
+				InputStream imageStream = new FileInputStream("src/main/resources/static" + bannerRepository.findByNo(ba.getNo()).getFilepath());
+				byte[] imageByteArray = IOUtils.toByteArray(imageStream);
+				imageStream.close();
+				
+				ResponseEntity<byte[]> re = new ResponseEntity<>(imageByteArray, HttpStatus.OK);
+
+			    res.add(re);
+			}
 		}
+		System.out.println("여기여기 : " + res);
 		return new ResponseEntity<List<byte[]>> (HttpStatus.OK);
 	}
 	
