@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.http.HttpHeaders;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -49,39 +48,32 @@ public class BannerController {
 		return banner;
 	}
 	
-	/* filepath 리스트 */
-	@GetMapping({"/list/"})
-	public void listFilepath() throws IOException {
+	/* 각 배너별 이미지 변환 */
+	@GetMapping(value = {"/view/{no}"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE,})
+	public ResponseEntity<byte[]> showImages(@PathVariable("no") Long no) throws IOException {
 		
-		List<Banner> banner =  new ArrayList<>(); 
-		
-		for (Banner ba : banner) {
-			Long no = ba.getNo();
-			showImages();
-		}
+		Banner banner = bannerRepository.findByNo(no);
 
+		InputStream imageStream = new FileInputStream("src/main/resources/static" + banner.getFilepath());
+		byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+		imageStream.close();
+	    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 	}
 	
-	/* 이미지 변환 */
-	@GetMapping(value = {"/view"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+	/* 이미지 변환 리스트 */
+	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
 	public ResponseEntity<List<byte[]>> showImages() throws IOException {
 		
 		List<Banner> banner = bannerRepository.findAll();
-		List<ResponseEntity> res = new ArrayList<>();
+		List<ResponseEntity<byte[]>> res = new ArrayList<>();
 		
 		for (Banner ba : banner) {
-		
-			Long no = ba.getNo();
-			
 			InputStream imageStream = new FileInputStream("src/main/resources/static" + bannerRepository.findByNo(ba.getNo()).getFilepath());
 			byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
 			imageStream.close();
 			ResponseEntity<byte[]> re = new ResponseEntity<>(imageByteArray, HttpStatus.OK);
-		    
 		    res.add(re);
 		}
-		System.out.println("bannerList : " + res);
-
 		return new ResponseEntity<List<byte[]>> (HttpStatus.OK);
 	}
 	
