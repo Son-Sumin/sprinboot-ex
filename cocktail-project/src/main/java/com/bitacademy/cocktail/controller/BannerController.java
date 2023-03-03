@@ -70,19 +70,20 @@ public class BannerController {
 		List<Banner> banners = bannerRepository.findAll();
 		List<byte[]> res = new ArrayList<>();
 		
-		
 		for (Banner banner : banners) {
-            String filePath = banner.getFilepath();
-            if (filePath != null && !filePath.isEmpty()) {
+
+			String filePath = banner.getFilepath();
+			
+			if (filePath != null && !filePath.isEmpty()) {
                 Path imagePath = Path.of("src/main/resources/static", filePath);
                 byte[] imageBytes = Files.readAllBytes(imagePath);
                 res.add(imageBytes);
             }
         }
-		System.out.println("res::::::::::: " + res);
-        return ResponseEntity.ok().body(res);
+		System.out.println("여기여기 : " + res);
+		return new ResponseEntity<List<byte[]>> (res, HttpStatus.OK);
 	}
-	
+
 	/* 배너 추가 */
 	@CrossOrigin(origins = "*")
 	@PostMapping("/add")
