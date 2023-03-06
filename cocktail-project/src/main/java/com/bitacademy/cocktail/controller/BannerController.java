@@ -53,7 +53,7 @@ public class BannerController {
 	
 	/* 각 배너별 이미지 변환 */
 	@GetMapping(value = {"/view/{no}"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE,})
-	public ResponseEntity<byte[]> showImages(@PathVariable("no") Long no) throws IOException {
+	public ResponseEntity<byte[]> showImage(@PathVariable("no") Long no) throws IOException {
 		
 		Banner banner = bannerRepository.findByNo(no);
 
@@ -63,26 +63,32 @@ public class BannerController {
 	    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 	}
 	
-	/* 이미지 변환 리스트 */
-	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
-	public ResponseEntity<List<byte[]>> showImages() throws IOException {
-		
-		List<Banner> banners = bannerRepository.findAll();
-		List<byte[]> res = new ArrayList<>();
-		
-		for (Banner banner : banners) {
-
-			String filePath = banner.getFilepath();
-			
-			if (filePath != null && !filePath.isEmpty()) {
-                Path imagePath = Path.of("src/main/resources/static", filePath);
-                byte[] imageBytes = Files.readAllBytes(imagePath);
-                res.add(imageBytes);
-            }
-        }
-		System.out.println("여기여기 : " + res);
-		return new ResponseEntity<List<byte[]>> (res, HttpStatus.OK);
-	}
+//	/* 이미지 변환 리스트 */
+//	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+//	public ResponseEntity<List<byte[]>> showImages() throws IOException {
+//		
+//		List<Banner> banners = bannerRepository.findAll();
+//		List<byte[]> res = new ArrayList<>();
+//	
+////		HttpHeaders headers = new HttpHeaders();
+////		headers.add("Content-Type", 
+//		
+//		for (Banner banner : banners) {
+//
+//			String filePath = banner.getFilepath();
+//			
+//			if (filePath != null && !filePath.isEmpty()) {
+////                Path imagePath = Path.of("src/main/resources/static", filePath);
+////                byte[] imageBytes = Files.readAllBytes(imagePath);
+//				InputStream imageStream = new FileInputStream("src/main/resources/static" + filePath);
+//				byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+//				imageStream.close();
+//                res.add(imageByteArray);
+//            }
+//        }
+//		System.out.println("여기여기 : " + res);
+//		return new ResponseEntity<List<byte[]>> (res, HttpStatus.OK);
+//	}
 
 	/* 배너 추가 */
 	@CrossOrigin(origins = "*")
