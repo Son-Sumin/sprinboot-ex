@@ -1,12 +1,10 @@
 package com.bitacademy.cocktail.controller;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.http.HttpHeaders;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -52,7 +50,7 @@ public class BannerController {
 	}
 	
 	/* 각 배너별 이미지 변환 */
-	@GetMapping(value = {"/view/{no}"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE,})
+	@GetMapping(value = {"/view/{no}"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
 	public ResponseEntity<byte[]> showImage(@PathVariable("no") Long no) throws IOException {
 		
 		Banner banner = bannerRepository.findByNo(no);
@@ -63,15 +61,36 @@ public class BannerController {
 	    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 	}
 	
+	/* 이미지 변환 리스트 */
+	@GetMapping(value = {"/images"})
+	public ResponseEntity<List<byte[]>> getImages() throws IOException {
+	    List<byte[]> imageDataList = new ArrayList<>();
+	    File directory = new File("src/main/resources/static/banner");
+	    File[] files = directory.listFiles();
+	    for (File file : files) {
+	        if (file.isFile()) {
+	            FileInputStream in = new FileInputStream(file);
+	            ByteArrayOutputStream out = new ByteArrayOutputStream();
+	            byte[] buffer = new byte[1024];
+	            int n;
+	            while ((n = in.read(buffer)) != -1) {
+	                out.write(buffer, 0, n);
+	            }
+	            in.close();
+	            out.close();
+	            byte[] data = out.toByteArray();
+	            imageDataList.add(data);
+	        }
+	    }
+	    return new ResponseEntity<List<byte[]>>(imageDataList, HttpStatus.OK);
+	}
+	
 //	/* 이미지 변환 리스트 */
 //	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
 //	public ResponseEntity<List<byte[]>> showImages() throws IOException {
 //		
 //		List<Banner> banners = bannerRepository.findAll();
 //		List<byte[]> res = new ArrayList<>();
-//	
-////		HttpHeaders headers = new HttpHeaders();
-////		headers.add("Content-Type", 
 //		
 //		for (Banner banner : banners) {
 //
@@ -106,7 +125,7 @@ public class BannerController {
 			 
 	     } else {
 	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
-	 		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+	 		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\banner";
 	 		UUID uuid = UUID.randomUUID();
 	 		String fileName = uuid + "_" + file.getOriginalFilename();
 	 		
@@ -117,7 +136,7 @@ public class BannerController {
 			// 사진 추가
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
-			banner.setFilepath("/files/" + fileName);
+			banner.setFilepath("/banner/" + fileName);
 
 			bannerRepository.save(banner);
 	     }
@@ -154,7 +173,7 @@ public class BannerController {
 			
 	    } else {
 	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
-			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\banner";
 			UUID uuid = UUID.randomUUID();
 			String fileName = uuid + "_" + file.getOriginalFilename();
 			
@@ -165,7 +184,7 @@ public class BannerController {
 			// 수정
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
-			banner.setFilepath("/files/" + fileName);
+			banner.setFilepath("/banner/" + fileName);
 			bannerRepository.save(banner);
 	    }
 	}
