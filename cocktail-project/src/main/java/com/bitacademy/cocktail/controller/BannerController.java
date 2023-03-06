@@ -64,9 +64,11 @@ public class BannerController {
 	/* 이미지 변환 리스트 */
 	@GetMapping(value = {"/images"})
 	public ResponseEntity<List<byte[]>> getImages() throws IOException {
+		
 		List<byte[]> imageList = new ArrayList<>();
 	    File directory = new File("src/main/resources/static/banner");
 	    File[] files = directory.listFiles();
+	    
 	    for (File file : files) {
 	        if (file.isFile()) {
 	            FileInputStream in = new FileInputStream(file);
@@ -151,6 +153,7 @@ public class BannerController {
 	}
 	
 	/* 배너 수정 */
+	@CrossOrigin(origins = "*")
 	@PutMapping("/modify/{no}")
 	public void modifyBanner(
 			@PathVariable("no") Long no,
@@ -159,9 +162,7 @@ public class BannerController {
 			MultipartFile file) throws Exception {
 		
 		banner = bannerRepository.findByNo(no);
-		System.out.println("~~~~~~~~~~~ no : " + no);
-		System.out.println("~~~~~~~~~~~ banner : " + banner);
-		System.out.println("~~~~~~~~~~~ file : " + file);
+
 		// 기존에 올린 파일 있으면 지우기
 		if(file != null) {
 			banner.setFilename(null);
@@ -174,7 +175,6 @@ public class BannerController {
 			banner.setFilename("");
 			banner.setFilepath("");
 			bannerRepository.save(banner);
-			System.out.println("banner3 : " + banner);
 		
 		// 파일을 올릴 경우
 	    } else {
@@ -191,12 +191,7 @@ public class BannerController {
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
 			banner.setFilepath("/banner/" + fileName);
-			
-			System.out.println("banner1 : " + banner);
-			
 			bannerRepository.save(banner);
-			
-			System.out.println("banner2 : " + banner);
 	    }
 	}
 }
