@@ -64,7 +64,7 @@ public class BannerController {
 	/* 이미지 변환 리스트 */
 	@GetMapping(value = {"/images"})
 	public ResponseEntity<List<byte[]>> getImages() throws IOException {
-	    List<byte[]> imageDataList = new ArrayList<>();
+		List<byte[]> imageList = new ArrayList<>();
 	    File directory = new File("src/main/resources/static/banner");
 	    File[] files = directory.listFiles();
 	    for (File file : files) {
@@ -79,10 +79,10 @@ public class BannerController {
 	            in.close();
 	            out.close();
 	            byte[] data = out.toByteArray();
-	            imageDataList.add(data);
+	            imageList.add(data);
 	        }
 	    }
-	    return new ResponseEntity<List<byte[]>>(imageDataList, HttpStatus.OK);
+	    return new ResponseEntity<List<byte[]>>(imageList, HttpStatus.OK);
 	}
 	
 //	/* 이미지 변환 리스트 */
@@ -122,7 +122,8 @@ public class BannerController {
 			banner.setFilename("");
 			banner.setFilepath("");
 			bannerRepository.save(banner);
-			 
+		
+		// 파일을 올릴 경우
 	     } else {
 	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
 	 		String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\banner";
@@ -158,19 +159,24 @@ public class BannerController {
 			MultipartFile file) throws Exception {
 		
 		banner = bannerRepository.findByNo(no);
-		
+		System.out.println("~~~~~~~~~~~ no : " + no);
+		System.out.println("~~~~~~~~~~~ banner : " + banner);
+		System.out.println("~~~~~~~~~~~ file : " + file);
 		// 기존에 올린 파일 있으면 지우기
-		if(file.isEmpty()) {
-			banner.setFilename("");
-			banner.setFilepath("");
+		if(file != null) {
+			banner.setFilename(null);
+			banner.setFilepath(null);
         }
 		
+		// 파일을 올리지 않을 경우
 		if(file.isEmpty()) {
 			banner.setTitle(form.getTitle());
 			banner.setFilename("");
 			banner.setFilepath("");
 			bannerRepository.save(banner);
-			
+			System.out.println("banner3 : " + banner);
+		
+		// 파일을 올릴 경우
 	    } else {
 	    	// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
 			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\banner";
@@ -185,7 +191,12 @@ public class BannerController {
 			banner.setTitle(form.getTitle());
 			banner.setFilename(file.getOriginalFilename());
 			banner.setFilepath("/banner/" + fileName);
+			
+			System.out.println("banner1 : " + banner);
+			
 			bannerRepository.save(banner);
+			
+			System.out.println("banner2 : " + banner);
 	    }
 	}
 }
