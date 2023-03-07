@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.bitacademy.cocktail.domain.Member;
 
-@Repository
 public interface MemberRepository extends JpaRepository<Member, Long>{
 
 	List<Member> findAll();

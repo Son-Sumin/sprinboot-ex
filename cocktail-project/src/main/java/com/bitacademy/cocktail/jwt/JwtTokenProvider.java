@@ -31,7 +31,7 @@ private String secretKey = "cocktailproject123";
 	
 	private final UserDetailsService userDetailsService;
 	
-	// 객체 초기화, secretKey를 Base64로 인코딩한다.
+	// 객체 초기화, secretKey를 Base64로 인코딩
 	protected void init() {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
@@ -39,7 +39,7 @@ private String secretKey = "cocktailproject123";
 	// JWT 토큰 생성
 	public String createToken(String userPk, Role roles, String nickname) {
 		Claims claims = Jwts.claims().setSubject(userPk);   // JWT payload 에 저장되는 정보단위, 보통 여기서 user를 식별하는 값을 넣는다.
-		claims.put("roles", roles);  // 정보는 key / value 쌍으로 저장된다.
+		claims.put("roles", roles);  // 정보 저장 (key-value)
 		Date now = new Date();
 		return Jwts.builder()
 				.setHeaderParam(Header.TYPE, Header.JWT_TYPE)

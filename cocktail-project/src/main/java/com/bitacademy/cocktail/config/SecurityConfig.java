@@ -37,12 +37,12 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
-			// http.httpBasic().disable(); // 일반적인 루트가 아닌 다른 방식으로 요청시 거절, header에 id, pw가 아닌 token(jwt)을 달고 간다. 그래서 basic이 아닌 bearer를 사용한다.
+			// http.httpBasic().disable();  // 일반적인 루트가 아닌 다른 방식으로 요청시 거절, header에 id, pw가 아닌 token(jwt)을 달고 간다. 그래서 basic이 아닌 bearer를 사용한다.
 			.httpBasic().disable()
 			.csrf().disable()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // 토큰 기반 인증이므로 세션 사용 안함
 			.and()
-			.authorizeHttpRequests()
+			.authorizeHttpRequests()  // 요청에 대한 사용 권한 체크
 //			.antMatchers("/admin/**").hasRole("admin")
 //			.antMatchers("/board/write").hasRole("enuser")
 //			.antMatchers("/unuser").hasRole("unuser")
