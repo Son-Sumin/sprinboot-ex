@@ -75,6 +75,7 @@ public class BannerController {
 		    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 		}
 		
+		System.out.println(banner);
 		return null;
 	}
 	
