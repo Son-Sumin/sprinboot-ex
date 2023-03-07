@@ -37,7 +37,7 @@ public class SignatureImageService {
 		List<SignatureImage> signatureImages = new ArrayList<>();
 		
 		for(MultipartFile file : files) {
-			if(!file.isEmpty()) {
+			if(file != null) {
 		
 				// 프로젝트 경로 설정, 랜덤한 문자열이 들어간 파일이름 설정
 				String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";

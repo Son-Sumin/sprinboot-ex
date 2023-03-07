@@ -25,10 +25,10 @@ public class SignatureRecipe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
 	
-	@ManyToOne
-	@JsonIgnoreProperties({"reviewSignatures"})
-	@JoinColumn(name = "signature_no")
-	private Signature signature;
+//	@ManyToOne
+//	@JsonIgnoreProperties({"reviewSignatures"})
+//	@JoinColumn(name = "signature_no")
+//	private Signature signature;
 	
 	@ManyToOne
 	@JsonIgnoreProperties({"cocktailRecipes"})

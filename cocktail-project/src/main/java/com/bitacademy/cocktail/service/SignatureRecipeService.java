@@ -32,12 +32,12 @@ public class SignatureRecipeService {
 		return signatureRecipeRepository.findAll();
 	}
 	
-	/* signatureNo에 따른 칵테일 레시피 */
-	public List<SignatureRecipe> findBySignature(Long signatureNo, SignatureRecipe signatureRecipe) {
-		Optional<Signature> signature = signatureRepository.findByNo(signatureNo);
-		//signatureRecipe.setSignature(signature).get();
-		return signatureRecipeRepository.findBySignatureNo(signatureNo);
-	}
+//	/* signatureNo에 따른 칵테일 레시피 */
+//	public List<SignatureRecipe> findBySignature(Long signatureNo, SignatureRecipe signatureRecipe) {
+//		Optional<Signature> signature = signatureRepository.findByNo(signatureNo);
+//		//signatureRecipe.setSignature(signature).get();
+//		return signatureRecipeRepository.findBySignatureNo(signatureNo);
+//	}
 	
 	/* 시그니처 작성간 재료 등록 */
 	public void addRecipes(Signature signature, List<SignatureRecipe> recipes) {
@@ -46,7 +46,7 @@ public class SignatureRecipeService {
 		
 		for(SignatureRecipe recipe : recipes) {
 			SignatureRecipe sigRecipe = new SignatureRecipe();
-			sigRecipe.setSignature(signature);
+			//sigRecipe.setSignature(signature);
 			sigRecipe.setIngredient(recipe.getIngredient());
 			//sigRecipe.setIngredient(ingredientRepository.findByName(recipe.getIngredient().getName()));
 			sigRecipe.setAmount(recipe.getAmount());
