@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import com.bitacademy.cocktail.domain.Role;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -23,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @Component
 public class JwtTokenProvider {
 
-private String secretKey = "cocktailproject";
+private String secretKey = "cocktailproject123";
 	
 	// 토큰 유효시간 60분
 	private long tokenValidTime = 60 * 60 * 1000L;
@@ -36,11 +37,12 @@ private String secretKey = "cocktailproject";
 	}
 	
 	// JWT 토큰 생성
-	public String createToken(String userPk, Role roles) {
+	public String createToken(String userPk, Role roles, String nickname) {
 		Claims claims = Jwts.claims().setSubject(userPk);   // JWT payload 에 저장되는 정보단위, 보통 여기서 user를 식별하는 값을 넣는다.
 		claims.put("roles", roles);  // 정보는 key / value 쌍으로 저장된다.
 		Date now = new Date();
 		return Jwts.builder()
+				.setHeaderParam(Header.TYPE, Header.JWT_TYPE)
 				.setClaims(claims)  // 정보 저장
 				.setIssuedAt(now)   // 토큰 발행 시간 정보
 				.setExpiration(new Date(now.getTime() + tokenValidTime)) // set Expire Time
@@ -63,7 +65,7 @@ private String secretKey = "cocktailproject";
 	
 	// Request의 Header에서 token 값을 가져옵니다. "Authorization" : "TOKEN값'
 	public String resolveToken(HttpServletRequest request) {
-		return request.getHeader("X-TOKEN");
+		return request.getHeader("X-AUTH-TOKEN");
 	}
 	
 	// 토큰의 유효성 + 만료일자 확인
