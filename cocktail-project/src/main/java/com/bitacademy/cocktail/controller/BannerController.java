@@ -62,30 +62,47 @@ public class BannerController {
 	}
 	
 	/* 이미지 변환 리스트 */
-	@GetMapping(value = {"/images"})
-	public ResponseEntity<List<byte[]>> getImages() throws IOException {
+	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+	public ResponseEntity<byte[]> showImage() throws IOException {
 		
-		List<byte[]> imageList = new ArrayList<>();
-	    File directory = new File("src/main/resources/static/banner");
-	    File[] files = directory.listFiles();
-	    
-	    for (File file : files) {
-	        if (file.isFile()) {
-	            FileInputStream in = new FileInputStream(file);
-	            ByteArrayOutputStream out = new ByteArrayOutputStream();
-	            byte[] buffer = new byte[1024];
-	            int n;
-	            while ((n = in.read(buffer)) != -1) {
-	                out.write(buffer, 0, n);
-	            }
-	            in.close();
-	            out.close();
-	            byte[] data = out.toByteArray();
-	            imageList.add(data);
-	        }
-	    }
-	    return new ResponseEntity<List<byte[]>>(imageList, HttpStatus.OK);
+		List<Banner> banner = bannerRepository.findAll();
+
+		for (Banner one : banner) {
+			
+			InputStream imageStream = new FileInputStream("src/main/resources/static" + one.getFilepath());
+			byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+			imageStream.close();
+		    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
+		}
+		
+		return null;
 	}
+	
+//	/* 이미지 변환 리스트 */
+//	@GetMapping(value = {"/images"})
+//	public ResponseEntity<List<byte[]>> getImages() throws IOException {
+//		
+//		List<byte[]> imageList = new ArrayList<>();
+//	    File directory = new File("src/main/resources/static/banner");
+//	    File[] files = directory.listFiles();
+//	    
+//	    for (File file : files) {
+//	        if (file.isFile()) {
+//	            FileInputStream in = new FileInputStream(file);
+//	            ByteArrayOutputStream out = new ByteArrayOutputStream();
+//	            byte[] buffer = new byte[1024];
+//	            int n;
+//	            while ((n = in.read(buffer)) != -1) {
+//	                out.write(buffer, 0, n);
+//	            }
+//	            in.close();
+//	            out.close();
+//	            byte[] data = out.toByteArray();
+//	            imageList.add(data);
+//	        }
+//	    }
+//	    return new ResponseEntity<List<byte[]>>(imageList, HttpStatus.OK);
+//	}
 	
 //	/* 이미지 변환 리스트 */
 //	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
