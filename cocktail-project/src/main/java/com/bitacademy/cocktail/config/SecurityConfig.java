@@ -1,6 +1,7 @@
 package com.bitacademy.cocktail.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig {
 
 	private final JwtTokenProvider jwtTokenProvider;
+	private final RedisTemplate redisTemplate;
 	
 	// 비밀번호 암호화
 	@Bean
@@ -49,7 +51,7 @@ public class SecurityConfig {
 //			.antMatchers("/**").authenticated()
 			.anyRequest().permitAll()
 			.and()
-			.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+			.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider, redisTemplate), UsernamePasswordAuthenticationFilter.class);
 			// JwtAuthenticationFilter를 UsernamePasswordAuthenticationFilter 전에 넣는다
 		
 		return http.build();

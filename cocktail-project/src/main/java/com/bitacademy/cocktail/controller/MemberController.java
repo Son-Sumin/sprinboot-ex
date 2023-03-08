@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bitacademy.cocktail.domain.Member;
@@ -49,7 +52,7 @@ public class MemberController {
 				.build());
     }
     
-	//jwt로그인
+	// jwt로그인
 	@PostMapping("/member/login")
 	public Token Login(@RequestBody Map<String, String> user) {
 		System.out.println("user = " + user);
@@ -64,6 +67,16 @@ public class MemberController {
 					.token(jwtTokenProvider.createToken(member.getId(), member.getRole(), member.getNickname()))
 					.build();
 	}
+	
+	// jwt로그아웃
+		@PostMapping("/member/logout")
+		public ResponseEntity<Void> logout(@RequestHeader("Authorization") String accessToken) {
+
+			memberService.logout(accessToken);
+
+			return new ResponseEntity(HttpStatus.OK);
+		}
+
     
     //유저리스트
     @GetMapping("/member/list")
