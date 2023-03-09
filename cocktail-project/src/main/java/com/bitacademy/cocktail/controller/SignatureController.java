@@ -57,25 +57,29 @@ public class SignatureController {
 			List<MultipartFile> files
 			/* List<SignatureRecipe> recipes */) throws Exception {
 		
-		//시그니처 글 작성
-		Signature signature = new Signature();
-		signature.setCocktailName(form.getCocktailName());
-		signature.setEngName(form.getEngName());
-		signature.setCocktailContents(form.getCocktailContents());
-		signature.setRecipeContents(form.getRecipeContents());
-		signature.setHit(0);
-		signatureService.add(signature);
+		if(files == null) {
+			System.out.println("1장 이상의 사진을 업로드하세요.");
+		} else {
 		
-		// 시그니처 재료 작성
-		//signatureRecipeService.addRecipes(signature, recipes);
-		
-		System.out.println("signature : " + signature);
-		System.out.println("signatureImage : " + signatureImage);
-		System.out.println("files : " + files);
-		
-		//파일 업로드
-		signatureImageService.addImages(signature, signatureImage, files);
-		
+			//시그니처 글 작성
+			Signature signature = new Signature();
+			signature.setCocktailName(form.getCocktailName());
+			signature.setEngName(form.getEngName());
+			signature.setCocktailContents(form.getCocktailContents());
+			signature.setRecipeContents(form.getRecipeContents());
+			signature.setHit(0);
+			signatureService.add(signature);
+			
+			// 시그니처 재료 작성
+			//signatureRecipeService.addRecipes(signature, recipes);
+			
+			System.out.println("signature : " + signature);
+			System.out.println("signatureImage : " + signatureImage);
+			System.out.println("files : " + files);
+			
+			//파일 업로드
+			signatureImageService.addImages(signature, signatureImage, files);
+		}
 		return signatureService.listSignature();
 	}
 
