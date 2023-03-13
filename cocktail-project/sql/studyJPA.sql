@@ -41,3 +41,6 @@ insert into reviewsignature values('3', '다', '다다다', '2023-02-09', '2023-
 
 delete from signature where no='16';
 drop table signature;
+
+-- Gangnam Cocktail------------------------------------
+select * from table1;
