@@ -25,7 +25,7 @@ public class Place {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;                    
 
-    @Column(length = 20)
+    @Column(name = "place_name")
     private String placeName;            
 
     @Column(nullable = false, columnDefinition = "GEOMETRY")
