@@ -28,6 +28,8 @@ public class Place {
     @Column(name = "place_name")
     private String placeName;            
 
-    @Column(nullable = false, columnDefinition = "GEOMETRY")
-    private Point geography;
+    private Double longitude;
+    private Double latitude;
+    
+    
 }
