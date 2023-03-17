@@ -1,9 +1,7 @@
 package com.bitacademy.cocktail.domain;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -21,14 +19,17 @@ import com.bitacademy.cocktail.base.BaseTimeEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Setter;
 
 @Entity(name="signature")
 @Table
-@Data
+@Getter
+@Setter
+@Builder
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -52,25 +53,26 @@ public class Signature extends BaseTimeEntity {
 	
 	private Integer hit;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="member_no")
+	@JsonIgnoreProperties({"boards", "reviews", "likeBoard", "likeCocktail", "signatures", "reviewSignatures", "likeSignature", "likePlace"})
 	private Member member;
 	
-	@ToString.Exclude
-	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"signature"})
 	private List<ReviewSignature> reviewSignatures = new ArrayList<>();
 
-	@ToString.Exclude
 	@OneToMany(mappedBy = "signature", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@JsonIgnoreProperties({"signature"})
 	private List<SignatureImage> signatureImages = new ArrayList<>();
 	
-//	@JsonIgnoreProperties({"signature"})
-//	@OneToMany(mappedBy = "signature", cascade = CascadeType.ALL)
-//	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
-	@OneToMany(mappedBy="signature", cascade = CascadeType.ALL)
-	private Set<LikeSignature> likes = new HashSet<>();
+	@OneToMany(mappedBy = "signature", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"signature"})
+	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
+	
+	@OneToMany(mappedBy="signature", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"signature"})
+	private List<LikeSignature> likeSignature = new ArrayList<>();
 	
 }

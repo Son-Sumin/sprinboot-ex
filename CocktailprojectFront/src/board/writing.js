@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 function writing(props) {
     // let Data1 = useFetch("http://localhost:5030/board")
     const Data1 = props.board;
+    const token = props.token;
 
     const noData = Math.max.apply(null, Data1.map(function (v) { return v.no })) + 1;
     const caRef = useRef(null);
@@ -35,17 +36,12 @@ function writing(props) {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
                 },
                 body: JSON.stringify({
-                    id: noData,
-                    no: noData,
-                    category: caRef.current.value,
-                    title: tiRef.current.value,
-                    contents: contentsData,
-                    hit: 0,
-                    reg_date: '2023-02-17',
-                    favorite: 0,
-                    user_no: 1,
+                    "category": caRef.current.value,
+                    "title": tiRef.current.value,
+                    "contents": contentsData,
                 }),
             })
                 .then(res => {
@@ -77,10 +73,10 @@ function writing(props) {
                                 <select
                                     id="sorting"
                                     style={{ width: "100%", height: "100%" }}
-                                    defaultChecked="자유"
+                                    defaultValue="random" ref={caRef}
                                 >
-                                    <option value="자유" ref={caRef}>자유</option>
-                                    <option value="Q&A" ref={caRef}>Q&A</option>
+                                    <option value="random">자유</option>
+                                    <option value="question">Q&A</option>
                                 </select>
                             </Col>
                             <Col xs={10}>

@@ -26,7 +26,7 @@ public class SignatureService {
 
 	/* 시그니처 1개 게시글 보기 */
 	public Signature findSigView(Long no) {
-		return signatureRepository.findByNo(no).get();
+		return signatureRepository.findByNo(no);
 	}
 
 	/* 시그니처 작성 */
@@ -47,11 +47,5 @@ public class SignatureService {
 	/* 조회수 올리기 */
 	public void updateHit(Long no) {
 		signatureRepository.updateHit(no);
-	}
-	
-//	/* 좋아요 올리기 */
-//	public void updateLike(Long no) {
-//		signatureRepository.updateLike(no);
-//	}
-	
+	}	
 }

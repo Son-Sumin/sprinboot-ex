@@ -1,13 +1,10 @@
 package com.bitacademy.cocktail.domain;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,16 +17,20 @@ import com.bitacademy.cocktail.base.BaseTimeEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity
-@Data
+@Entity(name = "board")
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper=false)
-@Table(name = "board")
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Board extends BaseTimeEntity {
 
 	@Id
@@ -40,18 +41,21 @@ public class Board extends BaseTimeEntity {
 	private String contents;
 	private Long hit;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="member_no")
+	@JsonIgnoreProperties({"boards", "reviews", "likeBoard","likeCocktail", "signatures", "reviewSignatures", "likeSignature", "likePlace"})
 	private Member member;
 	
 	@OneToMany(mappedBy="board", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"board"})
 	private List<ReviewBoard> reviews = new ArrayList<>();
 	
+	@OneToMany(mappedBy="board", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"board"})
+	private List<LikeBoard> likeBoard = new ArrayList<>();
+	
 	@OneToMany(mappedBy="board", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@JsonIgnoreProperties({"board"})
 	private List<BoardImage> imgs = new ArrayList<>();
 	
-	@OneToMany(mappedBy="board", cascade = CascadeType.ALL)
-	private Set<LikeBoard> likes = new HashSet<>();
 }

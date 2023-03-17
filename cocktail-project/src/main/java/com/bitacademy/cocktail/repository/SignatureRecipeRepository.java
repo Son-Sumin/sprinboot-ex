@@ -11,10 +11,10 @@ import com.bitacademy.cocktail.domain.SignatureRecipe;
 
 public interface SignatureRecipeRepository extends JpaRepository<SignatureRecipe, Long>{
 
-	//List<SignatureRecipe> findBySignatureNo(Long signatureNo);
+	List<SignatureRecipe> findBySignatureNo(Long signatureNo);
 
-	
-	
+	void deleteBySignatureNo(Long signatureNo);
+
 //	@Query(value= "SELECT r, i FROM signatureRecipe r, ingredient i "
 //			+ "WHERE i.name = :name",
 //			nativeQuery=true)

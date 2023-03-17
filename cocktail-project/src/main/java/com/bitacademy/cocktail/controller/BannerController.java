@@ -61,23 +61,23 @@ public class BannerController {
 	    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
 	}
 	
-	/* 이미지 변환 리스트 */
-	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
-	public ResponseEntity<byte[]> showImage() throws IOException {
-		
-		List<Banner> banner = bannerRepository.findAll();
-
-		for (Banner one : banner) {
-			
-			InputStream imageStream = new FileInputStream("src/main/resources/static" + one.getFilepath());
-			byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
-			imageStream.close();
-		    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
-		}
-		
-		System.out.println(banner);
-		return null;
-	}
+//	/* 이미지 변환 리스트 */
+//	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+//	public ResponseEntity<byte[]> showImage() throws IOException {
+//		
+//		List<Banner> banner = bannerRepository.findAll();
+//
+//		for (Banner one : banner) {
+//			
+//			InputStream imageStream = new FileInputStream("src/main/resources/static" + one.getFilepath());
+//			byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+//			imageStream.close();
+//		    return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
+//		}
+//		
+//		System.out.println(banner);
+//		return null;
+//	}
 	
 //	/* 이미지 변환 리스트 */
 //	@GetMapping(value = {"/images"})
@@ -105,29 +105,29 @@ public class BannerController {
 //	    return new ResponseEntity<List<byte[]>>(imageList, HttpStatus.OK);
 //	}
 	
-//	/* 이미지 변환 리스트 */
-//	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
-//	public ResponseEntity<List<byte[]>> showImages() throws IOException {
-//		
-//		List<Banner> banners = bannerRepository.findAll();
-//		List<byte[]> res = new ArrayList<>();
-//		
-//		for (Banner banner : banners) {
-//
-//			String filePath = banner.getFilepath();
-//			
-//			if (filePath != null && !filePath.isEmpty()) {
-////                Path imagePath = Path.of("src/main/resources/static", filePath);
-////                byte[] imageBytes = Files.readAllBytes(imagePath);
-//				InputStream imageStream = new FileInputStream("src/main/resources/static" + filePath);
-//				byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
-//				imageStream.close();
-//                res.add(imageByteArray);
-//            }
-//        }
-//		System.out.println("여기여기 : " + res);
-//		return new ResponseEntity<List<byte[]>> (res, HttpStatus.OK);
-//	}
+	/* 이미지 변환 리스트 */
+	@GetMapping(value = {"/images"}, produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+	public ResponseEntity<List<byte[]>> showImages() throws IOException {
+		
+		List<Banner> banners = bannerRepository.findAll();
+		List<byte[]> res = new ArrayList<>();
+		
+		for (Banner banner : banners) {
+
+			String filePath = banner.getFilepath();
+			
+			if (filePath != null && !filePath.isEmpty()) {
+//                Path imagePath = Path.of("src/main/resources/static", filePath);
+//                byte[] imageBytes = Files.readAllBytes(imagePath);
+				InputStream imageStream = new FileInputStream("src/main/resources/static" + filePath);
+				byte[] imageByteArray  = IOUtils.toByteArray(imageStream);
+				imageStream.close();
+                res.add(imageByteArray);
+            }
+        }
+		System.out.println("여기여기 : " + res);
+		return new ResponseEntity<List<byte[]>> (res, HttpStatus.OK);
+	}
 
 	/* 배너 추가 */
 	@CrossOrigin(origins = "*")

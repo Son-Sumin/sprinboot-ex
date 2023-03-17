@@ -30,7 +30,7 @@ public class Ingredient {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long no;
+	private Long no;
 
 	private String name;
 
@@ -50,7 +50,7 @@ public class Ingredient {
 	private List<CocktailRecipe> cocktailRecipes = new ArrayList<>();
 	
 	@JsonIgnore
-	//@JsonIgnoreProperties({"signatureRecipes"})
+	//@JsonIgnoreProperties({"ingredient"})
 	@OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
 	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	

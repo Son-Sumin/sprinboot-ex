@@ -1,13 +1,10 @@
 package com.bitacademy.cocktail.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.geolatte.geom.Point;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,8 +38,5 @@ public class Lecture {
 	private String review;
 	
 	private String state;
-	
-	@Column(nullable = false, columnDefinition = "GEOMETRY")
-    private Point location;
 
 }
