@@ -1,0 +1,20 @@
+AWS 회원가입
+
+* Sign up for AWS
+Root user email address : 본인 이메일
+AWS account name : 닉네임
+Verift address email 클릭
+본인이 입력한 이메일에 인증번호 확인 후 입력
+비밀번호 입력
+
+Personal - for your projectc 체크
+한국주소 영어로 입력(네이버에 한글 주소 영어로 검색)
+
+해외 결재까지 가능한 카드 등록
+카드 소유자 기재
+영수증을 받을 이메일 기재(가입 이메일과 동일해도 됨)
+
+핸드폰 인증 페이지
+인증번호 입력
+
+select a support plan : 가장 왼쪽 체크

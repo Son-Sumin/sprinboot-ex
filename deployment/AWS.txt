@@ -1,0 +1,91 @@
+캡처 : window + shift + s
+
+aws azure gcp 비교
+한 브라우저에 동시 접속 불가
+창 2개 띄우기(다른 브라우저, 시크릿모드 등)
+
+AWS Service
+1. billing
+  - 결제 - 청구서 - 틈틈히 확인(18h~24h 후 최신화)
+  - 기본설정 - 청구서 설정 - 프리 티어 사용량 알림 받기, 결제 알림 받기 check
+  -  Cost Management - Budgets - 예산 생성 후 사용
+
+2. IAM
+https://182864233461.signin.aws.amazon.com/console
+admin
+~
+
+https://182864233461.signin.aws.amazon.com/console
+host
+host1234!
+
+  - 실무에서는 root에서 한 사용자를 만드는데 권한(AdministratorAccess) 주고 'admin'으로서 활동시키다가 문제 생기면 그 사용자를 삭제하기
+  - 'admin' 계정은 billing 권한만 없음
+  - MFA 할당
+  - 사용자 - 권한 주기 - 직접 연결(AmazonEC2FullAccess 이면 다 가능)
+	회사에서는 그룹 생성 후 그 그룹에 연결
+
+3. EC2
+  - check the region
+  - 리소스 - 보안그룹 = 0이면 안됨
+  - 인스턴스 : 클라우드의 가상서버
+  - 이미지 : 운영체계(OS)
+  - 인스턴스 시작
+	- 이름 설정 - 아무거나
+	- OS이미지 - Ubuntu - 프리티어
+	- 인스턴스 유형 - t2.micro
+	- 키 페어(로그인) - 생성하기 (pem 파일 중요)
+
+  - 인스턴스 사용법
+	- 해당 인스턴스 접속 후 연결
+
+	1. web socket 방식의 접속
+	- 상단) EC2 인스턴스 연결
+ 	- 연결
+	- cmd - #sudo apt -y update
+
+	2. SSH 클라이언트 사용
+	- 상단) SSH 클라이언트
+	- pem있는 파일 위치에서 ssh 복사하여 실행
+	- cmd - #sudo apt -y update
+	- cmd - #sudo apt -y upgrade
+	- cmd - #sudo apt -y install nginx
+	- cmd - #sudo systemctl status nginx
+	
+	(처음 만들 때 보안그룹 생성 시 HTTP 선택 가능, 미선택 시 아래 실시)
+	- ssh(secure shell)를 사용해서 접속했니 scp(secure copy) 설치하여 사용
+	- 인스턴스 - 퍼블릭 IPv4 주소 접근 시 방화벽**으로 인해 접근 불가
+	- 중간 보안 탭 - 보안그룹 접속 - 인바운드 규칙 편집
+	- HTTP(유형), Anywhere-IPv4 - 규칙 저장
+  
+	  - 인스턴스 이미지(OS) 생성 - 해당 인스턴스 종료(삭제)
+		- 더 큰 용량의 인스턴스에 이전 만들었던 이미지를 설치
+		-> 기존 이미지 안에 있는 nginx 남아있음 (타작업 필요없음)
+	  - 해당 인스턴스 우클릭 - 이미지 및 켐플릿 - 이미지 생성
+
+	3. mobaxterm 다운로드
+	- session - ssh - Advanced SSH settings
+		- Specifty username - 해당 인스턴스 연결 - EC2 인스턴스 연결 - 사용자 이름 - 입력
+		- use private key (pem 파일 찾기)
+
+4. S3 (Simple Storage Service) : 웹 하드디스크
+
+5. RDS
+
+-----------------------------------------------------------------
+
+*** Springboot(Gradle) + React AWS 배포하기 ***
+
+* Springboot(Gradle) 빌드
+- cmd 열기
+- 스프링부트 파일의 디렉토리로 이동
+- 입력 #gradlew build
+- 해당 폴더\build\libs 에서 .jar 파일 생성 확인
+- cmd에서 #java -jar 방금 생성된 .jar 파일명.jar 입력하여 실행
+- 종료 시 ctrl +c 
+
+* React 빌드
+- cmd 열기
+- 스프링부트 파일의 디렉토리로 이동
+- 입력 #npm run build
+- 해당 폴더\build 폴더 생성 확인
