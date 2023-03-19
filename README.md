@@ -10,10 +10,11 @@
   <br>
   
 - [**cocktail-project**](https://github.com/Son-Sumin/springboot-test/tree/main/cocktail-project)   
-  * cocktail, signature, banner page CRUD 구현, BaseTimeEtity 활용한 시간 자동 등록   
+  * BaseTimeEtity 활용한 시간 자동 등록   
   * 1:多 mapping   
-  * signature page 댓글 구현   
+  * 댓글 구현   
   * 좋아요 기능 구현   
+  * jwt 활용한 로그인 및 권한 부여
   <br>
   
 - [**studyboot**](https://github.com/Son-Sumin/springboot-test/tree/main/studyboot)   
@@ -22,6 +23,7 @@
 
 - [**deployment**](https://github.com/Son-Sumin/springboot-test/tree/main/deployment)   
   * AWS 활용하여 스프링부트 프로젝트 배포   
+  * MariaDB(mysql), 스프링부트 활용   
 <br>
 
 - [**CocktailprojectFront**](https://github.com/Son-Sumin/springboot-test/tree/main/CocktailprojectFront)   
