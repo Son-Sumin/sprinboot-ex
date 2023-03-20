@@ -1,12 +1,24 @@
-*** Springboot(Gradle) + React AWS 배포하기 ***
+## Springboot(Gradle) + React 프로젝트 AWS 배포하기
+- EC2 활용
+- Lightsail 활용한 내용은 [링크]() 참고
 
 * Springboot(Gradle) 빌드
-- cmd 열기
-- 스프링부트 파일의 디렉토리로 이동
-- 입력 #gradlew build
-- 해당 폴더\build\libs 에서 .jar 파일 생성 확인
-- cmd에서 #java -jar 방금 생성된 .jar 파일명.jar 입력하여 실행
-- 종료 시 ctrl +c 
+- cmd   
+```
+스프링부트 파일의 디렉토리로 이동
+
+[스프링부트 파일 빌드]
+#./gradlew build
+
+해당 폴더\build\libs 디렉토리 이동하여.jar 파일 생성 확인
+
+[.jar 실행]
+(해당 폴더\build\libs 에서 실행)
+#java -jar 방금 생성된 .jar 파일명.jar 입력하여 실행
+
+[종료]
+ctrl +c 
+```
 
 * React 빌드
 - cmd 열기
