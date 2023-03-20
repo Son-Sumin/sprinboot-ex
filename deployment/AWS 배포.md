@@ -38,15 +38,16 @@
 <br>
 
 - React 빌드 참고
-  - 에러내용   
+>  - 에러1   
   ```
   Creating an optimized production build...
   Failed to compile.
 
   Module not found: Error: Can't resolve '@ckeditor/ckeditor5-build-classic' in 'C:\bitacademy-bigdata-ai\eclipse-workspace\aws\CocktailprojectFront\src\board'
+ 
   ```
-
-- 해결방법
+  
+> - 에러1 해결방법
   ```   
   package.json에 "dependencies"에 '@ckeditor/ckeditor5-build-classic' 관련 내용 확인
   
@@ -58,10 +59,24 @@
   #npm run build 재실행
   #npm install
   ```
+<br>
+
+> - 에러2   
+  ```
+  Creating an optimized production build...
+  Failed to compile.
+
+  Module not found: Error: Can't resolve 'react-kakao-maps-sdk' in 'C:\bitacademy-bigdata-ai\eclipse-workspace\aws\CocktailprojectFront\src\map'
+   ```
+> - 에러2 해결방법
+  ``` 
+  리액트 파일 있는 디렉토리로 이동하여
+  #npm install react-kakao-maps-sdk
+  #npm run build
+  ```
 
 - 추가내용   
-  React 빌드 후 index.html이 공백 없는 것으로 확인될텐데 정상임!!
-  
+  React 빌드 후 index.html이 공백 없는 것으로 확인될텐데 정상임!!     
   <br>
   
   * * *
