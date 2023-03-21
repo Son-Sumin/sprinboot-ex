@@ -13,17 +13,28 @@
   [스프링부트 파일 빌드]
   $ ./gradlew build
 
+  [git clone 했다면]
+  $ chmod +x gradlew
+
   해당 폴더\build\libs 디렉토리 이동하여.jar 파일 생성 확인
-  
+
   [.jar 실행]
   (해당 폴더\build\libs 에서 실행)
   $ java -jar 파일명.jar
 
+  [Linux 종료해도 연결 지속시키려면]
+  (& : 백그라운드에서 실행하겠다는 의미)
+  $ java -jar project.jar &
+  $ nohup java -jar project.jar &
+
   [종료]
   ctrl +c 
   
-  [git clone 후 ]
-  $ chmod +x gradlew
+  [백그라운드에서 실행 중인 스프링부트 종료]
+  $ ps -ef | grep jar
+  (.jar PID 번호 확인)
+  $ kill -9 PID번호
+
   ```
  <br>
 
