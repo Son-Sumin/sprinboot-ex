@@ -1,36 +1,39 @@
-## Springboot(Gradle) + React 프로젝트 AWS 배포하기
+# Springboot(Gradle) + React 프로젝트 AWS 배포하기
 - EC2, RDS, Ubuntu 활용
 - Lightsail 활용한 내용은 [링크]() 참고
 
 * * *
 <br>
 
-- Springboot(Gradle) 빌드
+- ### Springboot(Gradle) 빌드
   - terminal   
   ```
   스프링부트 파일의 디렉토리로 이동
   
   [스프링부트 파일 빌드]
-  #./gradlew build
+  $ ./gradlew build
 
   해당 폴더\build\libs 디렉토리 이동하여.jar 파일 생성 확인
   
   [.jar 실행]
   (해당 폴더\build\libs 에서 실행)
-  #java -jar 방금 생성된 .jar 파일명.jar 입력하여 실행
+  $ java -jar 파일명.jar
 
   [종료]
   ctrl +c 
+  
+  [git clone 후 ]
+  $ chmod +x gradlew
   ```
  <br>
 
-- React 빌드
+- ### React 빌드
   - terminal
   ```
   스프링부트 파일의 디렉토리로 이동
 
   [리액트 파일 빌드]
-  #npm run build
+  $ npm run build
   
   해당 폴더\build 디렉토리 파일 생성 확인
   ```
@@ -69,7 +72,7 @@
 
   Module not found: Error: Can't resolve 'react-kakao-maps-sdk' in 'C:\bitacademy-bigdata-ai\eclipse-workspace\aws\CocktailprojectFront\src\map'
    ```
-     
+   
  - 에러2 해결방법   
   ``` 
   리액트 파일 있는 디렉토리로 이동하여
@@ -85,7 +88,7 @@
 </details>
 <br><br>
 
-- mysql   
+- ### mysql   
   - terminal   
   ```
   $ sudo apt-get update
@@ -117,7 +120,7 @@
   ```
   <br>
 
-- java, node.js 설치   
+- ### java, node.js 설치   
   (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
   - terminal   
   ```
