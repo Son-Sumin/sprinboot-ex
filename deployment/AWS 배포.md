@@ -1,13 +1,12 @@
 ## Springboot(Gradle) + React 프로젝트 AWS 배포하기
-- EC2, RDS 활용
+- EC2, RDS, Ubuntu 활용
 - Lightsail 활용한 내용은 [링크]() 참고
-<br>
 
 * * *
 <br>
 
 - Springboot(Gradle) 빌드
-  - cmd   
+  - terminal   
   ```
   스프링부트 파일의 디렉토리로 이동
   
@@ -26,7 +25,7 @@
  <br>
 
 - React 빌드
-  - cmd
+  - terminal
   ```
   스프링부트 파일의 디렉토리로 이동
 
@@ -87,26 +86,45 @@
 <br><br>
 
 - mysql   
-  - cmd   
+  - terminal   
   ```
   $ sudo apt-get update
   $ sudo apt install mysql-server
   $ mysql --version
+  $ cd /etc/mysql/mysql.conf.d
+  $ sudo vi mysqld.cnf
+    1. 주석처리
+      # bind-address           = 127.0.0.1   
+      # mysqlx-bind-address    = 127.0.0.1   
+    2. 모든 접근 허용 (특정 IP값으로 지정 가능)
+      # bind-address           = 0.0.0.0
+
   $ sudo mysql -u root -p
   enter 또는 root 비밀번호 설정
-  mysql> #show databases;
-  mysql> #create database DB이름;
-  mysql> #use DB이름;
-  mysql> #select user. host from user;
-  mysql> #grant all privileges on *.* to 'ssum'@'%' with grant option;
-  mysql> #flush privileges;
+  
+  mysql> show databases;
+  mysql> select user. host from user;
+  mysql> create database DB이름;
+  mysql> use DB이름;
+  mysql> create user 'username'@'%' identified by '비밀번호';
+  mysql> grant all privileges on *.* to 'username'@'%' with grant option;
+  mysql> flush privileges;
+  mysql> select user. host from user;
+  
+  $ sudo systemctl status mysql
+  $ sudo systemctl stop mysql
+  $ sudo systemctl start mysql
   ```
   <br>
 
 - java, node.js 설치   
+  (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
+  - terminal   
+  ```
   $ sudo apt-get install openjdk-11-jdk   
   $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -   
   $ sudo apt-get install -y nodejs  
+  ```
   * * *
   <br>
   
