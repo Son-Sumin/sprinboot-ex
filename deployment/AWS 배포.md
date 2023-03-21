@@ -79,6 +79,18 @@
   React 빌드 후 index.html이 공백 없는 것으로 확인될텐데 정상임!!     
   <br>
   
+  - java, node.js 설치   
+#sudo apt-get install openjdk-11-jdk   
+#curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -   
+#sudo apt-get install -y nodejs   
+<br>
+
+- mysql   
+#sudo apt install mysql-server
+#mysql --version
+#sudo mysql -u root -p
+enter
+#show databases;
   * * *
   <br>
   
