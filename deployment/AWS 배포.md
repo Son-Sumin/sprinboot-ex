@@ -1,9 +1,19 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
 - EC2, RDS, Ubuntu 활용
 - Lightsail 활용한 내용은 [링크]() 참고
+- 참고 : https://3d-yeju.tistory.com/63
 
 * * *
 <br>
+
+- ### java, node.js 설치   
+  (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
+  - terminal   
+  ```
+  $ sudo apt-get install openjdk-11-jdk   
+  $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -   
+  $ sudo apt-get install -y nodejs  
+  ```
 
 - ### Springboot(Gradle) 빌드
   - terminal   
@@ -47,10 +57,58 @@
   $ npm run build
   
   해당 폴더\build 디렉토리 파일 생성 확인
+  
+  [express 설치]
+  $ npm install express --save
+  
+  [server code 생성(server.js)]
+  $ vi server.js
+  ``` 
+  ``` java script
+      ★ server.js 내용 작성
+      (작성 :i / 작성한 내용 저장하고 나가기 :wq)
+
+        const http = require("http");
+        const express = require("express");
+        const path = require("path");
+
+        const app = express();
+
+        const port = 5000; //인스턴스 생성시 만들었던 포트번호 기입
+
+        app.get("/ping", (req, res) => {
+        res.send("pong");
+        });
+
+        app.use(express.static(path.join(__dirname, "build")));
+
+        app.get("/*", (req, res) => {
+        res.set({
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        Pragma: "no-cache",
+        Date: Date.now()
+        });
+        res.sendFile(path.join(__dirname, "build", "index.html"));
+        });
+
+        http.createServer(app).listen(port, () => {
+        console.log(`app listening at ${port}`);
+        });
+   ```
+        
+    
+  - terminal (server.js 작성 후 이어서)
+  ```   
+  [서버 실행]
+  $ node server.js
+  
+  [백그라운드에서 서버 실행하고 싶으면]
+  $ node server.js &
   ```
+      
 
 <details>
-    <summary> React 빌드 참고 </summary> 
+    <summary> React 빌드 참고 (클릭:wink:) </summary> 
 <br>
  
 - 에러1   
@@ -91,9 +149,18 @@
   $ npm run build
   ```
   <br>
-
+  
+  - 모듈이 없다고 에러 발생할 경우 오류 내용에 맞게 아래 코드 실행
+  ```
+  $ npm install @ckeditor/ckeditor5-react
+  $ npm install @ckeditor/ckeditor5-build-classic
+  
+  $ npm install react-kakao-maps-sdk
+  ```
+  <br>
+  
 - 추가내용   
-  React 빌드 후 index.html이 공백 없는 것으로 확인될텐데 정상임!!     
+  React 빌드 후 index.html이 공백 없는 것으로 확인될텐데 정상임!!   
  
 <br>
 </details>
@@ -131,14 +198,6 @@
   ```
   <br>
 
-- ### java, node.js 설치   
-  (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
-  - terminal   
-  ```
-  $ sudo apt-get install openjdk-11-jdk   
-  $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -   
-  $ sudo apt-get install -y nodejs  
-  ```
   * * *
   <br>
   
