@@ -1,19 +1,50 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
-- EC2, RDS, Ubuntu 활용
+- EC2, RDS, Ubuntu, MobaXterm 활용
 - Lightsail 활용한 내용은 [링크]() 참고
 - 참고 : https://3d-yeju.tistory.com/63
 
 * * *
 <br>
 
+- ### 인스턴스 퍼블릭 IPv4 주소로 터미널 접속할 때
+  - termianl
+  ```
+  [접속할 때 실시]
+  $ sudo apt -y update   
+  $ sudo apt -y upgrade   
+  
+  [처음 접속했을 때 실시]
+  $ sudo apt -y install nginx   
+  $ sudo systemctl status nginx   
+  ```
+  <br>
+
 - ### java, node.js 설치   
   (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
   - terminal   
   ```
-  $ sudo apt-get install openjdk-11-jdk   
+  (설치 전 항상 실시)
+  $ sudo apt -y update
+  
+  $ sudo apt-get install openjdk-11-jdk
   $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -   
   $ sudo apt-get install -y nodejs  
   ```
+  <br>
+  
+- ### github  
+  - terminal
+  ```
+  [github 설치]
+  $ sudo apt-get update
+  $ sudo apt-get install -y git
+  $ git version
+  
+  [git clone]
+  $ git clone git주소
+  $ chmod +x gradlew
+  ```
+  <br>
 
 - ### Springboot(Gradle) 빌드
   - terminal   
@@ -183,8 +214,11 @@
   $ sudo mysql -u root -p
   enter 또는 root 비밀번호 설정
   
+  [db 및 user 현황 파악]
   mysql> show databases;
   mysql> select user. host from user;
+  
+  [db 및 user 생성, 권한 부여, 적용]
   mysql> create database DB이름;
   mysql> use DB이름;
   mysql> create user 'username'@'%' identified by '비밀번호';
@@ -192,11 +226,15 @@
   mysql> flush privileges;
   mysql> select user. host from user;
   
+  [mysql 작동 여부 확인, 중지, 시작]
   $ sudo systemctl status mysql
   $ sudo systemctl stop mysql
   $ sudo systemctl start mysql
   ```
   <br>
+  
+- ### Redis   
+  - terminal 
 
   * * *
   <br>
