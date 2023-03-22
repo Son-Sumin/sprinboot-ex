@@ -1,10 +1,20 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
-- EC2, RDS, Ubuntu 활용
+- EC2, RDS, Ubuntu, MobaXterm 활용
 - Lightsail 활용한 내용은 [링크]() 참고
 - 참고 : https://3d-yeju.tistory.com/63
 
 * * *
 <br>
+
+- 인스턴스 퍼블릭 IPv4 주소로 처음 터미널 접속할 때
+  - termianl
+  ```
+  $ sudo apt -y update   
+  $ sudo apt -y upgrade   
+  $ sudo apt -y install nginx   
+  $ sudo systemctl status nginx   
+  ```
+  <br>
 
 - ### java, node.js 설치   
   (프로젝트에서 사용한 버전에 따라 숫자 바꿔주면 됨)   
