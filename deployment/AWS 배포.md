@@ -1,6 +1,6 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
 - EC2, RDS, Ubuntu, MobaXterm 활용
-- Lightsail 활용한 내용은 [링크]() 참고
+- Lightsail 활용한 내용은 [링크](https://github.com/Son-Sumin/springboot-test/tree/main/deployment/Lightsail) 참고
 - 참고 : https://3d-yeju.tistory.com/63
 
 * * *
@@ -234,7 +234,10 @@
   <br>
   
 - ### Redis   
-  - terminal 
+  - terminal   
+  ```
+  
+  ```
 
   * * *
   <br>
