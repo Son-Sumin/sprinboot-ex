@@ -226,7 +226,7 @@
   $ sudo apt-get update
   $ sudo apt install mysql-server
   $ mysql --version
-  $ cd /etc/mysql/mysql.conf.d
+  $ cd /etc/mysql/mysqld.conf
   $ sudo vi mysqld.cnf
     1. 주석처리
       # bind-address           = 127.0.0.1   
