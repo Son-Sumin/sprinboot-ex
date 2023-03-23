@@ -138,7 +138,10 @@
   ```
   <br>
   
-- ### React 빌드 불가 ( Creating an optimized production build... )  
+- ### React 빌드 불가 ( Creating an optimized production build... )   
+- ### JavaScript heap out of memory   
+  Nodejs의 기본 메모리 사이즈를 512MB 초과하면 자동으로 앱이 종료됨   
+  기본 메모리 사이즈 늘려야 함
   - terminal   
   ```
   [AWS 인스턴스는 기본으로  스왑 메모리가 지정되어있지 않아서 0으로 표시됨 확인]
@@ -152,6 +155,9 @@
   [참고 : 스왑메모리 해제 방법]
   $ sudo swapoff -v /mnt/swapfile
   $ sudo rm /mnt/swapfile
+  
+  [기본 메모리 사이즈 늘리기]
+  $ export NODE_OPTIONS=--max_old_space_size=4096  (4GB 증가)
   ```
    
 
