@@ -166,12 +166,14 @@ $ sudo docker ps -aq
 [pull한 images 확인]
 $ sudo docker images
 
-[컨테이너 지우기] id 2자리씩만 입력해도 됨
+[컨테이너 지우기
+(id 2자리씩만 입력해도 됨)
 $ sudo docker rm 컨테이너id
 (전부 지우기)
 $ sudo docker rm `sudo docker ps -aq`
 
-[이미지 지우기] id 2자리씩만 입력해도 됨
+[이미지 지우기]
+(id 2자리씩만 입력해도 됨)
 $ sudo docker rmi 이미지id
 
 [컨테이너 강제 죽이기]
@@ -239,9 +241,14 @@ sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -d mysql
 
 --name some-mysql : 해도 되고 안해도됨 (이름 설정)
 
-$ sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -d mysql
+$ sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 -d mysql
 $ sudo docker ps
 (mysql 돌고 있는것 확인)
+(root로 접근하는 것 가능함)
+
+- mysql workbench
+connection 생성
+ - hostname : 퍼블릭 ip
 
 $ sudo docker exec -it <mysql_container_ID> mysql -u root -p
 $ password 입력
@@ -260,20 +267,11 @@ mysql> quit;
 (2)
 mysql 실행 중인 인스턴스 보안그룹에서 3306 포트 열어두기
 $ sudo docker exec -it <container ID> bash
-$ 
-$ 
-$ 
 
-
-
+[mysql 삭제]
+$ sudo docker ps
+$ sudo docker rm <mysql container ID>
 
 
 
 ubuntu, nginx, mysql, hello-world 실행 명령어 암기
-
-
-
-
-
-
- * hub.docker.com 접속
