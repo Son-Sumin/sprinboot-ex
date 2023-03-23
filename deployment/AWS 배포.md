@@ -1,7 +1,7 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
 - EC2, RDS, Ubuntu, MobaXterm 활용
 - Lightsail 활용한 내용은 [링크](https://github.com/Son-Sumin/springboot-test/tree/main/deployment/Lightsail) 참고
-- 참고 : https://3d-yeju.tistory.com/63
+- 참고 : https://3d-yeju.tistory.com/63, https://cloud-oky.tistory.com/395
 
 * * *
 <br>
@@ -236,7 +236,39 @@
 - ### Redis   
   - terminal   
   ```
+  [Redis 설치]
+  $ sudo apt update
+  $ sudo apt install redis-server
   
+  [서비스 상태 확인]
+  (설치 완료 후 Redis 서비스 자동으로 시작됨)
+  $ sudo systemctl status redis-server
+  
+  [원격 연결 허용]
+  (Redis가 실행 중인 시스템인 127.0.0.1(localhost)에서만 Redis 서버에 연결)
+  $ sudo nano /etc/redis/redis.conf
+  ```
+  ``` 
+      ★ redis.conf 수정 부분
+      bind 127.0.0.1 ::1 부분을 아래와 같이 수정
+      bind 0.0.0.0 ::1
+      :wq 입력하여 작성 및 저장하고 커맨드 라인으로 나오기
+  ```
+  ```
+  [redis.conf 변경 부분 적용하기 위해 Redis 다시 시작]
+  $ sudo systemctl restart redis-server
+  
+  [0.0.0.0:6379 확인]
+  $ ss -an | grep 6379
+  
+  [TCP 포트 6379에서 원격 시스템의 트래픽을 활성화하는 방화벽 규칙 추가]
+  $ 
+  $ 
+  $ 
+  
+  [설정 이상 여부 확인]
+  $ redis-cli ping
+  (PONG 응답이 오면 성공)
   ```
 
   * * *
