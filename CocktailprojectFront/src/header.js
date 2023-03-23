@@ -7,7 +7,7 @@ import axios from "axios";
 
 // 회원메뉴 모달창 (하위 컴포넌트)
 function HeaderModal(props) {
-  const { isModalOpen, handleModalClose, token} = props;
+  const {isModalOpen, handleModalClose, token} = props;
 
   // 모달창 이외의 부분 클릭시 모달창 닫기
   if (!isModalOpen) return null;
@@ -16,11 +16,11 @@ function HeaderModal(props) {
   const handleLogout = () => {
     handleModalClose;
 
-    axios.post('/member/logout', {}, {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/member/logout`, {}, {
       headers: {
         Authorization: `${token}`
       }
-    }).then(res => {
+    }).then(() => {
       console.log("로그아웃 서버전달 성공!");
     }).catch(() => {
       console.log("로그아웃 서버전달 실패ㅠㅠ");
@@ -67,10 +67,12 @@ function Header(props) {
   const search = process.env.PUBLIC_URL + '/search.png';
 
 
-  // 모달 핸들러
+  // 메뉴 클릭시 색상 변경
   const handleMenuClick = (menu) => {
     setSelectedMenu(menu);
   }
+
+  // 모달 핸들러
   function handleModal() {
     setIsModalOpen(true);
     // console.log("회원모달메뉴: " + isModalOpen);
@@ -102,27 +104,32 @@ function Header(props) {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px 200px 150px', columnGap: '10px' }}>
         {
+        (!isLoggedIn) ? (
+          <div style={{ gridColumn: '3/4' }}>
+          <button className='login-btn'>
+            <Link to="/join">회원가입</Link>
+          </button>
+        </div>
+        ) : null
+        }
+
+        {
         isLoggedIn ? (
-          <div style={{ gridColumn: '3/4'}}>
+          <div style={{ gridColumn: '4/5'}}>
             <>
-            <button className='login-btn' onClick={handleModal} style={{color:'black'}}>{user} 님</button>
+            <button className='login-btn' onClick={handleModal} style={{color:'black'}}>{user.name} 님</button>
             {isModalOpen && <HeaderModal isModalOpen={isModalOpen} handleModalClose={handleModalClose} 
               setIsLoggedIn={setIsLoggedIn} removeToken={removeToken} token={token}/>}
             </>
           </div>
         ) : (
-          <div style={{ gridColumn: '3/4' }}>
+          <div style={{ gridColumn: '4/5' }}>
             <button className='login-btn'>
               <Link to="/login">로그인</Link>
             </button>
           </div>
         )
         }
-        <div style={{ gridColumn: '4/5' }}>
-          <button className='login-btn'>
-            <Link to="/join">회원가입</Link>
-          </button>
-        </div>
       </div>
 
       <Link to="/cocktail" className={`header-menu-box ${selectedMenu === 'cocktail' ? 'selected' : ''}`} onClick={() => handleMenuClick('cocktail')}>
@@ -154,7 +161,8 @@ function Header(props) {
       <div style={{ gridColumn: '6/7', position: 'relative' }}>
         <img src={search} style={{ position: 'absolute', right: '5px', top: '4.5px', cursor: 'pointer' }}></img>
         <form onSubmit={onSubmit}>
-          <input type="text" className='header-search' value={inputValue} onChange={handleChange} placeholder='만들고 싶은 칵테일 또는 재료를 검색하세요 :)'></input>
+          <input type="text" className='header-search' value={inputValue} spellCheck="false"
+            onChange={handleChange} placeholder='만들고 싶은 칵테일 또는 재료를 검색하세요 :)'></input>
         </form>
       </div>
     </div>

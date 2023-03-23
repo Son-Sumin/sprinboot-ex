@@ -1,6 +1,6 @@
 /* eslint-disable */
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // 재료정보 추가 컴포넌트 (하위)
@@ -27,8 +27,9 @@ function IngredientForm(props) {
 
 // 시그니처 작성페이지 (상위)
 function SignatureJoin(props) {
-    // ingredient 데이터 불러오기
+    // ingredient 데이터 불러오기, 사진 그림 불러오기, navigate 사용
     const ingredient = props.ingredient;
+    const uploadPhoto = process.env.PUBLIC_URL + '/upload-photo.png';
     const navigate = useNavigate();
 
     // 데이터를 저장할 state
@@ -39,7 +40,7 @@ function SignatureJoin(props) {
         recipeContents: '',
     })
 
-    const [files, setFiles] = useState([]);
+    const [files, setFiles] = useState(null);
 
     const [ingredients, setIngredients] = useState(
         {
@@ -61,6 +62,29 @@ function SignatureJoin(props) {
         },
     )
 
+    // handleClickPhoto 이벤트
+    const fileInputRef = useRef(null);
+    const [previewUrl, setPreviewUrl] = useState(null);
+
+    const handleClickPhoto = () => {
+        fileInputRef.current.click();
+    }
+    const handleFilesChange = (e) => {
+        e.preventDefault();
+
+        // 파일 미리보기를 도와줌
+        const reader = new FileReader();
+
+        setFiles(e.target.value);
+
+        reader.onloadend = () => {
+            setPreviewUrl(reader.result);
+        };
+
+        reader.readAsDataURL(e.target.files[0]);
+    }
+
+
     // handleChange 이벤트
     const handleSignatureJoinChange = (e) => {
         const {name, value} = e.target; // name과 value 속성을 추출
@@ -71,11 +95,8 @@ function SignatureJoin(props) {
         });
     };
 
-    const handleFilesChange = (e) => {
-        setFiles(e.target.value);
-    }
 
-    // IngredientForm이벤트
+    // IngredientForm 이벤트
     const handleClickIngredientForm = () => {
         const nextKey = ingredientForm.length;
         const newIngredientForm = <IngredientForm key={nextKey} />;
@@ -161,19 +182,19 @@ function SignatureJoin(props) {
 
         // 엔드포인트에 JSON파일 전달
         try {
-            const res01 = await axios.post('/signature/write', formData01);
+            const res01 = await axios.post(`${process.env.REACT_APP_ENDPOINT}/signature/write`, formData01);
             // console.log(res.data);
             // navigate("/signature");
 
             const postNo = res01.data.no;
             console.log("postNo: " + postNo);
         
-            const res02 = await axios.post(`/signature/write/${postNo}/recipe`, formData02);
+            const res02 = await axios.post(`${process.env.REACT_APP_ENDPOINT}/signature/write/${postNo}/recipe`, formData02);
             
             console.log("formData02: " + JSON.stringify(res02.data));
             console.log("eachIngredientNo: " + JSON.stringify(ingredients));
 
-            const res03 = await axios.post(`/signature/write/${postNo}/recipe`, formData03);
+            const res03 = await axios.post(`${process.env.REACT_APP_ENDPOINT}/signature/write/${postNo}/recipe`, formData03);
             
             console.log("formData03: " + JSON.stringify(res03.data));
             // console.log("eachIngredientNo: " + JSON.stringify(ingredients));
@@ -184,7 +205,7 @@ function SignatureJoin(props) {
         }
 
         try {
-            await axios.post(`/signature/write/${no}/file`, formData03, {
+            await axios.post(`${process.env.REACT_APP_ENDPOINT}/signature/write/${no}/file`, formData03, {
                 headers: {
                   'Content-Type': 'multipart/form-data'
                 }
@@ -206,21 +227,33 @@ function SignatureJoin(props) {
             <div className="signature-join-contents">
                 {/* 영문이름 grid 150px */}
                 <form style={{display:'grid', gridTemplateRows:'1fr 150px 150px 280px 1fr 1fr', rowGap:'20px'}} onSubmit={handleSubmit}>
-                    <div className="signature-contents-picture-box">
+                    <div>
                         <h3>칵테일 사진 ▼</h3>
                         <div className="signature-picture-box signature-picture-box-grid-1" style={{border:'0px'}}>
-                            <div className="signature-picture-box" style={{border:'3px solid'}}>
-                                <input type="file" name='files' defaultValue={files} multiple onChange={handleFilesChange} style={{textAlign:'center', marginTop:'80px'}}></input>  
+                            <div>
+                                <button type='button' className='signature-picture-button' onClick={handleClickPhoto}>
+                                    <img src={uploadPhoto} alt="이미지 업로드 버튼"/>
+                                    <p className='signature-picture-button-text'>사진 업로드</p>
+                                </button>
+                                <input ref={fileInputRef} type="file" name='files' defaultValue={files} multiple onChange={handleFilesChange} style={{display:'none'}}></input>  
                             </div>
-                            <div className="signature-picture-box signature-picture-box-grid-2">
+
+                            <div className="signature-picture-box-2 signature-picture-box-grid-2" style={(previewUrl === null) ? null : {overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px'}}>
+                                {
+                                (previewUrl === null) ?
+                                (<>
                                 <div style={{gridRow:'2/3', textAlign:'center', fontWeight:'600'}}>추천사진1</div>
                                 <div style={{gridRow:'3/4', textAlign:'center'}}>깔끔하게 흰 배경에 <br/> 찍어보세요!</div>
+                                </>) : <img src={previewUrl} alt="file preview" />
+                                }
                             </div>
-                            <div className="signature-picture-box signature-picture-box-grid-2">
+
+                            <div className="signature-picture-box-2 signature-picture-box-grid-2">
                                 <div style={{gridRow:'2/3', textAlign:'center', fontWeight:'600'}}>추천사진2</div>
                                 <div style={{gridRow:'3/4', textAlign:'center'}}>깔끔하게 흰 배경에 <br/> 찍어보세요!</div>
                             </div>
-                            <div className="signature-picture-box signature-picture-box-grid-2">
+
+                            <div className="signature-picture-box-2 signature-picture-box-grid-2">
                                 <div style={{gridRow:'2/3', textAlign:'center', fontWeight:'600'}}>추천사진3</div>
                                 <div style={{gridRow:'3/4', textAlign:'center'}}>깔끔하게 흰 배경에 <br/> 찍어보세요!</div> 
                             </div>

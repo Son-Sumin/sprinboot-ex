@@ -1,31 +1,34 @@
 /* eslint-disable */
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 function Login(props) {
-    const setIsLoggedIn = props.setIsLoggedIn;
+    const { setIsLoggedIn } = props;
 
     const [id, setUserId] = useState('');
     const [password, setPassword] = useState('');
+    
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/member/login', { 
+            const response = await axios.post(`${process.env.REACT_APP_ENDPOINT}/member/login`, { 
                 id: id, 
                 password: password });
             const accessToken = response.data.accessToken;
             
-            localStorage.setItem('accessToken', accessToken); // 로그인 후 토큰을 localStorage에 저장!!
-            // if (response.status === 200) {
-            //     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`; // 토큰을 헤더에 저장!!
-            // }
+            // 로그인 후 토큰을 localStorage에 저장
+            localStorage.setItem('accessToken', accessToken);
+            
+            // 로그인 상태에 변화를 줌
             setIsLoggedIn(true);
 
+            // 이후 메인화면으로 복귀
             navigate("/");
+
             console.log("accessToken: " + accessToken);
 
             alert("로그인 성공!!");
@@ -37,6 +40,9 @@ function Login(props) {
 
     return (
         <div className="signature-join-container">
+            <div className="signature-join-contents">
+                <h1 style={{margin:'0px'}}>모여Bar 로그인</h1>
+            </div>
             <div className="signature-join-contents" style={{display:'grid', gridTemplateRows:'1fr 1fr'}}>
                 <label>
                     <h3>아이디 ▼</h3>

@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import '../App.css';
 import '../css/cocktailandingredient.css';
 import axios from 'axios';
-import {Routes, Route, Link, useParams, useNavigate, Outlet} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import parse from 'html-react-parser';
 
 function CocktailDetail(props) {
-    const {cocktail, token, isLoggedIn} = props;
-    const {no} = useParams();
+    const {cocktail, token, isLoggedIn, isLiked, setIsLiked} = props;
+    const {no} = useParams(); // 파라미터를 변수로 추출
 
     // 좋아요 버튼 (false일때에는 하얀하트, true일때에는 빨간하트)
-    const [isLiked, setIsLiked] = useState(false);
+    // const [isLiked, setIsLiked] = useState(false);
 
     // 좋아요 개수 저장 (버튼 클릭 시 실시간으로 좋아요 개수를 반영하기 위한 state)
     const[countLiked, setCountLiked] = useState([]);
@@ -20,18 +20,18 @@ function CocktailDetail(props) {
     const handleLikeClick = async (e) => {
         // 로그인 시에만 click이벤트 작동
         if (isLoggedIn) {
-            await axios.post(`/cocktail/like/${no}`, {}, {
+            await axios.post(`${process.env.REACT_APP_ENDPOINT}/cocktail/like/${no}`, {}, {
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
             }).then(() => {
                 // Click이벤트 발생 시, 하트상태 반전을 위한 데이버를 서버에서 불러옴
-                axios.get(`/cocktail/isliked/${no}`, {
+                axios.get(`${process.env.REACT_APP_ENDPOINT}/cocktail/isliked/${no}`, {
                     headers: {
                       Authorization: `Bearer ${token}`
                     }
                 }).then((res) => {
-                    const liked =  res.data; // 서버에서 회원의 좋아요정보 요청 => true or false
+                    const liked = res.data; // 서버에서 회원의 좋아요정보 요청 => true or false
                     setIsLiked(liked); // true or false를 isLiked state에 저장
                     console.log("좋아요 데이터 가져오기 성공: " + liked);
                 }).catch((err) => {
@@ -45,9 +45,9 @@ function CocktailDetail(props) {
             });
     
             // Click이벤트 발생 시, 실시간으로 숫자를 반영
-            axios.get(`/cocktail/countliked/${no}`)
+            axios.get(`${process.env.REACT_APP_ENDPOINT}/cocktail/countliked/${no}`)
             .then((res) => {
-                const counted =  res.data;
+                const counted = res.data;
                 setCountLiked(counted);
                 console.log("좋아요 카운트데이터 가져오기 성공: " + counted);
             }).catch((err) => {
@@ -62,12 +62,12 @@ function CocktailDetail(props) {
 
     // 렌더링 할때마다, 예전에 좋아요 버튼 클릭했다면 ♥으로 고정, 안했다면 ♡으로 고정... 서버에서 데이터를 불러옴
     useEffect(() => {
-        axios.get(`/cocktail/isliked/${no}`, {
+        axios.get(`${process.env.REACT_APP_ENDPOINT}/cocktail/isliked/${no}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
         }).then((res) => {
-            const liked =  res.data;
+            const liked = res.data;
             setIsLiked(liked);
             console.log("좋아요 데이터 가져오기 성공: " + liked);
         }).catch((err) => {
@@ -78,9 +78,9 @@ function CocktailDetail(props) {
 
     // 렌더링 할때마다, 실시간으로 숫자를 반영
     useEffect(() => {
-        axios.get(`/cocktail/countliked/${no}`)
+        axios.get(`${process.env.REACT_APP_ENDPOINT}/cocktail/countliked/${no}`)
         .then((res) => {
-            const counted =  res.data;
+            const counted = res.data;
             setCountLiked(counted);
             console.log("좋아요 카운트데이터 가져오기 성공: " + counted);
         }).catch((err) => {
@@ -105,9 +105,8 @@ function CocktailDetail(props) {
                                 {
                                 a.cocktailImages.map(function(a, i) {
                                     return (
-                                        <div className="cocktail-banner-box-minipiturebox">
-                                            {/* {a.url} */}
-                                            <img className="cocktail-banner-box-minipiture" src={a.url} width='420px' height='400px'></img>
+                                        <div className="cocktail-banner-box-minipicturebox">
+                                            <img className="cocktail-banner-box-minipicture" src={a.url} width='420px' height='400px'></img>
                                         </div>
                                     )
                                 })
@@ -139,7 +138,6 @@ function CocktailDetail(props) {
                 <div style={{paddingLeft:'15%', paddingRight:'15%', marginTop:'100px'}}>
                     <div style={{marginBottom:'50px'}}>
                         <span style={{fontSize:'20px', fontWeight:'bold'}}>재료정보 ▼</span>
-                        <button className="cocktail-ingredient-btn"> ↻ 단위변경</button>
                     </div>
                     <div className="cocktail-ingredient-recipe-box">
                         {
