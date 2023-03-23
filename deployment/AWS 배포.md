@@ -136,7 +136,14 @@
   [백그라운드에서 서버 실행하고 싶으면]
   $ node server.js &
   ```
-      
+  <br>
+  
+  - React 빌드 불가 시
+    Creating an optimized production build... 
+ ```
+ 
+ ```
+   
 
 <details>
     <summary> React 빌드 참고 (클릭:wink:) </summary> 
@@ -261,10 +268,15 @@
   [0.0.0.0:6379 확인]
   $ ss -an | grep 6379
   
-  [TCP 포트 6379에서 원격 시스템의 트래픽을 활성화하는 방화벽 규칙 추가]
-  $ 
-  $ 
-  $ 
+      (필요 시 설정) 
+      
+      [TCP 포트 6379에서 원격 시스템의 트래픽을 활성화하는 방화벽 규칙 추가]
+      (192.168.0.0 ~ 192.168.0.255 접근 가능)
+      $ sudo ufw allow proto tcp from 192.168.0.0/24 to any port 6379
+
+      [모든 IP 접근 가능]
+      (비추)
+      $ sudo ufw allow proto tcp from any to any port 6379
   
   [설정 이상 여부 확인]
   $ redis-cli ping
