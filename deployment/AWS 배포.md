@@ -1,7 +1,7 @@
 # Springboot(Gradle) + React 프로젝트 AWS 배포하기
 - EC2, RDS, Ubuntu, MobaXterm 활용
 - Lightsail 활용한 내용은 [링크](https://github.com/Son-Sumin/springboot-test/tree/main/deployment/Lightsail) 참고
-- 참고 : https://3d-yeju.tistory.com/63, https://cloud-oky.tistory.com/395
+- 참고 : https://3d-yeju.tistory.com/63, https://cloud-oky.tistory.com/395, https://codesyun.tistory.com/303
 
 * * *
 <br>
@@ -138,11 +138,21 @@
   ```
   <br>
   
-  - React 빌드 불가 시
-    Creating an optimized production build... 
- ```
- 
- ```
+- ### React 빌드 불가 ( Creating an optimized production build... )  
+  - terminal   
+  ```
+  [AWS 인스턴스는 기본으로  스왑 메모리가 지정되어있지 않아서 0으로 표시됨 확인]
+  $ free
+
+  [스왑 메모리 생성]
+  $ sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
+  $ sudo mkswap /mnt/swapfile
+  $ sudo swapon /mnt/swapfile
+  
+  [참고 : 스왑메모리 해제 방법]
+  $ sudo swapoff -v /mnt/swapfile
+  $ sudo rm /mnt/swapfile
+  ```
    
 
 <details>
@@ -286,4 +296,5 @@
   * * *
   <br>
   
-  
+  - rds 접근   
+    $ mysql -u 계정이름 -p -h 엔드포인트   
