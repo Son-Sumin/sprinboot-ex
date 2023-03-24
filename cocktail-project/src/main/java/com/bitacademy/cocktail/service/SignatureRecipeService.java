@@ -1,11 +1,13 @@
 package com.bitacademy.cocktail.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.bitacademy.cocktail.domain.BoardImage;
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.domain.SignatureRecipe;
 import com.bitacademy.cocktail.repository.SignatureRecipeRepository;
@@ -35,19 +37,39 @@ public class SignatureRecipeService {
 		return signatureRecipeRepository.findBySignatureNo(signatureNo);
 	}
 	
-	/* 시그니처 레시피 등록 */
-	public void addRecipe(Long signatureNo, SignatureRecipe recipe) {
+	/* 시그니처 레시피 리스트 등록 */
+	public void addRecipe(Long signatureNo, ArrayList<SignatureRecipe> signatureRecipes) {
 		
 		Signature signature = signatureRepository.findByNo(signatureNo);
+		System.out.println(("############ signature : " + signature));
 		
-		SignatureRecipe sigRecipe = new SignatureRecipe();
-		sigRecipe.setSignature(signature);
-		sigRecipe.setIngredient(recipe.getIngredient());
-		sigRecipe.setAmount(recipe.getAmount());
-		sigRecipe.setUnit(recipe.getUnit());
+		ArrayList<SignatureRecipe> recipes = new ArrayList<>();
 		
-		signatureRecipeRepository.save(sigRecipe);
+		for (SignatureRecipe recipe : recipes) {
+			
+			SignatureRecipe sig = new SignatureRecipe();
+			sig.setSignature(signature);
+			sig.setIngredient(recipe.getIngredient());
+			sig.setAmount(recipe.getAmount());
+			sig.setUnit(recipe.getUnit());
+			recipes.add(sig);
+		}
+		signatureRecipeRepository.saveAll(recipes);
 	}
+	
+//	/* 시그니처 레시피 등록 */
+//	public void addRecipe(Long signatureNo, SignatureRecipe recipe) {
+//		
+//		Signature signature = signatureRepository.findByNo(signatureNo);
+//		
+//		SignatureRecipe sigRecipe = new SignatureRecipe();
+//		sigRecipe.setSignature(signature);
+//		sigRecipe.setIngredient(recipe.getIngredient());
+//		sigRecipe.setAmount(recipe.getAmount());
+//		sigRecipe.setUnit(recipe.getUnit());
+//		
+//		signatureRecipeRepository.save(sigRecipe);
+//	}
 	
 	/* 시그니처 레시피 삭제 */
 	public void deleteRecipe(Long signatureNo) {
