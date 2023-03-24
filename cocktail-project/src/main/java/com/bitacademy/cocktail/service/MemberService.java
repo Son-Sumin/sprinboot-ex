@@ -64,5 +64,10 @@ public class MemberService {
 
 		redisTemplate.opsForValue().set(accessToken, "blackList", expiration, TimeUnit.MILLISECONDS);
 	}
+	
+	public void save(Member member) {
+		memberRepository.save(member);
+		
+	}
 
 }

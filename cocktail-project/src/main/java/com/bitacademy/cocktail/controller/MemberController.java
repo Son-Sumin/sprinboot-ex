@@ -1,10 +1,13 @@
 package com.bitacademy.cocktail.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,10 +15,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bitacademy.cocktail.domain.Member;
 import com.bitacademy.cocktail.domain.Role;
@@ -91,5 +98,24 @@ public class MemberController {
 	public Optional<Member> memberInfo() {
 		System.out.println(memberService.memberInfo(SecurityUtil.getCurrentMemberId()));
 		return memberService.memberInfo(SecurityUtil.getCurrentMemberId());
+	}
+	
+	@CrossOrigin(origins = "*")
+	@PatchMapping("/member/update")
+	public void imgUpdate(@ModelAttribute Member member, MultipartFile file) throws Exception {
+		member = memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get();
+		member.setProfileImage("");
+	
+		if(!file.isEmpty()) {
+			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\common";
+	 		UUID uuid = UUID.randomUUID();
+	 		String fileName = uuid + "_" + file.getOriginalFilename();
+	 		
+	 		File saveFile = new File(projectPath, fileName);
+	 		file.transferTo(saveFile);
+	 		
+	 		member.setProfileImage("/common/" + fileName);
+	 		memberService.save(member);	
+		}
 	}
 }
