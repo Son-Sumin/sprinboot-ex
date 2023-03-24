@@ -51,11 +51,11 @@
   ```
   스프링부트 파일의 디렉토리로 이동
   
-  [스프링부트 파일 빌드]
-  $ ./gradlew build
-
   [git clone 했다면]
   $ chmod +x gradlew
+  
+  [스프링부트 파일 빌드]
+  $ ./gradlew build
 
   해당 폴더\build\libs 디렉토리 이동하여.jar 파일 생성 확인
 
@@ -84,6 +84,9 @@
   ```
   스프링부트 파일의 디렉토리로 이동
 
+  [npm module 설치]
+  $ npm install
+  
   [리액트 파일 빌드]
   $ npm run build
   
