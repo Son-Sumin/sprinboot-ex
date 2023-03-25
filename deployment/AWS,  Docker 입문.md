@@ -1,29 +1,26 @@
-캡처 : window + shift + s
+### AWS,  Docker 입문 시 소개 내용
+<br>
 
-aws azure gcp 비교
-한 브라우저에 동시 접속 불가
-창 2개 띄우기(다른 브라우저, 시크릿모드 등)
+- 캡처 : window + shift + s   
+<br>
 
-AWS Service
-1. billing
-  - 결제 - 청구서 - 틈틈히 확인(18h~24h 후 최신화)
-  - 기본설정 - 청구서 설정 - 프리 티어 사용량 알림 받기, 결제 알림 받기 check
-  -  Cost Management - Budgets - 예산 생성 후 사용
+- aws azure gcp 비교   
+  한 브라우저에 동시 접속 불가   
+  창 2개 띄우기(다른 브라우저, 시크릿모드 등)   
+<br>
 
-2. IAM
-https://182864233461.signin.aws.amazon.com/console
-admin
-~
+- AWS Service   
+1. billing   
+  - 결제 - 청구서 - 틈틈히 확인(18h~24h 후 최신화)   
+  - 기본설정 - 청구서 설정 - 프리 티어 사용량 알림 받기, 결제 알림 받기 check   
+  -  Cost Management - Budgets - 예산 생성 후 사용   
 
-https://182864233461.signin.aws.amazon.com/console
-host
-host1234!
-
-  - 실무에서는 root에서 한 사용자를 만드는데 권한(AdministratorAccess) 주고 'admin'으로서 활동시키다가 문제 생기면 그 사용자를 삭제하기
-  - 'admin' 계정은 billing 권한만 없음
-  - MFA 할당
-  - 사용자 - 권한 주기 - 직접 연결(AmazonEC2FullAccess 이면 다 가능)
-	회사에서는 그룹 생성 후 그 그룹에 연결
+2. IAM   
+  - 실무에서는 root에서 한 사용자를 만드는데 권한(AdministratorAccess) 주고 'admin'으로서 활동시키다가 문제 생기면 그 사용자를 삭제하기   
+  - 'admin' 계정은 billing 권한만 없음   
+  - MFA 할당   
+  - 사용자 - 권한 주기 - 직접 연결(AmazonEC2FullAccess 이면 다 가능)   
+	회사에서는 그룹 생성 후 그 그룹에 연결   
 
 3. EC2
   - check the region
