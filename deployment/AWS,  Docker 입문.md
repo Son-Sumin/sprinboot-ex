@@ -1,6 +1,7 @@
 ### AWS,  Docker 입문 시 소개 내용
 <br>
 
+
 - 캡처 : window + shift + s   
 <br>
 
@@ -11,47 +12,54 @@
 
 - AWS Service   
 1. billing   
-  - 결제 - 청구서 - 틈틈히 확인(18h~24h 후 최신화)   
-  - 기본설정 - 청구서 설정 - 프리 티어 사용량 알림 받기, 결제 알림 받기 check   
-  -  Cost Management - Budgets - 예산 생성 후 사용   
+   - 결제 - 청구서 - 틈틈히 확인(18h~24h 후 최신화)   
+   - 기본설정 - 청구서 설정 - 프리 티어 사용량 알림 받기, 결제 알림 받기 check   
+   - Cost Management - Budgets - 예산 생성 후 사용   
 
 2. IAM   
-  - 실무에서는 root에서 한 사용자를 만드는데 권한(AdministratorAccess) 주고 'admin'으로서 활동시키다가 문제 생기면 그 사용자를 삭제하기   
-  - 'admin' 계정은 billing 권한만 없음   
-  - MFA 할당   
-  - 사용자 - 권한 주기 - 직접 연결(AmazonEC2FullAccess 이면 다 가능)   
-	회사에서는 그룹 생성 후 그 그룹에 연결   
+   - 실무에서는 root에서 한 사용자를 만드는데 권한(AdministratorAccess) 주고 'admin'(예시)으로서 활동시키다가 문제 생기면 그 사용자를 삭제   
+   - 'admin' 계정은 billing 권한만 없음, root 계정에 준하는 권한 소유    
+   - MFA 할당 (root계정은 설정 비추, 폰 교체/분실 시 복구 어려움)   
+   - 사용자 - 권한 주기 - 직접 연결(AmazonEC2FullAccess 이면 다 가능)   
+     회사에서는 그룹 생성 후 그 그룹에 연결   
 
 3. EC2
-  - check the region
-  - 리소스 - 보안그룹 = 0이면 안됨
-  - 인스턴스 : 클라우드의 가상서버
-  - 이미지 : 운영체계(OS)
-  - 인스턴스 시작
-	- 이름 설정 - 아무거나
-	- OS이미지 - Ubuntu - 프리티어
-	- 인스턴스 유형 - t2.micro
-	- 키 페어(로그인) - 생성하기 (pem 파일 중요)
+   - check the region
+   - 리소스 - '보안그룹 = 0' 이면 안 됨   
+     (기본으로 부여되는 default는 절대 삭제하면 안됨)
+   - 인스턴스 : 클라우드의 가상서버   
+   - 이미지 : 운영체계(OS)   
+   - 인스턴스 시작   
+     - 이름 설정 : 아무거나   
+     - OS이미지 : Ubuntu, 프리티어   
+     - 인스턴스 유형 : t2.micro   
+     - 키 페어(로그인) : 생성하기 (pem 파일 위치 확인 중요)   
 
-  - 인스턴스 사용법
-	- 해당 인스턴스 접속 후 연결
+   - 인스턴스 사용법 3가지   
+     (해당 인스턴스 접속 후 '연결' 클릭)   
+    1. web socket 방식의 접속   
+       - 상단) EC2 인스턴스 연결   
+       - 연결   
+       - cmd
+       ```
+         $ sudo apt -y update   
+       ```
 
-	1. web socket 방식의 접속
-	- 상단) EC2 인스턴스 연결
- 	- 연결
-	- cmd - #sudo apt -y update
-
-	2. SSH 클라이언트 사용
-	- 상단) SSH 클라이언트
-	- pem있는 파일 위치에서 ssh 복사하여 실행
-	- cmd - #sudo apt -y update
-	- cmd - #sudo apt -y upgrade
-	- cmd - #sudo apt -y install nginx
-	- cmd - #sudo systemctl status nginx
-	
-	(처음 만들 때 보안그룹 생성 시 HTTP 선택 가능, 미선택 시 아래 실시)
-	- ssh(secure shell)를 사용해서 접속했니 scp(secure copy) 설치하여 사용
-	- 인스턴스 - 퍼블릭 IPv4 주소 접근 시 방화벽**으로 인해 접근 불가
+    2. SSH 클라이언트 사용
+       - 상단) SSH 클라이언트
+       - pem있는 파일 위치에서 ssh 복사하여 실행
+       - cmd   
+       ```   
+         $ sudo apt -y update   
+	 $ sudo apt -y upgrade   
+	 $ sudo apt -y install nginx   
+	 $ sudo systemctl status nginx   
+       ```   
+       <br>
+       
+       - 처음 만들 때 보안그룹 생성 시 HTTP 선택 가능, 미선택 시 아래 실시)
+       - ssh(secure shell)를 사용해서 접속했니 scp(secure copy) 설치하여 사용
+	- 인스턴스 - 퍼블릭 IPv4 주소 접근 시 방화벽으로 인해 접근 불가
 	- 중간 보안 탭 - 보안그룹 접속 - 인바운드 규칙 편집
 	- HTTP(유형), Anywhere-IPv4 - 규칙 저장
   
@@ -60,29 +68,33 @@
 		-> 기존 이미지 안에 있는 nginx 남아있음 (타작업 필요없음)
 	  - 해당 인스턴스 우클릭 - 이미지 및 켐플릿 - 이미지 생성
 
-	3. mobaxterm 다운로드
-	- session - ssh - Advanced SSH settings
-		- Specifty username - 해당 인스턴스 연결 - EC2 인스턴스 연결 - 사용자 이름 - 입력
-		- use private key (pem 파일 찾기)
+    3. mobaxterm 다운로드   
+       - session → ssh → Advanced SSH settings   
+         hostname : 인스턴스 퍼블릭 ip   
+         Specifty username : ubuntu    
+         해당 인스턴스 연결 - EC2 인스턴스 연결 - 사용자 이름 - 입력
+         use private key : pem 파일 찾기   
 
 4. S3 (Simple Storage Service) : 웹 하드디스크
 
 5. RDS
 
------------------------------------------------------------------
+* * *
+<br>
 
 ** aws docker **
 
 
-MSA(Micro Service Architecture)   ↔ Monolithic
-MSA ~~ docker / container
+MSA(Micro Service Architecture) ↔  Monolithic   
+MSA ~~ docker / container   
 
-docker.com 으로 접속하면 아래 두 링크 나옴
-hub.docker.com
-docs.docker.com
+- 중요 링크   
+  (docker.com 으로 접속하면 아래 두 링크 나옴)   
+  - hub.docker.com   
+  - docs.docker.com   
+<br>
 
-
- * docs.docker.com 접속
+- docs.docker.com 접속   
 home / Download and install / 펭귄 (Install Docker Desktop on Linux)
 
 우리가 필요한 것은 Docker Desktop이 아니라 Docker Engine 설치 필요
@@ -106,36 +118,8 @@ $ cat /etc/**-release
   Set up the repository 고대로 따라하기
   Install Docker Engine 도 따라하기 (2번 Latest 설치)
  docker engine 설치 완료
----------------
-ubuntu@ip-172-31-38-201:/$ sudo docker run hello-world
-Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-2db29710123e: Pull complete
-Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
--------------------
-
+ 
+```
 [도커 / 컨테이너 명령어 확인]
 $ sudo docker --help
 또는 $ sudo docker -h
@@ -268,7 +252,7 @@ $ sudo docker exec -it <container ID> bash
 [mysql 삭제]
 $ sudo docker ps
 $ sudo docker rm <mysql container ID>
-
+```
 
 
 ubuntu, nginx, mysql, hello-world 실행 명령어 암기
