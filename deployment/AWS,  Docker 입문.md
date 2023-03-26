@@ -1,6 +1,9 @@
 ### AWS,  Docker 입문 시 소개 내용
 <br>
 
+<details>
+    <summary> AWS (클릭:wink:) </summary> 
+<br>
 
 - 캡처 : window + shift + s   
 <br>
@@ -51,33 +54,36 @@
        - cmd   
        ```   
          $ sudo apt -y update   
-	 $ sudo apt -y upgrade   
-	 $ sudo apt -y install nginx   
-	 $ sudo systemctl status nginx   
+         $ sudo apt -y upgrade   
+         $ sudo apt -y install nginx   
+         $ sudo systemctl status nginx   
        ```   
        <br>
        
-       - 처음 만들 때 보안그룹 생성 시 HTTP 선택 가능, 미선택 시 아래 실시)
-       - ssh(secure shell)를 사용해서 접속했니 scp(secure copy) 설치하여 사용
-	- 인스턴스 - 퍼블릭 IPv4 주소 접근 시 방화벽으로 인해 접근 불가
-	- 중간 보안 탭 - 보안그룹 접속 - 인바운드 규칙 편집
-	- HTTP(유형), Anywhere-IPv4 - 규칙 저장
-  
-	  - 인스턴스 이미지(OS) 생성 - 해당 인스턴스 종료(삭제)
-		- 더 큰 용량의 인스턴스에 이전 만들었던 이미지를 설치
-		-> 기존 이미지 안에 있는 nginx 남아있음 (타작업 필요없음)
-	  - 해당 인스턴스 우클릭 - 이미지 및 켐플릿 - 이미지 생성
+       - 처음 만들 때 보안그룹 생성 시 HTTP 선택 가능, 미선택 시 아래 실시)   
+       - ssh(secure shell)를 사용해서 접속 후 scp(secure copy) 설치하여 사용   
+       - 인스턴스 → 퍼블릭 IPv4 주소 접근 시 **방화벽**으로 인해 접근 불가
+       - 중간 보안 탭 → 보안그룹 접속 → 인바운드 규칙 편집 → HTTP(유형), Anywhere-IPv4 → 규칙 저장
+       <br>
+       
+       - 인스턴스 이미지(OS) 생성
+         - 해당 인스턴스 종료(삭제)
+         - 더 큰 용량의 인스턴스에 이전 만들었던 이미지를 설치 (기존 이미지 안에 있는 nginx 남아있으므로 타작업 필요없음
+         - 해당 인스턴스 우클릭 → 이미지 및 켐플릿 → 이미지 생성
 
     3. mobaxterm 다운로드   
        - session → ssh → Advanced SSH settings   
-         hostname : 인스턴스 퍼블릭 ip   
-         Specifty username : ubuntu    
-         해당 인스턴스 연결 - EC2 인스턴스 연결 - 사용자 이름 - 입력
-         use private key : pem 파일 찾기   
+         - hostname : 인스턴스 퍼블릭 ip   
+         - Specifty username : ubuntu    
+         - 해당 인스턴스 연결 - EC2 인스턴스 연결 - 사용자 이름 - 입력
+         - use private key : pem 파일 찾기   
+<br>
 
 4. S3 (Simple Storage Service) : 웹 하드디스크
 
 5. RDS
+</details>
+<br><br>
 
 * * *
 <br>
