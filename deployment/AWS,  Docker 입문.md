@@ -83,7 +83,7 @@
 
 5. RDS
 </details>
-<br><br>
+<br>
 
 * * *
 <br>
@@ -92,10 +92,10 @@
     <summary> AWS Docker (클릭:wink:) </summary> 
 <br>
 
-
-MSA(Micro Service Architecture)  ←→   Monolithic   
-MSA를 구현하기 위한 docker / container   
-
+- MSA(Micro Service Architecture)  ←→   Monolithic   
+- MSA를 구현하기 위한 docker / container   
+<br>
+    
 - 중요 링크 (docker.com 으로 접속하면 아래 두 링크 나옴)   
   - hub.docker.com   
   - docs.docker.com   
@@ -103,10 +103,11 @@ MSA를 구현하기 위한 docker / container
 - docs.docker.com 접속   
   - home → Download and install → 펭귄 (Install Docker Desktop on Linux)   
 
-- 우리가 필요한 것은 Docker Desktop이 아니라 Docker Engine 설치 필요
-- 'Docker Engine' 검색 후 좌측 배너 참고   
+- 우리가 필요한 것은 Docker Desktop이 아니라 **Docker Engine** 설치 필요
+  (좌측 배너 참고)   
+- Docker Engine 설치하기
   - Docker Engine → Install → Ubuntu → OS requirement에서 Ubuntu 종류 확인   
-- terminal
+  - terminal
     ``` 
     [Ubuntu 종류 확인]
     $ cd /etc
@@ -119,10 +120,34 @@ MSA를 구현하기 위한 docker / container
     [참고 - CentOS]
     $ cat /etc/**-release
     ```
-- Installation methods → Set up the repository, Install Docker Engine
-사이트 - terminal 번갈아 복붙
-지금 ubuntu ec2 인스턴스에 docker engine 설치하려함
-- OS requirement에서 Ubuntu 종류 확인 후
+  - Installation methods → Set up the repository, Install Docker Engine   
+    - 방법1 : 스크립트 실행   
+    - 방법2 : 아래 내용 차례로 설치   
+    - terminal   
+    ```
+    [Set up the repository]
+    $ sudo apt-get update
+    $ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg
+    
+    $ sudo mkdir -m 0755 -p /etc/apt/keyrings
+    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    
+    $ echo \
+    "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    
+    [Install Docker Engine]
+    $ sudo apt-get update
+    
+    $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    
+    $ sudo docker run hello-world
+    ```
+  - OS requirement에서 Ubuntu 종류 확인 후
   Set up the repository 고대로 따라하기
   Install Docker Engine 도 따라하기 (2번 Latest 설치)
  docker engine 설치 완료
