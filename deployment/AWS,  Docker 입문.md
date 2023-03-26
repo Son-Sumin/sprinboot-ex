@@ -89,7 +89,7 @@
 <br>
 
 <details>
-    <summary> AWS Docker (클릭:wink:) </summary> 
+    <summary> AWS Docker - mysql 설치 (클릭:wink:) </summary> 
 <br>
 
 - MSA(Micro Service Architecture)  ←→   Monolithic   
@@ -121,7 +121,8 @@
     $ cat /etc/**-release
     ```
   - Installation methods → Set up the repository, Install Docker Engine   
-    - 방법1 : 스크립트 실행   
+    - OS requirement에서 Ubuntu 종류 확인 후
+    - 방법1 : [스크립트 실행](https://github.com/Son-Sumin/docker_minikube_kubectl)   
     - 방법2 : 아래 내용 차례로 설치   
     - terminal   
     ```
@@ -147,148 +148,148 @@
     
     $ sudo docker run hello-world
     ```
-  - OS requirement에서 Ubuntu 종류 확인 후
-  Set up the repository 고대로 따라하기
-  Install Docker Engine 도 따라하기 (2번 Latest 설치)
- docker engine 설치 완료
+
+  여기까지 docker engine 설치 완료   
+  <br>
  
-```
-[도커 / 컨테이너 명령어 확인]
-$ sudo docker --help
-또는 $ sudo docker -h
+    - terminal
+    ```
+    [도커 / 컨테이너 명령어 확인]
+    $ sudo docker --help
+    또는 $ sudo docker -h
 
-[위에서 나온 명령어 세부사항 보기 ex. run]
-$ sudo docker run --help
+    [위에서 나온 명령어 세부사항 보기 ex. run]
+    $ sudo docker run --help
 
-[docker 상태 확인]
-$ sudo systemctl status docker
-$ sudo systemctl stop docker
-$ sudo systemctl start docker
+    [docker 상태 확인]
+    $ sudo systemctl status docker
+    $ sudo systemctl stop docker
+    $ sudo systemctl start docker
 
-[컨테이너에 ubuntu pull하여 사용]
-$ sudo docker  run -it ubuntu bash
+    [컨테이너에 ubuntu pull하여 사용]
+    $ sudo docker  run -it ubuntu bash
 
-[실행 중인 목록, 컨테이너id 확인]
-$ sudo docker ps
+    [실행 중인 목록, 컨테이너id 확인]
+    $ sudo docker ps
 
-[모든 process 확인 (끝난 것 포함)]
-(실행한 컨테이너 history)
-$ sudo docker ps -a
+    [모든 process 확인 (끝난 것 포함)]
+    (실행한 컨테이너 history)
+    $ sudo docker ps -a
 
-$ sudo docker ps -aq
+    $ sudo docker ps -aq
 
-[pull한 images 확인]
-$ sudo docker images
+    [pull한 images 확인]
+    $ sudo docker images
 
-[컨테이너 지우기
-(id 2자리씩만 입력해도 됨)
-$ sudo docker rm 컨테이너id
-(전부 지우기)
-$ sudo docker rm `sudo docker ps -aq`
+    [컨테이너 지우기
+    (id 2자리씩만 입력해도 됨)
+    $ sudo docker rm 컨테이너id
+    (전부 지우기)
+    $ sudo docker rm `sudo docker ps -aq`
 
-[이미지 지우기]
-(id 2자리씩만 입력해도 됨)
-$ sudo docker rmi 이미지id
+    [이미지 지우기]
+    (id 2자리씩만 입력해도 됨)
+    $ sudo docker rmi 이미지id
 
-[컨테이너 강제 죽이기]
-$ sudo docker rm -f 컨테이너id
+    [컨테이너 강제 죽이기]
+    $ sudo docker rm -f 컨테이너id
 
-[이미지 강제 죽이기]
-$ sudo docker rmi -f 이미지id
+    [이미지 강제 죽이기]
+    $ sudo docker rmi -f 이미지id
 
-컨테이너 안에서 밖으로 나갈 때 방법 2가지
-1. ctrl 누른 상태에서 P  Q    (컨테이너 실행 중 밖으로 나옴, 후에 다시 들어가기 위해)
-2. $ exit    (컨테이너 종료시키면서 나옴)
+    컨테이너 안에서 밖으로 나갈 때 방법 2가지
+    1. ctrl 누른 상태에서 P  Q    (컨테이너 실행 중 밖으로 나옴, 후에 다시 들어가기 위해)
+    2. $ exit    (컨테이너 종료시키면서 나옴)
 
-[컨테이너 밖에서 안으로 들어갈 때 방법]
-$ sudo dockerc -it 컨테이너id bash
-
-
-sudo docker run hello-world
-이거 실행할 때마다 이미지 생성됨
-컨테이너는 1번만 생성됨
-
-* 컨테이너?
-독립된 실행환경 (+ 실행 프로그램)
-컨테이너는 가볍다(lightweight), == 꼭 필요한 files만 존재
-이미지가 있어야 컨데이너 생성 가능
-ubuntu는 실행 코드라고 생각
-
-아래 전체를 담고 있는 EC2 존재, 그 안에
-etc 하드웨어 위에 ubuntu 라는 os 존재, 그 위에 docker engine 설치(nginx 여러 개 설치 가능)
-
-[nginx를 컨테이터로 띄우고, 외부(PC)에서 접속 가능]
-$ sudo docker run -d -p 80:80 nginx
-$ sudo docker exec -it 컨테이너id bash
+    [컨테이너 밖에서 안으로 들어갈 때 방법]
+    $ sudo dockerc -it 컨테이너id bash
 
 
+    sudo docker run hello-world
+    이거 실행할 때마다 이미지 생성됨
+    컨테이너는 1번만 생성됨
 
-sudo docker exec nginx컨테이너id bash
-nginx 접속 후
-cd /usr/share/nginx/html
-cat >> welcome.html
-ctrl d 하고 나오기
+    * 컨테이너?
+    독립된 실행환경 (+ 실행 프로그램)
+    컨테이너는 가볍다(lightweight), == 꼭 필요한 files만 존재
+    이미지가 있어야 컨데이너 생성 가능
+    ubuntu는 실행 코드라고 생각
 
-필요한 file을 컨테이터 안으로 카피, 컨테이너로부터 밖으로 카피 가능
+    아래 전체를 담고 있는 EC2 존재, 그 안에
+    etc 하드웨어 위에 ubuntu 라는 os 존재, 그 위에 docker engine 설치(nginx 여러 개 설치 가능)
 
-[컨테이너 안으로 copy]
-(ubuntu에서 파일 생성 후, 파일 생성 시 root 에서 하지 않도록 주의)
-$ sudo docker cp ./welcome2.html 컨테이너id:/usr/share/nginx/html/.
+    [nginx를 컨테이터로 띄우고, 외부(PC)에서 접속 가능]
+    $ sudo docker run -d -p 80:80 nginx
+    $ sudo docker exec -it 컨테이너id bash
 
 
 
-- 또 다른 nginx 실행, 즉 web server n개 실행하고 싶을 때
-ubuntu (도커 호스트 : 도커 엔진이 설치된 서버)
-도커 엔진은 도커 명령어 (ex. docker run, docker cp, docker exec)
-도커 명령어를 실행하는 패키지(시스템)
+    sudo docker exec nginx컨테이너id bash
+    nginx 접속 후
+    cd /usr/share/nginx/html
+    cat >> welcome.html
+    ctrl d 하고 나오기
 
-(도커호스트의 호스트번호 : 생성된 컨테이너에 기본적으로 부여된 포트번호)
-$ sudo docker run -d -p 8000:80 nginx
-$ sudo docker run -d -p 9000:80 nginx
+    필요한 file을 컨테이터 안으로 카피, 컨테이너로부터 밖으로 카피 가능
 
-
-
-- mysql 설치
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
-
-sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -d mysql
-
---name some-mysql : 해도 되고 안해도됨 (이름 설정)
-
-$ sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 -d mysql
-$ sudo docker ps
-(mysql 돌고 있는것 확인)
-(root로 접근하는 것 가능함)
-
-- mysql workbench
-connection 생성
- - hostname : 퍼블릭 ip
-
-$ sudo docker exec -it <mysql_container_ID> mysql -u root -p
-$ password 입력
-(mysql 진입)
-
-(1) 외부에서 mysql 접근하려면 root로는 접근이 안되니
-사용자 만드는 단계가 필요함
-(2) /etc/mysql/mysql.conf
-
-(1)
-mysql> create user 'host' identified by 'host1234';
-mysql> grant all privileges on *.* to 'host';
-mysql> flush privileges;
-mysql> quit;
-
-(2)
-mysql 실행 중인 인스턴스 보안그룹에서 3306 포트 열어두기
-$ sudo docker exec -it <container ID> bash
-
-[mysql 삭제]
-$ sudo docker ps
-$ sudo docker rm <mysql container ID>
-```
+    [컨테이너 안으로 copy]
+    (ubuntu에서 파일 생성 후, 파일 생성 시 root 에서 하지 않도록 주의)
+    $ sudo docker cp ./welcome2.html 컨테이너id:/usr/share/nginx/html/.
 
 
-ubuntu, nginx, mysql, hello-world 실행 명령어 암기
+
+    - 또 다른 nginx 실행, 즉 web server n개 실행하고 싶을 때
+    ubuntu (도커 호스트 : 도커 엔진이 설치된 서버)
+    도커 엔진은 도커 명령어 (ex. docker run, docker cp, docker exec)
+    도커 명령어를 실행하는 패키지(시스템)
+
+    (도커호스트의 호스트번호 : 생성된 컨테이너에 기본적으로 부여된 포트번호)
+    $ sudo docker run -d -p 8000:80 nginx
+    $ sudo docker run -d -p 9000:80 nginx
+
+
+
+    - mysql 설치
+    docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+
+    sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -d mysql
+
+    --name some-mysql : 해도 되고 안해도됨 (이름 설정)
+
+    $ sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 -d mysql
+    $ sudo docker ps
+    (mysql 돌고 있는것 확인)
+    (root로 접근하는 것 가능함)
+
+    - mysql workbench
+    connection 생성
+     - hostname : 퍼블릭 ip
+
+    $ sudo docker exec -it <mysql_container_ID> mysql -u root -p
+    $ password 입력
+    (mysql 진입)
+
+    (1) 외부에서 mysql 접근하려면 root로는 접근이 안되니
+    사용자 만드는 단계가 필요함
+    (2) /etc/mysql/mysql.conf
+
+    (1)
+    mysql> create user 'host' identified by 'host1234';
+    mysql> grant all privileges on *.* to 'host';
+    mysql> flush privileges;
+    mysql> quit;
+
+    (2)
+    mysql 실행 중인 인스턴스 보안그룹에서 3306 포트 열어두기
+    $ sudo docker exec -it <container ID> bash
+
+    [mysql 삭제]
+    $ sudo docker ps
+    $ sudo docker rm <mysql container ID>
+    ```
+
+
+    ubuntu, nginx, mysql, hello-world 실행 명령어 암기
     
 </details>
 <br><br>
