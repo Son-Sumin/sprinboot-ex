@@ -88,36 +88,38 @@
 * * *
 <br>
 
-** aws docker **
-
-
-MSA(Micro Service Architecture) ↔  Monolithic   
-MSA ~~ docker / container   
-
-- 중요 링크   
-  (docker.com 으로 접속하면 아래 두 링크 나옴)   
-  - hub.docker.com   
-  - docs.docker.com   
+<details>
+    <summary> AWS Docker (클릭:wink:) </summary> 
 <br>
 
+
+MSA(Micro Service Architecture)  ←→   Monolithic   
+MSA를 구현하기 위한 docker / container   
+
+- 중요 링크 (docker.com 으로 접속하면 아래 두 링크 나옴)   
+  - hub.docker.com   
+  - docs.docker.com   
+
 - docs.docker.com 접속   
-home / Download and install / 펭귄 (Install Docker Desktop on Linux)
+  - home → Download and install → 펭귄 (Install Docker Desktop on Linux)   
 
-우리가 필요한 것은 Docker Desktop이 아니라 Docker Engine 설치 필요
-(좌측 배너 참고)
-Docker Engine / Install / Ubuntu / OS requirement에서 Ubuntu 종류 확인
--terminal 
-$ cd /etc
-$ sudo cat os-release
-또는
-$ sudo uname -a
-또는
-$ sudo uname -r
+- 우리가 필요한 것은 Docker Desktop이 아니라 Docker Engine 설치 필요
+- 'Docker Engine' 검색 후 좌측 배너 참고   
+  - Docker Engine → Install → Ubuntu → OS requirement에서 Ubuntu 종류 확인   
+- terminal
+    ``` 
+    [Ubuntu 종류 확인]
+    $ cd /etc
+    $ sudo cat os-release
+    또는
+    $ sudo uname -a
+    또는
+    $ sudo uname -r
 
-참고
--terminal (CentOS)
-$ cat /etc/**-release
-
+    [참고 - CentOS]
+    $ cat /etc/**-release
+    ```
+- Installation methods → Set up the repository, Install Docker Engine
 사이트 - terminal 번갈아 복붙
 지금 ubuntu ec2 인스턴스에 docker engine 설치하려함
 - OS requirement에서 Ubuntu 종류 확인 후
@@ -262,3 +264,6 @@ $ sudo docker rm <mysql container ID>
 
 
 ubuntu, nginx, mysql, hello-world 실행 명령어 암기
+    
+</details>
+<br><br>
