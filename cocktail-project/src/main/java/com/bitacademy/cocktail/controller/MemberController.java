@@ -46,6 +46,7 @@ public class MemberController {
 	private final MemberRepository memberRepository;
 
 	// 회원가입
+	@CrossOrigin(origins = "*")
 	@PostMapping("/member/join")
 	public void Join(@RequestBody Map<String, String> member) {
 		System.out.println(member);
@@ -71,6 +72,7 @@ public class MemberController {
 	}
 
 	// jwt로그아웃
+	@CrossOrigin(origins = "*")
 	@PostMapping("/member/logout")
 	public ResponseEntity<Void> logout(@RequestHeader("Authorization") String accessToken) {
 		memberService.logout(accessToken);
@@ -79,6 +81,7 @@ public class MemberController {
 	}
 
 	// 유저리스트
+	@CrossOrigin(origins = "*")
 	@GetMapping("/member/list")
 	public List<Member> memberList(Model model) {
 		List<Member> memberList = memberService.memberList();
@@ -87,6 +90,7 @@ public class MemberController {
 		return memberList;
 	}
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/test")
 	public String test() {
 		System.out.println("@@@" + SecurityContextHolder.getContext().getAuthentication().getName() + "@@@");
@@ -94,6 +98,7 @@ public class MemberController {
 		return "test성공";
 	}
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping("/member/info")
 	public Optional<Member> memberInfo() {
 		System.out.println(memberService.memberInfo(SecurityUtil.getCurrentMemberId()));
