@@ -38,12 +38,12 @@ public class SignatureRecipeService {
 	}
 	
 	/* 시그니처 레시피 리스트 등록 */
-	public void addRecipe(Long signatureNo, ArrayList<SignatureRecipe> signatureRecipes) {
+	public void addRecipe(Long signatureNo, ArrayList<SignatureRecipe> recipes) {
 		
 		Signature signature = signatureRepository.findByNo(signatureNo);
 		System.out.println(("############ signature : " + signature));
 		
-		ArrayList<SignatureRecipe> recipes = new ArrayList<>();
+		List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 		
 		for (SignatureRecipe recipe : recipes) {
 			
@@ -52,9 +52,10 @@ public class SignatureRecipeService {
 			sig.setIngredient(recipe.getIngredient());
 			sig.setAmount(recipe.getAmount());
 			sig.setUnit(recipe.getUnit());
-			recipes.add(sig);
+			signatureRecipes.add(sig);
+			System.out.println("@@@@@@@ service sig : " + sig);
 		}
-		signatureRecipeRepository.saveAll(recipes);
+		signatureRecipeRepository.saveAll(signatureRecipes);
 	}
 	
 //	/* 시그니처 레시피 등록 */
