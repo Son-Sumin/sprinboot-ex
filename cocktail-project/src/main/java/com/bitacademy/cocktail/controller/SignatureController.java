@@ -1,6 +1,5 @@
 package com.bitacademy.cocktail.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -69,30 +66,15 @@ public class SignatureController {
 		Signature signature = signatureService.findSigView(no);
 		signatureImageService.addImages(signature, signatureImage, files);
 	}
-	
-	/* 시그니처 레시피 리스트 작성 */
+		
+	/* 시그니처 레시피 1개 작성 */
 	@CrossOrigin(origins = "*")
 	@PostMapping("/write/{sno}/recipe")
-	public void writeSignatureRecipe(@PathVariable("sno") Long sno, @RequestBody List<SignatureRecipe> recipes) {
+	public List<SignatureRecipe> writeSignatureRecipe(@PathVariable("sno") Long sno, @ModelAttribute SignatureRecipe recipe) {
 		signatureService.findSigView(sno);
-		
-		System.out.println("@@@@@@@ 전recipes : " + recipes);
-		
-		signatureRecipeService.addRecipe(sno, recipes);
-	
-		System.out.println("@@@@@@@ sno : " + sno);
-		System.out.println("@@@@@@@ recipes : " + recipes);
-		//return signatureRecipeService.findBySignature(sno, recipes);
+		signatureRecipeService.addRecipe(sno, recipe);
+		return signatureRecipeService.findBySignature(sno, recipe);
 	}
-	
-//	/* 시그니처 레시피 작성 */
-//	@CrossOrigin(origins = "*")
-//	@PostMapping("/write/{sno}/recipe")
-//	public List<SignatureRecipe> writeSignatureRecipe(@PathVariable("sno") Long sno, @ModelAttribute SignatureRecipe recipe) {
-//		signatureService.findSigView(sno);
-//		signatureRecipeService.addRecipe(sno, recipe);
-//		return signatureRecipeService.findBySignature(sno, recipe);
-//	}
 
 	/* 시그니처 게시글 보기 + 조회수 + 해당 게시글 댓글 리스트 + 해당 게시글 레시피 리스트 */
 	@CrossOrigin(origins = "*")
@@ -193,6 +175,20 @@ public class SignatureController {
 
 
 
+///* 시그니처 레시피 리스트 작성 */
+//@CrossOrigin(origins = "*")
+//@PostMapping("/write/{sno}/recipe")
+//public void writeSignatureRecipe(@PathVariable("sno") Long sno, @RequestBody List<SignatureRecipe> recipes) {
+//	signatureService.findSigView(sno);
+//	
+//	System.out.println("@@@@@@@ 전recipes : " + recipes);
+//	
+//	signatureRecipeService.addRecipe(sno, recipes);
+//
+//	System.out.println("@@@@@@@ sno : " + sno);
+//	System.out.println("@@@@@@@ recipes : " + recipes);
+//	//return signatureRecipeService.findBySignature(sno, recipes);
+//}
 
 
 //@GetMapping("/view/{no}")
