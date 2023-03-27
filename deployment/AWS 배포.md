@@ -46,16 +46,16 @@
   ```
   <br>
 
-- ### Springboot(Gradle) 빌드
+- ### Springboot(Gradle) 빌드   
   - terminal   
   ```
   스프링부트 파일의 디렉토리로 이동
   
-  [스프링부트 파일 빌드]
-  $ ./gradlew build
-
   [git clone 했다면]
   $ chmod +x gradlew
+  
+  [스프링부트 파일 빌드]
+  $ ./gradlew build
 
   해당 폴더\build\libs 디렉토리 이동하여.jar 파일 생성 확인
 
@@ -84,6 +84,9 @@
   ```
   스프링부트 파일의 디렉토리로 이동
 
+  [npm module 설치]
+  $ npm install
+  
   [리액트 파일 빌드]
   $ npm run build
   
@@ -234,6 +237,12 @@
     2. 모든 접근 허용 (특정 IP값으로 지정 가능)
       # bind-address           = 0.0.0.0
 
+  [mysql 작동 여부 확인, 중지, 시작]
+  (mysqld.cnf 설정 파일이므로 수정 후 )
+  $ sudo systemctl status mysql
+  $ sudo systemctl stop mysql
+  $ sudo systemctl start mysql
+
   $ sudo mysql -u root -p
   enter 또는 root 비밀번호 설정
   
@@ -248,11 +257,6 @@
   mysql> grant all privileges on *.* to 'username'@'%' with grant option;
   mysql> flush privileges;
   mysql> select user. host from user;
-  
-  [mysql 작동 여부 확인, 중지, 시작]
-  $ sudo systemctl status mysql
-  $ sudo systemctl stop mysql
-  $ sudo systemctl start mysql
   ```
   <br>
   
@@ -268,7 +272,8 @@
   $ sudo systemctl status redis-server
   
   [원격 연결 허용]
-  (Redis가 실행 중인 시스템인 127.0.0.1(localhost)에서만 Redis 서버에 연결)
+  (Redis가 기본으로 실행 중인 시스템인 127.0.0.1(localhost)에서만 Redis 서버에 연결)
+  (원격 연결 허용 후 스프링부트 application.properties / application.yml에서 ip 수정요필요)
   $ sudo nano /etc/redis/redis.conf
   ```
   ``` 
