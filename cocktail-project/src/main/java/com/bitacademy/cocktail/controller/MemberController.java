@@ -104,8 +104,11 @@ public class MemberController {
 	@PatchMapping("/member/update")
 	public void imgUpdate(@ModelAttribute Member member, MultipartFile file) throws Exception {
 		member = memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get();
-		member.setProfileImage("");
 	
+		if(file != null) {
+			member.setProfileImage(null);
+        }
+		
 		if(!file.isEmpty()) {
 			String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\common";
 	 		UUID uuid = UUID.randomUUID();
