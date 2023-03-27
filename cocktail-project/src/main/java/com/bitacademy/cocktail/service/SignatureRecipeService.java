@@ -7,9 +7,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.bitacademy.cocktail.domain.BoardImage;
 import com.bitacademy.cocktail.domain.Signature;
 import com.bitacademy.cocktail.domain.SignatureRecipe;
+import com.bitacademy.cocktail.repository.IngredientRepository;
 import com.bitacademy.cocktail.repository.SignatureRecipeRepository;
 import com.bitacademy.cocktail.repository.SignatureRepository;
 
@@ -23,7 +23,7 @@ public class SignatureRecipeService {
 	/* 생성자 주입 */
 	private final SignatureRepository signatureRepository;
 	private final SignatureRecipeRepository signatureRecipeRepository;
-	//private final IngredientRepository ingredientRepository;
+	private final IngredientRepository ingredientRepository;
 	
 	/* 시그니처 레시피 리스트 */
 	public List<SignatureRecipe> listSignatureRecipe() {
@@ -38,7 +38,7 @@ public class SignatureRecipeService {
 	}
 	
 	/* 시그니처 레시피 리스트 등록 */
-	public void addRecipe(Long signatureNo, ArrayList<SignatureRecipe> recipes) {
+	public void addRecipe(Long signatureNo, List<SignatureRecipe> recipes) {
 		
 		Signature signature = signatureRepository.findByNo(signatureNo);
 		System.out.println(("############ signature : " + signature));
@@ -49,7 +49,8 @@ public class SignatureRecipeService {
 			
 			SignatureRecipe sig = new SignatureRecipe();
 			sig.setSignature(signature);
-			sig.setIngredient(recipe.getIngredient());
+			sig.setIngredient(ingredientRepository.findByNo(recipe.getIngredient().getNo()));
+			//sig.setIngredient(recipe.getIngredient());
 			sig.setAmount(recipe.getAmount());
 			sig.setUnit(recipe.getUnit());
 			signatureRecipes.add(sig);
