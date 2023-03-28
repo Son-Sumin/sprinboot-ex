@@ -60,18 +60,22 @@ public class Signature extends BaseTimeEntity {
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"signature"})
+	@Builder.Default
 	private List<ReviewSignature> reviewSignatures = new ArrayList<>();
 
 	@OneToMany(mappedBy = "signature", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@JsonIgnoreProperties({"signature"})
+	@Builder.Default
 	private List<SignatureImage> signatureImages = new ArrayList<>();
 	
 	
 	@OneToMany(mappedBy = "signature", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"signature"})
+	@Builder.Default
 	private List<SignatureRecipe> signatureRecipes = new ArrayList<>();
 	
 	@OneToMany(mappedBy="signature", cascade = CascadeType.REMOVE)
+	@Builder.Default
 	private List<LikeSignature> likeSignature = new ArrayList<>();
 	
 }
