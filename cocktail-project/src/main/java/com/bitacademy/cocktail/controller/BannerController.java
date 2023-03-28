@@ -1,21 +1,11 @@
 package com.bitacademy.cocktail.controller;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
 
-import org.apache.commons.io.IOUtils;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +32,7 @@ public class BannerController {
 	private final BannerRepository bannerRepository;
 	
 	/* 배너 리스트 */
+	@CrossOrigin(origins = "*")
 	@GetMapping({"", "/list"})
 	public List<Banner> listBanner() {
 		return bannerRepository.findAll();
