@@ -40,7 +40,8 @@ public class BoardService {
 	public void boardDelete(Long no) {
 		boardRepository.deleteByNo(no);
 	}
-
+	
+	// 게시글 조회수
 	public void updateHit(Long no) {
 		boardRepository.updateHit(no);
 		

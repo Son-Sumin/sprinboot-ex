@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -54,15 +55,23 @@ public class BoardController {
 //	게시글 작성
 	@CrossOrigin(origins = "*")
 	@PostMapping("/board/write")
-	public void boardWrite(@ModelAttribute Board board, BoardImage boardImage, List<MultipartFile> files) throws Exception {
+	public Board boardWrite(@RequestBody Board board) {
 		board.setHit(0L);
 		board.setMember(memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get());
 		boardService.boardWrite(board);
-
-//		boardImageService.saveFile(board, boardImage, files);
+		return boardService.boardView(board.getNo());
+	}
+	
+	// 게시글 파일업로드
+	@CrossOrigin(origins = "*")
+	@PostMapping("/board/write/{no}/file")
+	public void boardFileUpload(@PathVariable("no") Long no, @RequestParam List<MultipartFile> files) throws Exception {
+		Board board = boardService.boardView(no);
+		boardImageService.saveFile(board, files);
 	}
 
 //	게시글 보기
+	@CrossOrigin(origins = "*")
 	@GetMapping("/board/view/{no}")
 	public Board boardView(Model model, @PathVariable("no") Long no) {
 		model.addAttribute("boardList", boardService.boardView(no));
@@ -71,6 +80,7 @@ public class BoardController {
 	}
 
 //	댓글쓰기
+	@CrossOrigin(origins = "*")
 	@PostMapping("/board/view/{no}/review/write")
 	public void reviewWrite(@PathVariable("no") Long no, @RequestBody ReviewBoard reviewBoard) {
 		reviewBoard.setNo(null);
@@ -79,47 +89,100 @@ public class BoardController {
 	}
 
 //	댓글삭제
-	@GetMapping("/board/view/{no}/review/delete/{bno}")
+	@CrossOrigin(origins = "*")
+	@DeleteMapping("/board/view/{no}/review/delete/{bno}")
 	public void reivewDelete(@PathVariable("no") Long no, @PathVariable("bno") Long bno, ReviewBoard reviewBoard) {
 		reviewBoardService.reviewDelete(bno);
 	}
 
 //	게시글 수정
+	@CrossOrigin(origins = "*")
 	@PutMapping("/board/update/{no}")
-	public void boardUpdate(@PathVariable("no") Long no, @RequestBody Board board, BoardImage boardImage, List<MultipartFile> files)
-			throws Exception {
+	public void boardUpdate(@PathVariable("no") Long no, @RequestBody Board board) {
 		Board boardTemp = boardService.boardView(no);
 		boardTemp.setCategory(board.getCategory());
 		boardTemp.setTitle(board.getTitle());
 		boardTemp.setContents(board.getContents());
 		boardTemp.setImgs(board.getImgs());
 		boardService.boardWrite(boardTemp);
+	}
 
-//		System.out.println("img:  "+boardTemp.getImgs());
-//		if(boardTemp.getImgs() != null) {
-//			System.out.println("*****");
-//			boardImageService.imgDelete(no);
-//		}
-//		boardImageService.saveFile(board, boardImage, files);
+
+//	게시글 파일 수정
+	@CrossOrigin(origins = "*")
+	@PutMapping("/board/update/{no}/file")
+	public void boardFileUpdate(@PathVariable("no") Long no, @RequestParam List<MultipartFile> files) throws Exception {
+		Board board = boardService.boardView(no);
+		if(board.getImgs() != null) {
+			boardImageService.imgDelete(no);
+	}
+	boardImageService.saveFile(board, files);
 	}
 
 //	게시글삭제
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("/board/delete/{no}")
 	public void boardDelete(@PathVariable("no") Long no) {
 		boardService.boardDelete(no);
 	}
 	
 //	좋아요
+	@CrossOrigin(origins = "*")
 	@PostMapping("/board/like/{no}")
 	public void addLike(@PathVariable("no") Long no){
 		Member member = memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get();
 		likeBoardService.addLike(member, no);
-		
+	}
+	
+//	 좋아요 확인
+	@CrossOrigin(origins = "*")
+	@GetMapping("/board/isliked/{no}")
+	public boolean isLiked(@PathVariable("no") Long no) {
+		Board board = boardService.boardView(no);
+		Member member = memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get();
+		return !likeBoardService.notLike(member, board);
+	}
+	
+//	 좋아요 갯수
+	@CrossOrigin(origins = "*")
+	@GetMapping("/board/countliked/{no}")
+	public String countLiked(@PathVariable("no") Long no) {
+		return likeBoardService.countLiked(no);
 	}
 
 //	이미지 삭제
+//	@CrossOrigin(origins = "*")
 //	@GetMapping("/board/{no}/img/delete/{bno}")
 //	public void imgDelete(@PathVariable("no") Long no, @PathVariable("bno") Long bno) {
 //		boardImageService.imgDelete(bno);
+//	}
+	
+//	게시글 작성
+//	@CrossOrigin(origins = "*")
+//	@PostMapping("/board/write")
+//	public void boardWrite(@ModelAttribute Board board, BoardImage boardImage, List<MultipartFile> files) throws Exception {
+//		board.setHit(0L);
+//		board.setMember(memberService.memberInfo(SecurityUtil.getCurrentMemberId()).get());
+//		boardService.boardWrite(board);
+//		boardImageService.saveFile(board, boardImage, files);
+//	}
+	
+//	게시글 수정
+//	@PutMapping("/board/update/{no}")
+//	public void boardUpdate(@PathVariable("no") Long no, @RequestBody Board board, BoardImage boardImage, List<MultipartFile> files)
+//			throws Exception {
+//		Board boardTemp = boardService.boardView(no);
+//		boardTemp.setCategory(board.getCategory());
+//		boardTemp.setTitle(board.getTitle());
+//		boardTemp.setContents(board.getContents());
+//		boardTemp.setImgs(board.getImgs());
+//		boardService.boardWrite(boardTemp);
+//
+////		System.out.println("img:  "+boardTemp.getImgs());
+////		if(boardTemp.getImgs() != null) {
+////			System.out.println("*****");
+////			boardImageService.imgDelete(no);
+////		}
+////		boardImageService.saveFile(board, boardImage, files);
 //	}
 }

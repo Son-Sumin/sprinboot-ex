@@ -20,7 +20,6 @@ public class ReviewBoardService {
 	BoardRepository boardRepository;
 	
 	public void reviewWrite(Long no, ReviewBoard review) {
-		
 		review.setBoard(boardRepository.findByNo(no).get());
 		reviewBoardRepository.save(review);
 	}
