@@ -45,6 +45,7 @@ public class BoardController {
 	LikeBoardService likeBoardService;
 	
 //	게시글 리스트
+	@CrossOrigin(origins = "*")
 	@GetMapping("/board/list")
 	public List<Board> boardList(Model model) {
 		List<Board> boardList = boardService.boardList();
